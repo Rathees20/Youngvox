@@ -4,14 +4,15 @@ import Footer from '../Footer';
 import vectorImage from '../../assets/Vector.png';
 import joinBanner from '../../assets/join bannner.png';
 
-const FormPage = () => {
+const CorporateFormPage = () => {
   const [formData, setFormData] = useState({
     name: '',
-    designation: '',
     email: '',
     phoneNumber: '',
-    location: '',
-    schoolName: '',
+    city: '',
+    country: '',
+    subject: 'CSR Partnership',
+    organizationName: '',
     message: '',
     confirmInterest: false
   });
@@ -26,18 +27,8 @@ const FormPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
   };
-
-  const designations = [
-    'Principal',
-    'Vice Principal',
-    'Teacher',
-    'Administrator',
-    'Coordinator',
-    'Other'
-  ];
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -61,16 +52,10 @@ const FormPage = () => {
             {/* Left Panel - Content */}
             <div className="space-y-6">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
-                Bring YoungVox to Your Campus. Inspire Changemakers.
+                CSR for Change. Empower the Next Generation With YoungVox.
               </h1>
               <p className="text-base sm:text-lg text-black leading-relaxed">
-                As a YoungVox school chapter, your students gain the opportunity to build leadership skills, participate in engaging activities and campaigns within their own school, and take part in community initiatives that create real, lasting impact.
-              </p>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
-                And the best part? It's completely free of cost.
-              </p>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
-                By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers—one student at a time.
+                Companies can partner with YoungVox by supporting initiatives, campaigns, or leadership programs that align with their CSR priorities. From education and skill-building to civic engagement and environmental awareness, your contribution helps strengthen youth leadership, empower student action, and build the next generation of responsible changemakers.
               </p>
               <a
                 href="https://www.cry.org/contact/?type=corporate"
@@ -101,23 +86,6 @@ const FormPage = () => {
                 </div>
                 
                 <div>
-                  <select
-                    name="designation"
-                    value={formData.designation}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
-                    required
-                  >
-                    <option value="">Designation</option>
-                    {designations.map((designation) => (
-                      <option key={designation} value={designation}>
-                        {designation}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                
-                <div>
                   <input
                     type="email"
                     name="email"
@@ -144,9 +112,9 @@ const FormPage = () => {
                 <div>
                   <input
                     type="text"
-                    name="location"
-                    placeholder="Location"
-                    value={formData.location}
+                    name="city"
+                    placeholder="City"
+                    value={formData.city}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
                     required
@@ -156,9 +124,33 @@ const FormPage = () => {
                 <div>
                   <input
                     type="text"
-                    name="schoolName"
-                    placeholder="School Name"
-                    value={formData.schoolName}
+                    name="country"
+                    placeholder="Country"
+                    value={formData.country}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject - CSR Partnership"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <input
+                    type="text"
+                    name="organizationName"
+                    placeholder="Organization Name"
+                    value={formData.organizationName}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
                     required
@@ -187,7 +179,7 @@ const FormPage = () => {
                     className="mt-1 mr-2 w-4 h-4 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
                   />
                   <label htmlFor="confirmInterest" className="text-sm text-black">
-                    I confirm the school's interest in becoming a YoungVox School Chapter (Free of Cost).
+                    I confirm our intent to contribute to YoungVox programs and campaigns.
                   </label>
                 </div>
                 
@@ -203,7 +195,6 @@ const FormPage = () => {
         </div>
       </section>
 
-      {/* Wavy Red Separator */}
       <div className="w-full">
         <img
           src={vectorImage}
@@ -218,5 +209,5 @@ const FormPage = () => {
   );
 };
 
-export default FormPage;
+export default CorporateFormPage;
 

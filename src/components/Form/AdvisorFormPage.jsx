@@ -4,14 +4,15 @@ import Footer from '../Footer';
 import vectorImage from '../../assets/Vector.png';
 import joinBanner from '../../assets/join bannner.png';
 
-const FormPage = () => {
+const AdvisorFormPage = () => {
   const [formData, setFormData] = useState({
     name: '',
-    designation: '',
     email: '',
     phoneNumber: '',
-    location: '',
-    schoolName: '',
+    city: '',
+    organisation: '',
+    designation: '',
+    areaOfExpertise: '',
     message: '',
     confirmInterest: false
   });
@@ -26,17 +27,19 @@ const FormPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
   };
 
-  const designations = [
-    'Principal',
-    'Vice Principal',
-    'Teacher',
-    'Administrator',
-    'Coordinator',
-    'Other'
+  // 8 Wings options
+  const wings = [
+    'Education & Learning',
+    'Health & Wellbeing',
+    'Environment & Sustainability',
+    'Civic Engagement',
+    'Arts & Culture',
+    'Technology & Innovation',
+    'Social Justice',
+    'Community Development'
   ];
 
   return (
@@ -61,16 +64,10 @@ const FormPage = () => {
             {/* Left Panel - Content */}
             <div className="space-y-6">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
-                Bring YoungVox to Your Campus. Inspire Changemakers.
+                Advisor for Change. Nurture Young Voices.
               </h1>
               <p className="text-base sm:text-lg text-black leading-relaxed">
-                As a YoungVox school chapter, your students gain the opportunity to build leadership skills, participate in engaging activities and campaigns within their own school, and take part in community initiatives that create real, lasting impact.
-              </p>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
-                And the best part? It's completely free of cost.
-              </p>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
-                By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers—one student at a time.
+                We collaborate with education experts, youth mentors, and thought leaders who share our commitment to nurturing the next generation of responsible leaders. Partner with us to provide guidance, shape programs, and support student-led initiatives that create real community impact.
               </p>
               <a
                 href="https://www.cry.org/contact/?type=corporate"
@@ -101,23 +98,6 @@ const FormPage = () => {
                 </div>
                 
                 <div>
-                  <select
-                    name="designation"
-                    value={formData.designation}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
-                    required
-                  >
-                    <option value="">Designation</option>
-                    {designations.map((designation) => (
-                      <option key={designation} value={designation}>
-                        {designation}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                
-                <div>
                   <input
                     type="email"
                     name="email"
@@ -144,9 +124,9 @@ const FormPage = () => {
                 <div>
                   <input
                     type="text"
-                    name="location"
-                    placeholder="Location"
-                    value={formData.location}
+                    name="city"
+                    placeholder="City"
+                    value={formData.city}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
                     required
@@ -156,13 +136,42 @@ const FormPage = () => {
                 <div>
                   <input
                     type="text"
-                    name="schoolName"
-                    placeholder="School Name"
-                    value={formData.schoolName}
+                    name="organisation"
+                    placeholder="Organisation"
+                    value={formData.organisation}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
                     required
                   />
+                </div>
+                
+                <div>
+                  <input
+                    type="text"
+                    name="designation"
+                    placeholder="Designation"
+                    value={formData.designation}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <select
+                    name="areaOfExpertise"
+                    value={formData.areaOfExpertise}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    required
+                  >
+                    <option value="">Area of Expertise / Interest (Tick all that apply)</option>
+                    {wings.map((wing) => (
+                      <option key={wing} value={wing}>
+                        {wing}
+                      </option>
+                    ))}
+                  </select>
                 </div>
                 
                 <div>
@@ -187,7 +196,7 @@ const FormPage = () => {
                     className="mt-1 mr-2 w-4 h-4 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
                   />
                   <label htmlFor="confirmInterest" className="text-sm text-black">
-                    I confirm the school's interest in becoming a YoungVox School Chapter (Free of Cost).
+                    I confirm my interest in contributing as an Advisor with YoungVox.
                   </label>
                 </div>
                 
@@ -203,7 +212,6 @@ const FormPage = () => {
         </div>
       </section>
 
-      {/* Wavy Red Separator */}
       <div className="w-full">
         <img
           src={vectorImage}
@@ -218,5 +226,5 @@ const FormPage = () => {
   );
 };
 
-export default FormPage;
+export default AdvisorFormPage;
 
