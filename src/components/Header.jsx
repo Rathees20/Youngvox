@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import youngvoxLogo from '../assets/Youngvox logo.png';
 
 const Header = () => {
@@ -14,17 +15,19 @@ const Header = () => {
         <div className="flex items-center justify-between w-full">
           {/* Left Side - Logo */}
           <div className="flex items-center">
-            <img
-              src={youngvoxLogo}
-              alt="Youngvox Logo"
-              className="w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18"
-            />
+            <Link to="/">
+              <img
+                src={youngvoxLogo}
+                alt="Youngvox Logo"
+                className="w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18"
+              />
+            </Link>
           </div>
 
           {/* Center - Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Home</a>
-            <a href="#about" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">About</a>
+            <Link to="/" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Home</Link>
+            <Link to="/about" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">About</Link>
             <a href="#chapters" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Chapters</a>
             <a href="#get-involved" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Get Involved</a>
             <a href="#contact" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Contact us</a>
@@ -72,20 +75,20 @@ const Header = () => {
           }`}>
               <div className="flex flex-col h-full pt-20 px-6">
                 <div className="flex flex-col space-y-4">
-                  <a
-                    href="#home"
+                  <Link
+                    to="/"
                     onClick={toggleMenu}
                     className="text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth"
                   >
                     Home
-                  </a>
-                  <a
-                    href="#about"
+                  </Link>
+                  <Link
+                    to="/about"
                     onClick={toggleMenu}
                     className="text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth"
                   >
                     About
-                  </a>
+                  </Link>
                   <a
                     href="#chapters"
                     onClick={toggleMenu}
