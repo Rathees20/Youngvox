@@ -47,12 +47,12 @@ const AdvisorFormPage = () => {
       <Header />
 
       {/* Banner Section */}
-      <section className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px]">
-        <div className="absolute inset-0">
-          <img
-            src={joinBanner}
-            alt="Join YoungVox Banner"
-            className="w-full h-full object-cover"
+      <section className="w-full relative">
+        <div className="relative w-full">
+          <img 
+            src={joinBanner} 
+            alt="Join YoungVox Banner" 
+            className="w-full h-auto object-cover"
           />
         </div>
       </section>
@@ -216,8 +216,8 @@ const AdvisorFormPage = () => {
         <img
           src={vectorImage}
           alt="Wavy separator"
-          className="w-full h-auto object-cover"
-          style={{ display: 'block' }}
+          className="w-full h-auto object-contain"
+          style={{ display: 'block', maxWidth: '100%' }}
         />
       </div>
 

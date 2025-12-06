@@ -31,26 +31,31 @@ const ChaptersPage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px]">
+      <section className="relative w-full min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
         <div className="absolute inset-0">
           <img
             src={chapterBanner}
             alt="Chapter banner"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
+            style={{ minHeight: '300px' }}
           />
         </div>
         
         {/* Text Overlay */}
-        <div className="absolute right-4 sm:right-8 lg:right-16 top-1/2 -translate-y-1/2 p-6 sm:p-8 lg:p-10 max-w-md lg:max-w-lg">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
-            YoungVox School Chapters
-          </h1>
-          <p className="text-sm sm:text-base text-black mb-6 leading-relaxed">
-            Join our network of schools committed to empowering young leaders. Discover how your school can become part of the YoungVox movement.
-          </p>
-          <button className="bg-[#A82228] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors">
-            Join Now
-          </button>
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-md lg:max-w-lg ml-auto mr-0">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
+                YoungVox School Chapters
+              </h1>
+              <p className="text-sm sm:text-base text-black mb-6 leading-relaxed">
+                Join our network of schools committed to empowering young leaders. Discover how your school can become part of the YoungVox movement.
+              </p>
+              <button className="bg-[#A82228] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors">
+                Join Now
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
