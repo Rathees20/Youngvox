@@ -53,9 +53,12 @@ const JoinYoung = () => {
               <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
               Become a YoungVox School Chapter and empower your students to lead with purpose. Students build leadership skills, run campaigns in their own school, and take part in community initiatives that create real, lasting impact. And the best part? It's completely free of cost. By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers.
               </p>
-              <button className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto">
+              <Link
+                to="/form"
+                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto text-center"
+              >
                 I'd Like To Know More
-              </button>
+              </Link>
             </div>
             {/* Right Column - Image */}
             <div className="order-1 lg:order-2">
@@ -89,9 +92,12 @@ const JoinYoung = () => {
               <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
               Our volunteers and interns work closely with students and communities to implement programs that inspire real change. From organizing school and community campaigns to offering guidance, creativity, and mentorship, every contribution strengthens our mission. Your time and skills can empower young leaders.
               </p>
-              <button className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto">
+              <Link
+                to="/form"
+                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto text-center"
+              >
                 I'd Like To Know More
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -109,9 +115,12 @@ const JoinYoung = () => {
               <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
               Companies can partner with YoungVox by supporting initiatives, campaigns, or leadership programs that align with their CSR priorities. From education and skill-building to civic engagement and environmental awareness, your contribution helps strengthen youth leadership and build the next generation of responsible changemakers.
               </p>
-              <button className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto">
+              <Link
+                to="/form"
+                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto text-center"
+              >
                 I'd Like To Know More
-              </button>
+              </Link>
             </div>
             {/* Right Column - Image */}
             <div className="order-1 lg:order-2">
@@ -145,9 +154,12 @@ const JoinYoung = () => {
               <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
               We collaborate with education experts, youth mentors, and thought leaders who share our commitment to nurturing the next generation of responsible leaders. Partner with us to provide guidance, shape programs, and support student-led initiatives that create real community impact.
               </p>
-              <button className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto">
+              <Link
+                to="/form"
+                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto text-center"
+              >
                 I'd Like To Know More
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -165,9 +177,12 @@ const JoinYoung = () => {
               <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
               Are you an NGO, school, or community organization working with youth on the ground? Partner with YoungVox to combine resources, share expertise, and amplify the impact of youth campaigns and leadership programs. Every partnership begins with a conversation. Let's explore how we can work together to empower young leaders and drive meaningful change.
               </p>
-              <button className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto">
+              <Link
+                to="/form"
+                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto text-center"
+              >
                 I'd Like To Know More
-              </button>
+              </Link>
             </div>
             {/* Right Column - Image */}
             <div className="order-1 lg:order-2">
