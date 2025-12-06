@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import contactImage from '../../assets/contact.png';
 import vectorImage from '../../assets/Vector.png';
 
@@ -27,16 +28,20 @@ const ContactPage = () => {
     console.log('Form submitted:', formData);
   };
 
+  const [touchRef, touchVisible] = useScrollAnimation({ once: true });
+  const [bannerRef, bannerVisible] = useScrollAnimation({ once: true });
+  const [imageRef, imageVisible] = useScrollAnimation({ once: true });
+
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
 
       {/* Get in Touch Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+      <section ref={touchRef} className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel */}
-            <div className="space-y-6">
+            <div className={`space-y-6 ${touchVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
                 <span className="block">Get in Touch with</span>
                 <span className="block text-4xl sm:text-5xl lg:text-6xl">YoungVox</span>
@@ -81,7 +86,7 @@ const ContactPage = () => {
             </div>
 
             {/* Right Panel - Contact Form */}
-            <div className="bg-white">
+            <div className={`bg-white ${touchVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
               <h2 className="text-2xl sm:text-3xl font-bold text-black mb-6">
                 Write to the YoungVox Team
               </h2>
@@ -180,14 +185,14 @@ const ContactPage = () => {
       </section>
 
       {/* Connect. Collaborate. Create Future Leaders. Section */}
-      <section className="bg-[#A82228] py-12 sm:py-16 lg:py-20 relative">
+      <section ref={bannerRef} className="bg-[#A82228] py-12 sm:py-16 lg:py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-8 sm:mb-12">
+          <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-8 sm:mb-12 ${bannerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
             Connect. Collaborate. Create Future Leaders.
           </h2>
           
           {/* Contact Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
+          <div className={`grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto ${bannerVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
             {/* Phone Number Card */}
             <div className="bg-white rounded-lg p-6 sm:p-8 shadow-lg flex items-center gap-4">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center flex-shrink-0">
@@ -242,11 +247,11 @@ const ContactPage = () => {
       </section>
 
       {/* Main Image / Banner Section */}
-      <section className="w-full relative" style={{ marginTop: '-1px', zIndex: 1 }}>
+      <section ref={imageRef} className={`w-full relative ${imageVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ marginTop: '-1px', zIndex: 1 }}>
         <img
           src={contactImage}
           alt="YoungVox students"
-          className="w-full h-auto object-cover"
+          className="w-full h-auto object-cover hover-scale transition-transform duration-300"
         />
       </section>
 

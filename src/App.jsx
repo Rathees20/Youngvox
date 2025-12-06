@@ -4,6 +4,7 @@ import HomePage from './components/HomePage'
 import AboutPage from './components/About/AboutPage'
 import JoinYoung from './components/JoinYoung'
 import ChaptersPage from './components/Chapters/ChaptersPage'
+import WingsPage from './components/Wings/WingsPage'
 import ContactPage from './components/Contact/ContactPage'
 import FormPage from './components/Form/FormPage'
 import VolunteerFormPage from './components/Form/VolunteerFormPage'
@@ -18,6 +19,7 @@ function App() {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/joinyoung" element={<JoinYoung />} />
       <Route path="/chapters" element={<ChaptersPage />} />
+      <Route path="/wings" element={<WingsPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/form" element={<FormPage />} />
       <Route path="/form/school" element={<FormPage />} />

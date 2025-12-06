@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import smilesAndLearningImage from '../assets/smiles and learning all.png';
 
 const EmpoweringYouth = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [ref, isVisible] = useScrollAnimation({ once: true });
 
   const carouselImages = [
     {
@@ -32,11 +34,11 @@ const EmpoweringYouth = () => {
   };
 
   return (
-    <section id="about" className="bg-white py-12 sm:py-16 lg:py-24">
+    <section ref={ref} id="about" className="bg-white py-12 sm:py-16 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Column - Text Content */}
-          <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
+          <div className={`space-y-4 sm:space-y-6 order-2 lg:order-1 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800">
               Empowering Youth. Inspiring Change.
             </h2>
@@ -58,13 +60,13 @@ const EmpoweringYouth = () => {
               </p>
             </div>
 
-            <button className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto">
+            <button className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-all hover-lift w-full sm:w-auto">
               Join YoungVox
             </button>
           </div>
 
           {/* Right Column - Image Carousel */}
-          <div className="relative order-1 lg:order-2">
+          <div className={`relative order-1 lg:order-2 ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
             <div className="relative overflow-hidden rounded-lg">
               <div
                 className="flex transition-transform duration-500 ease-in-out gap-4"

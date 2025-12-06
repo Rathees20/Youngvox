@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import vectorImage from '../../assets/Vector.png';
 import joinBanner from '../../assets/join bannner.png';
 
@@ -39,12 +40,15 @@ const FormPage = () => {
     'Other'
   ];
 
+  const [bannerRef, bannerVisible] = useScrollAnimation({ once: true });
+  const [contentRef, contentVisible] = useScrollAnimation({ once: true });
+
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
 
       {/* Banner Section */}
-      <section className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px]">
+      <section ref={bannerRef} className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px]">
         <div className="absolute inset-0">
           <img
             src={joinBanner}
@@ -55,11 +59,11 @@ const FormPage = () => {
       </section>
 
       {/* Form Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+      <section ref={contentRef} className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel - Content */}
-            <div className="space-y-6">
+            <div className={`space-y-6 ${contentVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
                 Bring YoungVox to Your Campus. Inspire Changemakers.
               </h1>
@@ -83,7 +87,7 @@ const FormPage = () => {
             </div>
 
             {/* Right Panel - Form */}
-            <div className="bg-[#FFFBF2] rounded-lg p-6 sm:p-8 shadow-sm">
+            <div className={`bg-[#FFFBF2] rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${contentVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
               <h2 className="text-2xl sm:text-3xl font-bold text-black mb-6">
                 Write to Us
               </h2>

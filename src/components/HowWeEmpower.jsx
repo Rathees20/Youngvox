@@ -1,4 +1,5 @@
 import React from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import schoolChapterImg from '../assets/School Chapter.png';
 import mentorLeadersImg from '../assets/Mentor and wing leaders.png';
 import annualActivitiesImg from '../assets/Annual Activities.png';
@@ -75,11 +76,15 @@ const HowWeEmpower = () => {
         }
     ];
 
+    const [headerRef, headerVisible] = useScrollAnimation({ once: true });
+    const [cardsRef, cardsVisible] = useScrollAnimation({ once: true });
+    const [partnersRef, partnersVisible] = useScrollAnimation({ once: true });
+    
     return (
         <section className="bg-[#FFF5F5] py-12 md:py-16 lg:py-20">
             <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
                 {/* Section Header */}
-                <div className="text-center mb-10 md:mb-12">
+                <div ref={headerRef} className={`text-center mb-10 md:mb-12 ${headerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3">
                         How YoungVox Empowers School
                     </h2>
@@ -89,11 +94,11 @@ const HowWeEmpower = () => {
                 </div>
 
                 {/* Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-16 md:mb-20 lg:mb-24">
-                    {empowermentCards.map((card) => (
+                <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-16 md:mb-20 lg:mb-24">
+                    {empowermentCards.map((card, index) => (
                         <div
                             key={card.id}
-                            className={`rounded-xl md:rounded-2xl overflow-hidden shadow-md border-4 md:border-[6px] ${card.borderColor} ${card.bgColor} transition-transform hover:scale-105`}
+                            className={`rounded-xl md:rounded-2xl overflow-hidden shadow-md border-4 md:border-[6px] ${card.borderColor} ${card.bgColor} transition-transform hover:scale-105 hover-lift ${cardsVisible ? `animate-fade-in-up animate-delay-${(index % 2) * 100}` : 'opacity-0'}`}
                         >
                             {/* Card Image */}
                             <div className="relative h-48 md:h-56 lg:h-64 overflow-hidden bg-white">
@@ -118,9 +123,9 @@ const HowWeEmpower = () => {
                 </div>
 
                 {/* Be Part of the Change Section */}
-                <div>
+                <div ref={partnersRef}>
                     {/* Section Header */}
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 md:mb-12">
+                    <div className={`flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 md:mb-12 ${partnersVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
                         <div>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-2 md:mb-3">
                                 Be Part of the Change
@@ -136,10 +141,10 @@ const HowWeEmpower = () => {
 
                     {/* Partner Cards */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-                        {partnerCards.map((card) => (
+                        {partnerCards.map((card, index) => (
                             <div
                                 key={card.id}
-                                className="bg-white rounded-xl md:rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                                className={`bg-white rounded-xl md:rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 hover-lift ${partnersVisible ? `animate-scale-in animate-delay-${index * 100}` : 'opacity-0'}`}
                             >
                                 {/* Icon */}
                                 <div className="mb-3 md:mb-4">

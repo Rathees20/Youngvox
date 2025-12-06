@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../Header';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import visionImage from '../../assets/Our vision.png';
 import tornBorder from '../../assets/our vision frame red.png';
 import ourVisionShadow from '../../assets/our vision shadow.png';
@@ -94,7 +95,7 @@ const AboutPage = () => {
         </div>
 
         {/* 🔥 Full-width Vision Image with overlays */}
-        <div className="relative w-full mt-6 sm:mt-12">
+        <div className={`relative w-full mt-6 sm:mt-12 ${visionVisible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
 
           {/* Top shadow */}
           <img
@@ -208,11 +209,11 @@ const AboutPage = () => {
       </section>
 
       {/* Our Team Section */}
-      <section className="py-6 sm:py-16 lg:py-24 bg-[#FAF9F6]">
+      <section ref={teamRef} className="py-6 sm:py-16 lg:py-24 bg-[#FAF9F6]">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left Column - Text Content */}
-            <div className="lg:max-w-md">
+            <div className={`lg:max-w-md ${teamVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-black mb-2 sm:mb-3">
                 Our Team
               </h2>
@@ -292,11 +293,11 @@ const AboutPage = () => {
       </section>
 
       {/* Our Advisors Section */}
-      <section className="py-6 sm:py-16 lg:py-24 bg-[#FAF9F6]">
+      <section ref={advisorsRef} className="py-6 sm:py-16 lg:py-24 bg-[#FAF9F6]">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left Column - Text Content */}
-            <div className="lg:max-w-md">
+            <div className={`lg:max-w-md ${advisorsVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-black mb-2 sm:mb-3">
                 Our Advisors
               </h2>
@@ -312,7 +313,7 @@ const AboutPage = () => {
             </div>
 
             {/* Right Column - Carousel */}
-            <div className="relative">
+            <div className={`relative ${advisorsVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
               <div className="relative overflow-hidden">
                 <div
                   className="flex transition-transform duration-500 ease-in-out gap-4"

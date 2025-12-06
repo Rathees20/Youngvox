@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../Header';
 import NewsletterSection from '../Newsletter';
 import Footer from '../Footer';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import chapterBanner from '../../assets/chapter.png';
 import maskGroupIcon from '../../assets/icons/Mask group.png';
 
@@ -25,13 +26,16 @@ const ChaptersPage = () => {
   const districts = ['Chennai', 'Bangalore', 'Mumbai', 'Delhi', 'Ahmedabad'];
 
   const totalPages = Math.ceil(schools.length / 12);
+  const [heroRef, heroVisible] = useScrollAnimation({ once: true });
+  const [searchRef, searchVisible] = useScrollAnimation({ once: true });
+  const [resultsRef, resultsVisible] = useScrollAnimation({ once: true });
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px]">
+      <section ref={heroRef} className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px]">
         <div className="absolute inset-0">
           <img
             src={chapterBanner}
@@ -41,7 +45,7 @@ const ChaptersPage = () => {
         </div>
         
         {/* Text Overlay */}
-        <div className="absolute right-4 sm:right-8 lg:right-16 top-1/2 -translate-y-1/2 p-6 sm:p-8 lg:p-10 max-w-md lg:max-w-lg">
+        <div className={`absolute right-4 sm:right-8 lg:right-16 top-1/2 -translate-y-1/2 p-6 sm:p-8 lg:p-10 max-w-md lg:max-w-lg ${heroVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
             YoungVox School Chapters
           </h1>
@@ -55,8 +59,8 @@ const ChaptersPage = () => {
       </section>
 
       {/* Search and Filter Bar */}
-      <section className="py-6 sm:py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <section ref={searchRef} className="py-6 sm:py-8 bg-white">
+        <div className={`max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 ${searchVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {/* Search Bar */}
             <div className="relative">
@@ -106,9 +110,9 @@ const ChaptersPage = () => {
       </section>
 
       {/* School Chapters Listing */}
-      <section className="py-6 sm:py-12 bg-white">
+      <section ref={resultsRef} className="py-6 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-6 sm:mb-8">
+          <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-6 sm:mb-8 ${resultsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
             Showing Result 1-30
           </h2>
 
@@ -117,9 +121,10 @@ const ChaptersPage = () => {
             {schools.map((school, index) => (
               <div 
                 key={school.id} 
-                className={`border border-gray-200 rounded-sm p-4 sm:p-5 relative ${
+                className={`border border-gray-200 rounded-sm p-4 sm:p-5 relative hover-lift transition-all ${
                   index % 2 === 0 ? 'bg-white' : 'bg-[#FFFBF2]'
-                }`}
+                } ${resultsVisible ? 'animate-scale-in' : 'opacity-0'}`}
+                style={{ animationDelay: `${index * 50}ms` }}
               >
                 {/* School Icon */}
                 <div className="flex items-center gap-2 mb-2">

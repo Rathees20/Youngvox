@@ -29,6 +29,7 @@ const Header = () => {
             <Link to="/" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Home</Link>
             <Link to="/about" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">About</Link>
             <Link to="/chapters" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Chapters</Link>
+            <Link to="/wings" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Wings</Link>
             <a href="#get-involved" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Get Involved</a>
             <Link to="/contact" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Contact us</Link>
           </nav>
@@ -95,6 +96,13 @@ const Header = () => {
                     className="text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth"
                   >
                     Chapters
+                  </Link>
+                  <Link
+                    to="/wings"
+                    onClick={toggleMenu}
+                    className="text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth"
+                  >
+                    Wings
                   </Link>
                   <a
                     href="#get-involved"
