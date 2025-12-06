@@ -235,8 +235,8 @@ const VolunteerFormPage = () => {
         <img
           src={vectorImage}
           alt="Wavy separator"
-          className="w-full h-auto object-cover"
-          style={{ display: 'block' }}
+          className="w-full h-auto object-contain"
+          style={{ display: 'block', maxWidth: '100%' }}
         />
       </div>
 

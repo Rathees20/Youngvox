@@ -40,7 +40,8 @@ const ChaptersPage = () => {
           <img
             src={chapterBanner}
             alt="Chapter banner"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
+            style={{ minHeight: '300px' }}
           />
         </div>
         
