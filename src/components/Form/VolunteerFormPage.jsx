@@ -42,7 +42,6 @@ const VolunteerFormPage = () => {
   ];
 
   const genders = ['Male', 'Female', 'Other', 'Prefer not to say'];
-  const [bannerRef, bannerVisible] = useScrollAnimation({ once: true });
   const [contentRef, contentVisible] = useScrollAnimation({ once: true });
 
   return (
@@ -50,12 +49,12 @@ const VolunteerFormPage = () => {
       <Header />
 
       {/* Banner Section */}
-      <section ref={bannerRef} className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px]">
-        <div className="absolute inset-0">
-          <img
-            src={joinBanner}
-            alt="Join YoungVox Banner"
-            className="w-full h-full object-cover"
+      <section className="w-full relative">
+        <div className="relative w-full">
+          <img 
+            src={joinBanner} 
+            alt="Join YoungVox Banner" 
+            className="w-full h-auto object-cover"
           />
         </div>
       </section>
