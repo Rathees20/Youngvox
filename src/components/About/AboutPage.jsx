@@ -71,13 +71,17 @@ const AboutPage = () => {
     setAdvisorsSlide((prev) => (prev - 1 + advisors.length) % advisors.length);
   };
 
+  const [visionRef, visionVisible] = useScrollAnimation({ once: true });
+  const [teamRef, teamVisible] = useScrollAnimation({ once: true });
+  const [advisorsRef, advisorsVisible] = useScrollAnimation({ once: true });
+
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
 
       {/* Our Vision Section */}
-      <section className="py-6 sm:py-20 lg:py-24">
-        <div className="max-w-4xl mx-auto px-3 sm:px-6 text-center">
+      <section ref={visionRef} className="py-6 sm:py-20 lg:py-24">
+        <div className={`max-w-4xl mx-auto px-3 sm:px-6 text-center ${visionVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
           <h1 className="text-xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-2 sm:mb-4 leading-tight sm:leading-normal">
             Our Vision
           </h1>

@@ -39,7 +39,7 @@ const OurApproach = () => {
                             <img
                                 src={ourApproachImage}
                                 alt="Students in uniform standing together in front of school building"
-                                className="w-full h-64 sm:h-80 lg:h-96 object-cover hover-scale transition-transform duration-300"
+                                className={`w-full h-64 sm:h-80 lg:h-96 object-cover ${isVisible ? 'animate-zoom-in-out' : ''}`}
                             />
                         </div>
                     </div>

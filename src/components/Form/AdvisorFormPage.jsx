@@ -6,6 +6,8 @@ import vectorImage from '../../assets/Vector.png';
 import joinBanner from '../../assets/join bannner.png';
 
 const AdvisorFormPage = () => {
+  const [contentRef, contentVisible] = useScrollAnimation({ once: true });
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',

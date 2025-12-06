@@ -4,9 +4,17 @@ import youngvoxLogo from '../assets/Youngvox logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [clickedItem, setClickedItem] = useState(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleMenuClick = (itemName) => {
+    setClickedItem(itemName);
+    setTimeout(() => {
+      setClickedItem(null);
+    }, 400);
   };
 
   return (
@@ -26,12 +34,48 @@ const Header = () => {
 
           {/* Center - Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Home</Link>
-            <Link to="/about" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">About</Link>
-            <Link to="/chapters" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Chapters</Link>
-            <Link to="/wings" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Wings</Link>
-            <a href="#get-involved" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Get Involved</a>
-            <Link to="/contact" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Contact us</Link>
+            <Link 
+              to="/" 
+              onClick={() => handleMenuClick('home')}
+              className={`text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth inline-block ${clickedItem === 'home' ? 'animate-bounce-click' : ''}`}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/about" 
+              onClick={() => handleMenuClick('about')}
+              className={`text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth inline-block ${clickedItem === 'about' ? 'animate-bounce-click' : ''}`}
+            >
+              About
+            </Link>
+            <Link 
+              to="/chapters" 
+              onClick={() => handleMenuClick('chapters')}
+              className={`text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth inline-block ${clickedItem === 'chapters' ? 'animate-bounce-click' : ''}`}
+            >
+              Chapters
+            </Link>
+            <Link 
+              to="/wings" 
+              onClick={() => handleMenuClick('wings')}
+              className={`text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth inline-block ${clickedItem === 'wings' ? 'animate-bounce-click' : ''}`}
+            >
+              Wings
+            </Link>
+            <a 
+              href="#get-involved" 
+              onClick={() => handleMenuClick('get-involved')}
+              className={`text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth inline-block ${clickedItem === 'get-involved' ? 'animate-bounce-click' : ''}`}
+            >
+              Get Involved
+            </a>
+            <Link 
+              to="/contact" 
+              onClick={() => handleMenuClick('contact')}
+              className={`text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth inline-block ${clickedItem === 'contact' ? 'animate-bounce-click' : ''}`}
+            >
+              Contact us
+            </Link>
           </nav>
 
           {/* Right Side - Mobile Menu Button and Donate Button */}
@@ -78,43 +122,43 @@ const Header = () => {
                 <div className="flex flex-col space-y-4">
                   <Link
                     to="/"
-                    onClick={toggleMenu}
-                    className="text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth"
+                    onClick={() => { handleMenuClick('home-mobile'); toggleMenu(); }}
+                    className={`text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth inline-block ${clickedItem === 'home-mobile' ? 'animate-bounce-click' : ''}`}
                   >
                     Home
                   </Link>
                   <Link
                     to="/about"
-                    onClick={toggleMenu}
-                    className="text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth"
+                    onClick={() => { handleMenuClick('about-mobile'); toggleMenu(); }}
+                    className={`text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth inline-block ${clickedItem === 'about-mobile' ? 'animate-bounce-click' : ''}`}
                   >
                     About
                   </Link>
                   <Link
                     to="/chapters"
-                    onClick={toggleMenu}
-                    className="text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth"
+                    onClick={() => { handleMenuClick('chapters-mobile'); toggleMenu(); }}
+                    className={`text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth inline-block ${clickedItem === 'chapters-mobile' ? 'animate-bounce-click' : ''}`}
                   >
                     Chapters
                   </Link>
                   <Link
                     to="/wings"
-                    onClick={toggleMenu}
-                    className="text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth"
+                    onClick={() => { handleMenuClick('wings-mobile'); toggleMenu(); }}
+                    className={`text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth inline-block ${clickedItem === 'wings-mobile' ? 'animate-bounce-click' : ''}`}
                   >
                     Wings
                   </Link>
                   <a
                     href="#get-involved"
-                    onClick={toggleMenu}
-                    className="text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth"
+                    onClick={() => { handleMenuClick('get-involved-mobile'); toggleMenu(); }}
+                    className={`text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth inline-block ${clickedItem === 'get-involved-mobile' ? 'animate-bounce-click' : ''}`}
                   >
                     Get Involved
                   </a>
                   <Link
                     to="/contact"
-                    onClick={toggleMenu}
-                    className="text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth"
+                    onClick={() => { handleMenuClick('contact-mobile'); toggleMenu(); }}
+                    className={`text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth inline-block ${clickedItem === 'contact-mobile' ? 'animate-bounce-click' : ''}`}
                   >
                     Contact us
                   </Link>

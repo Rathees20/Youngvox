@@ -105,7 +105,8 @@ const HowWeEmpower = () => {
                                 <img
                                     src={card.image}
                                     alt={card.title}
-                                    className="w-full h-full object-cover object-center"
+                                    className={`w-full h-full object-cover object-center ${cardsVisible ? 'animate-zoom-in-out' : ''}`}
+                                    style={{ animationDelay: `${index * 0.5}s` }}
                                 />
                             </div>
 
@@ -141,29 +142,39 @@ const HowWeEmpower = () => {
 
                     {/* Partner Cards */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-                        {partnerCards.map((card, index) => (
-                            <div
-                                key={card.id}
-                                className={`bg-white rounded-xl md:rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 hover-lift ${partnersVisible ? `animate-scale-in animate-delay-${index * 100}` : 'opacity-0'}`}
-                            >
-                                {/* Icon */}
-                                <div className="mb-3 md:mb-4">
-                                    <img
-                                        src={card.icon}
-                                        alt={card.title}
-                                        className="w-12 h-12 md:w-14 md:h-14 object-contain"
-                                    />
+                        {partnerCards.map((card, index) => {
+                            // Calculate delay for center-outward animation
+                            // For 4 cards: center is between 1 and 2, so order: 1, 2, 0, 3
+                            const centerOutwardOrder = [1, 2, 0, 3]; // Cards animate from center outward
+                            const animationDelay = centerOutwardOrder.indexOf(index) * 0.15;
+                            
+                            return (
+                                <div
+                                    key={card.id}
+                                    className={`bg-white rounded-xl md:rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 hover-lift ${partnersVisible ? 'animate-scale-in-from-center' : 'opacity-0'}`}
+                                    style={{ 
+                                        animationDelay: partnersVisible ? `${animationDelay}s` : '0s'
+                                    }}
+                                >
+                                    {/* Icon */}
+                                    <div className="mb-3 md:mb-4">
+                                        <img
+                                            src={card.icon}
+                                            alt={card.title}
+                                            className="w-12 h-12 md:w-14 md:h-14 object-contain"
+                                        />
+                                    </div>
+                                    {/* Title */}
+                                    <h3 className="text-base md:text-lg font-bold text-black mb-2">
+                                        {card.title}
+                                    </h3>
+                                    {/* Description */}
+                                    <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                                        {card.description}
+                                    </p>
                                 </div>
-                                {/* Title */}
-                                <h3 className="text-base md:text-lg font-bold text-black mb-2">
-                                    {card.title}
-                                </h3>
-                                {/* Description */}
-                                <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
-                                    {card.description}
-                                </p>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </div>
