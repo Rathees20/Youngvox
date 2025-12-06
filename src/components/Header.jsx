@@ -28,7 +28,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Home</Link>
             <Link to="/about" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">About</Link>
-            <a href="#chapters" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Chapters</a>
+            <Link to="/chapters" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Chapters</Link>
             <a href="#get-involved" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Get Involved</a>
             <a href="#contact" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Contact us</a>
           </nav>
@@ -89,13 +89,13 @@ const Header = () => {
                   >
                     About
                   </Link>
-                  <a
-                    href="#chapters"
+                  <Link
+                    to="/chapters"
                     onClick={toggleMenu}
                     className="text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth"
                   >
                     Chapters
-                  </a>
+                  </Link>
                   <a
                     href="#get-involved"
                     onClick={toggleMenu}
