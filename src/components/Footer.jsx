@@ -57,14 +57,14 @@ const Footer = () => {
                 <div className="border-t border-gray-200 pt-6 mb-6">
                     <h3 className="text-sm font-bold text-black mb-3">SOCIALS MEDIAS</h3>
                     <div className="flex gap-3">
-                        <a href="#" className="px-4 py-2 border border-gray-300 rounded-full text-xs text-gray-700 hover:border-[#A82228] hover:text-[#A82228] transition-colors">
-                            Instagram
+                        <a href="#" className="px-4 py-2 bg-white border border-gray-300 rounded-full text-xs text-black hover:border-[#A82228] hover:text-[#A82228] transition-colors flex items-center gap-1">
+                            Instagram <span>→</span>
                         </a>
-                        <a href="#" className="px-4 py-2 border border-gray-300 rounded-full text-xs text-gray-700 hover:border-[#A82228] hover:text-[#A82228] transition-colors">
-                            Facebook
+                        <a href="#" className="px-4 py-2 bg-white border border-gray-300 rounded-full text-xs text-black hover:border-[#A82228] hover:text-[#A82228] transition-colors flex items-center gap-1">
+                            Facebook <span>→</span>
                         </a>
-                        <a href="#" className="px-4 py-2 border border-gray-300 rounded-full text-xs text-gray-700 hover:border-[#A82228] hover:text-[#A82228] transition-colors">
-                            YouTube
+                        <a href="#" className="px-4 py-2 bg-white border border-gray-300 rounded-full text-xs text-black hover:border-[#A82228] hover:text-[#A82228] transition-colors flex items-center gap-1">
+                            YouTube <span>→</span>
                         </a>
                     </div>
                 </div>

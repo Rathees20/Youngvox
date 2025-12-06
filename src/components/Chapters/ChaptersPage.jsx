@@ -2,26 +2,27 @@ import React, { useState } from 'react';
 import Header from '../Header';
 import NewsletterSection from '../Newsletter';
 import Footer from '../Footer';
-import joinBanner from '../../assets/join bannner.png';
+import chapterBanner from '../../assets/chapter.png';
+import maskGroupIcon from '../../assets/icons/Mask group.png';
 
 const ChaptersPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedState, setSelectedState] = useState('');
-  const [selectedCity, setSelectedCity] = useState('');
+  const [selectedDistrict, setSelectedDistrict] = useState('');
 
   // Sample school data
-  const schools = Array.from({ length: 12 }, (_, i) => ({
+  const schools = Array.from({ length: 30 }, (_, i) => ({
     id: i + 1,
     name: 'Delhi Public School',
-    category: 'K-12',
-    city: 'Chennai',
+    chapterId: '127879317',
+    district: 'Chennai',
     state: 'Tamil Nadu',
-    availableSlots: '1000+ Slots'
+    createdFrom: '12/11/20205'
   }));
 
   const states = ['Tamil Nadu', 'Karnataka', 'Maharashtra', 'Delhi', 'Gujarat'];
-  const cities = ['Chennai', 'Bangalore', 'Mumbai', 'Delhi', 'Ahmedabad'];
+  const districts = ['Chennai', 'Bangalore', 'Mumbai', 'Delhi', 'Ahmedabad'];
 
   const totalPages = Math.ceil(schools.length / 12);
 
@@ -33,8 +34,8 @@ const ChaptersPage = () => {
       <section className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px]">
         <div className="absolute inset-0">
           <img
-            src={joinBanner}
-            alt="Young boy with paper airplane"
+            src={chapterBanner}
+            alt="Chapter banner"
             className="w-full h-full object-cover"
           />
         </div>
@@ -66,7 +67,7 @@ const ChaptersPage = () => {
               </div>
               <input
                 type="text"
-                placeholder="Search by School Name"
+                placeholder="Search by Name or ID..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
@@ -87,16 +88,16 @@ const ChaptersPage = () => {
               ))}
             </select>
 
-            {/* City Dropdown */}
+            {/* District Dropdown */}
             <select
-              value={selectedCity}
-              onChange={(e) => setSelectedCity(e.target.value)}
+              value={selectedDistrict}
+              onChange={(e) => setSelectedDistrict(e.target.value)}
               className="px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
             >
-              <option value="">Select City</option>
-              {cities.map((city) => (
-                <option key={city} value={city}>
-                  {city}
+              <option value="">Select District</option>
+              {districts.map((district) => (
+                <option key={district} value={district}>
+                  {district}
                 </option>
               ))}
             </select>
@@ -108,43 +109,50 @@ const ChaptersPage = () => {
       <section className="py-6 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-6 sm:mb-8">
-            Showing 1000+ Results
+            Showing Result 1-30
           </h2>
 
           {/* School Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-8">
-            {schools.map((school) => (
-              <div key={school.id} className="bg-white border border-gray-200 rounded-lg p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow relative">
-                {/* Red Triangular Logo */}
-                <div className="absolute top-3 left-3">
-                  <svg width="32" height="32" viewBox="0 0 32 32" className="absolute">
-                    <polygon points="0,0 32,0 0,32" fill="#A82228" />
-                  </svg>
-                  <svg className="absolute top-1.5 left-1.5 w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
+            {schools.map((school, index) => (
+              <div 
+                key={school.id} 
+                className={`border border-gray-200 rounded-sm p-4 sm:p-5 relative ${
+                  index % 2 === 0 ? 'bg-white' : 'bg-[#FFFBF2]'
+                }`}
+              >
+                {/* School Icon */}
+                <div className="flex items-center gap-2 mb-2">
+                  <img 
+                    src={maskGroupIcon} 
+                    alt="School icon" 
+                    className="w-6 h-6 object-contain"
+                  />
+                  <span className="text-xs sm:text-sm text-gray-600">Name</span>
                 </div>
 
-                <div className="mt-8">
-                  <h3 className="text-lg sm:text-xl font-bold text-black mb-4">
-                    {school.name}
-                  </h3>
-                  
-                  {/* Details with Beige Background */}
-                  <div className="bg-[#FFFBF2] rounded-md p-3 space-y-2">
-                    <p className="text-sm text-black">
-                      <span className="font-semibold">Category:</span> {school.category}
-                    </p>
-                    <p className="text-sm text-black">
-                      <span className="font-semibold">City:</span> {school.city}
-                    </p>
-                    <p className="text-sm text-black">
-                      <span className="font-semibold">State:</span> {school.state}
-                    </p>
-                    <p className="text-sm text-black">
-                      <span className="font-semibold">Available:</span> {school.availableSlots}
-                    </p>
-                  </div>
+                {/* School Name */}
+                <h3 className="text-base sm:text-lg font-bold text-black mb-2">
+                  {school.name}
+                </h3>
+                
+                {/* Horizontal Line */}
+                <hr className="border-gray-300 mb-3" />
+                
+                {/* Details */}
+                <div className="space-y-1.5">
+                  <p className="text-xs sm:text-sm text-black">
+                    <span className="font-semibold">Chapter ID:</span> <span className="font-bold">{school.chapterId}</span>
+                  </p>
+                  <p className="text-xs sm:text-sm text-black">
+                    <span className="font-semibold">District:</span> <span className="font-bold">{school.district}</span>
+                  </p>
+                  <p className="text-xs sm:text-sm text-black">
+                    <span className="font-semibold">State:</span> <span className="font-bold">{school.state}</span>
+                  </p>
+                  <p className="text-xs sm:text-sm text-black">
+                    <span className="font-semibold">Created From:</span> <span className="font-bold">{school.createdFrom}</span>
+                  </p>
                 </div>
               </div>
             ))}
@@ -152,38 +160,59 @@ const ChaptersPage = () => {
 
           {/* Pagination */}
           <div className="flex justify-center items-center gap-2">
-            <button
-              onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-              disabled={currentPage === 1}
-              className="w-10 h-10 rounded-full border border-[#A82228] flex items-center justify-center hover:bg-[#A82228] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                onClick={() => setCurrentPage(page)}
-                className={`w-10 h-10 rounded-full border ${
-                  currentPage === page
-                    ? 'bg-[#A82228] border-[#A82228] text-white'
-                    : 'border-[#A82228] text-[#A82228] hover:bg-[#A82228] hover:text-white'
-                } transition-colors`}
-              >
-                {page}
-              </button>
-            ))}
+            {(() => {
+              const pages = [];
+              const showPages = 4; // Show first 4 pages
+              
+              // Add first pages (1, 2, 3, 4)
+              for (let i = 1; i <= Math.min(showPages, totalPages); i++) {
+                pages.push(i);
+              }
+              
+              // Add ellipsis if there are more pages
+              if (totalPages > showPages + 1) {
+                pages.push('ellipsis');
+              }
+              
+              // Add last page
+              if (totalPages > showPages) {
+                pages.push(totalPages);
+              }
+              
+              return pages.map((item, index) => {
+                if (item === 'ellipsis') {
+                  return (
+                    <span key={`ellipsis-${index}`} className="text-[#A82228] px-1">
+                      ...
+                    </span>
+                  );
+                }
+                
+                const page = item;
+                const isActive = currentPage === page;
+                
+                return (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`${
+                      isActive
+                        ? 'w-10 h-10 rounded-full bg-[#A82228] text-white'
+                        : 'text-[#A82228] hover:opacity-80'
+                    } flex items-center justify-center transition-colors font-medium`}
+                  >
+                    {page}
+                  </button>
+                );
+              });
+            })()}
 
             <button
               onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
               disabled={currentPage === totalPages}
-              className="w-10 h-10 rounded-full border border-[#A82228] flex items-center justify-center hover:bg-[#A82228] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-10 h-10 rounded-full bg-[#A82228] text-white flex items-center justify-center hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed font-medium"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              &gt;
             </button>
           </div>
         </div>

@@ -30,7 +30,7 @@ const Header = () => {
             <Link to="/about" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">About</Link>
             <Link to="/chapters" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Chapters</Link>
             <a href="#get-involved" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Get Involved</a>
-            <a href="#contact" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Contact us</a>
+            <Link to="/contact" className="text-[#364153] hover:text-[#A82228] transition-colors scroll-smooth">Contact us</Link>
           </nav>
 
           {/* Right Side - Mobile Menu Button and Donate Button */}
@@ -103,13 +103,13 @@ const Header = () => {
                   >
                     Get Involved
                   </a>
-                  <a
-                    href="#contact"
+                  <Link
+                    to="/contact"
                     onClick={toggleMenu}
                     className="text-[#364153] hover:text-[#A82228] transition-colors py-2 scroll-smooth"
                   >
                     Contact us
-                  </a>
+                  </Link>
                   <button className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors flex items-center justify-center space-x-2 mt-4 w-full">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
