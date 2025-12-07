@@ -66,28 +66,30 @@ const EmpoweringYouth = () => {
           </div>
 
           {/* Right Column - Image Carousel */}
-          <div className={`relative order-1 lg:order-2 ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-            <div className="relative overflow-hidden rounded-lg">
+          <div className={`relative order-1 lg:order-2 w-full ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+            <div className="relative overflow-hidden rounded-lg shadow-xl">
               <div
-                className="flex transition-transform duration-500 ease-in-out gap-4"
-                style={{ transform: `translateX(-${currentSlide * 50}%)` }}
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
                 {carouselImages.map((image, index) => (
-                  <div key={index} className="min-w-[48%] relative rounded-lg overflow-hidden shadow-xl">
+                  <div key={index} className="w-full min-w-full flex-shrink-0 relative">
                     <img
                       src={image.src}
                       alt={image.caption || 'Carousel image'}
-                      className="w-full h-64 sm:h-80 lg:h-96 object-contain bg-gray-100"
+                      className="w-full h-64 sm:h-80 lg:h-96 object-cover"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-3 sm:p-4">
-                      <p className="text-left text-sm sm:text-base font-medium">{image.caption}</p>
-                    </div>
+                    {image.caption && (
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent text-white p-4 sm:p-6">
+                        <p className="text-sm sm:text-base lg:text-lg font-medium">{image.caption}</p>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
               
-              {/* Carousel Navigation Arrows - Vertical on Left Side */}
-              <div className="absolute left-4 sm:left-[0] top-1/2 -translate-y-1/2 flex flex-col gap-1 z-20">
+              {/* Carousel Navigation Arrows */}
+              <div className="flex justify-center sm:justify-start gap-4 mt-4 sm:mt-6 lg:absolute lg:left-2 lg:top-1/2 lg:-translate-y-1/2 lg:flex-col lg:mt-0 lg:gap-1 z-20">
                 <button
                   onClick={prevSlide}
                   className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center hover:shadow-xl transition-all shadow-lg border border-gray-200"

@@ -6,6 +6,11 @@ import tornBorder from '../../assets/our vision frame red.png';
 import ourVisionShadow from '../../assets/our vision shadow.png';
 import frame15Image from '../../assets/Frame 15.png';
 import saranyaImage from '../../assets/Saranya jaikumar.png';
+import csrIcon1 from '../../assets/icons/CSR Icon.png';
+import csrIcon2 from '../../assets/icons/CSR 2 Icon.png';
+import csrIcon3 from '../../assets/icons/CSR 3 Icon.png';
+import csrIcon4 from '../../assets/icons/CSR 4 Icon.png';
+import csrIcon5 from '../../assets/icons/CSR 5 Icon.png';
 import NewsletterSection from '../Newsletter';
 import Footer from '../Footer';
 
@@ -233,17 +238,17 @@ const AboutPage = () => {
             </div>
 
             {/* Right Column - Carousel */}
-            <div className="relative">
-              <div className="relative overflow-hidden">
+            <div className="relative w-full lg:w-auto">
+              <div className="relative overflow-hidden rounded-lg">
                 <div
-                  className="flex transition-transform duration-500 ease-in-out gap-4"
-                  style={{ transform: `translateX(-${teamSlide * (100 / 2.5)}%)` }}
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${teamSlide * 100}%)` }}
                 >
                   {teamMembers.map((member) => (
-                    <div key={member.id} className="min-w-[280px] sm:min-w-[320px] flex-shrink-0">
+                    <div key={member.id} className="w-full min-w-full lg:min-w-[320px] flex-shrink-0 px-2 sm:px-0">
                       <div className="bg-white rounded-lg border border-white shadow-sm overflow-hidden">
                         {/* Headshot */}
-                        <div className="relative h-64 sm:h-72 overflow-hidden">
+                        <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden">
                           <img
                             src={member.image}
                             alt={member.name}
@@ -269,8 +274,8 @@ const AboutPage = () => {
                 </div>
               </div>
 
-              {/* Navigation Arrows - Vertical on Left Side */}
-              <div className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 flex flex-col gap-1 z-20">
+              {/* Navigation Arrows */}
+              <div className="flex justify-center sm:justify-start gap-4 mt-6 lg:absolute lg:left-2 lg:top-1/2 lg:-translate-y-1/2 lg:flex-col lg:mt-0 lg:gap-1 z-20">
                 <button
                   onClick={prevTeamSlide}
                   className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center hover:shadow-xl transition-all shadow-lg border border-gray-200"
@@ -317,17 +322,17 @@ const AboutPage = () => {
             </div>
 
             {/* Right Column - Carousel */}
-            <div className={`relative ${advisorsVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <div className="relative overflow-hidden">
+            <div className={`relative w-full lg:w-auto ${advisorsVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+              <div className="relative overflow-hidden rounded-lg">
                 <div
-                  className="flex transition-transform duration-500 ease-in-out gap-4"
-                  style={{ transform: `translateX(-${advisorsSlide * (100 / 2.5)}%)` }}
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${advisorsSlide * 100}%)` }}
                 >
                   {advisors.map((advisor) => (
-                    <div key={advisor.id} className="min-w-[280px] sm:min-w-[320px] flex-shrink-0">
+                    <div key={advisor.id} className="w-full min-w-full lg:min-w-[320px] flex-shrink-0 px-2 sm:px-0">
                       <div className="bg-white rounded-lg border border-white shadow-sm overflow-hidden">
                         {/* Headshot */}
-                        <div className="relative h-64 sm:h-72 overflow-hidden">
+                        <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden">
                           <img
                             src={advisor.image}
                             alt={advisor.name}
@@ -353,8 +358,8 @@ const AboutPage = () => {
                 </div>
               </div>
 
-              {/* Navigation Arrows - Vertical on Left Side */}
-              <div className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 flex flex-col gap-1 z-20">
+              {/* Navigation Arrows */}
+              <div className="flex justify-center sm:justify-start gap-4 mt-6 lg:absolute lg:left-2 lg:top-1/2 lg:-translate-y-1/2 lg:flex-col lg:mt-0 lg:gap-1 z-20">
                 <button
                   onClick={prevAdvisorsSlide}
                   className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center hover:shadow-xl transition-all shadow-lg border border-gray-200"
@@ -387,79 +392,90 @@ const AboutPage = () => {
             Our CSR Partners
           </h2>
           
-          {/* Partner Logos */}
-          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-8">
-            {/* Placeholder for partner logos - replace with actual logo images */}
-            <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md border border-gray-100 min-w-[120px] sm:min-w-[150px] flex items-center justify-center">
-              <div className="text-gray-400 text-xs sm:text-sm text-center">Partner Logo 1</div>
-            </div>
-            <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md border border-gray-100 min-w-[120px] sm:min-w-[150px] flex items-center justify-center">
-              <div className="text-blue-600 font-bold text-sm sm:text-base">VELAMMAL NEXUS</div>
-            </div>
-            <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md border border-gray-100 min-w-[120px] sm:min-w-[150px] flex flex-col items-center justify-center">
-              <div className="text-[#A82228] font-bold text-sm sm:text-base uppercase">ABACUS</div>
-              <div className="flex gap-1 my-1">
-                <div className="w-1 h-1 bg-black rounded-full"></div>
-                <div className="w-1 h-1 bg-black rounded-full"></div>
-                <div className="w-1 h-1 bg-black rounded-full"></div>
-                <div className="w-1 h-1 bg-black rounded-full"></div>
+          {/* Partner Logos - Horizontal Scroll with Invisible Scrollbar */}
+          <div className="overflow-x-auto scrollbar-hide -mx-3 sm:mx-0 px-3 sm:px-0 lg:overflow-visible" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <style>{`
+              .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
+            <div className="flex items-center gap-3 sm:gap-4 lg:justify-center lg:gap-8 pb-4 lg:mx-auto" style={{ width: 'max-content' }}>
+              {/* Partner Logo 1 */}
+              <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0">
+                <img src={csrIcon1} alt="CSR Partner 1" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
               </div>
-              <div className="text-black text-xs">Montessori School</div>
-            </div>
-            <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md border border-gray-100 min-w-[120px] sm:min-w-[150px] flex items-center justify-center">
-              <div className="text-blue-600 font-bold text-sm sm:text-base">TIPS iSP</div>
-            </div>
-            <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md border border-gray-100 min-w-[120px] sm:min-w-[150px] flex items-center justify-center">
-              <div className="text-gray-400 text-xs sm:text-sm text-center">Partner Logo 5</div>
-            </div>
-            <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md border border-gray-100 min-w-[120px] sm:min-w-[150px] flex items-center justify-center">
-              <div className="text-gray-400 text-xs sm:text-sm text-center">Partner Logo 6</div>
+              
+              {/* Partner Logo 2 - Velammal Nexus */}
+              <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0">
+                <img src={csrIcon2} alt="Velammal Nexus" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
+              </div>
+              
+              {/* Partner Logo 3 - ABACUS Montessori School */}
+              <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0">
+                <img src={csrIcon3} alt="ABACUS Montessori School" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
+              </div>
+              
+              {/* Partner Logo 4 - TIPS iSP */}
+              <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0">
+                <img src={csrIcon4} alt="TIPS iSP International Schools Partnership" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
+              </div>
+              
+              {/* Partner Logo 5 */}
+              <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0">
+                <img src={csrIcon5} alt="CSR Partner 5" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Let's talk about school chapters Section */}
+      {/* Connect. Collaborate. Create Future Leaders Section */}
       <section className="py-6 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-black text-center mb-8 sm:mb-12">
-            Let's talk about school chapters
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black text-center mb-8 sm:mb-12">
+            Connect. Collaborate. Create Future Leaders.
           </h2>
           
           {/* Contact Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            {/* Card 1: Let's speak for work */}
-            <div className="bg-white border border-black rounded-lg p-6 sm:p-8 flex flex-col items-center text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white border-2 border-black rounded-full flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+            {/* Card 1: Phone Number */}
+            <div className="bg-[#FFFBF2] rounded-lg p-6 sm:p-8 shadow-md flex items-center gap-4 sm:gap-6 w-full sm:w-auto min-w-[280px] sm:min-w-[300px]">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-black mb-2">Let's speak for work</h3>
-              <p className="text-base sm:text-lg text-black">+91 930979292</p>
+              <div className="flex flex-col">
+                <h3 className="text-sm sm:text-base font-bold text-black mb-1 uppercase tracking-wide">Phone Number</h3>
+                <p className="text-base sm:text-lg text-black">+91 935979292</p>
+              </div>
             </div>
 
-            {/* Card 2: Email us */}
-            <div className="bg-[#FFFBF2] border border-black rounded-lg p-6 sm:p-8 flex flex-col items-center text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white border-2 border-black rounded-full flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {/* Card 2: Email */}
+            <div className="bg-[#FFFBF2] rounded-lg p-6 sm:p-8 shadow-md flex items-center gap-4 sm:gap-6 w-full sm:w-auto min-w-[280px] sm:min-w-[300px]">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-black mb-2">Email us</h3>
-              <p className="text-base sm:text-lg text-black">hello@youngvox.org</p>
+              <div className="flex flex-col">
+                <h3 className="text-sm sm:text-base font-bold text-black mb-1 uppercase tracking-wide">Email</h3>
+                <p className="text-base sm:text-lg text-black">hello@youngvox.org</p>
+              </div>
             </div>
 
-            {/* Card 3: Reach us */}
-            <div className="bg-white border border-black rounded-lg p-6 sm:p-8 flex flex-col items-center text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white border-2 border-black rounded-full flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {/* Card 3: Address */}
+            <div className="bg-[#FFFBF2] rounded-lg p-6 sm:p-8 shadow-md flex items-center gap-4 sm:gap-6 w-full sm:w-auto min-w-[280px] sm:min-w-[300px]">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-black mb-2">Reach us</h3>
-              <p className="text-base sm:text-lg text-black">YoungVox, India</p>
+              <div className="flex flex-col">
+                <h3 className="text-sm sm:text-base font-bold text-black mb-1 uppercase tracking-wide">Address</h3>
+                <p className="text-base sm:text-lg text-black">Young Vox, India</p>
+              </div>
             </div>
           </div>
         </div>

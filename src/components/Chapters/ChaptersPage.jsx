@@ -35,27 +35,30 @@ const ChaptersPage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px]">
-        <div className="absolute inset-0">
+      <section ref={heroRef} className="relative w-full overflow-hidden">
+        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
           <img
             src={chapterBanner}
             alt="Chapter banner"
             className="w-full h-full object-cover object-center"
-            style={{ minHeight: '300px' }}
           />
         </div>
         
         {/* Text Overlay */}
-        <div className={`absolute right-4 sm:right-8 lg:right-16 top-1/2 -translate-y-1/2 p-6 sm:p-8 lg:p-10 max-w-md lg:max-w-lg ${heroVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
-            YoungVox School Chapters
-          </h1>
-          <p className="text-sm sm:text-base text-black mb-6 leading-relaxed">
-            Join our network of schools committed to empowering young leaders. Discover how your school can become part of the YoungVox movement.
-          </p>
-          <button className="bg-[#A82228] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors">
-            Join Now
-          </button>
+        <div className={`absolute inset-0 flex items-center justify-end px-4 sm:px-6 md:px-8 lg:px-16 py-6 sm:py-8 md:py-10 lg:py-12 ${heroVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
+          <div className="w-full sm:w-auto max-w-full sm:max-w-md lg:max-w-lg sm:ml-auto">
+            <div className="text-left sm:text-right">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-3 sm:mb-4 drop-shadow-sm">
+                YoungVox School Chapters
+              </h1>
+              <p className="text-sm sm:text-base text-black mb-4 sm:mb-6 leading-relaxed drop-shadow-sm">
+                Join our network of schools committed to empowering young leaders. Discover how your school can become part of the YoungVox movement.
+              </p>
+              <button className="bg-[#A82228] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors w-auto text-sm sm:text-base">
+                Join Now
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
