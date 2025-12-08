@@ -5,6 +5,8 @@ import Footer from '../Footer';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import chapterBanner from '../../assets/chapter.png';
 import maskGroupIcon from '../../assets/icons/Mask group.png';
+import frameImage from '../../assets/Frame.png';
+import rightArrowIcon from '../../assets/icons/right arrow.png';
 
 const ChaptersPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,7 +21,7 @@ const ChaptersPage = () => {
     chapterId: '127879317',
     district: 'Chennai',
     state: 'Tamil Nadu',
-    createdFrom: '12/11/20205'
+    createdFrom: '12/11/2025'
   }));
 
   const states = ['Tamil Nadu', 'Karnataka', 'Maharashtra', 'Delhi', 'Gujarat'];
@@ -121,50 +123,75 @@ const ChaptersPage = () => {
           </h2>
 
           {/* School Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-8">
-            {schools.map((school, index) => (
-              <div 
-                key={school.id} 
-                className={`border border-gray-200 rounded-sm p-4 sm:p-5 relative hover-lift transition-all ${
-                  index % 2 === 0 ? 'bg-white' : 'bg-[#FFFBF2]'
-                } ${resultsVisible ? 'animate-scale-in' : 'opacity-0'}`}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {/* School Icon */}
-                <div className="flex items-center gap-2 mb-2">
-                  <img 
-                    src={maskGroupIcon} 
-                    alt="School icon" 
-                    className="w-6 h-6 object-contain"
-                  />
-                  <span className="text-xs sm:text-sm text-gray-600">Name</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 mb-8">
+            {schools.map((school, index) => {
+              const isPinkBox = index % 2 !== 0; // Pink boxes for odd indices
+              return (
+                <div 
+                  key={school.id} 
+                  className={`rounded-sm p-4 sm:p-4 relative hover-lift transition-all overflow-hidden ${
+                    isPinkBox ? 'bg-pink-50' : 'bg-white border border-gray-200'
+                  } ${resultsVisible ? 'animate-scale-in' : 'opacity-0'} w-full h-[300px] sm:h-[300px]`}
+                  style={{ 
+                    animationDelay: `${index * 50}ms`
+                  }}
+                >
+                  {/* Frame Image for Pink Boxes */}
+                  {isPinkBox && (
+                    <img
+                      src={frameImage}
+                      alt="Frame"
+                      className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+                      style={{ opacity: 0.4 }}
+                    />
+                  )}
+                  
+                  {/* Content */}
+                  <div className="relative z-10 h-full flex flex-col">
+                    {/* School Icon and Name Header */}
+                    <div className="mb-2">
+                      <div className="flex items-center gap-1.5 mb-1">
+                        <img 
+                          src={maskGroupIcon} 
+                          alt="School icon" 
+                          className="w-5 h-5 object-contain flex-shrink-0"
+                        />
+                        <span className="text-[10px] text-gray-600 font-normal">Name</span>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-5 h-5 flex-shrink-0"></div>
+                        <h3 className="text-sm font-bold text-black leading-tight">
+                          {school.name}
+                        </h3>
+                      </div>
+                    </div>
+                    
+                    {/* Horizontal Line */}
+                    <hr className="border-gray-300 mb-2" />
+                    
+                    {/* Details */}
+                    <div className="space-y-1.5 flex-1">
+                      <div>
+                        <p className="text-[10px] text-gray-600 font-normal mb-0.5">Chapter ID:</p>
+                        <p className="text-[10px] font-bold text-black">{school.chapterId}</p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-gray-600 font-normal mb-0.5">District:</p>
+                        <p className="text-[10px] font-bold text-black">{school.district}</p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-gray-600 font-normal mb-0.5">State:</p>
+                        <p className="text-[10px] font-bold text-black">{school.state}</p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-gray-600 font-normal mb-0.5">Created From:</p>
+                        <p className="text-[10px] font-bold text-black">{school.createdFrom}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                {/* School Name */}
-                <h3 className="text-base sm:text-lg font-bold text-black mb-2">
-                  {school.name}
-                </h3>
-                
-                {/* Horizontal Line */}
-                <hr className="border-gray-300 mb-3" />
-                
-                {/* Details */}
-                <div className="space-y-1.5">
-                  <p className="text-xs sm:text-sm text-black">
-                    <span className="font-semibold">Chapter ID:</span> <span className="font-bold">{school.chapterId}</span>
-                  </p>
-                  <p className="text-xs sm:text-sm text-black">
-                    <span className="font-semibold">District:</span> <span className="font-bold">{school.district}</span>
-                  </p>
-                  <p className="text-xs sm:text-sm text-black">
-                    <span className="font-semibold">State:</span> <span className="font-bold">{school.state}</span>
-                  </p>
-                  <p className="text-xs sm:text-sm text-black">
-                    <span className="font-semibold">Created From:</span> <span className="font-bold">{school.createdFrom}</span>
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Pagination */}
@@ -219,9 +246,16 @@ const ChaptersPage = () => {
             <button
               onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
               disabled={currentPage === totalPages}
-              className="w-10 h-10 rounded-full bg-[#A82228] text-white flex items-center justify-center hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+              className="w-10 h-10 rounded-full bg-[#A82228] text-white flex items-center justify-center hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              &gt;
+              <img 
+                src={rightArrowIcon} 
+                alt="Next page" 
+                className="w-5 h-5 object-contain"
+                style={{ 
+                  filter: 'brightness(0) saturate(100%) invert(100%)'
+                }}
+              />
             </button>
           </div>
         </div>
