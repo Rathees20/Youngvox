@@ -17,7 +17,7 @@ const HowWeEmpower = () => {
             title: "Formation of the\nSchool Chapter",
             description: "Launch a YoungVox Chapter in your school to empower students to lead and create impact",
             borderColor: "border-[#E5E5E5]",
-            bgColor: "bg-[#FFF9F0]",
+            bgColor: "bg-pink-50",
             textColor: "text-black"
         },
         {
@@ -44,7 +44,7 @@ const HowWeEmpower = () => {
             title: "Measuring Impact\nat School",
             description: "YoungVox uses structured assessments to track your school's progress and impact of YoungVox",
             borderColor: "border-[#E5E5E5]",
-            bgColor: "bg-[#FFF9F0]",
+            bgColor: "bg-pink-50",
             textColor: "text-black"
         }
     ];

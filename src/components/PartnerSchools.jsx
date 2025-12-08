@@ -55,7 +55,6 @@ const PartnerSchools = () => {
                         {/* Pagination Dots */}
                         <div className="flex justify-center gap-2 mt-3 md:mt-4">
                             <div className="w-2 h-2 rounded-full bg-gray-800"></div>
-                            <div className="w-2 h-2 rounded-full bg-gray-300"></div>
                         </div>
                     </div>
                 </div>

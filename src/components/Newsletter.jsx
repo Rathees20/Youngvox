@@ -3,6 +3,7 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import frameImage from '../assets/Frame.png';
 import backgroundCircle from '../assets/backgound circle.png';
 import studentImage from '../assets/student.png';
+import sendIcon from '../assets/icons/send.png';
 
 export default function NewsletterSection() {
   const [ref, isVisible] = useScrollAnimation({ once: true, threshold: 0.1 });
@@ -36,22 +37,18 @@ export default function NewsletterSection() {
             />
           </div>
 
-          <button className="bg-white text-[#A82228] px-6 sm:px-8 py-3.5 rounded-lg font-semibold hover:bg-gray-100 transition-all hover-lift w-full md:w-[576px] flex items-center justify-center gap-2">
-            <span>Subscribe Now</span>
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
-              />
-            </svg>
-          </button>
+           <button className="bg-white text-[#A82228] border-2 border-[#A82228] px-6 sm:px-8 py-3.5 rounded-lg font-semibold hover:bg-gray-100 transition-all hover-lift w-full md:w-[576px] flex items-center justify-center gap-2">
+             Subscribe Now
+             <img 
+               src={sendIcon} 
+               alt="Send" 
+               className="w-5 h-5"
+               style={{ 
+                 filter: 'brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(5000%) hue-rotate(350deg) brightness(90%) contrast(90%)',
+                 objectFit: 'contain'
+               }}
+             />
+           </button>
         </div>
       </div>
 
