@@ -1,5 +1,8 @@
 import React from 'react';
 import youngvoxLogo from '../assets/Youngvox logo.png';
+import instagramIcon from '../assets/icons/instagram.png';
+import youtubeIcon from '../assets/icons/youtube.png';
+import facebookIcon from '../assets/icons/facebook.png';
 
 const Footer = () => {
     return (
@@ -57,14 +60,14 @@ const Footer = () => {
                 <div className="border-t border-gray-200 pt-6 mb-6">
                     <h3 className="text-sm font-bold text-black mb-3">SOCIALS MEDIAS</h3>
                     <div className="flex gap-3">
-                        <a href="#" className="px-4 py-2 bg-white border border-gray-300 rounded-full text-xs text-black hover:border-[#A82228] hover:text-[#A82228] transition-colors flex items-center gap-1">
-                            Instagram <span>→</span>
+                        <a href="#" className="w-10 h-10 bg-white border border-gray-300 rounded-full hover:border-[#A82228] transition-colors flex items-center justify-center">
+                            <img src={instagramIcon} alt="Instagram" className="w-5 h-5 object-contain" />
                         </a>
-                        <a href="#" className="px-4 py-2 bg-white border border-gray-300 rounded-full text-xs text-black hover:border-[#A82228] hover:text-[#A82228] transition-colors flex items-center gap-1">
-                            Facebook <span>→</span>
+                        <a href="#" className="w-10 h-10 bg-white border border-gray-300 rounded-full hover:border-[#A82228] transition-colors flex items-center justify-center">
+                            <img src={youtubeIcon} alt="YouTube" className="w-5 h-5 object-contain" />
                         </a>
-                        <a href="#" className="px-4 py-2 bg-white border border-gray-300 rounded-full text-xs text-black hover:border-[#A82228] hover:text-[#A82228] transition-colors flex items-center gap-1">
-                            YouTube <span>→</span>
+                        <a href="#" className="w-10 h-10 bg-white border border-gray-300 rounded-full hover:border-[#A82228] transition-colors flex items-center justify-center">
+                            <img src={facebookIcon} alt="Facebook" className="w-5 h-5 object-contain" />
                         </a>
                     </div>
                 </div>
