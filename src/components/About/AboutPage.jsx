@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../Header';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import visionImage from '../../assets/Our vision.png';
@@ -17,6 +17,16 @@ import Footer from '../Footer';
 const AboutPage = () => {
   const [teamSlide, setTeamSlide] = useState(0);
   const [advisorsSlide, setAdvisorsSlide] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const teamMembers = [
     {
@@ -61,19 +71,25 @@ const AboutPage = () => {
   ];
 
   const nextTeamSlide = () => {
-    setTeamSlide((prev) => (prev + 1) % teamMembers.length);
+    setTeamSlide((prev) => {
+      const maxSlide = isDesktop ? teamMembers.length - 2 : teamMembers.length - 1;
+      return Math.min(prev + 1, maxSlide);
+    });
   };
 
   const prevTeamSlide = () => {
-    setTeamSlide((prev) => (prev - 1 + teamMembers.length) % teamMembers.length);
+    setTeamSlide((prev) => Math.max(prev - 1, 0));
   };
 
   const nextAdvisorsSlide = () => {
-    setAdvisorsSlide((prev) => (prev + 1) % advisors.length);
+    setAdvisorsSlide((prev) => {
+      const maxSlide = isDesktop ? advisors.length - 2 : advisors.length - 1;
+      return Math.min(prev + 1, maxSlide);
+    });
   };
 
   const prevAdvisorsSlide = () => {
-    setAdvisorsSlide((prev) => (prev - 1 + advisors.length) % advisors.length);
+    setAdvisorsSlide((prev) => Math.max(prev - 1, 0));
   };
 
   const [visionRef, visionVisible] = useScrollAnimation({ once: true });
@@ -218,9 +234,9 @@ const AboutPage = () => {
       </section>
 
       {/* Our Team Section */}
-      <section ref={teamRef} className="py-6 sm:py-16 lg:py-24 bg-[#FAF9F6]">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+      <section ref={teamRef} className="py-6 sm:py-16 lg:py-24 bg-pink-50 lg:overflow-visible">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 lg:overflow-visible">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:overflow-visible">
             {/* Left Column - Text Content */}
             <div className={`lg:max-w-md ${teamVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-black mb-2 sm:mb-3">
@@ -238,26 +254,26 @@ const AboutPage = () => {
             </div>
 
             {/* Right Column - Carousel */}
-            <div className="relative w-full lg:w-auto">
+            <div className="relative w-full lg:w-auto lg:overflow-visible">
               <div className="relative overflow-hidden rounded-lg">
                 <div
                   className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${teamSlide * 100}%)` }}
+                  style={{ transform: `translateX(-${teamSlide * (isDesktop ? 50 : 100)}%)` }}
                 >
                   {teamMembers.map((member) => (
-                    <div key={member.id} className="w-full min-w-full lg:min-w-[320px] flex-shrink-0 px-2 sm:px-0">
-                      <div className="bg-white rounded-lg border border-white shadow-sm overflow-hidden">
+                    <div key={member.id} className="w-full lg:w-1/2 min-w-full lg:min-w-[50%] flex-shrink-0 px-0 sm:px-2">
+                      <div className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden">
                         {/* Headshot */}
-                        <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden">
+                        <div className="relative h-85 sm:h-72 lg:h-80 overflow-hidden m-0 p-0 leading-[0]">
                           <img
                             src={member.image}
                             alt={member.name}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover block m-0 p-0 align-top"
+                            style={{ display: 'block', verticalAlign: 'top', width: '100%', height: '100%', objectFit: 'cover' }}
                           />
                         </div>
-                        
                         {/* Red Background Section */}
-                        <div className="bg-[#A82228] p-4 sm:p-5">
+                        <div className="bg-[#A82228] p-4 sm:p-5 mt-0">
                           <h3 className="text-white text-lg sm:text-xl font-bold mb-1">
                             {member.name}
                           </h3>
@@ -275,23 +291,23 @@ const AboutPage = () => {
               </div>
 
               {/* Navigation Arrows - Mobile: Below carousel, Desktop: Left border */}
-              <div className="flex justify-center gap-3 sm:gap-4 mt-6 lg:absolute lg:left-0 lg:top-[55%] lg:-translate-y-1/2 lg:-translate-x-1/2 lg:flex-col lg:mt-0 lg:gap-2 z-20">
+              <div className="flex justify-center gap-3 sm:gap-4 mt-6 lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:-translate-x-1/2 lg:flex-col lg:mt-0 lg:gap-2 z-20">
                 <button
                   onClick={prevTeamSlide}
-                  className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:shadow-xl transition-all shadow-lg border border-gray-200"
+                  className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 hover:shadow-xl transition-all shadow-lg border border-gray-300"
                   aria-label="Previous slide"
                 >
-                  <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
 
                 <button
                   onClick={nextTeamSlide}
-                  className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:shadow-xl transition-all shadow-lg border border-gray-200"
+                  className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 hover:shadow-xl transition-all shadow-lg border border-gray-300"
                   aria-label="Next slide"
                 >
-                  <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
@@ -302,9 +318,9 @@ const AboutPage = () => {
       </section>
 
       {/* Our Advisors Section */}
-      <section ref={advisorsRef} className="py-6 sm:py-16 lg:py-24 bg-[#FAF9F6]">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+      <section ref={advisorsRef} className="py-6 sm:py-16 lg:py-24 bg-pink-50 lg:overflow-visible">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 lg:overflow-visible">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:overflow-visible">
             {/* Left Column - Text Content */}
             <div className={`lg:max-w-md ${advisorsVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-black mb-2 sm:mb-3">
@@ -326,22 +342,22 @@ const AboutPage = () => {
               <div className="relative overflow-hidden rounded-lg">
                 <div
                   className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${advisorsSlide * 100}%)` }}
+                  style={{ transform: `translateX(-${advisorsSlide * (isDesktop ? 50 : 100)}%)` }}
                 >
                   {advisors.map((advisor) => (
-                    <div key={advisor.id} className="w-full min-w-full lg:min-w-[320px] flex-shrink-0 px-2 sm:px-0">
-                      <div className="bg-white rounded-lg border border-white shadow-sm overflow-hidden">
+                    <div key={advisor.id} className="w-full lg:w-1/2 min-w-full lg:min-w-[50%] flex-shrink-0 px-2 sm:px-2">
+                      <div className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden">
                         {/* Headshot */}
-                        <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden">
+                        <div className="relative h-70 sm:h-72 lg:h-80 overflow-hidden m-0 p-0 leading-[0] bg-gray-50 lg:bg-transparent">
                           <img
                             src={advisor.image}
                             alt={advisor.name}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover block m-0 p-0 align-top display-block"
+                            style={{ display: 'block', verticalAlign: 'top', width: '100%', height: '100%' }}
                           />
                         </div>
-                        
                         {/* Red Background Section */}
-                        <div className="bg-[#A82228] p-4 sm:p-5">
+                        <div className="bg-[#A82228] p-4 sm:p-5 mt-0">
                           <h3 className="text-white text-lg sm:text-xl font-bold mb-1">
                             {advisor.name}
                           </h3>
@@ -359,23 +375,23 @@ const AboutPage = () => {
               </div>
 
               {/* Navigation Arrows - Mobile: Below carousel, Desktop: Left border */}
-              <div className="flex justify-center gap-3 sm:gap-4 mt-6 lg:absolute lg:left-0 lg:top-[55%] lg:-translate-y-1/2 lg:-translate-x-1/2 lg:flex-col lg:mt-0 lg:gap-2 z-20">
+              <div className="flex justify-center gap-3 sm:gap-4 mt-6 lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:-translate-x-1/2 lg:flex-col lg:mt-0 lg:gap-2 z-20">
                 <button
                   onClick={prevAdvisorsSlide}
-                  className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:shadow-xl transition-all shadow-lg border border-gray-200"
+                  className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 hover:shadow-xl transition-all shadow-lg border border-gray-300"
                   aria-label="Previous slide"
                 >
-                  <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
 
                 <button
                   onClick={nextAdvisorsSlide}
-                  className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:shadow-xl transition-all shadow-lg border border-gray-200"
+                  className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 hover:shadow-xl transition-all shadow-lg border border-gray-300"
                   aria-label="Next slide"
                 >
-                  <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>

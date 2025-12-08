@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import youngvoxLogo from '../assets/Youngvox logo.png';
 import instagramIcon from '../assets/icons/instagram.png';
 import youtubeIcon from '../assets/icons/youtube.png';
 import facebookIcon from '../assets/icons/facebook.png';
 
 const Footer = () => {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
         <footer className="bg-white pt-12 pb-6">
             <div className="container mx-auto px-4 md:px-6 max-w-6xl">
@@ -26,9 +31,10 @@ const Footer = () => {
                     <div>
                         <h3 className="text-sm font-bold text-black mb-3">QUICK LINKS</h3>
                         <ul className="space-y-2">
-                            <li><a href="#" className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">Home</a></li>
-                            <li><a href="#" className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">About Us</a></li>
-                            <li><a href="#" className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">Wings & Chapters</a></li>
+                            <li><Link to="/" onClick={scrollToTop} className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">Home</Link></li>
+                            <li><Link to="/about" onClick={scrollToTop} className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">About Us</Link></li>
+                            <li><Link to="/wings" onClick={scrollToTop} className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">Wings </Link></li>
+                            <li><Link to="/chapters" onClick={scrollToTop} className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">Chapters</Link></li>
                             <li><a href="#" className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">Events</a></li>
                         </ul>
                     </div>
@@ -48,8 +54,8 @@ const Footer = () => {
                     <div>
                         <h3 className="text-sm font-bold text-black mb-3">SUPPORT</h3>
                         <ul className="space-y-2">
-                            <li><a href="#" className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">Contact Us</a></li>
-                            <li><a href="#" className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">Help Center</a></li>
+                            <li><Link to="/contact" onClick={scrollToTop} className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">Contact Us</Link></li>
+                            <li><Link to="/joinyoung" onClick={scrollToTop} className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">Join YoungVox</Link></li>
                             <li><a href="#" className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">Terms & Conditions</a></li>
                             <li><a href="#" className="text-gray-600 text-xs hover:text-[#A82228] transition-colors">Ethics & Privacy</a></li>
                         </ul>
