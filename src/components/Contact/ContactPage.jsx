@@ -170,7 +170,7 @@ const ContactPage = () => {
                 </div>
                 
                 {/* Submit Button */}
-                <div className="flex justify-center">
+                <div className="flex justify-start">
                   <button
                     type="submit"
                     className="bg-[#8B0000] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#700000] transition-colors"
@@ -251,7 +251,7 @@ const ContactPage = () => {
         <img
           src={contactImage}
           alt="YoungVox students"
-          className="w-full h-auto object-cover hover-scale transition-transform duration-300"
+          className="w-full h-auto object-cover"
         />
       </section>
 

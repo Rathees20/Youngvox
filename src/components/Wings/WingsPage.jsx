@@ -10,6 +10,11 @@ import wing4Image from '../../assets/wing4.png';
 import wing5Image from '../../assets/wing5.png';
 import wingLBanner from '../../assets/wingLbanner.png';
 import vectorImage from '../../assets/our vision frame red.png';
+import containerIcon from '../../assets/icons/Container.png';
+import container01Icon from '../../assets/icons/Container01.png';
+import maskGroupIcon from '../../assets/icons/Mask group.png';
+import maskGroup1Icon from '../../assets/icons/Mask group1.png';
+import maskGroup2Icon from '../../assets/icons/Mask group2.png';
 
 const WingsPage = () => {
   const [formData, setFormData] = useState({
@@ -92,71 +97,78 @@ const WingsPage = () => {
               Leadership Structure
             </h2>
             <p className="text-lg sm:text-xl text-black">
-              A collaborative model where students lead, learn and grow together.
+              A collaborative model where students lead, learn, and grow together.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Left - Teacher Mentors */}
-            <div className={`bg-white rounded-lg p-6 sm:p-8 shadow-sm hover-lift ${leadershipVisible ? 'animate-fade-in-left animate-delay-200' : 'opacity-0'}`}>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 bg-[#A82228] rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14v7M5 12.55v-1.9a12 12 0 010-5.3m14 0a12 12 0 010 5.3v1.9" />
-                  </svg>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            {/* Left - Teacher Mentors (Square Card with decreased width) */}
+            <div className={`bg-white rounded-2xl p-6 sm:p-8 shadow-sm relative overflow-visible min-h-[280px] max-w-md mx-auto lg:mx-0 ml-8 lg:ml-12 ${leadershipVisible ? 'animate-fade-in-left animate-delay-200' : 'opacity-0'}`}>
+              <div className="flex flex-col items-center h-full justify-center">
+                {/* Icon - Container.png without red circle */}
+                <div className="w-16 h-16 flex items-center justify-center mb-4">
+                  <img src={containerIcon} alt="Teacher Mentors" className="w-full h-full object-contain" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-black">Teacher Mentors (2)</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-black text-center mb-3">Teacher Mentors (2)</h3>
+                <p className="text-base text-black text-center">
+                  Two teachers guide, support, and ensure smooth functioning of student-led initiatives.
+                </p>
               </div>
-              <p className="text-base text-black">
-                Two teachers guide, support, and ensure smooth functioning of student-led initiatives.
-              </p>
+              {/* Red horizontal line below - increased thickness */}
+              <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
             </div>
 
             {/* Right - Student Leadership */}
-            <div className={`space-y-4 ${leadershipVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+            <div className={`space-y-6 -ml-8 lg:-ml-12 ${leadershipVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+              {/* Top Row - Three smaller square cards */}
               <div className="grid grid-cols-3 gap-4">
-                <div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm text-center hover-lift transition-all">
-                  <div className="w-12 h-12 bg-[#A82228] rounded-lg mx-auto mb-3 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
-                    </svg>
+                {/* Chapter Chief */}
+                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm text-center relative overflow-visible">
+                  <div className="w-14 h-14 bg-[#A82228] rounded-full mx-auto mb-4 flex items-center justify-center p-3">
+                    <img src={maskGroupIcon} alt="Chapter Chief" className="w-full h-full object-contain" />
                   </div>
-                  <h4 className="text-sm sm:text-base font-bold text-black">Chapter Chief</h4>
+                  <h4 className="text-base font-bold text-black">Chapter Chief</h4>
+                  {/* Red horizontal line below - increased thickness */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
                 </div>
-                <div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm text-center hover-lift transition-all">
-                  <div className="w-12 h-12 bg-[#A82228] rounded-lg mx-auto mb-3 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
-                    </svg>
+                
+                {/* Treasurer - Swapped icon */}
+                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm text-center relative overflow-visible">
+                  <div className="w-14 h-14 bg-[#A82228] rounded-full mx-auto mb-4 flex items-center justify-center p-3">
+                    <img src={maskGroup2Icon} alt="Treasurer" className="w-full h-full object-contain" />
                   </div>
-                  <h4 className="text-sm sm:text-base font-bold text-black">Secretary</h4>
+                  <h4 className="text-base font-bold text-black">Treasurer</h4>
+                  {/* Red horizontal line below - increased thickness */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
                 </div>
-                <div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm text-center hover-lift transition-all">
-                  <div className="w-12 h-12 bg-[#A82228] rounded-lg mx-auto mb-3 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" />
-                    </svg>
+                
+                {/* Secretary - Swapped icon */}
+                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm text-center relative overflow-visible">
+                  <div className="w-14 h-14 bg-[#A82228] rounded-full mx-auto mb-4 flex items-center justify-center p-3">
+                    <img src={maskGroup1Icon} alt="Secretary" className="w-full h-full object-contain" />
                   </div>
-                  <h4 className="text-sm sm:text-base font-bold text-black">Treasurer</h4>
+                  <h4 className="text-base font-bold text-black">Secretary</h4>
+                  {/* Red horizontal line below - increased thickness */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
                 </div>
               </div>
               
-              <div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-[#A82228] rounded-full flex items-center justify-center">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
+              {/* Bottom - 4 Wing Leaders Card (Horizontal Layout) */}
+              <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm relative overflow-visible">
+                {/* Horizontal layout: Icon on left, text on right */}
+                <div className="flex items-start gap-4">
+                  <div className="w-16 h-16 flex items-center justify-center flex-shrink-0">
+                    <img src={container01Icon} alt="4 Wing Leaders" className="w-full h-full object-contain" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-xl sm:text-2xl font-bold text-black mb-2">4 Wing Leaders</h3>
                     <p className="text-base text-black">
-                      Each wing is led by 4 Wing Leaders who are active student leaders passionate about their domain.
+                      Each wing led by a Wing Leader with an active student team passionate about that domain.
                     </p>
                   </div>
                 </div>
+                {/* Red horizontal line below - increased thickness */}
+                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
               </div>
             </div>
           </div>
@@ -169,12 +181,17 @@ const WingsPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left - Content */}
             <div className={`space-y-4 ${wing1Visible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+              {/* Light pink tag */}
+              <div className="inline-block bg-pink-200 rounded-lg px-4 py-2 mb-4">
+                <span className="text-black font-medium">Student to Professional</span>
+              </div>
+              
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
-                Academic & Career Guidance Wing
+                Academic & Career<br />Guidance Wing
               </h2>
-              <p className="text-sm sm:text-base text-gray-600">(SDG 4 - Quality Education)</p>
+              <p className="text-sm sm:text-base text-[#A82228] italic">|SDG 4 - Quality Education|</p>
               <p className="text-base sm:text-lg text-black leading-relaxed">
-                Helps students discover academic interests, set career goals, and acquire relevant knowledge.
+                Helps students discover academic interests, plan career paths, and access learning resources.
               </p>
             </div>
             
@@ -205,12 +222,17 @@ const WingsPage = () => {
             
             {/* Right - Content */}
             <div className={`space-y-4 ${wing2Visible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+              {/* Light pink tag */}
+              <div className="inline-block bg-pink-200 rounded-lg px-4 py-2 mb-4">
+                <span className="text-black font-medium">Digital Detox</span>
+              </div>
+              
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
                 Student Wellbeing Wing
               </h2>
-              <p className="text-sm sm:text-base text-gray-600">(SDG 3 - Good Health & Well-being)</p>
+              <p className="text-sm sm:text-base text-[#A82228] italic">|SDG 3 - Good Health & Well-being|</p>
               <p className="text-base sm:text-lg text-black leading-relaxed">
-                Promotes emotional, mental, and physical well-being through yoga/meditation, awareness sessions, and healthy habit-building activities.
+                Promotes emotional, mental, and physical wellbeing through psychoeducation, awareness sessions, and healthy habit-building activities.
               </p>
             </div>
           </div>
@@ -223,12 +245,17 @@ const WingsPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left - Content */}
             <div className={`space-y-4 ${wing3Visible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+              {/* Light pink tag */}
+              <div className="inline-block bg-pink-200 rounded-lg px-4 py-2 mb-4">
+                <span className="text-black font-medium">Speak Up</span>
+              </div>
+              
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
                 Child Rights & Social Justice Wing
               </h2>
-              <p className="text-sm sm:text-base text-gray-600">(SDG 16 - Peace, Justice & Strong Institutions)</p>
+              <p className="text-sm sm:text-base text-[#A82228] italic">| SDG 16 – Peace, Justice & Strong Institutions|</p>
               <p className="text-base sm:text-lg text-black leading-relaxed">
-                Builds awareness on child rights, protection, equality, justice, and safety through campaigns and initiatives.
+                Builds awareness on children's rights, protection, equality, safety, and safety through campaigns and forums.
               </p>
             </div>
             
@@ -259,12 +286,17 @@ const WingsPage = () => {
             
             {/* Right - Content */}
             <div className={`space-y-4 ${wing4Visible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+              {/* Light pink tag */}
+              <div className="inline-block bg-pink-200 rounded-lg px-4 py-2 mb-4">
+                <span className="text-black font-medium">Blue Earth, Clean Earth</span>
+              </div>
+              
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
                 Community Outreach & Service Wing
               </h2>
-              <p className="text-sm sm:text-base text-gray-600">(SDG 14 - Life Below Water)</p>
+              <p className="text-sm sm:text-base text-[#A82228] italic">| SDG 14 - Life Below Water|</p>
               <p className="text-base sm:text-lg text-black leading-relaxed">
-                Fosters eco-friendly initiatives, environmental awareness drives, community service, to promote civic responsibility.
+                Leads eco-friendly initiatives, environmental awareness drives, and community service to promote sustainability and civic responsibility.
               </p>
             </div>
           </div>
@@ -319,7 +351,7 @@ const WingsPage = () => {
                   className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-all hover:scale-110 active:scale-95"
                   aria-label="Previous step"
                 >
-                  <svg className="w-5 h-5 text-black transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-gray-700 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
@@ -328,7 +360,7 @@ const WingsPage = () => {
                   className="w-10 h-10 rounded-full bg-[#A82228] flex items-center justify-center hover:bg-[#8a1c22] transition-all hover:scale-110 active:scale-95"
                   aria-label="Next step"
                 >
-                  <svg className="w-5 h-5 text-black transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-white transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>

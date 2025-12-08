@@ -12,13 +12,13 @@ export default function NewsletterSection() {
       {/* Top Section */}
       <div className="max-w-4xl mx-auto text-center pt-16 pb-12 px-4 flex-1">
         <div className={`${isVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-          <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-            Subscribe to Our Free Monthly Newsletter
-          </h1>
+        <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
+          Subscribe to Our Free Monthly Newsletter
+        </h1>
 
-          <p className="text-white text-lg md:text-xl mb-10">
-            Stay Updated on YoungVox Activities, Events, and Student Initiatives
-          </p>
+        <p className="text-white text-lg md:text-xl mb-10">
+          Stay Updated on YoungVox Activities, Events, and Student Initiatives
+        </p>
         </div>
 
         {/* Input Fields and Button Container */}
