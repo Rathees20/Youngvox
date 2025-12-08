@@ -6,7 +6,7 @@ const OurApproach = () => {
     const [ref, isVisible] = useScrollAnimation({ once: true });
     
     return (
-        <section ref={ref} className="bg-[#FFF8E7] py-12 sm:py-16 lg:py-24">
+        <section ref={ref} className="bg-pink-50 py-12 sm:py-16 lg:py-24">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                     {/* Left Column - Text Content */}

@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="absolute top-4 sm:top-6 lg:top-8 right-4 sm:right-8 lg:right-12">
           <button
             onClick={handleJoinClick}
-            className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg"
+            className="bg-[#A82228] text-white px-2 sm:px-8 py-1 sm:py-3 text-sm sm:text-base rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg"
           >
             Join YoungVox
           </button>

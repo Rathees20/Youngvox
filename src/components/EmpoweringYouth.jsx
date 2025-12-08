@@ -67,49 +67,50 @@ const EmpoweringYouth = () => {
 
           {/* Right Column - Image Carousel */}
           <div className={`relative order-1 lg:order-2 w-full ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-            <div className="relative overflow-hidden rounded-lg shadow-xl">
+            <div className="relative overflow-hidden rounded-lg shadow-xl aspect-[16/10] sm:aspect-[3/2] lg:aspect-[4/3]">
               <div
-                className="flex transition-transform duration-500 ease-in-out"
+                className="flex h-full transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
                 {carouselImages.map((image, index) => (
-                  <div key={index} className="w-full min-w-full flex-shrink-0 relative">
+                  <div key={index} className="w-full min-w-full flex-shrink-0 relative h-full">
                     <img
                       src={image.src}
                       alt={image.caption || 'Carousel image'}
-                      className="w-full h-64 sm:h-80 lg:h-96 object-cover"
+                      className="w-full h-full object-cover"
+                      loading={index === 0 ? 'eager' : 'lazy'}
                     />
                     {image.caption && (
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent text-white p-4 sm:p-6">
-                        <p className="text-sm sm:text-base lg:text-lg font-medium">{image.caption}</p>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent text-white p-3 sm:p-4 lg:p-6">
+                        <p className="text-xs sm:text-sm lg:text-base xl:text-lg font-medium">{image.caption}</p>
                       </div>
                     )}
                   </div>
                 ))}
               </div>
-              
-              {/* Carousel Navigation Arrows */}
-              <div className="flex justify-center sm:justify-start gap-4 mt-4 sm:mt-6 lg:absolute lg:left-2 lg:top-1/2 lg:-translate-y-1/2 lg:flex-col lg:mt-0 lg:gap-1 z-20">
-                <button
-                  onClick={prevSlide}
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center hover:shadow-xl transition-all shadow-lg border border-gray-200"
-                  aria-label="Previous slide"
-                >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
+            </div>
+            
+            {/* Carousel Navigation Arrows - Mobile: Bottom border, Desktop: Left border */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 flex gap-3 sm:gap-4 lg:left-0 lg:top-[55%] lg:-translate-y-1/2 lg:-translate-x-1/2 lg:flex-col lg:gap-2 z-20">
+              <button
+                onClick={prevSlide}
+                className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:shadow-xl transition-all shadow-lg border border-gray-200"
+                aria-label="Previous slide"
+              >
+                <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
 
-                <button
-                  onClick={nextSlide}
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-200 rounded-full flex items-center justify-center hover:shadow-xl transition-all shadow-lg border border-gray-300"
-                  aria-label="Next slide"
-                >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
+              <button
+                onClick={nextSlide}
+                className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:shadow-xl transition-all shadow-lg border border-gray-200"
+                aria-label="Next slide"
+              >
+                <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
