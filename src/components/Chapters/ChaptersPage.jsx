@@ -4,7 +4,7 @@ import NewsletterSection from '../Newsletter';
 import Footer from '../Footer';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import chapterBanner from '../../assets/chapter.png';
-import maskGroupIcon from '../../assets/icons/Mask group.png';
+import schoolIcon from '../../assets/icons/schools.png';
 import frameImage from '../../assets/Frame.png';
 import rightArrowIcon from '../../assets/icons/right arrow.png';
 
@@ -131,7 +131,7 @@ const ChaptersPage = () => {
                   key={school.id} 
                   className={`rounded-sm p-4 sm:p-4 relative hover-lift transition-all overflow-hidden ${
                     isPinkBox ? 'bg-pink-50' : 'bg-white border border-gray-200'
-                  } ${resultsVisible ? 'animate-scale-in' : 'opacity-0'} w-full h-[300px] sm:h-[300px]`}
+                  } ${resultsVisible ? 'animate-scale-in' : 'opacity-100 sm:opacity-0'} w-full min-h-[280px] h-auto sm:h-[300px]`}
                   style={{ 
                     animationDelay: `${index * 50}ms`
                   }}
@@ -147,30 +147,30 @@ const ChaptersPage = () => {
                   )}
                   
                   {/* Content */}
-                  <div className="relative z-10 h-full flex flex-col">
+                  <div className="relative z-10 w-full h-full flex flex-col">
                     {/* School Icon and Name Header */}
-                    <div className="mb-2">
-                      <div className="flex items-center gap-1.5 mb-1">
+                    <div className="mb-2 flex-shrink-0">
+                      <div className="flex items-start gap-2 mb-0">
                         <img 
-                          src={maskGroupIcon} 
+                          src={schoolIcon} 
                           alt="School icon" 
-                          className="w-5 h-5 object-contain flex-shrink-0"
+                          className="w-7 h-7 sm:w-8 sm:h-8 object-contain flex-shrink-0 mt-0.5"
                         />
                         <span className="text-[10px] text-gray-600 font-normal">Name</span>
                       </div>
                       <div className="flex items-start">
-                        <div className="w-5 h-5 flex-shrink-0"></div>
-                        <h3 className="text-sm font-bold text-black leading-tight">
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0"></div>
+                        <h3 className="text-sm font-bold text-black leading-tight ml-2">
                           {school.name}
                         </h3>
                       </div>
                     </div>
                     
                     {/* Horizontal Line */}
-                    <hr className="border-gray-300 mb-2" />
+                    <hr className="border-gray-300 mb-2 flex-shrink-0" />
                     
                     {/* Details */}
-                    <div className="space-y-1.5 flex-1">
+                    <div className="space-y-1.5 flex-1 min-h-0">
                       <div>
                         <p className="text-[10px] text-gray-600 font-normal mb-0.5">Chapter ID:</p>
                         <p className="text-[10px] font-bold text-black">{school.chapterId}</p>
