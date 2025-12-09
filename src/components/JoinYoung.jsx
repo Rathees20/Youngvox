@@ -17,6 +17,10 @@ const JoinYoung = () => {
   const [advisorRef, advisorVisible] = useScrollAnimation({ once: true });
   const [partnerRef, partnerVisible] = useScrollAnimation({ once: true });
 
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
@@ -63,7 +67,8 @@ const JoinYoung = () => {
               </p>
               <Link
                 to="/form/school"
-                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto text-center"
+                onClick={handleLinkClick}
+                className="inline-block bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center text-xs sm:text-sm md:text-base"
               >
                 I'd Like To Know More
               </Link>
@@ -102,7 +107,8 @@ const JoinYoung = () => {
               </p>
               <Link
                 to="/form/volunteer"
-                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto text-center"
+                onClick={handleLinkClick}
+                className="inline-block bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center text-xs sm:text-sm md:text-base"
               >
                 I'd Like To Know More
               </Link>
@@ -125,7 +131,8 @@ const JoinYoung = () => {
               </p>
               <Link
                 to="/form/corporate"
-                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto text-center"
+                onClick={handleLinkClick}
+                className="inline-block bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center text-xs sm:text-sm md:text-base"
               >
                 I'd Like To Know More
               </Link>
@@ -164,7 +171,8 @@ const JoinYoung = () => {
               </p>
               <Link
                 to="/form/advisor"
-                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto text-center"
+                onClick={handleLinkClick}
+                className="inline-block bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center text-xs sm:text-sm md:text-base"
               >
                 I'd Like To Know More
               </Link>
@@ -187,7 +195,8 @@ const JoinYoung = () => {
               </p>
               <Link
                 to="/form/partner"
-                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-full sm:w-auto text-center"
+                onClick={handleLinkClick}
+                className="inline-block bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center text-xs sm:text-sm md:text-base"
               >
                 I'd Like To Know More
               </Link>

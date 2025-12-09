@@ -97,7 +97,7 @@ const Header = () => {
             </button>
 
             {/* Desktop Donate Button */}
-            <button className="hidden md:flex bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors items-center space-x-2">
+            <button className="hidden md:flex bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl items-center space-x-2">
               <img src={donationIcon} alt="Donation" className="w-5 h-5" style={{ filter: 'brightness(0) invert(1)' }} />
               <span>Donate now</span>
             </button>
@@ -161,7 +161,7 @@ const Header = () => {
                   >
                     Contact us
                   </Link>
-                  <button className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors flex items-center justify-center space-x-2 mt-4 w-full">
+                  <button className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mt-4 w-full">
                     <img src={donationIcon} alt="Donation" className="w-5 h-5" style={{ filter: 'brightness(0) invert(1)' }} />
                     <span>Donate now</span>
                   </button>

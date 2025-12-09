@@ -72,7 +72,7 @@ const WingsPage = () => {
               <p className="text-base sm:text-lg text-black leading-relaxed">
                 YoungVox nurtures student leadership through a structured School Chapter model powered by four dynamic wings. Each wing is led by students, supported by a core leadership team and teacher mentors, ensuring meaningful engagement, collaboration, and real-world learning.
               </p>
-              <button className="bg-[#A82228] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold hover:bg-[#8a1c22] transition-all hover-lift">
+              <button className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl">
                 Join Now
               </button>
             </div>
@@ -90,7 +90,7 @@ const WingsPage = () => {
       </section>
 
       {/* Leadership Structure Section */}
-      <section ref={leadershipRef} className="py-12 sm:py-16 lg:py-24 bg-[#FFFBF2]">
+      <section ref={leadershipRef} className="py-12 sm:py-16 lg:py-24 bg-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-12 ${leadershipVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4">
@@ -103,7 +103,7 @@ const WingsPage = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Left - Teacher Mentors (Square Card with decreased width) */}
-            <div className={`bg-white rounded-2xl p-6 sm:p-8 shadow-sm relative overflow-visible min-h-[280px] max-w-md mx-auto lg:mx-0 ml-8 lg:ml-12 ${leadershipVisible ? 'animate-fade-in-left animate-delay-200' : 'opacity-0'}`}>
+            <div className={`bg-white rounded-2xl p-6 sm:p-8 shadow-sm relative overflow-visible min-h-[280px] w-full max-w-md mx-auto lg:mx-0 lg:ml-12 ${leadershipVisible ? 'animate-fade-in-left animate-delay-200' : 'opacity-0'}`}>
               <div className="flex flex-col items-center h-full justify-center">
                 {/* Icon - Container.png without red circle */}
                 <div className="w-16 h-16 flex items-center justify-center mb-4">
@@ -119,35 +119,35 @@ const WingsPage = () => {
             </div>
 
             {/* Right - Student Leadership */}
-            <div className={`space-y-6 -ml-8 lg:-ml-12 ${leadershipVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+            <div className={`space-y-6 lg:-ml-12 ${leadershipVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
               {/* Top Row - Three smaller square cards */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 {/* Chapter Chief */}
-                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm text-center relative overflow-visible">
-                  <div className="w-14 h-14 bg-[#A82228] rounded-full mx-auto mb-4 flex items-center justify-center p-3">
+                <div className="bg-white rounded-2xl p-3 sm:p-4 md:p-6 shadow-sm text-center relative overflow-visible">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center p-2 sm:p-3">
                     <img src={maskGroupIcon} alt="Chapter Chief" className="w-full h-full object-contain" />
                   </div>
-                  <h4 className="text-base font-bold text-black">Chapter Chief</h4>
+                  <h4 className="text-xs sm:text-sm md:text-base font-bold text-black">Chapter Chief</h4>
                   {/* Red horizontal line below - increased thickness */}
                   <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
                 </div>
                 
                 {/* Treasurer - Swapped icon */}
-                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm text-center relative overflow-visible">
-                  <div className="w-14 h-14 bg-[#A82228] rounded-full mx-auto mb-4 flex items-center justify-center p-3">
+                <div className="bg-white rounded-2xl p-3 sm:p-4 md:p-6 shadow-sm text-center relative overflow-visible">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center p-2 sm:p-3">
                     <img src={maskGroup2Icon} alt="Treasurer" className="w-full h-full object-contain" />
                   </div>
-                  <h4 className="text-base font-bold text-black">Treasurer</h4>
+                  <h4 className="text-xs sm:text-sm md:text-base font-bold text-black">Treasurer</h4>
                   {/* Red horizontal line below - increased thickness */}
                   <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
                 </div>
                 
                 {/* Secretary - Swapped icon */}
-                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm text-center relative overflow-visible">
-                  <div className="w-14 h-14 bg-[#A82228] rounded-full mx-auto mb-4 flex items-center justify-center p-3">
+                <div className="bg-white rounded-2xl p-3 sm:p-4 md:p-6 shadow-sm text-center relative overflow-visible">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center p-2 sm:p-3">
                     <img src={maskGroup1Icon} alt="Secretary" className="w-full h-full object-contain" />
                   </div>
-                  <h4 className="text-base font-bold text-black">Secretary</h4>
+                  <h4 className="text-xs sm:text-sm md:text-base font-bold text-black">Secretary</h4>
                   {/* Red horizontal line below - increased thickness */}
                   <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
                 </div>
@@ -208,7 +208,7 @@ const WingsPage = () => {
       </section>
 
       {/* Student Wellbeing Wing */}
-      <section ref={wing2Ref} className="py-12 sm:py-16 lg:py-24 bg-[#FFFBF2]">
+      <section ref={wing2Ref} className="py-12 sm:py-16 lg:py-24 bg-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left - Image */}
@@ -272,7 +272,7 @@ const WingsPage = () => {
       </section>
 
       {/* Community Outreach & Service Wing */}
-      <section ref={wing4Ref} className="py-12 sm:py-16 lg:py-24 bg-[#FFFBF2]">
+      <section ref={wing4Ref} className="py-12 sm:py-16 lg:py-24 bg-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left - Image */}
@@ -304,7 +304,7 @@ const WingsPage = () => {
       </section>
 
       {/* How it works Section */}
-      <section ref={howItWorksRef} className="py-12 sm:py-16 lg:py-24 bg-[#FFFBF2]">
+      <section ref={howItWorksRef} className="py-12 sm:py-16 lg:py-24 bg-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left - Content */}
@@ -402,7 +402,7 @@ const WingsPage = () => {
             </div>
 
             {/* Right - Form */}
-            <div className={`bg-[#FFFBF2] rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${formVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+            <div className={`bg-pink-50 rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${formVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
               <h3 className="text-2xl sm:text-3xl font-bold text-black mb-6">
                 Write to Us
               </h3>
@@ -414,7 +414,7 @@ const WingsPage = () => {
                     placeholder="Name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#FFFBF2] border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
                     required
                   />
                 </div>
@@ -424,7 +424,7 @@ const WingsPage = () => {
                     name="schoolName"
                     value={formData.schoolName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#FFFBF2] border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent appearance-none pr-10"
+                    className="w-full px-4 py-3 bg-pink-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent appearance-none pr-10"
                     required
                   >
                     <option value="">School Name</option>
@@ -446,7 +446,7 @@ const WingsPage = () => {
                     placeholder="Email ID"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#FFFBF2] border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
                     required
                   />
                 </div>
@@ -458,7 +458,7 @@ const WingsPage = () => {
                     placeholder="Phone Number"
                     value={formData.phoneNumber}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#FFFBF2] border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
                     required
                   />
                 </div>
@@ -470,7 +470,7 @@ const WingsPage = () => {
                     placeholder="Location"
                     value={formData.location}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#FFFBF2] border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
                     required
                   />
                 </div>
@@ -482,7 +482,7 @@ const WingsPage = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows="5"
-                    className="w-full px-4 py-3 bg-[#FFFBF2] border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 bg-pink-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent resize-none"
                     required
                   ></textarea>
                 </div>

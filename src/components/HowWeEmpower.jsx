@@ -135,7 +135,7 @@ const HowWeEmpower = () => {
                                 A transformative platform that nurtures leadership, voice, and real-world impact in every student
                             </p>
                         </div>
-                        <button className="bg-[#A82228] text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full text-sm md:text-base font-semibold hover:bg-[#8B1B20] transition-colors whitespace-nowrap">
+                        <button className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl whitespace-nowrap">
                             Join Us Today
                         </button>
                     </div>

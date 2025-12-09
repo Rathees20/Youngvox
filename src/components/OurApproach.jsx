@@ -28,7 +28,7 @@ const OurApproach = () => {
                             </p>
                         </div>
 
-                        <button className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-all hover-lift w-full sm:w-auto">
+                        <button className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto">
                             Join YoungVox
                         </button>
                     </div>

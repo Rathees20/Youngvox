@@ -56,7 +56,7 @@ const ChaptersPage = () => {
               <p className="text-sm sm:text-base text-black mb-4 sm:mb-6 leading-relaxed drop-shadow-sm">
                 Join our network of schools committed to empowering young leaders. Discover how your school can become part of the YoungVox movement.
               </p>
-              <button className="bg-[#A82228] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors w-auto text-sm sm:text-base">
+              <button className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-auto text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl">
                 Join Now
               </button>
             </div>
@@ -233,9 +233,9 @@ const ChaptersPage = () => {
                     onClick={() => setCurrentPage(page)}
                     className={`${
                       isActive
-                        ? 'w-10 h-10 rounded-full bg-[#A82228] text-white'
-                        : 'text-[#A82228] hover:opacity-80'
-                    } flex items-center justify-center transition-colors font-medium`}
+                        ? 'w-10 h-10 rounded-full bg-[#A82228] text-white shadow-lg hover:shadow-xl'
+                        : 'w-10 h-10 rounded-full text-[#A82228]'
+                    } flex items-center justify-center transition-colors font-semibold hover:bg-[#8a1c22] hover:text-white`}
                   >
                     {page}
                   </button>
@@ -246,7 +246,7 @@ const ChaptersPage = () => {
             <button
               onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
               disabled={currentPage === totalPages}
-              className="w-10 h-10 rounded-full bg-[#A82228] text-white flex items-center justify-center hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-10 h-10 rounded-full bg-[#A82228] text-white flex items-center justify-center hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#A82228] font-semibold"
             >
               <img 
                 src={rightArrowIcon} 

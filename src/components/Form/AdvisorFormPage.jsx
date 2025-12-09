@@ -83,7 +83,7 @@ const AdvisorFormPage = () => {
             </div>
 
             {/* Right Panel - Form */}
-            <div className={`bg-[#FFFBF2] rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${contentVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+            <div className={`bg-pink-50 rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${contentVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
               <h2 className="text-2xl sm:text-3xl font-bold text-black mb-6">
                 Write to Us
               </h2>

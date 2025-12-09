@@ -280,7 +280,7 @@ const AboutPage = () => {
                           <p className="text-white text-sm sm:text-base mb-3">
                             {member.title}
                           </p>
-                          <button className="bg-white text-[#A82228] px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">
+                          <button className="bg-white text-[#A82228] px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl">
                             Read Bio
                           </button>
                         </div>
@@ -364,7 +364,7 @@ const AboutPage = () => {
                           <p className="text-white text-sm sm:text-base mb-3">
                             {advisor.title}
                           </p>
-                          <button className="bg-white text-[#A82228] px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">
+                          <button className="bg-white text-[#A82228] px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl">
                             Read Bio
                           </button>
                         </div>

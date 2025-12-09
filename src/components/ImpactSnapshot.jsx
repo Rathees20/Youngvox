@@ -128,7 +128,7 @@ const ImpactSnapshot = () => {
 
                 {/* Get in touch Button */}
                 <div className={`text-center mt-8 md:mt-12 ${isVisible ? 'animate-fade-in-up animate-delay-500' : 'opacity-0'}`}>
-                    <button className="bg-white text-[#A82228] px-6 md:px-8 py-2.5 md:py-3 rounded-full text-xs md:text-sm font-bold hover:bg-gray-100 transition-all hover-lift shadow-lg">
+                    <button className="bg-white text-[#A82228] px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl">
                         Get in touch
                     </button>
                 </div>
