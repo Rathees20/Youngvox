@@ -308,62 +308,77 @@ const WingsPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left - Content */}
-            <div className={`space-y-6 ${howItWorksVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6">
+            <div className={`${howItWorksVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+              {/* Title */}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
                 How it works
               </h2>
               
               {/* Step Indicators with Horizontal Line */}
-              <div className="relative mb-6">
-                {/* Horizontal Gray Line - positioned between numbers and dots */}
+              <div className="relative mb-8">
+                {/* Horizontal Gray Line - spans from left edge to right edge */}
                 <div className="absolute top-8 left-0 right-0 h-0.5 bg-gray-300 z-0"></div>
                 
-                {/* Step Numbers and Dots */}
-                <div className="relative flex items-center justify-between w-full">
-                  {[1, 2, 3, 4].map((step) => (
-                    <div key={step} className="flex flex-col items-center relative z-10 flex-1">
-                      {/* Number - Plain text, not in circle */}
-                      <div className={`text-lg mb-3 transition-all duration-300 ${
-                        currentStep === step 
-                          ? 'font-bold text-black scale-110' 
-                          : 'font-normal text-gray-500'
-                      }`}>
-                        {String(step).padStart(2, '0')}
+                {/* Step Numbers and Dots - positioned only in the right half */}
+                <div className="relative w-full">
+                  {[1, 2, 3, 4].map((step, index) => {
+                    // Position dots in the right half: evenly distribute in second half
+                    // Positions: 50%, 62.5%, 75%, 87.5%
+                    const leftPosition = 50 + (index * 12.5);
+                    return (
+                      <div key={step} className="absolute flex flex-col items-center" style={{ left: `${leftPosition}%`, transform: 'translateX(-50%)', zIndex: 10 }}>
+                        {/* Number - positioned above the line */}
+                        <div className={`text-lg font-medium transition-all duration-300 ${
+                          currentStep === step 
+                            ? 'font-bold text-gray-800' 
+                            : 'font-normal text-gray-500'
+                        }`} style={{ marginBottom: '8px' }}>
+                          {String(step).padStart(2, '0')}
+                        </div>
+                        {/* Dot - positioned directly on the line at top-8 (32px), centered vertically on the line */}
+                        <div className={`rounded-full absolute transition-all duration-300 ${
+                          currentStep === step 
+                            ? 'w-4 h-4 bg-[#A82228]' 
+                            : 'w-3 h-3 bg-gray-400'
+                        }`} style={{ 
+                          top: '32px',
+                          transform: 'translateY(-50%)'
+                        }}></div>
                       </div>
-                      {/* Dot Below */}
-                      <div className={`w-3 h-3 rounded-full mt-2 transition-all duration-300 ${
-                        currentStep === step ? 'bg-[#A82228] scale-125' : 'bg-gray-400'
-                      }`}></div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
               
-              {/* Descriptive Text - Below progress indicator */}
-              <p className="text-base sm:text-lg text-black leading-relaxed mb-6">
-                Student-led leadership structure - Every activity is planned, and executed by student leaders from each wing.
-              </p>
-              
-              {/* Navigation Buttons */}
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setCurrentStep(Math.max(1, currentStep - 1))}
-                  className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-all hover:scale-110 active:scale-95"
-                  aria-label="Previous step"
-                >
-                  <svg className="w-5 h-5 text-gray-700 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <button
-                  onClick={() => setCurrentStep(Math.min(4, currentStep + 1))}
-                  className="w-10 h-10 rounded-full bg-[#A82228] flex items-center justify-center hover:bg-[#8a1c22] transition-all hover:scale-110 active:scale-95"
-                  aria-label="Next step"
-                >
-                  <svg className="w-5 h-5 text-white transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+              {/* Descriptive Text - Positioned below the timeline, starts where dots start (at 50%) */}
+              <div className="mb-8 mt-32" style={{ paddingLeft: '50%' }}>
+                <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6">
+                  Student-led leadership structure - Every activity is planned, and executed by student leaders from each wing.
+                </p>
+                
+                {/* Navigation Buttons */}
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => setCurrentStep(Math.max(1, currentStep - 1))}
+                    className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-all hover:scale-110 active:scale-95"
+                    aria-label="Previous step"
+                  >
+                    <svg className="w-6 h-6 text-gray-900" viewBox="0 0 24 24" fill="currentColor">
+                      {/* Solid left arrow: triangle head pointing left + rectangular shaft */}
+                      <polygon points="6,12 12,6 12,9 18,9 18,15 12,15 12,18"/>
+                    </svg>
+                  </button>
+                  <button
+                    onClick={() => setCurrentStep(Math.min(4, currentStep + 1))}
+                    className="w-10 h-10 rounded-full bg-[#A82228] flex items-center justify-center hover:bg-[#8a1c22] transition-all hover:scale-110 active:scale-95"
+                    aria-label="Next step"
+                  >
+                    <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                      {/* Solid right arrow: triangle head pointing right + rectangular shaft */}
+                      <polygon points="18,12 12,6 12,9 6,9 6,15 12,15 12,18"/>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
             
