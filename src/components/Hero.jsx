@@ -18,7 +18,7 @@ const Hero = () => {
           className="w-full h-auto"
         />
         {/* Overlay button for "Join YoungVox" - positioned at top right corner */}
-        <div className="absolute top-4 sm:top-6 lg:top-8 right-4 sm:right-8 lg:right-12">
+        <div className="absolute top-4 sm:top-6 lg:top-8 right-2 sm:right-8 lg:right-12">
           <button
             onClick={handleJoinClick}
             className="bg-[#A82228] text-white px-1 sm:px-8 py-1 sm:py-2 text-xs sm:text-base rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg"
