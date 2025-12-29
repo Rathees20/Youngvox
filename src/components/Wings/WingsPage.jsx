@@ -62,7 +62,7 @@ const WingsPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8">
             {/* Left - Title */}
             <div className={`${heroVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-6">
                 YOUNGVOX - WINGS & LEADERSHIP
               </h1>
             </div>
@@ -93,7 +93,7 @@ const WingsPage = () => {
       <section ref={leadershipRef} className="py-12 sm:py-16 lg:py-24 bg-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-12 ${leadershipVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
               Leadership Structure
             </h2>
             <p className="text-lg sm:text-xl text-black">
@@ -186,7 +186,7 @@ const WingsPage = () => {
                 <span className="text-black font-medium">Student to Professional</span>
               </div>
               
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
                 Academic & Career<br />Guidance Wing
               </h2>
               <p className="text-sm sm:text-base text-[#A82228] italic">|SDG 4 - Quality Education|</p>
@@ -227,7 +227,7 @@ const WingsPage = () => {
                 <span className="text-black font-medium">Digital Detox</span>
               </div>
               
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
                 Student Wellbeing Wing
               </h2>
               <p className="text-sm sm:text-base text-[#A82228] italic">|SDG 3 - Good Health & Well-being|</p>
@@ -250,7 +250,7 @@ const WingsPage = () => {
                 <span className="text-black font-medium">Speak Up</span>
               </div>
               
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
                 Child Rights & Social Justice Wing
               </h2>
               <p className="text-sm sm:text-base text-[#A82228] italic">| SDG 16 – Peace, Justice & Strong Institutions|</p>
@@ -291,7 +291,7 @@ const WingsPage = () => {
                 <span className="text-black font-medium">Blue Earth, Clean Earth</span>
               </div>
               
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
                 Community Outreach & Service Wing
               </h2>
               <p className="text-sm sm:text-base text-[#A82228] italic">| SDG 14 - Life Below Water|</p>
@@ -309,7 +309,7 @@ const WingsPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left - Content */}
             <div className={`space-y-6 ${howItWorksVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-6">
                 How it works
               </h2>
               
@@ -385,7 +385,7 @@ const WingsPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left - Content */}
             <div className={`space-y-6 ${formVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
                 Launch a YoungVox Chapter
               </h2>
               <p className="text-base sm:text-lg text-black leading-relaxed">
@@ -403,7 +403,7 @@ const WingsPage = () => {
 
             {/* Right - Form */}
             <div className={`bg-pink-50 rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${formVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h3 className="text-2xl sm:text-3xl font-bold text-black mb-6">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-6">
                 Write to Us
               </h3>
               <form onSubmit={handleSubmit} className="space-y-4">

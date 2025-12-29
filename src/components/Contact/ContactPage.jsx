@@ -42,9 +42,9 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel */}
             <div className={`space-y-6 ${touchVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
                 <span className="block">Get in Touch with</span>
-                <span className="block text-4xl sm:text-5xl lg:text-6xl">YoungVox</span>
+                <span className="block text-3xl sm:text-4xl lg:text-5xl">YoungVox</span>
               </h1>
               <p className="text-base sm:text-lg text-black leading-relaxed">
                 Ready to collaborate, contribute, or learn more about our student-led leadership initiatives?
@@ -87,7 +87,7 @@ const ContactPage = () => {
 
             {/* Right Panel - Contact Form */}
             <div className={`bg-white ${touchVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-3xl font-bold text-black mb-6">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-6">
                 Write to the YoungVox Team
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -187,7 +187,7 @@ const ContactPage = () => {
       {/* Connect. Collaborate. Create Future Leaders. Section */}
       <section ref={bannerRef} className="bg-[#A82228] py-12 sm:py-16 lg:py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-8 sm:mb-12 ${bannerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+          <h2 className={`text-xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-8 sm:mb-12 ${bannerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
             Connect. Collaborate. Create Future Leaders.
           </h2>
           

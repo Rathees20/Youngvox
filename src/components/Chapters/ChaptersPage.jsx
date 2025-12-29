@@ -50,7 +50,7 @@ const ChaptersPage = () => {
         <div className={`absolute inset-0 flex items-center justify-end px-4 sm:px-6 md:px-8 lg:px-16 py-6 sm:py-8 md:py-10 lg:py-12 ${heroVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
           <div className="w-full sm:w-auto max-w-full sm:max-w-md lg:max-w-lg sm:ml-auto">
             <div className="text-left sm:text-right">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-3 sm:mb-4 drop-shadow-sm">
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-3 sm:mb-4 drop-shadow-sm">
                 YoungVox School Chapters
               </h1>
               <p className="text-sm sm:text-base text-black mb-4 sm:mb-6 leading-relaxed drop-shadow-sm">
@@ -118,7 +118,7 @@ const ChaptersPage = () => {
       {/* School Chapters Listing */}
       <section ref={resultsRef} className="py-6 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-6 sm:mb-8 ${resultsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+          <h2 className={`text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-6 sm:mb-8 ${resultsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
             Showing Result 1-30
           </h2>
 

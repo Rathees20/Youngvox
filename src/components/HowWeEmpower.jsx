@@ -85,7 +85,7 @@ const HowWeEmpower = () => {
             <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
                 {/* Section Header */}
                 <div ref={headerRef} className={`text-center mb-10 md:mb-12 ${headerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-3">
                         How YoungVox Empowers School
                     </h2>
                     <p className="text-gray-700 text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
@@ -128,7 +128,7 @@ const HowWeEmpower = () => {
                     {/* Section Header */}
                     <div className={`flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 md:mb-12 ${partnersVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
                         <div>
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-2 md:mb-3">
+                            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-2 md:mb-3">
                                 Be Part of the Change
                             </h2>
                             <p className="text-gray-700 text-sm md:text-base max-w-md leading-relaxed">

@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import NewsletterSection from './Newsletter';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import joinBanner from '../assets/join bannner.png';
+import joinBanner from '../assets/youngvox image.png';
 import join01Image from '../assets/join01.png';
 import joinImage from '../assets/join.png';
 import join1Image from '../assets/join1.png';
@@ -24,27 +24,27 @@ const JoinYoung = () => {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
-      
+
       {/* Banner Section */}
       <section ref={bannerRef} className="w-full relative">
         <div className="relative w-full">
-          <img 
-            src={joinBanner} 
-            alt="Join YoungVox Banner" 
+          <img
+            src={joinBanner}
+            alt="Join YoungVox Banner"
             className="w-full h-auto object-cover"
           />
-          
+
           {/* Overlay Content - Right aligned on all screens */}
-          <div className={`absolute inset-0 flex items-center justify-end pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-24 py-8 sm:py-12 md:py-16 lg:py-20 z-20 ${bannerVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
-            <div className="max-w-[85%] sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl text-right space-y-4 sm:space-y-5 md:space-y-6">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight drop-shadow-lg">
+          <div className={`absolute inset-0 flex items-center justify-end pr-6 sm:pr-8 md:pr-12 lg:pr-16 xl:pr-20 2xl:pr-24 py-12 sm:py-16 md:py-20 lg:py-24 z-20 ${bannerVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
+            <div className="max-w-[90%] sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl text-right space-y-5 sm:space-y-6 md:space-y-7">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight drop-shadow-lg">
                 Join YoungVox
               </h1>
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white leading-relaxed drop-shadow-md">
-                At YoungVox, we're building a community of passionate, driven individuals committed to empowering youth and creating lasting change. Whether you're a school, volunteer, corporate partner, or advisor, there's a place for you in our mission.
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-black leading-relaxed drop-shadow-md">
+               At YoungVox, we're building a community of passionate, driven individuals committed to empowering youth and creating meaningful impact. We provide a collaborative environment where ideas flourish, and your efforts directly contribute to shaping the next generation of responsible, capable leaders.
               </p>
-              <div className="flex justify-end pt-2 sm:pt-3 md:pt-4">
-                <button className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl relative z-30">
+              <div className="flex justify-end pt-3 sm:pt-4 md:pt-5">
+                <button className="bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl relative z-30">
                   Explore Ways to Join
                 </button>
               </div>
@@ -54,24 +54,26 @@ const JoinYoung = () => {
       </section>
 
       {/* Join as a School Section */}
-      <section ref={schoolRef} className="py-12 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <section ref={schoolRef} className="py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             {/* Left Column - Text Content */}
-            <div className={`order-2 lg:order-1 ${schoolVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <div className={`order-2 lg:order-1 space-y-6 ${schoolVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Join as a School
               </h2>
-              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
-              Become a YoungVox School Chapter and empower your students to lead with purpose. Students build leadership skills, run campaigns in their own school, and take part in community initiatives that create real, lasting impact. And the best part? It's completely free of cost. By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers.
+              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                Become a YoungVox School Chapter and empower your students to lead with purpose. Students build leadership skills, run campaigns in their own school, and take part in community initiatives that create real, lasting impact. And the best part? It's completely free of cost. By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers.
               </p>
-              <Link
-                to="/form/school"
-                onClick={handleLinkClick}
-                className="inline-block bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center text-xs sm:text-sm md:text-base"
-              >
-                I'd Like To Know More
-              </Link>
+              <div className="pt-2">
+                <Link
+                  to="/form/school"
+                  onClick={handleLinkClick}
+                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+                >
+                  Get in touch
+                </Link>
+              </div>
             </div>
             {/* Right Column - Image */}
             <div className={`order-1 lg:order-2 ${schoolVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
@@ -86,9 +88,9 @@ const JoinYoung = () => {
       </section>
 
       {/* Volunteer or Intern With Us Section */}
-      <section ref={volunteerRef} className="py-12 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <section ref={volunteerRef} className="py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             {/* Left Column - Image */}
             <div className={`${volunteerVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <img
@@ -98,44 +100,48 @@ const JoinYoung = () => {
               />
             </div>
             {/* Right Column - Text Content */}
-            <div className={`${volunteerVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <div className={`space-y-6 ${volunteerVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Volunteer or Intern With Us
               </h2>
-              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
-              Our volunteers and interns play a vital role in YoungVox, working closely with students and communities to implement programs and initiatives that inspire real change. From organizing school and community campaigns to offering guidance, creativity, and mentorship, every contribution strengthens our mission. Your time and skills can empower young leaders.
+              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                Our volunteers and interns play a vital role in YoungVox, working closely with students and communities to implement programs and initiatives that inspire real change. From organizing school and community campaigns to offering guidance, creativity, and mentorship, every contribution strengthens our mission. Your time and skills can empower young leaders.
               </p>
-              <Link
-                to="/form/volunteer"
-                onClick={handleLinkClick}
-                className="inline-block bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center text-xs sm:text-sm md:text-base"
-              >
-                I'd Like To Know More
-              </Link>
+              <div className="pt-2">
+                <Link
+                  to="/form/volunteer"
+                  onClick={handleLinkClick}
+                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+                >
+                  Get in touch
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Corporate Collaboration Section */}
-      <section ref={corporateRef} className="py-12 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <section ref={corporateRef} className="py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             {/* Left Column - Text Content */}
-            <div className={`order-2 lg:order-1 ${corporateVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <div className={`order-2 lg:order-1 space-y-6 ${corporateVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Corporate Collaboration
               </h2>
-              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
-              Companies can partner with YoungVox by supporting initiatives, campaigns, or leadership programs that align with their CSR priorities. From education and skill-building to civic engagement and environmental awareness, your contribution helps strengthen youth leadership, empower student action, and build the next generation of responsible changemakers.
+              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                Companies can partner with YoungVox by supporting initiatives, campaigns, or leadership programs that align with their CSR priorities. From education and skill-building to civic engagement and environmental awareness, your contribution helps strengthen youth leadership, empower student action, and build the next generation of responsible changemakers.
               </p>
-              <Link
-                to="/form/corporate"
-                onClick={handleLinkClick}
-                className="inline-block bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center text-xs sm:text-sm md:text-base"
-              >
-                I'd Like To Know More
-              </Link>
+              <div className="pt-2">
+                <Link
+                  to="/form/corporate"
+                  onClick={handleLinkClick}
+                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+                >
+                  Get in touch
+                </Link>
+              </div>
             </div>
             {/* Right Column - Image */}
             <div className={`order-1 lg:order-2 ${corporateVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
@@ -150,9 +156,9 @@ const JoinYoung = () => {
       </section>
 
       {/* Advisors Section */}
-      <section ref={advisorRef} className="py-12 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <section ref={advisorRef} className="py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             {/* Left Column - Image */}
             <div className={`${advisorVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <img
@@ -162,44 +168,48 @@ const JoinYoung = () => {
               />
             </div>
             {/* Right Column - Text Content */}
-            <div className={`${advisorVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <div className={`space-y-6 ${advisorVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Advisors
               </h2>
-              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
-              We collaborate with education experts, youth mentors, and thought leaders who share our commitment to nurturing the next generation of responsible leaders. Partner with us to provide guidance, shape programs, and support student-led initiatives that create real community impact.
+              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                We collaborate with education experts, youth mentors, and thought leaders who share our commitment to nurturing the next generation of responsible leaders. Partner with us to provide guidance, shape programs, and support student-led initiatives that create real community impact.
               </p>
-              <Link
-                to="/form/advisor"
-                onClick={handleLinkClick}
-                className="inline-block bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center text-xs sm:text-sm md:text-base"
-              >
-                I'd Like To Know More
-              </Link>
+              <div className="pt-2">
+                <Link
+                  to="/form/advisor"
+                  onClick={handleLinkClick}
+                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+                >
+                  Get in touch
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Implementation Partners Section */}
-      <section ref={partnerRef} className="py-12 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <section ref={partnerRef} className="py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             {/* Left Column - Text Content */}
-            <div className={`order-2 lg:order-1 ${partnerVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <div className={`order-2 lg:order-1 space-y-6 ${partnerVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Implementation Partners
               </h2>
-              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
-              Are you an NGO, school, or community organization working with youth on the ground? Partner with YoungVox to combine resources, share expertise, and amplify the impact of youth campaigns and leadership programs. Every partnership begins with a conversation. Let's explore how we can work together to empower young leaders and drive meaningful change.
+              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                Are you an NGO, school, or community organization working with youth on the ground? Partner with YoungVox to combine resources, share expertise, and amplify the impact of youth campaigns and leadership programs. Every partnership begins with a conversation. Let's explore how we can work together to empower young leaders and drive meaningful change.
               </p>
-              <Link
-                to="/form/partner"
-                onClick={handleLinkClick}
-                className="inline-block bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center text-xs sm:text-sm md:text-base"
-              >
-                I'd Like To Know More
-              </Link>
+              <div className="pt-2">
+                <Link
+                  to="/form/partner"
+                  onClick={handleLinkClick}
+                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+                >
+                  Get in touch
+                </Link>
+              </div>
             </div>
             {/* Right Column - Image */}
             <div className={`order-1 lg:order-2 ${partnerVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>

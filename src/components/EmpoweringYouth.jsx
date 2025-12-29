@@ -39,7 +39,7 @@ const EmpoweringYouth = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className={`space-y-4 sm:space-y-6 order-2 lg:order-1 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">
               Empowering Youth. Inspiring Change.
             </h2>
 
