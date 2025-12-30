@@ -35,15 +35,30 @@ const JoinYoung = () => {
           />
 
           {/* Overlay Content - Right aligned on all screens */}
-          <div className={`absolute inset-0 flex items-center justify-end pr-6 sm:pr-8 md:pr-12 lg:pr-16 xl:pr-20 2xl:pr-24 py-12 sm:py-16 md:py-20 lg:py-24 z-20 ${bannerVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
-            <div className="max-w-[90%] sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl text-right space-y-5 sm:space-y-6 md:space-y-7">
+         <div
+  className={`absolute inset-0 flex items-center z-20 ${
+    bannerVisible ? 'animate-fade-in-right' : 'opacity-0'
+  }`}
+>
+  <div
+    className="
+      ml-6 sm:ml-auto
+      mr-6 sm:mr-[6%]
+      max-w-[88%] sm:max-w-lg md:max-w-xl lg:max-w-2xl
+      text-left
+      space-y-3 sm:space-y-5 md:space-y-6
+    "
+  >
+
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight drop-shadow-lg">
                 Join YoungVox
               </h1>
               <p className="text-xs sm:text-sm md:text-base lg:text-lg text-black leading-relaxed drop-shadow-md">
-               At YoungVox, we're building a community of passionate, driven individuals committed to empowering youth and creating meaningful impact. We provide a collaborative environment where ideas flourish, and your efforts directly contribute to shaping the next generation of responsible, capable leaders.
+                At YoungVox, we're building a community of passionate, driven individuals committed to empowering youth and creating meaningful impact. We provide a collaborative environment where ideas flourish, and your efforts directly contribute to shaping the next generation of responsible, capable leaders.
               </p>
-              <div className="flex justify-end pt-3 sm:pt-4 md:pt-5">
+              <div className="pt-3">
+
+
                 <button className="bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl relative z-30">
                   Explore Ways to Join
                 </button>

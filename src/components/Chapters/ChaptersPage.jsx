@@ -45,18 +45,32 @@ const ChaptersPage = () => {
             className="w-full h-full object-cover object-center"
           />
         </div>
-        
+
         {/* Text Overlay */}
-        <div className={`absolute inset-0 flex items-center justify-end px-4 sm:px-6 md:px-8 lg:px-16 py-6 sm:py-8 md:py-10 lg:py-12 ${heroVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
-          <div className="w-full sm:w-auto max-w-full sm:max-w-md lg:max-w-lg sm:ml-auto">
-            <div className="text-left sm:text-right">
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-3 sm:mb-4 drop-shadow-sm">
-                YoungVox School Chapters
-              </h1>
-              <p className="text-sm sm:text-base text-black mb-4 sm:mb-6 leading-relaxed drop-shadow-sm">
-                Join our network of schools committed to empowering young leaders. Discover how your school can become part of the YoungVox movement.
-              </p>
-              <button className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors w-auto text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl">
+        <div
+  className={`absolute inset-0 flex items-center z-20 ${
+    heroVisible ? 'animate-fade-in-right' : 'opacity-0'
+  }`}
+>
+  <div
+    className="
+      ml-auto
+      mr-[6%]
+      max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl
+      text-left
+      space-y-4 sm:space-y-5 md:space-y-6
+    "
+  >
+
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-lg">
+              YoungVox School Chapters
+            </h1>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white leading-relaxed drop-shadow-md">
+              Join our network of schools committed to empowering young leaders. Discover how your school can become part of the YoungVox movement.
+            </p>
+            <div className="pt-2 sm:pt-3 md:pt-4">
+
+              <button className="bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl relative z-30">
                 Join Now
               </button>
             </div>
@@ -127,12 +141,11 @@ const ChaptersPage = () => {
             {schools.map((school, index) => {
               const isPinkBox = index % 2 !== 0; // Pink boxes for odd indices
               return (
-                <div 
-                  key={school.id} 
-                  className={`rounded-sm p-4 sm:p-4 relative hover-lift transition-all overflow-hidden ${
-                    isPinkBox ? 'bg-pink-50' : 'bg-white border border-gray-200'
-                  } ${resultsVisible ? 'animate-scale-in' : 'opacity-100 sm:opacity-0'} w-full min-h-[280px] h-auto sm:h-[300px]`}
-                  style={{ 
+                <div
+                  key={school.id}
+                  className={`rounded-sm p-4 sm:p-4 relative hover-lift transition-all overflow-hidden ${isPinkBox ? 'bg-pink-50' : 'bg-white border border-gray-200'
+                    } ${resultsVisible ? 'animate-scale-in' : 'opacity-100 sm:opacity-0'} w-full min-h-[280px] h-auto sm:h-[300px]`}
+                  style={{
                     animationDelay: `${index * 50}ms`
                   }}
                 >
@@ -145,15 +158,15 @@ const ChaptersPage = () => {
                       style={{ opacity: 0.4 }}
                     />
                   )}
-                  
+
                   {/* Content */}
                   <div className="relative z-10 w-full h-full flex flex-col">
                     {/* School Icon and Name Header */}
                     <div className="mb-2 flex-shrink-0">
                       <div className="flex items-start gap-2 mb-0">
-                        <img 
-                          src={schoolIcon} 
-                          alt="School icon" 
+                        <img
+                          src={schoolIcon}
+                          alt="School icon"
                           className="w-7 h-7 sm:w-8 sm:h-8 object-contain flex-shrink-0 mt-0.5"
                         />
                         <span className="text-[10px] text-gray-600 font-normal">Name</span>
@@ -165,10 +178,10 @@ const ChaptersPage = () => {
                         </h3>
                       </div>
                     </div>
-                    
+
                     {/* Horizontal Line */}
                     <hr className="border-gray-300 mb-2 flex-shrink-0" />
-                    
+
                     {/* Details */}
                     <div className="space-y-1.5 flex-1 min-h-0">
                       <div>
@@ -199,22 +212,22 @@ const ChaptersPage = () => {
             {(() => {
               const pages = [];
               const showPages = 4; // Show first 4 pages
-              
+
               // Add first pages (1, 2, 3, 4)
               for (let i = 1; i <= Math.min(showPages, totalPages); i++) {
                 pages.push(i);
               }
-              
+
               // Add ellipsis if there are more pages
               if (totalPages > showPages + 1) {
                 pages.push('ellipsis');
               }
-              
+
               // Add last page
               if (totalPages > showPages) {
                 pages.push(totalPages);
               }
-              
+
               return pages.map((item, index) => {
                 if (item === 'ellipsis') {
                   return (
@@ -223,19 +236,18 @@ const ChaptersPage = () => {
                     </span>
                   );
                 }
-                
+
                 const page = item;
                 const isActive = currentPage === page;
-                
+
                 return (
                   <button
                     key={page}
                     onClick={() => setCurrentPage(page)}
-                    className={`${
-                      isActive
+                    className={`${isActive
                         ? 'w-10 h-10 rounded-full bg-[#A82228] text-white shadow-lg hover:shadow-xl'
                         : 'w-10 h-10 rounded-full text-[#A82228]'
-                    } flex items-center justify-center transition-colors font-semibold hover:bg-[#8a1c22] hover:text-white`}
+                      } flex items-center justify-center transition-colors font-semibold hover:bg-[#8a1c22] hover:text-white`}
                   >
                     {page}
                   </button>
@@ -248,11 +260,11 @@ const ChaptersPage = () => {
               disabled={currentPage === totalPages}
               className="w-10 h-10 rounded-full bg-[#A82228] text-white flex items-center justify-center hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#A82228] font-semibold"
             >
-              <img 
-                src={rightArrowIcon} 
-                alt="Next page" 
+              <img
+                src={rightArrowIcon}
+                alt="Next page"
                 className="w-5 h-5 object-contain"
-                style={{ 
+                style={{
                   filter: 'brightness(0) saturate(100%) invert(100%)'
                 }}
               />

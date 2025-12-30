@@ -4,7 +4,7 @@ import ourApproachImage from '../assets/Our approach.png';
 
 const OurApproach = () => {
     const [ref, isVisible] = useScrollAnimation({ once: true });
-    
+
     return (
         <section ref={ref} className="bg-pink-50 py-12 sm:py-16 lg:py-24">
             <div className="container mx-auto px-4">
