@@ -26,8 +26,8 @@ const Hero = () => {
               absolute
               top-3 right-0 sm:top-6 sm:right-5
               bg-[#A82228] text-white
-              px-3 py-1 sm:px-4 sm:py-2
-              text-xs
+              px-2 py-0.5 sm:px-4 sm:py-2
+              text-[10px] sm:text-xs
               rounded-full
               font-semibold
               shadow-lg
