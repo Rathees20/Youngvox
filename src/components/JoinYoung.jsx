@@ -44,19 +44,19 @@ const JoinYoung = () => {
     className="
       ml-6 sm:ml-auto
       mr-6 sm:mr-[6%]
-      max-w-[88%] sm:max-w-lg md:max-w-xl lg:max-w-2xl
+      max-w-[95%] sm:max-w-lg md:max-w-xl lg:max-w-2xl
       text-left
-      space-y-3 sm:space-y-5 md:space-y-6
+      space-y-2 sm:space-y-5 md:space-y-6
     "
   >
 
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight drop-shadow-lg">
+              <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-snug sm:leading-tight drop-shadow-lg">
                 Join YoungVox
               </h1>
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-black leading-relaxed drop-shadow-md">
+              <p className="text-[11px] sm:text-sm md:text-base lg:text-lg text-black leading-normal sm:leading-relaxed drop-shadow-md">
                 At YoungVox, we're building a community of passionate, driven individuals committed to empowering youth and creating meaningful impact. We provide a collaborative environment where ideas flourish, and your efforts directly contribute to shaping the next generation of responsible, capable leaders.
               </p>
-              <div className="pt-3">
+              <div className="pt-2 sm:pt-3">
 
 
                 <button className="bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl relative z-30">
