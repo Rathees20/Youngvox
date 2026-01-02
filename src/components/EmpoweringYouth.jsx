@@ -32,16 +32,15 @@ const EmpoweringYouth = () => {
   return (
     <section
       ref={ref}
-      className="bg-white py-20 lg:py-28 overflow-hidden"
+      className="bg-white pt-6 pb-20 lg:pt-10 lg:pb-28 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] items-center gap-14">
-          
+
           {/* LEFT CONTENT */}
           <div
-            className={`space-y-6 ${
-              isVisible ? 'animate-fade-in-left' : 'opacity-0'
-            }`}
+            className={`space-y-6 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'
+              }`}
           >
             <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900">
               Empowering Youth.
@@ -51,13 +50,13 @@ const EmpoweringYouth = () => {
 
             <div className="text-gray-700 space-y-4 text-[15px] leading-relaxed max-w-xl">
               <p>
-                YoungVox is a national youth leadership movement committed to shaping confident, socially responsible young leaders across India. As a non-political and non-religious initiative, it focuses on youth development, civic awareness, and community wellbeing aligned closely with the UN Sustainable Development Goals (SDGs). Through a structured school chapter–based model, YoungVox conducts regular leadership activities, youth campaigns, and peer-driven initiatives that strengthen student voice and participation.  
+                YoungVox is a national youth leadership movement committed to shaping confident, socially responsible young leaders across India. As a non-political and non-religious initiative, it focuses on youth development, civic awareness, and community wellbeing aligned closely with the UN Sustainable Development Goals (SDGs). Through a structured school chapter–based model, YoungVox conducts regular leadership activities, youth campaigns, and peer-driven initiatives that strengthen student voice and participation.
 
 
               </p>
 
               <p>
-              The YoungVox School Chapter is completely free of cost, offering schools a ready-to-run platform that nurtures leadership, life skills, and active citizenship through hands-on experiences, collaborative projects, and meaningful engagement opportunities.
+                The YoungVox School Chapter is completely free of cost, offering schools a ready-to-run platform that nurtures leadership, life skills, and active citizenship through hands-on experiences, collaborative projects, and meaningful engagement opportunities.
               </p>
             </div>
 
@@ -68,9 +67,8 @@ const EmpoweringYouth = () => {
 
           {/* RIGHT CAROUSEL */}
           <div
-            className={`relative ${
-              isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'
-            }`}
+            className={`relative ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'
+              }`}
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[320px] sm:h-[360px] lg:h-[400px]">
               <div
