@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import smilesAndLearningImage from '../assets/smiles and learning all.png';
+import smilesAndLearningImage from '../assets/smiles and learning all.jpg';
 
 const EmpoweringYouth = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,16 +9,13 @@ const EmpoweringYouth = () => {
   const carouselImages = [
     {
       src: smilesAndLearningImage,
-      caption: 'Smiles and learning all around!',
+      // caption: 'Smiles and learning all around!',
     },
     {
       src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200',
       caption: 'True strength comes from asking for help',
     },
-    {
-      src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200',
-      caption: 'Building leaders of tomorrow',
-    },
+
   ];
 
   const nextSlide = () =>

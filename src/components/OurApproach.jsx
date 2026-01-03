@@ -1,6 +1,6 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import ourApproachImage from '../assets/Our approach.png';
+import ourApproachImage from '../assets/Our approach.jpg';
 import backgroundImage from '../assets/backgound.png';
 
 const OurApproach = () => {

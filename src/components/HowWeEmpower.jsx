@@ -1,9 +1,9 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import schoolChapterImg from '../assets/School Chapter.png';
-import mentorLeadersImg from '../assets/Mentor and wing leaders.png';
-import annualActivitiesImg from '../assets/Annual Activities.png';
-import measuringImpactImg from '../assets/Measuring Impact.png';
+import schoolChapterImg from '../assets/School Chapter.jpg';
+import mentorLeadersImg from '../assets/Mentor and wing leaders.jpg';
+import annualActivitiesImg from '../assets/Annual Activities.jpg';
+import measuringImpactImg from '../assets/Measuring Impact.jpg';
 import schoolsIcon from '../assets/icons/schools.png';
 import advisorsIcon from '../assets/icons/advisors.png';
 import ngosIcon from '../assets/icons/NGOS.png';
