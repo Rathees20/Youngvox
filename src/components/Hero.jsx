@@ -6,38 +6,34 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section id="home" className="w-full bg-white py-0 md:py-2">
-      <div className="relative mx-auto w-full max-w-[1600px] px-4">
+    <section id="home" className="w-full bg-white flex justify-center py-0">
+      <div className="relative w-full max-w-8xl px-0">
 
-        {/* Card with controlled height via aspect ratio */}
-        <div className="relative w-full rounded-2xl shadow-md overflow-hidden aspect-[9/5]">
+        {/* Full width hero image (within container) */}
+        <img
+          src={heroImage}
+          alt="YoungVox Hero"
+          className="w-full h-auto md:h-[700px] object-cover object-top rounded-xl shadow-sm"
+        />
 
-          {/* Image fills entire card */}
-          <img
-            src={heroImage}
-            alt="YoungVox Hero"
-            className="w-full h-full object-contain"
-          />
-
-          {/* Join Button */}
+        {/* Join Button - positioned absolutely to match the design */}
+        <div className="absolute top-4 right-1 md:top-[15%] md:right-[6%]">
           <button
             onClick={() => navigate('/joinyoung')}
             className="
-              absolute
-              top-3 right-0 sm:top-6 sm:right-5
               bg-[#A82228] text-white
-              px-2 py-0.5 sm:px-4 sm:py-2
-              text-[10px] sm:text-xs
+              px-4 py-2 md:px-6 md:py-3
+              text-[10px] sm:text-sm md:text-base
               rounded-full
-              font-semibold
+              font-bold
               shadow-lg
               hover:bg-[#8a1c22]
-              transition
+              hover:scale-105
+              transition-transform duration-200
             "
           >
             Join YoungVox
           </button>
-
         </div>
 
       </div>

@@ -9,7 +9,7 @@ import school6Logo from '../assets/school6.png';
 
 const PartnerSchools = () => {
     const [ref, isVisible] = useScrollAnimation({ once: true });
-    
+
     // Partner school logos
     const partnerSchools = [
         { id: 1, name: 'School 1', logo: school1Logo },
@@ -29,7 +29,7 @@ const PartnerSchools = () => {
                         <h2 className="text-3xl md:text-4xl font-bold text-black mb-2 md:mb-3">
                             Partner Schools
                         </h2>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-gray-600 text-base leading-relaxed">
                             Collaborating with leading educational institutions across India
                         </p>
                     </div>

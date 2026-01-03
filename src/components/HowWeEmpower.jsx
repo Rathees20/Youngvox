@@ -8,6 +8,8 @@ import schoolsIcon from '../assets/icons/schools.png';
 import advisorsIcon from '../assets/icons/advisors.png';
 import ngosIcon from '../assets/icons/NGOS.png';
 import companiesIcon from '../assets/icons/Companies.png';
+import howWeEmpowerBg from '../assets/how empower bacground image.png';
+import bePartChangeBg from '../assets/be part change background.png';
 
 const HowWeEmpower = () => {
     const empowermentCards = [
@@ -79,16 +81,22 @@ const HowWeEmpower = () => {
     const [headerRef, headerVisible] = useScrollAnimation({ once: true });
     const [cardsRef, cardsVisible] = useScrollAnimation({ once: true });
     const [partnersRef, partnersVisible] = useScrollAnimation({ once: true });
-    
+
     return (
-        <section className="bg-[#FFF5F5] py-12 md:py-16 lg:py-20">
+        <section
+            className="py-12 md:py-16 lg:py-20 bg-contain bg-center bg-no-repeat"
+            style={{
+                backgroundColor: '#FF8E5114',
+                backgroundImage: `url(${howWeEmpowerBg})`
+            }}
+        >
             <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
                 {/* Section Header */}
                 <div ref={headerRef} className={`text-center mb-10 md:mb-12 ${headerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-3">
                         How YoungVox Empowers School
                     </h2>
-                    <p className="text-gray-700 text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
                         Inspiring students to grow as leaders, address real-time issues, and drive change within and beyond their schools
                     </p>
                 </div>
@@ -115,7 +123,7 @@ const HowWeEmpower = () => {
                                 <h3 className="text-sm md:text-base lg:text-lg font-bold mb-2 leading-tight whitespace-pre-line">
                                     {card.title}
                                 </h3>
-                                <p className={`text-xs md:text-sm leading-relaxed ${card.textColor === 'text-white' ? 'text-white/95' : 'text-gray-700'}`}>
+                                <p className={`text-sm md:text-base leading-relaxed ${card.textColor === 'text-white' ? 'text-white/95' : 'text-gray-700'}`}>
                                     {card.description}
                                 </p>
                             </div>
@@ -131,7 +139,7 @@ const HowWeEmpower = () => {
                             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-2 md:mb-3">
                                 Be Part of the Change
                             </h2>
-                            <p className="text-gray-700 text-sm md:text-base max-w-md leading-relaxed">
+                            <p className="text-gray-700 text-base md:text-lg max-w-md leading-relaxed">
                                 A transformative platform that nurtures leadership, voice, and real-world impact in every student
                             </p>
                         </div>
@@ -147,13 +155,14 @@ const HowWeEmpower = () => {
                             // For 4 cards: center is between 1 and 2, so order: 1, 2, 0, 3
                             const centerOutwardOrder = [1, 2, 0, 3]; // Cards animate from center outward
                             const animationDelay = centerOutwardOrder.indexOf(index) * 0.15;
-                            
+
                             return (
                                 <div
                                     key={card.id}
-                                    className={`bg-white rounded-xl md:rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 hover-lift ${partnersVisible ? 'animate-scale-in-from-center' : 'opacity-0'}`}
-                                    style={{ 
-                                        animationDelay: partnersVisible ? `${animationDelay}s` : '0s'
+                                    className={`rounded-xl md:rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 hover-lift bg-cover bg-center bg-no-repeat ${partnersVisible ? 'animate-scale-in-from-center' : 'opacity-0'}`}
+                                    style={{
+                                        animationDelay: partnersVisible ? `${animationDelay}s` : '0s',
+                                        backgroundImage: `url(${bePartChangeBg})`
                                     }}
                                 >
                                     {/* Icon */}
@@ -169,7 +178,7 @@ const HowWeEmpower = () => {
                                         {card.title}
                                     </h3>
                                     {/* Description */}
-                                    <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                                    <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                                         {card.description}
                                     </p>
                                 </div>

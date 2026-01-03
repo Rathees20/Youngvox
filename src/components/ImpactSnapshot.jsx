@@ -63,7 +63,7 @@ const ImpactSnapshot = () => {
                     <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-3">
                         Impact Snapshot
                     </h2>
-                    <p className="text-white/90 text-xs md:text-sm max-w-2xl mx-auto leading-relaxed px-4">
+                    <p className="text-white/90 text-sm md:text-base max-w-2xl mx-auto leading-relaxed px-4">
                         Our reach and impact across India, empowering the next generation of leaders with continued growth expected in the subsequent years
                     </p>
                 </div>
@@ -88,12 +88,12 @@ const ImpactSnapshot = () => {
                                 >
                                     {/* Circle */}
                                     <div className={`w-[200px] h-[200px] rounded-full border-[2px] border-white/70 flex flex-col items-center justify-center bg-transparent ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
-                                         style={{ animationDelay: `${index * 200}ms` }}>
+                                        style={{ animationDelay: `${index * 200}ms` }}>
                                         <div className="text-center">
                                             <div className="text-4xl font-bold text-white mb-1">
                                                 {formatNumber(currentCount)}{stat.suffix}
                                             </div>
-                                            <div className="text-xs text-white/90 font-medium whitespace-pre-line leading-tight px-2">
+                                            <div className="text-sm md:text-base text-white/90 font-medium whitespace-pre-line leading-tight px-2">
                                                 {stat.label}
                                             </div>
                                         </div>
@@ -111,12 +111,12 @@ const ImpactSnapshot = () => {
                         return (
                             <div key={stat.id} className="flex justify-center">
                                 <div className={`w-[140px] h-[140px] rounded-full border-[2px] border-white/70 flex flex-col items-center justify-center bg-transparent ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
-                                     style={{ animationDelay: `${index * 200}ms` }}>
+                                    style={{ animationDelay: `${index * 200}ms` }}>
                                     <div className="text-center">
                                         <div className="text-2xl font-bold text-white mb-1">
                                             {formatNumber(currentCount)}{stat.suffix}
                                         </div>
-                                        <div className="text-[10px] text-white/90 font-medium whitespace-pre-line leading-tight px-2">
+                                        <div className="text-xs sm:text-sm text-white/90 font-medium whitespace-pre-line leading-tight px-2">
                                             {stat.label}
                                         </div>
                                     </div>
