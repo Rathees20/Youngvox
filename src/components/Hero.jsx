@@ -22,8 +22,8 @@ const Hero = () => {
             onClick={() => navigate('/joinyoung')}
             className="
               bg-[#A82228] text-white
-              px-4 py-2 md:px-6 md:py-3
-              text-[10px] sm:text-sm md:text-base
+              px-2 py-1 md:px-6 md:py-3
+              text-[8px] sm:text-sm md:text-base
               rounded-full
               font-bold
               shadow-lg
