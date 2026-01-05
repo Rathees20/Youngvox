@@ -106,11 +106,11 @@ const AboutPage = () => {
       {/* Our Vision Section */}
       <section ref={visionRef} className="py-6 sm:py-20 lg:py-24">
         <div className={`max-w-4xl mx-auto px-3 sm:px-6 text-center ${visionVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-          <h1 className="text-lg sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-3 sm:mb-8 leading-tight sm:leading-snug">
+          <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-3 sm:mb-8">
             Our Vision
           </h1>
 
-          <p className="text-[11px] sm:text-sm lg:text-base text-gray-700 leading-snug sm:leading-relaxed max-w-3xl mx-auto px-0.5 sm:px-0">
+          <p className="text-lg text-gray-700 leading-snug sm:leading-relaxed max-w-3xl mx-auto px-0.5 sm:px-0">
             To build a generation of empowered youth leaders who are informed,
             compassionate, and equipped to create a sustainable, equitable,
             and inclusive world
@@ -146,11 +146,11 @@ const AboutPage = () => {
       {/* Our Mission Section */}
       <section className="py-6 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-3 sm:px-6 text-center">
-          <h1 className="text-lg sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-3 sm:mb-8 leading-tight sm:leading-snug">
+          <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-3 sm:mb-8">
             Our Mission
           </h1>
 
-          <p className="text-[11px] sm:text-sm lg:text-base text-gray-700 leading-snug sm:leading-relaxed max-w-3xl mx-auto px-0.5 sm:px-0 mb-8 sm:mb-12">
+          <p className="text-lg text-gray-700 leading-snug sm:leading-relaxed max-w-3xl mx-auto px-0.5 sm:px-0 mb-8 sm:mb-12">
             To partner with schools, institutions, and organizations in nurturing student voice and leadership through education, empowerment, and equity.
           </p>
 
@@ -210,24 +210,24 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
             {/* Left Column - Text Content */}
             <div className="order-2 lg:order-1 lg:max-w-[420px] xl:max-w-[500px]">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-3xl font-semibold text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-[1.2] sm:leading-tight">
+              <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-4 sm:mb-6 lg:mb-8">
                 Empowering India's Youth to Lead, Thrive, and Transform
               </h2>
 
-              <div className="space-y-4 sm:space-y-5 lg:space-y-5 text-gray-700 text-sm sm:text-base lg:text-[15px] xl:text-[16px] leading-[1.6] sm:leading-[1.65]">
-                <p className="text-xs sm:text-sm lg:text-base">
+              <div className="space-y-4 sm:space-y-5 lg:space-y-5 text-gray-700 text-lg leading-[1.6] sm:leading-[1.65]">
+                <p>
                   YoungVox was born out of a vision to create empowered, emotionally strong, and socially responsible young leaders across India.
                 </p>
 
-                <p className="text-xs sm:text-sm lg:text-base">
+                <p>
                   India has one of the world's largest youth populations—253 million adolescents, with one in every five individuals aged between 10 and 19 (UNICEF, 2023). Yet, access to holistic education, leadership development, and emotional wellbeing support remains limited. While SDG 4 (Quality Education) and NEP 2020 strongly emphasize life-skill-oriented learning, most school systems continue to remain heavily academic-centric. This gap highlights the urgent need for a structured, school-based ecosystem that nurtures both competence and character.
                 </p>
 
-                <p className="text-xs sm:text-sm lg:text-base">
+                <p>
                   YoungVox was created to bridge this gap. Through its unique 8-Wing Chapter Model, YoungVox provides students with opportunities to discover their voice, develop leadership abilities, strengthen emotional resilience, and contribute meaningfully to their communities.
                 </p>
 
-                <p className="text-xs sm:text-sm lg:text-base">
+                <p>
                   YoungVox is redefining what youth development looks like in Indian schools — creating a generation that is not only academically capable, but also emotionally aware, socially responsible, and future-ready
                 </p>
               </div>
@@ -248,19 +248,19 @@ const AboutPage = () => {
       </section>
 
       {/* Our Team Section */}
-      <section ref={teamRef} className="py-6 sm:py-16 lg:py-24 bg-pink-50 lg:overflow-visible">
+      <section ref={teamRef} className="bg-pink-50 lg:overflow-visible">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 lg:overflow-visible">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:overflow-visible">
             {/* Left Column - Text Content */}
             <div className={`lg:max-w-md ${teamVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-[#A82228] flex-shrink-0"></div>
-                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-black">
+                <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
                   Our Team
                 </h2>
               </div>
 
-              <p className="text-sm sm:text-base text-black leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 Our leadership group brings together experienced professionals across programs, training, and operations, united in their commitment to shaping a generation of strong, confident, and capable young leaders
               </p>
             </div>
@@ -286,10 +286,10 @@ const AboutPage = () => {
                         </div>
                         {/* Red Background Section */}
                         <div className="bg-[#A82228] p-4 sm:p-5 mt-0">
-                          <h3 className="text-white text-base sm:text-lg font-bold mb-1">
+                          <h3 className="text-white text-xl font-bold mb-1">
                             {member.name}
                           </h3>
-                          <p className="text-white text-sm sm:text-base mb-3">
+                          <p className="text-white text-lg mb-3">
                             {member.title}
                           </p>
                           <button className="bg-white text-[#A82228] px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">
@@ -330,19 +330,19 @@ const AboutPage = () => {
       </section>
 
       {/* Our Advisors Section */}
-      <section ref={advisorsRef} className="py-6 sm:py-16 lg:py-24 bg-pink-50 lg:overflow-visible">
+      <section ref={advisorsRef} className="bg-pink-50 lg:overflow-visible">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 lg:overflow-visible">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:overflow-visible">
             {/* Left Column - Text Content */}
             <div className={`lg:max-w-md ${advisorsVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-[#A82228] flex-shrink-0"></div>
-                <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-black">
+                <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
                   Our Advisors
                 </h2>
               </div>
 
-              <p className="text-sm sm:text-base text-black leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 Our leadership group brings together experienced professionals across programs, training, and operations, united in their commitment to shaping a generation of strong, confident, and capable young leaders
               </p>
             </div>
@@ -368,10 +368,10 @@ const AboutPage = () => {
                         </div>
                         {/* Red Background Section */}
                         <div className="bg-[#A82228] p-4 sm:p-5 mt-0">
-                          <h3 className="text-white text-base sm:text-lg font-bold mb-1">
+                          <h3 className="text-white text-xl font-bold mb-1">
                             {advisor.name}
                           </h3>
-                          <p className="text-white text-sm sm:text-base mb-3">
+                          <p className="text-white text-lg mb-3">
                             {advisor.title}
                           </p>
                           <button className="bg-white text-[#A82228] px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">
@@ -414,7 +414,7 @@ const AboutPage = () => {
       {/* Our CSR Partners Section */}
       <section className="py-6 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className="text-xl sm:text-3xl lg:text-4xl font-semibold text-black text-center mb-6 sm:mb-10">
+          <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black text-center mb-6 sm:mb-10">
             Our CSR Partners
           </h2>
 
@@ -458,7 +458,7 @@ const AboutPage = () => {
       {/* Connect. Collaborate. Create Future Leaders Section */}
       <section className="py-6 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-black text-center mb-6 sm:mb-10">
+          <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black text-center mb-6 sm:mb-10">
             Connect. Collaborate. Create Future Leaders.
           </h2>
 

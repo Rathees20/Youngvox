@@ -35,25 +35,24 @@ const JoinYoung = () => {
           />
 
           {/* Overlay Content - Right aligned on all screens */}
-         <div
-  className={`absolute inset-0 flex items-center z-20 ${
-    bannerVisible ? 'animate-fade-in-right' : 'opacity-0'
-  }`}
->
-  <div
-    className="
+          <div
+            className={`absolute inset-0 flex items-center z-20 ${bannerVisible ? 'animate-fade-in-right' : 'opacity-0'
+              }`}
+          >
+            <div
+              className="
       ml-6 sm:ml-auto
       mr-6 sm:mr-[6%]
       max-w-[95%] sm:max-w-lg md:max-w-xl lg:max-w-2xl
       text-left
       space-y-2 sm:space-y-5 md:space-y-6
     "
-  >
+            >
 
               <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-snug sm:leading-tight drop-shadow-lg">
                 Join YoungVox
               </h1>
-              <p className="text-[11px] sm:text-sm md:text-base lg:text-lg text-black leading-normal sm:leading-relaxed drop-shadow-md">
+              <p className="text-lg text-black leading-normal sm:leading-relaxed drop-shadow-md">
                 At YoungVox, we're building a community of passionate, driven individuals committed to empowering youth and creating meaningful impact. We provide a collaborative environment where ideas flourish, and your efforts directly contribute to shaping the next generation of responsible, capable leaders.
               </p>
               <div className="pt-2 sm:pt-3">
@@ -77,7 +76,7 @@ const JoinYoung = () => {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Join as a School
               </h2>
-              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+              <p className="text-gray-700 text-lg leading-relaxed">
                 Become a YoungVox School Chapter and empower your students to lead with purpose. Students build leadership skills, run campaigns in their own school, and take part in community initiatives that create real, lasting impact. And the best part? It's completely free of cost. By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers.
               </p>
               <div className="pt-2">
@@ -119,7 +118,7 @@ const JoinYoung = () => {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Volunteer or Intern With Us
               </h2>
-              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+              <p className="text-gray-700 text-lg leading-relaxed">
                 Our volunteers and interns play a vital role in YoungVox, working closely with students and communities to implement programs and initiatives that inspire real change. From organizing school and community campaigns to offering guidance, creativity, and mentorship, every contribution strengthens our mission. Your time and skills can empower young leaders.
               </p>
               <div className="pt-2">
@@ -145,7 +144,7 @@ const JoinYoung = () => {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Corporate Collaboration
               </h2>
-              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+              <p className="text-gray-700 text-lg leading-relaxed">
                 Companies can partner with YoungVox by supporting initiatives, campaigns, or leadership programs that align with their CSR priorities. From education and skill-building to civic engagement and environmental awareness, your contribution helps strengthen youth leadership, empower student action, and build the next generation of responsible changemakers.
               </p>
               <div className="pt-2">
@@ -187,7 +186,7 @@ const JoinYoung = () => {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Advisors
               </h2>
-              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+              <p className="text-gray-700 text-lg leading-relaxed">
                 We collaborate with education experts, youth mentors, and thought leaders who share our commitment to nurturing the next generation of responsible leaders. Partner with us to provide guidance, shape programs, and support student-led initiatives that create real community impact.
               </p>
               <div className="pt-2">
@@ -213,7 +212,7 @@ const JoinYoung = () => {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Implementation Partners
               </h2>
-              <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+              <p className="text-gray-700 text-lg leading-relaxed">
                 Are you an NGO, school, or community organization working with youth on the ground? Partner with YoungVox to combine resources, share expertise, and amplify the impact of youth campaigns and leadership programs. Every partnership begins with a conversation. Let's explore how we can work together to empower young leaders and drive meaningful change.
               </p>
               <div className="pt-2">

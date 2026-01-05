@@ -1,19 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import heroImage from '../assets/Hero page.png';
+import heroImage from '../assets/Banner Hero image.jpg';
 
 const Hero = () => {
   const navigate = useNavigate();
 
   return (
     <section id="home" className="w-full bg-white flex justify-center py-0">
-      <div className="relative w-full max-w-8xl px-0">
+      <div className="relative w-full px-0">
 
         {/* Full width hero image (within container) */}
         <img
           src={heroImage}
           alt="YoungVox Hero"
-          className="w-full h-auto md:h-[700px] object-cover object-top rounded-xl shadow-sm"
+          className="w-full h-auto md:h-[550px] object-scale-down md:object-fill object-top shadow-sm"
         />
 
         {/* Join Button - positioned absolutely to match the design */}

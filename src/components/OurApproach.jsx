@@ -9,7 +9,7 @@ const OurApproach = () => {
     return (
         <section
             ref={ref}
-            className="py-12 sm:py-16 lg:py-24 bg-center bg-no-repeat"
+            className="bg-center bg-no-repeat"
             style={{
                 backgroundImage: `url(${backgroundImage}), linear-gradient(180deg, #FFF6E3 0%, #FFFFFF 100%)`,
                 backgroundSize: 'contain, cover'
@@ -19,11 +19,11 @@ const OurApproach = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
                     {/* Left Column - Text Content */}
                     <div className={`space-y-6 order-2 lg:order-1 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A1A]">
+                        <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-[#1A1A1A]">
                             Our Approach
                         </h2>
 
-                        <div className="space-y-6 text-[#4A4A4A] leading-relaxed text-lg sm:text-xl">
+                        <div className="space-y-6 text-[#4A4A4A] leading-relaxed text-lg">
                             <p>
                                 We build strong youth leaders through a collaborative and inclusive model. By
                                 bringing together senior advisors, purpose-driven companies, NGOs, and

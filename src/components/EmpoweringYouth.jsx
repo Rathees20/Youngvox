@@ -14,7 +14,7 @@ const EmpoweringYouth = () => {
     },
     {
       src: youthEmpowerSecondImg,
-      caption: 'Building leaders of tomorrow',
+      
     },
    
   ];

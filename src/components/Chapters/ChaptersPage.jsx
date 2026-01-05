@@ -48,24 +48,23 @@ const ChaptersPage = () => {
 
         {/* Text Overlay */}
         <div
-  className={`absolute inset-0 flex items-center z-20 ${
-    heroVisible ? 'animate-fade-in-right' : 'opacity-0'
-  }`}
->
-  <div
-    className="
+          className={`absolute inset-0 flex items-center z-20 ${heroVisible ? 'animate-fade-in-right' : 'opacity-0'
+            }`}
+        >
+          <div
+            className="
       ml-auto
       mr-[6%]
       max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl
       text-left
       space-y-4 sm:space-y-5 md:space-y-6
     "
-  >
+          >
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-lg">
+            <h1 className="text-[34px] lg:text-[42px] font-extrabold text-white leading-tight drop-shadow-lg">
               YoungVox School Chapters
             </h1>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white leading-relaxed drop-shadow-md">
+            <p className="text-lg text-white leading-relaxed drop-shadow-md">
               Join our network of schools committed to empowering young leaders. Discover how your school can become part of the YoungVox movement.
             </p>
             <div className="pt-2 sm:pt-3 md:pt-4">
@@ -132,7 +131,7 @@ const ChaptersPage = () => {
       {/* School Chapters Listing */}
       <section ref={resultsRef} className="py-6 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className={`text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-6 sm:mb-8 ${resultsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+          <h2 className={`text-[30px] lg:text-[36px] font-bold text-black mb-6 sm:mb-8 ${resultsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
             Showing Result 1-30
           </h2>
 
@@ -245,8 +244,8 @@ const ChaptersPage = () => {
                     key={page}
                     onClick={() => setCurrentPage(page)}
                     className={`${isActive
-                        ? 'w-10 h-10 rounded-full bg-[#A82228] text-white shadow-lg hover:shadow-xl'
-                        : 'w-10 h-10 rounded-full text-[#A82228]'
+                      ? 'w-10 h-10 rounded-full bg-[#A82228] text-white shadow-lg hover:shadow-xl'
+                      : 'w-10 h-10 rounded-full text-[#A82228]'
                       } flex items-center justify-center transition-colors font-semibold hover:bg-[#8a1c22] hover:text-white`}
                   >
                     {page}

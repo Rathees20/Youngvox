@@ -12,11 +12,11 @@ export default function NewsletterSection() {
     <section ref={ref} className="w-full bg-[#A82228] relative overflow-hidden">
       {/* TOP CONTENT */}
       <div className="max-w-4xl mx-auto text-center pt-10 sm:pt-14 pb-6 px-4">
-        <h1 className="text-white font-bold text-[22px] sm:text-[32px] md:text-[42px] mb-2">
+        <h1 className="text-white text-[34px] leading-tight lg:text-[42px] font-extrabold mb-2">
           Subscribe to Our Free Monthly Newsletter
         </h1>
 
-        <p className="text-white text-[14px] sm:text-base md:text-lg mb-6 sm:mb-8">
+        <p className="text-white text-lg mb-6 sm:mb-8">
           Stay Updated on YoungVox Activities, Events, and Student Initiatives
         </p>
 

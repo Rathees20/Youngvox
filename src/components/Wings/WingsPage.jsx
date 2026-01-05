@@ -57,65 +57,65 @@ const WingsPage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="py-12 sm:py-16 lg:py-24 bg-white">
+      <section ref={heroRef} className="pt-12 pb-6 sm:pt-16 sm:pb-8 lg:pt-24 lg:pb-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8">
             {/* Left - Title */}
             <div className={`${heroVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-6">
+              <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-6">
                 YOUNGVOX - WINGS & LEADERSHIP
               </h1>
             </div>
-            
+
             {/* Right - Description */}
             <div className={`space-y-4 ${heroVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 YoungVox nurtures student leadership through a structured School Chapter model powered by four dynamic wings. Each wing is led by students, supported by a core leadership team and teacher mentors, ensuring meaningful engagement, collaboration, and real-world learning.
               </p>
-              <button className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl">
+              <button className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl">
                 Join Now
               </button>
             </div>
           </div>
-          
+
           {/* Hero Image */}
           <div className={`w-full ${heroVisible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
             <img
               src={wingBanner}
               alt="YoungVox students"
-              className="w-full h-auto object-cover rounded-lg hover-scale transition-transform duration-300"
+              className="w-full h-auto object-cover rounded-2xl hover-scale transition-transform duration-300"
             />
           </div>
         </div>
       </section>
 
       {/* Leadership Structure Section */}
-      <section ref={leadershipRef} className="py-12 sm:py-16 lg:py-24 bg-pink-50">
+      <section ref={leadershipRef} className="py-6 sm:py-8 lg:py-12" style={{ backgroundColor: '#FFF6E3' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-12 ${leadershipVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
+          <div className={`text-center mb-10 ${leadershipVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+            <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-2">
               Leadership Structure
             </h2>
-            <p className="text-lg sm:text-xl text-black">
-              A collaborative model where students lead, learn, and grow together.
+            <p className="text-xs sm:text-sm font-bold text-gray-500 tracking-widest uppercase">
+              A COLLABORATIVE MODEL WHERE STUDENTS LEAD, LEARN, AND GROW TOGETHER
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Left - Teacher Mentors (Square Card with decreased width) */}
-            <div className={`bg-white rounded-2xl p-6 sm:p-8 shadow-sm relative overflow-visible min-h-[280px] w-full max-w-md mx-auto lg:mx-0 lg:ml-12 ${leadershipVisible ? 'animate-fade-in-left animate-delay-200' : 'opacity-0'}`}>
+            <div className={`bg-white rounded-2xl p-6 sm:p-8 shadow-sm relative overflow-visible min-h-[280px] w-full max-w-sm mx-auto lg:mx-0 lg:ml-8 ${leadershipVisible ? 'animate-fade-in-left animate-delay-200' : 'opacity-0'}`}>
               <div className="flex flex-col items-center h-full justify-center">
-                {/* Icon - Container.png without red circle */}
-                <div className="w-16 h-16 flex items-center justify-center mb-4">
+                {/* Icon */}
+                <div className="w-16 h-16 flex items-center justify-center mb-6">
                   <img src={containerIcon} alt="Teacher Mentors" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-black text-center mb-3">Teacher Mentors (2)</h3>
-                <p className="text-base text-black text-center">
+                <p className="text-base text-gray-600 text-center leading-relaxed">
                   Two teachers guide, support, and ensure smooth functioning of student-led initiatives.
                 </p>
               </div>
-              {/* Red horizontal line below - increased thickness */}
-              <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
+              {/* Red horizontal line below */}
+              <div className="absolute bottom-0 left-0 right-0 h-[6px] bg-[#A82228] rounded-b-2xl"></div>
             </div>
 
             {/* Right - Student Leadership */}
@@ -124,178 +124,120 @@ const WingsPage = () => {
               <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 {/* Chapter Chief */}
                 <div className="bg-white rounded-2xl p-3 sm:p-4 md:p-6 shadow-sm text-center relative overflow-visible">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center p-2 sm:p-3">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center p-2 sm:p-3 shadow-md">
                     <img src={maskGroupIcon} alt="Chapter Chief" className="w-full h-full object-contain" />
                   </div>
                   <h4 className="text-xs sm:text-sm md:text-base font-bold text-black">Chapter Chief</h4>
-                  {/* Red horizontal line below - increased thickness */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-[6px] bg-[#A82228] rounded-b-2xl"></div>
                 </div>
-                
+
                 {/* Treasurer - Swapped icon */}
                 <div className="bg-white rounded-2xl p-3 sm:p-4 md:p-6 shadow-sm text-center relative overflow-visible">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center p-2 sm:p-3">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center p-2 sm:p-3 shadow-md">
                     <img src={maskGroup2Icon} alt="Treasurer" className="w-full h-full object-contain" />
                   </div>
                   <h4 className="text-xs sm:text-sm md:text-base font-bold text-black">Treasurer</h4>
-                  {/* Red horizontal line below - increased thickness */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-[6px] bg-[#A82228] rounded-b-2xl"></div>
                 </div>
-                
+
                 {/* Secretary - Swapped icon */}
                 <div className="bg-white rounded-2xl p-3 sm:p-4 md:p-6 shadow-sm text-center relative overflow-visible">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center p-2 sm:p-3">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center p-2 sm:p-3 shadow-md">
                     <img src={maskGroup1Icon} alt="Secretary" className="w-full h-full object-contain" />
                   </div>
                   <h4 className="text-xs sm:text-sm md:text-base font-bold text-black">Secretary</h4>
-                  {/* Red horizontal line below - increased thickness */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-[6px] bg-[#A82228] rounded-b-2xl"></div>
                 </div>
               </div>
-              
+
               {/* Bottom - 4 Wing Leaders Card (Horizontal Layout) */}
               <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm relative overflow-visible">
-                {/* Horizontal layout: Icon on left, text on right */}
-                <div className="flex items-start gap-4">
+                <div className="flex items-center gap-6">
                   <div className="w-16 h-16 flex items-center justify-center flex-shrink-0">
                     <img src={container01Icon} alt="4 Wing Leaders" className="w-full h-full object-contain" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl sm:text-2xl font-bold text-black mb-2">4 Wing Leaders</h3>
-                    <p className="text-base text-black">
+                    <h3 className="text-xl sm:text-2xl font-bold text-black mb-1">4 Wing Leaders</h3>
+                    <p className="text-base text-gray-600">
                       Each wing led by a Wing Leader with an active student team passionate about that domain.
                     </p>
                   </div>
                 </div>
-                {/* Red horizontal line below - increased thickness */}
-                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#A82228] rounded-b-full" style={{ transform: 'translateY(50%)' }}></div>
+                <div className="absolute bottom-0 left-0 right-0 h-[6px] bg-[#A82228] rounded-b-2xl"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Academic & Career Guidance Wing */}
-      <section ref={wing1Ref} className="py-12 sm:py-16 lg:py-24 bg-white">
+      {/* Wings Grid Section */}
+      <section className="py-6 sm:py-8 lg:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left - Content */}
-            <div className={`space-y-4 ${wing1Visible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              {/* Light pink tag */}
-              <div className="inline-block bg-pink-200 rounded-lg px-4 py-2 mb-4">
-                <span className="text-black font-medium">Student to Professional</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Academic & Career Guidance Wing */}
+            <div ref={wing1Ref} className={`p-6 lg:p-10 rounded-[2rem] bg-[#FFF6E3] shadow-sm transition-all hover:shadow-md ${wing1Visible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+              <div className="relative mb-6">
+                <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-1.5 shadow-sm">
+                  <span className="text-[10px] sm:text-xs font-bold text-gray-600 uppercase tracking-wider">Student to Professional</span>
+                </div>
+                <div className="aspect-[4/3] sm:aspect-video overflow-hidden rounded-2xl">
+                  <img src={wing1Image} alt="Academic & Career Guidance" className="w-full h-full object-cover" />
+                </div>
               </div>
-              
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
-                Academic & Career<br />Guidance Wing
-              </h2>
-              <p className="text-sm sm:text-base text-[#A82228] italic">|SDG 4 - Quality Education|</p>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
+              <h2 className="text-xl sm:text-2xl font-bold text-black mb-2">Academic & Career Guidance Wing</h2>
+              <p className="text-sm text-gray-600 mb-4 font-medium italic">| SDG 4 – Quality Education |</p>
+              <p className="text-lg text-gray-700 leading-relaxed font-medium">
                 Helps students discover academic interests, plan career paths, and access learning resources.
               </p>
             </div>
-            
-            {/* Right - Image */}
-            <div className={`${wing1Visible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <img
-                src={wing1Image}
-                alt="Academic & Career Guidance"
-                className="w-full h-auto rounded-lg shadow-lg hover-scale transition-transform duration-300"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Student Wellbeing Wing */}
-      <section ref={wing2Ref} className="py-12 sm:py-16 lg:py-24 bg-pink-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left - Image */}
-            <div className={`${wing2Visible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <img
-                src={wing2Image}
-                alt="Student Wellbeing"
-                className="w-full h-auto rounded-lg shadow-lg hover-scale transition-transform duration-300"
-              />
-            </div>
-            
-            {/* Right - Content */}
-            <div className={`space-y-4 ${wing2Visible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              {/* Light pink tag */}
-              <div className="inline-block bg-pink-200 rounded-lg px-4 py-2 mb-4">
-                <span className="text-black font-medium">Digital Detox</span>
+            {/* Student Wellbeing Wing */}
+            <div ref={wing2Ref} className={`p-6 lg:p-10 rounded-[2rem] bg-[#A82228] shadow-sm transition-all hover:shadow-md ${wing2Visible ? 'animate-fade-in-up animate-delay-100' : 'opacity-0'}`}>
+              <div className="relative mb-6">
+                <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-1.5 shadow-sm">
+                  <span className="text-[10px] sm:text-xs font-bold text-gray-600 uppercase tracking-wider">Digital Detox</span>
+                </div>
+                <div className="aspect-[4/3] sm:aspect-video overflow-hidden rounded-2xl">
+                  <img src={wing2Image} alt="Student Wellbeing" className="w-full h-full object-cover" />
+                </div>
               </div>
-              
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
-                Student Wellbeing Wing
-              </h2>
-              <p className="text-sm sm:text-base text-[#A82228] italic">|SDG 3 - Good Health & Well-being|</p>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">Student Wellbeing Wing</h2>
+              <p className="text-sm text-white/80 mb-4 font-medium italic">| SDG 3 – Good Health & Well-being |</p>
+              <p className="text-lg text-white/90 leading-relaxed font-medium">
                 Promotes emotional, mental, and physical wellbeing through psychoeducation, awareness sessions, and healthy habit-building activities.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Child Rights & Social Justice Wing */}
-      <section ref={wing3Ref} className="py-12 sm:py-16 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left - Content */}
-            <div className={`space-y-4 ${wing3Visible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              {/* Light pink tag */}
-              <div className="inline-block bg-pink-200 rounded-lg px-4 py-2 mb-4">
-                <span className="text-black font-medium">Speak Up</span>
+            {/* Child Rights & Social Justice Wing */}
+            <div ref={wing3Ref} className={`p-6 lg:p-10 rounded-[2rem] bg-[#A82228] shadow-sm transition-all hover:shadow-md ${wing3Visible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
+              <div className="relative mb-6">
+                <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-1.5 shadow-sm">
+                  <span className="text-[10px] sm:text-xs font-bold text-gray-600 uppercase tracking-wider">Speak Up</span>
+                </div>
+                <div className="aspect-[4/3] sm:aspect-video overflow-hidden rounded-2xl">
+                  <img src={wing3Image} alt="Child Rights & Social Justice" className="w-full h-full object-cover" />
+                </div>
               </div>
-              
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
-                Child Rights & Social Justice Wing
-              </h2>
-              <p className="text-sm sm:text-base text-[#A82228] italic">| SDG 16 – Peace, Justice & Strong Institutions|</p>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">Child Rights & Social Justice Wing</h2>
+              <p className="text-sm text-white/80 mb-4 font-medium italic">| SDG 16 – Peace, Justice & Strong Institutions |</p>
+              <p className="text-lg text-white/90 leading-relaxed font-medium">
                 Builds awareness on children's rights, protection, equality, safety, and safety through campaigns and forums.
               </p>
             </div>
-            
-            {/* Right - Image */}
-            <div className={`${wing3Visible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <img
-                src={wing3Image}
-                alt="Child Rights & Social Justice"
-                className="w-full h-auto rounded-lg shadow-lg hover-scale transition-transform duration-300"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Community Outreach & Service Wing */}
-      <section ref={wing4Ref} className="py-12 sm:py-16 lg:py-24 bg-pink-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left - Image */}
-            <div className={`${wing4Visible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <img
-                src={wing4Image}
-                alt="Community Outreach & Service"
-                className="w-full h-auto rounded-lg shadow-lg hover-scale transition-transform duration-300"
-              />
-            </div>
-            
-            {/* Right - Content */}
-            <div className={`space-y-4 ${wing4Visible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              {/* Light pink tag */}
-              <div className="inline-block bg-pink-200 rounded-lg px-4 py-2 mb-4">
-                <span className="text-black font-medium">Blue Earth, Clean Earth</span>
+            {/* Community Outreach & Service Wing */}
+            <div ref={wing4Ref} className={`p-6 lg:p-10 rounded-[2rem] bg-[#FFF6E3] shadow-sm transition-all hover:shadow-md ${wing4Visible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
+              <div className="relative mb-6">
+                <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-1.5 shadow-sm">
+                  <span className="text-[10px] sm:text-xs font-bold text-gray-600 uppercase tracking-wider">Blue Earth, Clean Earth</span>
+                </div>
+                <div className="aspect-[4/3] sm:aspect-video overflow-hidden rounded-2xl">
+                  <img src={wing4Image} alt="Community Outreach & Service" className="w-full h-full object-cover" />
+                </div>
               </div>
-              
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
-                Community Outreach & Service Wing
-              </h2>
-              <p className="text-sm sm:text-base text-[#A82228] italic">| SDG 14 - Life Below Water|</p>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
+              <h2 className="text-xl sm:text-2xl font-bold text-black mb-2">Community Outreach & Service Wing</h2>
+              <p className="text-sm text-gray-600 mb-4 font-medium italic">| SDG 14 – Life Below Water |</p>
+              <p className="text-lg text-gray-700 leading-relaxed font-medium">
                 Leads eco-friendly initiatives, environmental awareness drives, and community service to promote sustainability and civic responsibility.
               </p>
             </div>
@@ -304,69 +246,72 @@ const WingsPage = () => {
       </section>
 
       {/* How it works Section */}
-      <section ref={howItWorksRef} className="py-12 sm:py-16 lg:py-24 bg-pink-50">
+      <section ref={howItWorksRef} className="py-6 sm:py-8 lg:py-12" style={{ backgroundColor: '#FFF6E3' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left - Content */}
             <div className={`space-y-6 ${howItWorksVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-6">
+              <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-6">
                 How it works
               </h2>
-              
+
               {/* Step Indicators with Horizontal Line */}
-              <div className="relative mb-6">
-                {/* Horizontal Gray Line - positioned between numbers and dots */}
-                <div className="absolute top-8 left-0 right-0 h-0.5 bg-gray-300 z-0"></div>
-                
+              <div className="relative mb-8 py-2">
+                {/* Horizontal Gray Line */}
+                <div className="absolute top-[4.5rem] left-0 right-0 h-[1px] bg-gray-300 z-0"></div>
+
                 {/* Step Numbers and Dots */}
                 <div className="relative flex items-center justify-between w-full">
                   {[1, 2, 3, 4].map((step) => (
                     <div key={step} className="flex flex-col items-center relative z-10 flex-1">
-                      {/* Number - Plain text, not in circle */}
-                      <div className={`text-lg mb-3 transition-all duration-300 ${
-                        currentStep === step 
-                          ? 'font-bold text-black scale-110' 
-                          : 'font-normal text-gray-500'
-                      }`}>
+                      {/* Number */}
+                      <div className={`text-sm mb-4 transition-all duration-300 ${currentStep === step
+                        ? 'font-bold text-black'
+                        : 'font-medium text-gray-400'
+                        }`}>
                         {String(step).padStart(2, '0')}
                       </div>
                       {/* Dot Below */}
-                      <div className={`w-3 h-3 rounded-full mt-2 transition-all duration-300 ${
-                        currentStep === step ? 'bg-[#A82228] scale-125' : 'bg-gray-400'
-                      }`}></div>
+                      <div className={`w-3.5 h-3.5 rounded-full border-2 border-white transition-all duration-300 ${currentStep === step ? 'bg-[#A82228] scale-110 shadow-sm' : 'bg-gray-300'
+                        }`}></div>
                     </div>
                   ))}
                 </div>
               </div>
-              
+
               {/* Descriptive Text - Below progress indicator */}
-              <p className="text-base sm:text-lg text-black leading-relaxed mb-6">
-                Student-led leadership structure - Every activity is planned, and executed by student leaders from each wing.
-              </p>
-              
-              {/* Navigation Buttons */}
-              <div className="flex gap-3">
+              <div className="min-h-[80px]">
+                <p className="text-lg text-black leading-relaxed">
+                  {currentStep === 1 && "Student-led leadership structure - Every activity is planned, and executed by student leaders from each wing."}
+                  {currentStep === 2 && "Collaborative planning - Students from different wings work together to organize events and campaigns."}
+                  {currentStep === 3 && "Execution & Mentorship - Activities are carried out with guidance from teacher mentors and advisors."}
+                  {currentStep === 4 && "Impact & Growth - Students learn leadership through real-world results and community feedback."}
+                </p>
+              </div>
+
+              {/* Navigation Arrows */}
+              <div className="flex gap-4 mt-8">
                 <button
                   onClick={() => setCurrentStep(Math.max(1, currentStep - 1))}
-                  className="w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-all hover:scale-110 active:scale-95"
-                  aria-label="Previous step"
+                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${currentStep === 1 ? 'bg-gray-200 text-gray-400' : 'bg-[#A82228] text-white hover:bg-[#8a1c22]'}`}
+                  disabled={currentStep === 1}
                 >
-                  <svg className="w-5 h-5 text-gray-700 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
                 <button
                   onClick={() => setCurrentStep(Math.min(4, currentStep + 1))}
-                  className="w-10 h-10 rounded-full bg-[#A82228] flex items-center justify-center hover:bg-[#8a1c22] transition-all hover:scale-110 active:scale-95"
-                  aria-label="Next step"
+                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${currentStep === 4 ? 'bg-gray-200 text-gray-400' : 'bg-[#A82228] text-white hover:bg-[#8a1c22]'}`}
+                  disabled={currentStep === 4}
                 >
-                  <svg className="w-5 h-5 text-white transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
               </div>
             </div>
-            
+
             {/* Right - Image */}
             <div className={`${howItWorksVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
               <img
@@ -380,15 +325,15 @@ const WingsPage = () => {
       </section>
 
       {/* Launch a YoungVox Chapter Section */}
-      <section ref={formRef} className="py-12 sm:py-16 lg:py-24 bg-white">
+      <section ref={formRef} className="py-6 sm:py-8 lg:py-12" style={{ backgroundColor: '#FFF6E3' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left - Content */}
             <div className={`space-y-6 ${formVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
+              <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
                 Launch a YoungVox Chapter
               </h2>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 Bring the four-wing leadership model to your campus and empower future changemakers.
               </p>
               <a
@@ -402,8 +347,8 @@ const WingsPage = () => {
             </div>
 
             {/* Right - Form */}
-            <div className={`bg-pink-50 rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${formVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-6">
+            <div className={`bg-white rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${formVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+              <h3 className="text-[30px] lg:text-[36px] font-bold text-black mb-6">
                 Write to Us
               </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -418,13 +363,13 @@ const WingsPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div className="relative">
                   <select
                     name="schoolName"
                     value={formData.schoolName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-pink-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent appearance-none pr-10"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent appearance-none pr-10"
                     required
                   >
                     <option value="">School Name</option>
@@ -438,7 +383,7 @@ const WingsPage = () => {
                     </svg>
                   </div>
                 </div>
-                
+
                 <div>
                   <input
                     type="email"
@@ -450,7 +395,7 @@ const WingsPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="tel"
@@ -462,7 +407,7 @@ const WingsPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="text"
@@ -474,7 +419,7 @@ const WingsPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <textarea
                     name="message"
@@ -482,11 +427,11 @@ const WingsPage = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows="5"
-                    className="w-full px-4 py-3 bg-pink-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent resize-none"
                     required
                   ></textarea>
                 </div>
-                
+
                 <div className="flex items-start">
                   <input
                     type="checkbox"
@@ -501,7 +446,7 @@ const WingsPage = () => {
                     I confirm the school's interest in becoming a YoungVox School Chapter (Free of Cost).
                   </label>
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full bg-[#A82228] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors"
@@ -521,7 +466,7 @@ const WingsPage = () => {
           alt="YoungVox students"
           className="w-full h-auto object-cover"
         />
-        
+
         {/* Crack/Tear Design at Bottom */}
         <div className="absolute bottom-0 left-0 right-0" style={{ transform: 'translateY(40%)', zIndex: 10 }}>
           <img

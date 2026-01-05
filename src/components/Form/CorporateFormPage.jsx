@@ -7,7 +7,7 @@ import joinBanner from '../../assets/join bannner.png';
 
 const CorporateFormPage = () => {
   const [contentRef, contentVisible] = useScrollAnimation({ once: true });
-  
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,9 +40,9 @@ const CorporateFormPage = () => {
       {/* Banner Section */}
       <section className="w-full relative">
         <div className="relative w-full">
-          <img 
-            src={joinBanner} 
-            alt="Join YoungVox Banner" 
+          <img
+            src={joinBanner}
+            alt="Join YoungVox Banner"
             className="w-full h-auto object-cover"
           />
         </div>
@@ -54,10 +54,10 @@ const CorporateFormPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel - Content */}
             <div className={`space-y-6 ${contentVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
+              <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
                 CSR for Change. Empower the Next Generation With YoungVox.
               </h1>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 Companies can partner with YoungVox by supporting initiatives, campaigns, or leadership programs that align with their CSR priorities. From education and skill-building to civic engagement and environmental awareness, your contribution helps strengthen youth leadership, empower student action, and build the next generation of responsible changemakers.
               </p>
               <a
@@ -72,7 +72,7 @@ const CorporateFormPage = () => {
 
             {/* Right Panel - Form */}
             <div className={`bg-pink-50 rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${contentVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-6">
+              <h2 className="text-[30px] lg:text-[36px] font-bold text-black mb-6">
                 Write to Us
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -87,7 +87,7 @@ const CorporateFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="email"
@@ -99,7 +99,7 @@ const CorporateFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="tel"
@@ -111,7 +111,7 @@ const CorporateFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="text"
@@ -123,7 +123,7 @@ const CorporateFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="text"
@@ -135,7 +135,7 @@ const CorporateFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="text"
@@ -147,7 +147,7 @@ const CorporateFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="text"
@@ -159,7 +159,7 @@ const CorporateFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <textarea
                     name="message"
@@ -171,7 +171,7 @@ const CorporateFormPage = () => {
                     required
                   ></textarea>
                 </div>
-                
+
                 <div className="flex items-start">
                   <input
                     type="checkbox"
@@ -185,7 +185,7 @@ const CorporateFormPage = () => {
                     I confirm our intent to contribute to YoungVox programs and campaigns.
                   </label>
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full bg-[#A82228] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors"
