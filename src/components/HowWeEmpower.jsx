@@ -83,111 +83,119 @@ const HowWeEmpower = () => {
     const [partnersRef, partnersVisible] = useScrollAnimation({ once: true });
 
     return (
-        <section
-            className="py-12 md:py-16 lg:py-20 bg-contain bg-center bg-no-repeat"
-            style={{
-                backgroundColor: '#FF8E5114',
-                backgroundImage: `url(${howWeEmpowerBg})`
-            }}
-        >
-            <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-                {/* Section Header */}
-                <div ref={headerRef} className={`text-center mb-10 md:mb-12 ${headerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                    <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-3">
-                        How YoungVox Empowers School
-                    </h2>
-                    <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-                        Inspiring students to grow as leaders, address real-time issues, and drive change within and beyond their schools
-                    </p>
-                </div>
-
-                {/* Cards Grid */}
-                <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-16 md:mb-20 lg:mb-24">
-                    {empowermentCards.map((card, index) => (
-                        <div
-                            key={card.id}
-                            className={`rounded-xl md:rounded-2xl overflow-hidden shadow-md border-4 md:border-[6px] ${card.borderColor} ${card.bgColor} transition-transform hover:scale-105 hover-lift ${cardsVisible ? `animate-fade-in-up animate-delay-${(index % 2) * 100}` : 'opacity-0'}`}
-                        >
-                            {/* Card Image */}
-                            <div className="relative h-48 md:h-56 lg:h-64 overflow-hidden bg-white">
-                                <img
-                                    src={card.image}
-                                    alt={card.title}
-                                    className={`w-full h-full object-cover object-center ${cardsVisible ? 'animate-zoom-in-out' : ''}`}
-                                    style={{ animationDelay: `${index * 0.5}s` }}
-                                />
-                            </div>
-
-                            {/* Card Content */}
-                            <div className={`p-4 md:p-5 lg:p-6 ${card.textColor}`}>
-                                <h3 className="text-xl font-bold mb-2 leading-tight whitespace-pre-line">
-                                    {card.title}
-                                </h3>
-                                <p className={`text-lg leading-relaxed ${card.textColor === 'text-white' ? 'text-white/95' : 'text-gray-700'}`}>
-                                    {card.description}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Be Part of the Change Section */}
-                <div ref={partnersRef}>
+        <>
+            <section
+                className="mt-8 md:mt-12 py-0 bg-contain bg-center bg-no-repeat"
+                style={{
+                    backgroundColor: '#FF8E5114',
+                    backgroundImage: `url(${howWeEmpowerBg})`
+                }}
+            >
+                <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
                     {/* Section Header */}
-                    <div className={`flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 md:mb-12 ${partnersVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                        <div>
-                            <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-2 md:mb-3">
-                                Be Part of the Change
-                            </h2>
-                            <p className="text-gray-700 text-lg max-w-md leading-relaxed">
-                                A transformative platform that nurtures leadership, voice, and real-world impact in every student
-                            </p>
-                        </div>
-                        <button className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl whitespace-nowrap">
-                            Join Us Today
-                        </button>
+                    <div ref={headerRef} className={`text-center mb-10 md:mb-12 ${headerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+                        <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-3">
+                            How YoungVox Empowers School
+                        </h2>
+                        <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
+                            Inspiring students to grow as leaders, address real-time issues, and drive change within and beyond their schools
+                        </p>
                     </div>
 
-                    {/* Partner Cards */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-                        {partnerCards.map((card, index) => {
-                            // Calculate delay for center-outward animation
-                            // For 4 cards: center is between 1 and 2, so order: 1, 2, 0, 3
-                            const centerOutwardOrder = [1, 2, 0, 3]; // Cards animate from center outward
-                            const animationDelay = centerOutwardOrder.indexOf(index) * 0.15;
+                    {/* Cards Grid */}
+                    <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
+                        {empowermentCards.map((card, index) => (
+                            <div
+                                key={card.id}
+                                className={`rounded-xl md:rounded-2xl overflow-hidden shadow-md border-4 md:border-[6px] ${card.borderColor} ${card.bgColor} transition-transform hover:scale-105 hover-lift ${cardsVisible ? `animate-fade-in-up animate-delay-${(index % 2) * 100}` : 'opacity-0'}`}
+                            >
+                                {/* Card Image */}
+                                <div className="relative h-48 md:h-56 lg:h-64 overflow-hidden bg-white">
+                                    <img
+                                        src={card.image}
+                                        alt={card.title}
+                                        className={`w-full h-full object-cover object-center ${cardsVisible ? 'animate-zoom-in-out' : ''}`}
+                                        style={{ animationDelay: `${index * 0.5}s` }}
+                                    />
+                                </div>
 
-                            return (
-                                <div
-                                    key={card.id}
-                                    className={`rounded-xl md:rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 hover-lift bg-cover bg-center bg-no-repeat ${partnersVisible ? 'animate-scale-in-from-center' : 'opacity-0'}`}
-                                    style={{
-                                        animationDelay: partnersVisible ? `${animationDelay}s` : '0s',
-                                        backgroundImage: `url(${bePartChangeBg})`
-                                    }}
-                                >
-                                    {/* Icon */}
-                                    <div className="mb-3 md:mb-4">
-                                        <img
-                                            src={card.icon}
-                                            alt={card.title}
-                                            className="w-12 h-12 md:w-14 md:h-14 object-contain"
-                                        />
-                                    </div>
-                                    {/* Title */}
-                                    <h3 className="text-xl font-bold text-black mb-2">
+                                {/* Card Content */}
+                                <div className={`p-4 md:p-5 lg:p-6 ${card.textColor}`}>
+                                    <h3 className="text-xl font-bold mb-2 leading-tight whitespace-pre-line">
                                         {card.title}
                                     </h3>
-                                    {/* Description */}
-                                    <p className="text-lg text-gray-600 leading-relaxed">
+                                    <p className={`text-lg leading-relaxed ${card.textColor === 'text-white' ? 'text-white/95' : 'text-gray-700'}`}>
                                         {card.description}
                                     </p>
                                 </div>
-                            );
-                        })}
+                            </div>
+                        ))}
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            {/* Be Part of the Change Section */}
+            <section className="mt-8 md:mt-12 py-0 bg-white">
+                <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+                    <div ref={partnersRef}>
+                        {/* Section Header */}
+                        <div className={`flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 md:mb-12 ${partnersVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+                            <div>
+                                <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-2 md:mb-3">
+                                    Be Part of the Change
+                                </h2>
+                                <p className="text-gray-700 text-lg max-w-md leading-relaxed">
+                                    A transformative platform that nurtures leadership, voice, and real-world impact in every student
+                                </p>
+                            </div>
+                            <button
+                                className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl whitespace-nowrap"
+                            >
+                                Join Us Today
+                            </button>
+                        </div>
+
+                        {/* Partner Cards */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+                            {partnerCards.map((card, index) => {
+                                // Calculate delay for center-outward animation
+                                // For 4 cards: center is between 1 and 2, so order: 1, 2, 0, 3
+                                const centerOutwardOrder = [1, 2, 0, 3]; // Cards animate from center outward
+                                const animationDelay = centerOutwardOrder.indexOf(index) * 0.15;
+
+                                return (
+                                    <div
+                                        key={card.id}
+                                        className={`rounded-xl md:rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 hover-lift bg-cover bg-center bg-no-repeat ${partnersVisible ? 'animate-scale-in-from-center' : 'opacity-0'}`}
+                                        style={{
+                                            animationDelay: partnersVisible ? `${animationDelay}s` : '0s',
+                                            backgroundImage: `url(${bePartChangeBg})`
+                                        }}
+                                    >
+                                        {/* Icon */}
+                                        <div className="mb-3 md:mb-4">
+                                            <img
+                                                src={card.icon}
+                                                alt={card.title}
+                                                className="w-12 h-12 md:w-14 md:h-14 object-contain"
+                                            />
+                                        </div>
+                                        {/* Title */}
+                                        <h3 className="text-xl font-bold text-black mb-2">
+                                            {card.title}
+                                        </h3>
+                                        {/* Description */}
+                                        <p className="text-lg text-gray-600 leading-relaxed">
+                                            {card.description}
+                                        </p>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
     );
 };
 

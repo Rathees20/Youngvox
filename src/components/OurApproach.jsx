@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import ourApproachImage from '../assets/Our approach.jpg';
 import backgroundImage from '../assets/backgound.png';
 
 const OurApproach = () => {
+    const navigate = useNavigate();
     const [ref, isVisible] = useScrollAnimation({ once: true });
 
     return (
@@ -36,7 +38,10 @@ const OurApproach = () => {
                             </p>
                         </div>
 
-                        <button className="bg-[#A82228] text-white px-8 py-3 rounded-full font-bold hover:bg-[#901d22] transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform duration-200">
+                        <button
+                            onClick={() => navigate('/joinyoung')}
+                            className="bg-[#A82228] text-white px-8 py-3 rounded-full font-bold hover:bg-[#901d22] transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
+                        >
                             Join YoungVox
                         </button>
                     </div>

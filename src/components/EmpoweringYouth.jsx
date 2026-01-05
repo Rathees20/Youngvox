@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import smilesAndLearningImage from '../assets/smiles and learning all.jpg';
 import youthEmpowerSecondImg from '../assets/Youthempower second image.png';
 
 const EmpoweringYouth = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [ref, isVisible] = useScrollAnimation({ once: true });
 
@@ -14,9 +16,9 @@ const EmpoweringYouth = () => {
     },
     {
       src: youthEmpowerSecondImg,
-      
+
     },
-   
+
   ];
 
   const nextSlide = () =>
@@ -56,7 +58,10 @@ const EmpoweringYouth = () => {
               </p>
             </div>
 
-            <button className="mt-6 inline-flex items-center bg-[#A82228] text-white px-7 py-3 rounded-full font-semibold shadow-md hover:bg-[#8f1d22] transition">
+            <button
+              onClick={() => navigate('/joinyoung')}
+              className="mt-6 inline-flex items-center bg-[#A82228] text-white px-7 py-3 rounded-full font-semibold shadow-md hover:bg-[#8f1d22] transition"
+            >
               Join YoungVox
             </button>
           </div>
