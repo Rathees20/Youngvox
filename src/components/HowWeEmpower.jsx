@@ -85,7 +85,7 @@ const HowWeEmpower = () => {
     return (
         <>
             <section
-                className="pt-12 md:pt-20 lg:pt-24 pb-4 md:pb-6 lg:pb-8"
+                className="pt-4 md:pt-8 lg:pt-12 pb-4 md:pb-6 lg:pb-8"
             >
                 <div className="max-w-7xl mx-auto px-6 lg:px-10">
                     {/* Unified Container for Header and Cards */}
@@ -104,7 +104,7 @@ const HowWeEmpower = () => {
                             <h2 className="text-[34px] leading-tight lg:text-[46px] font-extrabold text-[#1A1A1A] mb-4">
                                 How YoungVox Empowers School
                             </h2>
-                            <p className="text-[#4A4A4A]/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                            <p className="text-[#4A4A4A]/80 text-lg max-w-4xl mx-auto leading-relaxed">
                                 Inspiring students to grow as leaders, address real time issues, and drive change within and beyond their schools
                             </p>
                         </div>

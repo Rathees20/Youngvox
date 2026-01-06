@@ -11,7 +11,7 @@ const OurApproach = () => {
     return (
         <section
             ref={ref}
-            className="bg-center bg-no-repeat lg:h-[500px] flex items-center py-2"
+            className="bg-center bg-no-repeat lg:h-[500px] flex items-center py-2 pb-2 md:pb-4 lg:pb-6"
             style={{
                 backgroundImage: `url(${backgroundImage}), linear-gradient(180deg, #FFF6E3 0%, #FFFFFF 100%)`,
                 backgroundSize: 'contain, cover'
