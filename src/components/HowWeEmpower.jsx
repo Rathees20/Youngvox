@@ -135,7 +135,7 @@ const HowWeEmpower = () => {
             </section>
 
             {/* Be Part of the Change Section */}
-            <section className="mt-8 md:mt-12 py-0 bg-white">
+            <section className="mt-8 md:mt-12 pt-0 pb-12 md:pb-20 bg-white">
                 <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
                     <div ref={partnersRef}>
                         {/* Section Header */}
