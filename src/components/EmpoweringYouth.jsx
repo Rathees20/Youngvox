@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import smilesAndLearningImage from '../assets/smiles and learning all.jpg';
+import smilesAndLearningImage from '../assets/smiles and learning all.png';
 import youthEmpowerSecondImg from '../assets/Youthempower second image.png';
 
 const EmpoweringYouth = () => {
@@ -35,7 +35,7 @@ const EmpoweringYouth = () => {
       className="bg-white pt-6 pb-20 lg:pt-10 lg:pb-28 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] items-start gap-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-14">
 
           {/* LEFT CONTENT */}
           <div
@@ -48,7 +48,7 @@ const EmpoweringYouth = () => {
               Inspiring Change.
             </h2>
 
-            <div className="text-gray-700 space-y-4 text-lg leading-relaxed max-w-xl text-justify">
+            <div className="text-gray-700 space-y-4 text-base leading-relaxed max-w-xl text-justify">
               <p>
                 YoungVox is a national youth leadership movement committed to shaping confident, socially responsible young leaders across India. As a non-political and non-religious initiative, it focuses on youth development, civic awareness, and community wellbeing aligned closely with the UN Sustainable Development Goals (SDGs). Through a structured school chapter–based model, YoungVox conducts regular leadership activities, youth campaigns, and peer-driven initiatives that strengthen student voice and participation.
               </p>
@@ -69,9 +69,9 @@ const EmpoweringYouth = () => {
           {/* RIGHT CAROUSEL */}
           <div
             className={`relative ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'
-              }`}
+              } flex justify-center lg:justify-end lg:pt-2`}
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[320px] sm:h-[360px] lg:h-[550px]">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-[508px] h-[320px] sm:h-[400px] lg:h-[508px] aspect-square">
               <div
                 className="flex h-full transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -98,11 +98,11 @@ const EmpoweringYouth = () => {
               </div>
             </div>
 
-            {/* NAVIGATION */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col gap-3 z-10">
+            {/* DESKTOP NAVIGATION */}
+            <div className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[-100%] flex-col gap-1.5 z-20">
               <button
                 onClick={prevSlide}
-                className="w-11 h-11 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-105 transition"
+                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:scale-105 active:scale-95 transition"
               >
                 <svg
                   className="w-5 h-5 text-gray-700"
@@ -113,7 +113,7 @@ const EmpoweringYouth = () => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2.5}
+                    strokeWidth={2}
                     d="M15 19l-7-7 7-7"
                   />
                 </svg>
@@ -121,7 +121,7 @@ const EmpoweringYouth = () => {
 
               <button
                 onClick={nextSlide}
-                className="w-11 h-11 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-105 transition"
+                className="w-10 h-10 rounded-full bg-gray-300 shadow-md flex items-center justify-center hover:scale-105 active:scale-95 transition"
               >
                 <svg
                   className="w-5 h-5 text-gray-700"
@@ -132,7 +132,48 @@ const EmpoweringYouth = () => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2.5}
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {/* MOBILE NAVIGATION */}
+            <div className="lg:hidden absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between z-20 pointer-events-none">
+              <button
+                onClick={prevSlide}
+                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center pointer-events-auto active:scale-95 transition -translate-x-1/2"
+              >
+                <svg
+                  className="w-5 h-5 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+
+              <button
+                onClick={nextSlide}
+                className="w-10 h-10 rounded-full bg-gray-300 shadow-md flex items-center justify-center pointer-events-auto active:scale-95 transition translate-x-1/2"
+              >
+                <svg
+                  className="w-5 h-5 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
