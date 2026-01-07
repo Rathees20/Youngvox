@@ -11,21 +11,21 @@ const OurApproach = () => {
     return (
         <section
             ref={ref}
-            className="bg-center bg-no-repeat lg:h-[500px] flex items-center py-2 pb-2 md:pb-4 lg:pb-6"
+            className="bg-center bg-no-repeat lg:h-[500px] flex items-center py-0 pb-0"
             style={{
                 backgroundImage: `url(${backgroundImage}), linear-gradient(180deg, #FFF6E3 0%, #FFFFFF 100%)`,
                 backgroundSize: 'contain, cover'
             }}
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-10 lg:pl-15 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-20 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 sm:gap-2 items-center">
                     {/* Left Column - Text Content */}
-                    <div className={`space-y-6 order-2 lg:order-1 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                        <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-[#1A1A1A]">
+                    <div className={`space-y-3 order-2 lg:order-1 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+                        <h2 className="text-[24px] leading-relaxed lg:text-[32px] font-extrabold text-[#1A1A1A]">
                             Our Approach
                         </h2>
 
-                        <div className="space-y-4 text-[#4A4A4A] leading-relaxed text-base">
+                        <div className="space-y-2 text-[#4A4A4A] leading-[1.8] text-base">
                             <p>
                                 We build strong youth leaders through a collaborative and inclusive model. By
                                 bringing together senior advisors, purpose-driven companies, NGOs, and

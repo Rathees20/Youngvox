@@ -101,10 +101,10 @@ const HowWeEmpower = () => {
                     >
                         {/* Section Header */}
                         <div ref={headerRef} className={`text-center mb-12 md:mb-16 ${headerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                            <h2 className="text-[34px] leading-tight lg:text-[46px] font-extrabold text-[#1A1A1A] mb-4">
+                            <h2 className="text-[24px] leading-relaxed lg:text-[32px] font-extrabold text-[#1A1A1A] mb-4">
                                 How YoungVox Empowers School
                             </h2>
-                            <p className="text-[#4A4A4A]/80 text-lg max-w-4xl mx-auto leading-relaxed">
+                            <p className="text-[#4A4A4A]/80 text-lg max-w-4xl mx-auto leading-[1.8]">
                                 Inspiring students to grow as leaders, address real time issues, and drive change within and beyond their schools
                             </p>
                         </div>
@@ -130,10 +130,10 @@ const HowWeEmpower = () => {
 
                                     {/* Card Content */}
                                     <div className="px-8 lg:px-10 pt-6 pb-8 flex-grow flex flex-col justify-start text-left">
-                                        <h3 className={`text-xl lg:text-[28px] font-extrabold mb-3 leading-tight whitespace-pre-line ${card.textColor}`}>
+                                        <h3 className={`text-lg lg:text-[22px] font-extrabold mb-3 leading-relaxed whitespace-pre-line ${card.textColor}`}>
                                             {card.title}
                                         </h3>
-                                        <p className={`text-base lg:text-[17px] leading-relaxed ${card.descColor}`}>
+                                        <p className={`text-base lg:text-[17px] leading-[1.7] ${card.descColor}`}>
                                             {card.description}
                                         </p>
                                     </div>
@@ -151,10 +151,10 @@ const HowWeEmpower = () => {
                         {/* Section Header */}
                         <div className={`flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-6 lg:mb-8 ${partnersVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
                             <div className="max-w-xl">
-                                <h2 className="text-[34px] leading-tight lg:text-[46px] font-extrabold text-[#1A1A1A] mb-4">
+                                <h2 className="text-[24px] leading-relaxed lg:text-[32px] font-extrabold text-[#1A1A1A] mb-4">
                                     Be Part of the Change
                                 </h2>
-                                <p className="text-[#4A4A4A]/80 text-lg md:text-xl leading-relaxed">
+                                <p className="text-[#4A4A4A]/80 text-lg md:text-xl leading-[1.8]">
                                     A transformative platform that nurtures leadership, voice, and real-world impact in every student.
                                 </p>
                             </div>

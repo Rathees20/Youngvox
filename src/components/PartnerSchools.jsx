@@ -26,10 +26,10 @@ const PartnerSchools = () => {
                 <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12">
                     {/* Left Side - Title and Description */}
                     <div className={`w-full md:w-1/3 text-left -ml-4 md:-ml-6 pt-4 md:pt-6 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                        <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-2 md:mb-3 text-left">
+                        <h2 className="text-[24px] leading-relaxed lg:text-[32px] font-extrabold text-black mb-2 md:mb-3 text-left">
                             Partner Schools
                         </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed text-left">
+                        <p className="text-gray-600 text-lg leading-[1.8] text-left">
                             Collaborating with leading educational institutions across India
                         </p>
                     </div>

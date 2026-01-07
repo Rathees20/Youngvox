@@ -42,13 +42,13 @@ const EmpoweringYouth = () => {
             className={`space-y-6 pt-10 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'
               }`}
           >
-            <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900">
+            <h2 className="text-[24px] leading-relaxed lg:text-[32px] font-extrabold text-gray-900">
               Empowering Youth.
               <br />
               Inspiring Change.
             </h2>
 
-            <div className="text-gray-700 space-y-4 text-base leading-relaxed max-w-xl text-justify">
+            <div className="text-gray-700 space-y-4 text-base leading-[1.8] max-w-xl text-justify">
               <p>
                 YoungVox is a national youth leadership movement committed to shaping confident, socially responsible young leaders across India. As a non-political and non-religious initiative, it focuses on youth development, civic awareness, and community wellbeing aligned closely with the UN Sustainable Development Goals (SDGs). Through a structured school chapter–based model, YoungVox conducts regular leadership activities, youth campaigns, and peer-driven initiatives that strengthen student voice and participation.
               </p>
