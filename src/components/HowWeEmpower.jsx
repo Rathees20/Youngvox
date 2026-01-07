@@ -85,12 +85,12 @@ const HowWeEmpower = () => {
     return (
         <>
             <section
-                className="pt-4 md:pt-8 lg:pt-12 pb-4 md:pb-6 lg:pb-8"
+                className="pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-12 lg:pb-16"
             >
-                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="max-w-[1600px] mx-auto px-6 lg:px-12 xl:px-16">
                     {/* Unified Container for Header and Cards */}
                     <div
-                        className="rounded-[40px] p-6 md:p-10 lg:p-14 shadow-sm border border-[#F5F5F5] transition-all duration-500 hover:shadow-md overflow-hidden relative"
+                        className="rounded-[40px] p-8 md:p-12 lg:p-16 xl:p-20 shadow-sm border border-[#F5F5F5] transition-all duration-500 hover:shadow-md overflow-hidden relative"
                         style={{
                             backgroundColor: '#FF8E5114',
                             backgroundImage: `url(${howWeEmpowerBg})`,
@@ -100,8 +100,8 @@ const HowWeEmpower = () => {
                         }}
                     >
                         {/* Section Header */}
-                        <div ref={headerRef} className={`text-center mb-12 md:mb-16 ${headerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                            <h2 className="text-[24px] leading-relaxed lg:text-[32px] font-extrabold text-[#1A1A1A] mb-4">
+                        <div ref={headerRef} className={`text-center mb-12 md:mb-16 lg:mb-20 ${headerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+                            <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-[#1A1A1A] mb-4">
                                 How YoungVox Empowers School
                             </h2>
                             <p className="text-[#4A4A4A]/80 text-xl max-w-4xl mx-auto leading-[1.8]">
@@ -110,14 +110,14 @@ const HowWeEmpower = () => {
                         </div>
 
                         {/* Cards Grid */}
-                        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-8">
+                        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 xl:gap-12">
                             {empowermentCards.map((card, index) => (
                                 <div
                                     key={card.id}
-                                    className={`rounded-[30px] overflow-hidden shadow-xl ${card.bgColor} transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl lg:w-[610px] lg:h-[500px] flex flex-col mx-auto ${cardsVisible ? `animate-fade-in-up animate-delay-${(index % 2) * 100}` : 'opacity-0'}`}
+                                    className={`rounded-[30px] overflow-hidden shadow-xl ${card.bgColor} transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl w-full max-w-full lg:max-w-[700px] xl:max-w-[750px] lg:h-[550px] xl:h-[600px] flex flex-col mx-auto ${cardsVisible ? `animate-fade-in-up animate-delay-${(index % 2) * 100}` : 'opacity-0'}`}
                                 >
                                     {/* Card Image Container */}
-                                    <div className="p-6 pb-0">
+                                    <div className="p-6 lg:p-8 pb-0">
                                         <div className="relative w-full aspect-[16/9.5] overflow-hidden rounded-[20px] shadow-sm bg-gray-100">
                                             <img
                                                 src={card.image}
@@ -129,11 +129,11 @@ const HowWeEmpower = () => {
                                     </div>
 
                                     {/* Card Content */}
-                                    <div className="px-8 lg:px-10 pt-6 pb-8 flex-grow flex flex-col justify-start text-left">
-                                        <h3 className={`text-lg lg:text-[22px] font-extrabold mb-3 leading-relaxed whitespace-pre-line ${card.textColor}`}>
+                                    <div className="px-8 lg:px-10 xl:px-12 pt-6 lg:pt-8 pb-8 lg:pb-10 flex-grow flex flex-col justify-start text-left">
+                                        <h3 className={`text-lg lg:text-[22px] xl:text-[24px] font-extrabold mb-3 lg:mb-4 leading-tight whitespace-pre-line ${card.textColor}`}>
                                             {card.title}
                                         </h3>
-                                        <p className={`text-base lg:text-[17px] leading-[1.7] ${card.descColor}`}>
+                                        <p className={`text-base lg:text-[17px] xl:text-[18px] leading-[1.7] ${card.descColor}`}>
                                             {card.description}
                                         </p>
                                     </div>
@@ -151,7 +151,7 @@ const HowWeEmpower = () => {
                         {/* Section Header */}
                         <div className={`flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-6 lg:mb-8 ${partnersVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
                             <div className="max-w-xl">
-                                <h2 className="text-[24px] leading-relaxed lg:text-[32px] font-extrabold text-[#1A1A1A] mb-4">
+                                <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-[#1A1A1A] mb-4">
                                     Be Part of the Change
                                 </h2>
                                 <p className="text-[#4A4A4A]/80 text-xl leading-[1.8]">

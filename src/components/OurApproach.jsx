@@ -11,7 +11,7 @@ const OurApproach = () => {
     return (
         <section
             ref={ref}
-            className="bg-center bg-no-repeat lg:h-[500px] flex items-center py-0 pb-0"
+            className="bg-center bg-no-repeat lg:h-[500px] flex items-center py-0 pb-0 -mb-10 lg:-mb-14"
             style={{
                 backgroundImage: `url(${backgroundImage}), linear-gradient(180deg, #FFF6E3 0%, #FFFFFF 100%)`,
                 backgroundSize: 'contain, cover'
@@ -21,7 +21,7 @@ const OurApproach = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 sm:gap-2 items-center">
                     {/* Left Column - Text Content */}
                     <div className={`space-y-3 order-2 lg:order-1 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                        <h2 className="text-[24px] leading-relaxed lg:text-[32px] font-extrabold text-[#1A1A1A]">
+                        <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-[#1A1A1A]">
                             Our Approach
                         </h2>
 
@@ -47,12 +47,12 @@ const OurApproach = () => {
                     </div>
 
                     {/* Right Column - Image */}
-                    <div className={`order-1 lg:order-2 flex justify-center lg:justify-end ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl w-full max-w-[450px] aspect-square">
+                    <div className={`order-1 lg:order-2 flex justify-center lg:justify-end mb-0 ml-auto lg:ml-16 xl:ml-24 ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+                        <div className="relative rounded-3xl overflow-hidden shadow-2xl w-full max-w-[550px] lg:max-w-[600px] aspect-[4/3] mb-0 pb-0">
                             <img
                                 src={ourApproachImage}
                                 alt="Students in uniform standing together in front of school building"
-                                className={`w-full h-full object-cover object-center ${isVisible ? 'animate-zoom-in-out' : ''}`}
+                                className={`w-full h-full object-cover object-top ${isVisible ? 'animate-zoom-in-out' : ''}`}
                             />
                         </div>
                     </div>

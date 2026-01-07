@@ -12,7 +12,7 @@ export default function NewsletterSection() {
     <section ref={ref} className="w-full bg-[#A82228] relative overflow-hidden">
       {/* TOP CONTENT */}
       <div className="max-w-4xl mx-auto text-center pt-10 sm:pt-14 pb-6 px-4">
-        <h1 className="text-white text-[24px] leading-relaxed lg:text-[32px] font-extrabold mb-2">
+        <h1 className="text-white text-[24px] leading-tight lg:text-[32px] font-extrabold mb-2">
           Subscribe to Our Free Monthly Newsletter
         </h1>
 

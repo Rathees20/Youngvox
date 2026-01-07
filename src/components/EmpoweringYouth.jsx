@@ -42,7 +42,7 @@ const EmpoweringYouth = () => {
             className={`space-y-6 pt-10 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'
               }`}
           >
-            <h2 className="text-[24px] leading-relaxed lg:text-[32px] font-extrabold text-gray-900">
+            <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-gray-900">
               Empowering Youth.
               <br />
               Inspiring Change.

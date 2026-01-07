@@ -60,7 +60,7 @@ const ImpactSnapshot = () => {
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 {/* Section Header */}
                 <div className={`text-center mb-6 md:mb-4 ${isVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                    <h2 className="text-[24px] leading-relaxed lg:text-[32px] font-extrabold text-white mb-2 md:mb-3">
+                    <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-white mb-2 md:mb-3">
                         Impact Snapshot
                     </h2>
                     <p className="text-white/90 text-xl max-w-2xl mx-auto leading-[1.8] px-4">
