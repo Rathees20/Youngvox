@@ -4,7 +4,9 @@ import NewsletterSection from '../Newsletter';
 import Footer from '../Footer';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import chapterBanner from '../../assets/chapter.png';
-import maskGroupIcon from '../../assets/icons/Mask group.png';
+import schoolIcon from '../../assets/icons/schools.png';
+import frameImage from '../../assets/Frame.png';
+import rightArrowIcon from '../../assets/icons/right arrow.png';
 
 const ChaptersPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,7 +21,7 @@ const ChaptersPage = () => {
     chapterId: '127879317',
     district: 'Chennai',
     state: 'Tamil Nadu',
-    createdFrom: '12/11/20205'
+    createdFrom: '12/11/2025'
   }));
 
   const states = ['Tamil Nadu', 'Karnataka', 'Maharashtra', 'Delhi', 'Gujarat'];
@@ -43,18 +45,31 @@ const ChaptersPage = () => {
             className="w-full h-full object-cover object-center"
           />
         </div>
-        
+
         {/* Text Overlay */}
-        <div className={`absolute inset-0 flex items-center justify-end px-4 sm:px-6 md:px-8 lg:px-16 py-6 sm:py-8 md:py-10 lg:py-12 ${heroVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
-          <div className="w-full sm:w-auto max-w-full sm:max-w-md lg:max-w-lg sm:ml-auto">
-            <div className="text-left sm:text-right">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-3 sm:mb-4 drop-shadow-sm">
-                YoungVox School Chapters
-              </h1>
-              <p className="text-sm sm:text-base text-black mb-4 sm:mb-6 leading-relaxed drop-shadow-sm">
-                Join our network of schools committed to empowering young leaders. Discover how your school can become part of the YoungVox movement.
-              </p>
-              <button className="bg-[#A82228] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors w-auto text-sm sm:text-base">
+        <div
+          className={`absolute inset-0 flex items-center z-20 ${heroVisible ? 'animate-fade-in-right' : 'opacity-0'
+            }`}
+        >
+          <div
+            className="
+      ml-auto
+      mr-[6%]
+      max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl
+      text-left
+      space-y-4 sm:space-y-5 md:space-y-6
+    "
+          >
+
+            <h1 className="text-[34px] lg:text-[42px] font-extrabold text-white leading-tight drop-shadow-lg">
+              YoungVox School Chapters
+            </h1>
+            <p className="text-lg text-white leading-relaxed drop-shadow-md">
+              Join our network of schools committed to empowering young leaders. Discover how your school can become part of the YoungVox movement.
+            </p>
+            <div className="pt-2 sm:pt-3 md:pt-4">
+
+              <button className="bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl relative z-30">
                 Join Now
               </button>
             </div>
@@ -116,55 +131,79 @@ const ChaptersPage = () => {
       {/* School Chapters Listing */}
       <section ref={resultsRef} className="py-6 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-6 sm:mb-8 ${resultsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+          <h2 className={`text-[30px] lg:text-[36px] font-bold text-black mb-6 sm:mb-8 ${resultsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
             Showing Result 1-30
           </h2>
 
           {/* School Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-8">
-            {schools.map((school, index) => (
-              <div 
-                key={school.id} 
-                className={`border border-gray-200 rounded-sm p-4 sm:p-5 relative hover-lift transition-all ${
-                  index % 2 === 0 ? 'bg-white' : 'bg-[#FFFBF2]'
-                } ${resultsVisible ? 'animate-scale-in' : 'opacity-0'}`}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {/* School Icon */}
-                <div className="flex items-center gap-2 mb-2">
-                  <img 
-                    src={maskGroupIcon} 
-                    alt="School icon" 
-                    className="w-6 h-6 object-contain"
-                  />
-                  <span className="text-xs sm:text-sm text-gray-600">Name</span>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 mb-8">
+            {schools.map((school, index) => {
+              const isPinkBox = index % 2 !== 0; // Pink boxes for odd indices
+              return (
+                <div
+                  key={school.id}
+                  className={`rounded-sm p-4 sm:p-4 relative hover-lift transition-all overflow-hidden ${isPinkBox ? 'bg-pink-50' : 'bg-white border border-gray-200'
+                    } ${resultsVisible ? 'animate-scale-in' : 'opacity-100 sm:opacity-0'} w-full min-h-[280px] h-auto sm:h-[300px]`}
+                  style={{
+                    animationDelay: `${index * 50}ms`
+                  }}
+                >
+                  {/* Frame Image for Pink Boxes */}
+                  {isPinkBox && (
+                    <img
+                      src={frameImage}
+                      alt="Frame"
+                      className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+                      style={{ opacity: 0.4 }}
+                    />
+                  )}
 
-                {/* School Name */}
-                <h3 className="text-base sm:text-lg font-bold text-black mb-2">
-                  {school.name}
-                </h3>
-                
-                {/* Horizontal Line */}
-                <hr className="border-gray-300 mb-3" />
-                
-                {/* Details */}
-                <div className="space-y-1.5">
-                  <p className="text-xs sm:text-sm text-black">
-                    <span className="font-semibold">Chapter ID:</span> <span className="font-bold">{school.chapterId}</span>
-                  </p>
-                  <p className="text-xs sm:text-sm text-black">
-                    <span className="font-semibold">District:</span> <span className="font-bold">{school.district}</span>
-                  </p>
-                  <p className="text-xs sm:text-sm text-black">
-                    <span className="font-semibold">State:</span> <span className="font-bold">{school.state}</span>
-                  </p>
-                  <p className="text-xs sm:text-sm text-black">
-                    <span className="font-semibold">Created From:</span> <span className="font-bold">{school.createdFrom}</span>
-                  </p>
+                  {/* Content */}
+                  <div className="relative z-10 w-full h-full flex flex-col">
+                    {/* School Icon and Name Header */}
+                    <div className="mb-2 flex-shrink-0">
+                      <div className="flex items-start gap-2 mb-0">
+                        <img
+                          src={schoolIcon}
+                          alt="School icon"
+                          className="w-7 h-7 sm:w-8 sm:h-8 object-contain flex-shrink-0 mt-0.5"
+                        />
+                        <span className="text-[10px] text-gray-600 font-normal">Name</span>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0"></div>
+                        <h3 className="text-sm font-bold text-black leading-tight ml-2">
+                          {school.name}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Horizontal Line */}
+                    <hr className="border-gray-300 mb-2 flex-shrink-0" />
+
+                    {/* Details */}
+                    <div className="space-y-1.5 flex-1 min-h-0">
+                      <div>
+                        <p className="text-[10px] text-gray-600 font-normal mb-0.5">Chapter ID:</p>
+                        <p className="text-[10px] font-bold text-black">{school.chapterId}</p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-gray-600 font-normal mb-0.5">District:</p>
+                        <p className="text-[10px] font-bold text-black">{school.district}</p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-gray-600 font-normal mb-0.5">State:</p>
+                        <p className="text-[10px] font-bold text-black">{school.state}</p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-gray-600 font-normal mb-0.5">Created From:</p>
+                        <p className="text-[10px] font-bold text-black">{school.createdFrom}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Pagination */}
@@ -172,22 +211,22 @@ const ChaptersPage = () => {
             {(() => {
               const pages = [];
               const showPages = 4; // Show first 4 pages
-              
+
               // Add first pages (1, 2, 3, 4)
               for (let i = 1; i <= Math.min(showPages, totalPages); i++) {
                 pages.push(i);
               }
-              
+
               // Add ellipsis if there are more pages
               if (totalPages > showPages + 1) {
                 pages.push('ellipsis');
               }
-              
+
               // Add last page
               if (totalPages > showPages) {
                 pages.push(totalPages);
               }
-              
+
               return pages.map((item, index) => {
                 if (item === 'ellipsis') {
                   return (
@@ -196,19 +235,18 @@ const ChaptersPage = () => {
                     </span>
                   );
                 }
-                
+
                 const page = item;
                 const isActive = currentPage === page;
-                
+
                 return (
                   <button
                     key={page}
                     onClick={() => setCurrentPage(page)}
-                    className={`${
-                      isActive
-                        ? 'w-10 h-10 rounded-full bg-[#A82228] text-white'
-                        : 'text-[#A82228] hover:opacity-80'
-                    } flex items-center justify-center transition-colors font-medium`}
+                    className={`${isActive
+                      ? 'w-10 h-10 rounded-full bg-[#A82228] text-white shadow-lg hover:shadow-xl'
+                      : 'w-10 h-10 rounded-full text-[#A82228]'
+                      } flex items-center justify-center transition-colors font-semibold hover:bg-[#8a1c22] hover:text-white`}
                   >
                     {page}
                   </button>
@@ -219,9 +257,16 @@ const ChaptersPage = () => {
             <button
               onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
               disabled={currentPage === totalPages}
-              className="w-10 h-10 rounded-full bg-[#A82228] text-white flex items-center justify-center hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+              className="w-10 h-10 rounded-full bg-[#A82228] text-white flex items-center justify-center hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#A82228] font-semibold"
             >
-              &gt;
+              <img
+                src={rightArrowIcon}
+                alt="Next page"
+                className="w-5 h-5 object-contain"
+                style={{
+                  filter: 'brightness(0) saturate(100%) invert(100%)'
+                }}
+              />
             </button>
           </div>
         </div>

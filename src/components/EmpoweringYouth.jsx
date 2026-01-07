@@ -1,114 +1,181 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import smilesAndLearningImage from '../assets/smiles and learning all.png';
+import youthEmpowerSecondImg from '../assets/Youthempower second image.png';
 
 const EmpoweringYouth = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [ref, isVisible] = useScrollAnimation({ once: true });
 
   const carouselImages = [
     {
       src: smilesAndLearningImage,
-      
+      // caption: 'Smiles and learning all around!',
     },
     {
-      src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
-      caption: "True strength comes from asking for help"
+      src: youthEmpowerSecondImg,
+
     },
-    {
-      src: "https://images.unsplash.com/photo-1529390079861-9deac17f4561?w=800&h=600&fit=crop",
-      caption: "Building leaders of tomorrow"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=800&h=600&fit=crop",
-      caption: "Empowering future leaders"
-    }
+
   ];
 
-  const nextSlide = () => {
+  const nextSlide = () =>
     setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-  };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
-  };
+  const prevSlide = () =>
+    setCurrentSlide(
+      (prev) => (prev - 1 + carouselImages.length) % carouselImages.length
+    );
 
   return (
-    <section ref={ref} id="about" className="bg-white py-12 sm:py-16 lg:py-24">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-          {/* Left Column - Text Content */}
-          <div className={`space-y-4 sm:space-y-6 order-2 lg:order-1 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800">
-              Empowering Youth. Inspiring Change.
+    <section
+      ref={ref}
+      className="bg-white pt-6 pb-20 lg:pt-10 lg:pb-28 overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-14">
+
+          {/* LEFT CONTENT */}
+          <div
+            className={`space-y-6 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'
+              }`}
+          >
+            <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900">
+              Empowering Youth.
+              <br />
+              Inspiring Change.
             </h2>
 
-            <div className="space-y-3 sm:space-y-4 text-gray-700 leading-relaxed text-sm sm:text-base">
+            <div className="text-gray-700 space-y-4 text-base leading-relaxed max-w-xl text-justify">
               <p>
-                YoungVox is a national youth leadership movement committed to shaping confident,
-                socially responsible young leaders across India. As a non-political and non-religious
-                initiative, it focuses on youth development, civic awareness, and community wellbeing
-                aligned closely with the UN Sustainable Development Goals (SDGs). Through a
-                structured school chapter-based model, YoungVox conducts regular leadership
-                activities, youth campaigns, and peer-driven initiatives that strengthen student voice and
-                participation.
+                YoungVox is a national youth leadership movement committed to shaping confident, socially responsible young leaders across India. As a non-political and non-religious initiative, it focuses on youth development, civic awareness, and community wellbeing aligned closely with the UN Sustainable Development Goals (SDGs). Through a structured school chapter–based model, YoungVox conducts regular leadership activities, youth campaigns, and peer-driven initiatives that strengthen student voice and participation.
               </p>
+
               <p>
-                The YoungVox School Chapter is completely free of cost, offering schools a ready-to-run
-                platform that nurtures leadership, life skills, and active citizenship through hands-on
-                experiences, collaborative projects, and meaningful engagement opportunities.
+                The YoungVox School Chapter is completely free of cost, offering schools a <span className="whitespace-nowrap">ready-to-run platform</span> that nurtures leadership, life skills, and active citizenship through hands-on experiences, collaborative projects, and meaningful engagement opportunities.
               </p>
             </div>
 
-            <button className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-all hover-lift w-full sm:w-auto">
+            <button
+              onClick={() => navigate('/joinyoung')}
+              className="mt-6 inline-flex items-center bg-[#A82228] text-white px-7 py-3 rounded-full font-semibold shadow-md hover:bg-[#8f1d22] transition"
+            >
               Join YoungVox
             </button>
           </div>
 
-          {/* Right Column - Image Carousel */}
-          <div className={`relative order-1 lg:order-2 w-full ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-            <div className="relative overflow-hidden rounded-lg shadow-xl aspect-[16/10] sm:aspect-[3/2] lg:aspect-[4/3]">
+          {/* RIGHT CAROUSEL */}
+          <div
+            className={`relative ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'
+              } flex justify-center lg:justify-end lg:pt-2`}
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-[508px] h-[320px] sm:h-[400px] lg:h-[508px] aspect-square">
               <div
                 className="flex h-full transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
-                {carouselImages.map((image, index) => (
-                  <div key={index} className="w-full min-w-full flex-shrink-0 relative h-full">
+                {carouselImages.map((img, i) => (
+                  <div key={i} className="min-w-full h-full relative">
                     <img
-                      src={image.src}
-                      alt={image.caption || 'Carousel image'}
+                      src={img.src}
+                      alt={img.caption}
                       className="w-full h-full object-cover"
-                      loading={index === 0 ? 'eager' : 'lazy'}
                     />
-                    {image.caption && (
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent text-white p-3 sm:p-4 lg:p-6">
-                        <p className="text-xs sm:text-sm lg:text-base xl:text-lg font-medium">{image.caption}</p>
-                      </div>
-                    )}
+
+                    {/* DARK OVERLAY */}
+                    <div className="absolute inset-0 bg-black/25" />
+
+                    {/* CAPTION */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+                      <p className="text-white text-sm font-medium">
+                        {img.caption}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
-            
-            {/* Carousel Navigation Arrows - Mobile: Bottom border, Desktop: Left border */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 flex gap-3 sm:gap-4 lg:left-0 lg:top-[55%] lg:-translate-y-1/2 lg:-translate-x-1/2 lg:flex-col lg:gap-2 z-20">
+
+            {/* DESKTOP NAVIGATION */}
+            <div className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[-100%] flex-col gap-1.5 z-20">
               <button
                 onClick={prevSlide}
-                className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:shadow-xl transition-all shadow-lg border border-gray-200"
-                aria-label="Previous slide"
+                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:scale-105 active:scale-95 transition"
               >
-                <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                <svg
+                  className="w-5 h-5 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
                 </svg>
               </button>
 
               <button
                 onClick={nextSlide}
-                className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:shadow-xl transition-all shadow-lg border border-gray-200"
-                aria-label="Next slide"
+                className="w-10 h-10 rounded-full bg-gray-300 shadow-md flex items-center justify-center hover:scale-105 active:scale-95 transition"
               >
-                <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                <svg
+                  className="w-5 h-5 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {/* MOBILE NAVIGATION */}
+            <div className="lg:hidden absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between z-20 pointer-events-none">
+              <button
+                onClick={prevSlide}
+                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center pointer-events-auto active:scale-95 transition -translate-x-1/2"
+              >
+                <svg
+                  className="w-5 h-5 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+
+              <button
+                onClick={nextSlide}
+                className="w-10 h-10 rounded-full bg-gray-300 shadow-md flex items-center justify-center pointer-events-auto active:scale-95 transition translate-x-1/2"
+              >
+                <svg
+                  className="w-5 h-5 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </button>
             </div>
@@ -120,4 +187,3 @@ const EmpoweringYouth = () => {
 };
 
 export default EmpoweringYouth;
-

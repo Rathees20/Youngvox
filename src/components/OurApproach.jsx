@@ -1,21 +1,31 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import ourApproachImage from '../assets/Our approach.png';
+import backgroundImage from '../assets/backgound.png';
 
 const OurApproach = () => {
+    const navigate = useNavigate();
     const [ref, isVisible] = useScrollAnimation({ once: true });
-    
+
     return (
-        <section ref={ref} className="bg-pink-50 py-12 sm:py-16 lg:py-24">
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+        <section
+            ref={ref}
+            className="bg-center bg-no-repeat lg:h-[500px] flex items-center py-2 pb-2 md:pb-4 lg:pb-6"
+            style={{
+                backgroundImage: `url(${backgroundImage}), linear-gradient(180deg, #FFF6E3 0%, #FFFFFF 100%)`,
+                backgroundSize: 'contain, cover'
+            }}
+        >
+            <div className="max-w-7xl mx-auto px-6 lg:px-10 lg:pl-15 w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-20 items-center">
                     {/* Left Column - Text Content */}
-                    <div className={`space-y-4 sm:space-y-6 order-2 lg:order-1 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
+                    <div className={`space-y-6 order-2 lg:order-1 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+                        <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-[#1A1A1A]">
                             Our Approach
                         </h2>
 
-                        <div className="space-y-3 sm:space-y-4 text-gray-700 leading-relaxed text-sm sm:text-base">
+                        <div className="space-y-4 text-[#4A4A4A] leading-relaxed text-base">
                             <p>
                                 We build strong youth leaders through a collaborative and inclusive model. By
                                 bringing together senior advisors, purpose-driven companies, NGOs, and
@@ -28,18 +38,21 @@ const OurApproach = () => {
                             </p>
                         </div>
 
-                        <button className="bg-[#A82228] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-all hover-lift w-full sm:w-auto">
+                        <button
+                            onClick={() => navigate('/joinyoung')}
+                            className="bg-[#A82228] text-white px-8 py-3 rounded-full font-bold hover:bg-[#901d22] transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
+                        >
                             Join YoungVox
                         </button>
                     </div>
 
                     {/* Right Column - Image */}
-                    <div className={`order-1 lg:order-2 ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-                        <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                    <div className={`order-1 lg:order-2 flex justify-center lg:justify-end ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+                        <div className="relative rounded-3xl overflow-hidden shadow-2xl w-full max-w-[450px] aspect-square">
                             <img
                                 src={ourApproachImage}
                                 alt="Students in uniform standing together in front of school building"
-                                className={`w-full h-64 sm:h-80 lg:h-96 object-cover ${isVisible ? 'animate-zoom-in-out' : ''}`}
+                                className={`w-full h-full object-cover object-center ${isVisible ? 'animate-zoom-in-out' : ''}`}
                             />
                         </div>
                     </div>

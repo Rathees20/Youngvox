@@ -1,6 +1,6 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import schoolChapterImg from '../assets/School Chapter.png';
+import schoolChapterImg from '../assets/school chapter 1.png';
 import mentorLeadersImg from '../assets/Mentor and wing leaders.png';
 import annualActivitiesImg from '../assets/Annual Activities.png';
 import measuringImpactImg from '../assets/Measuring Impact.png';
@@ -8,6 +8,8 @@ import schoolsIcon from '../assets/icons/schools.png';
 import advisorsIcon from '../assets/icons/advisors.png';
 import ngosIcon from '../assets/icons/NGOS.png';
 import companiesIcon from '../assets/icons/Companies.png';
+import howWeEmpowerBg from '../assets/how empower bacground image.png';
+import bePartChangeBg from '../assets/be part change background.png';
 
 const HowWeEmpower = () => {
     const empowermentCards = [
@@ -16,36 +18,36 @@ const HowWeEmpower = () => {
             image: schoolChapterImg,
             title: "Formation of the\nSchool Chapter",
             description: "Launch a YoungVox Chapter in your school to empower students to lead and create impact",
-            borderColor: "border-[#E5E5E5]",
-            bgColor: "bg-pink-50",
-            textColor: "text-black"
+            bgColor: "bg-white",
+            textColor: "text-[#1A1A1A]",
+            descColor: "text-gray-600"
         },
         {
             id: 2,
             image: mentorLeadersImg,
             title: "Identifying Teacher\nMentor and Wing Leaders",
-            description: "This school selects a teacher mentor and Wing Leaders to guide the chapter and lead meaningful student initiatives",
-            borderColor: "border-[#A82228]",
+            description: "The school selects a teacher mentor and Wing Leaders to guide the chapter and lead impactful student initiatives",
             bgColor: "bg-[#A82228]",
-            textColor: "text-white"
+            textColor: "text-white",
+            descColor: "text-white/90"
         },
         {
             id: 3,
             image: annualActivitiesImg,
             title: "Engaging in Monthly\nand Annual Activities",
             description: "Each wing engages in monthly and annual activities, led by student leaders and guided by YoungVox in their school",
-            borderColor: "border-[#A82228]",
             bgColor: "bg-[#A82228]",
-            textColor: "text-white"
+            textColor: "text-white",
+            descColor: "text-white/90"
         },
         {
             id: 4,
             image: measuringImpactImg,
             title: "Measuring Impact\nat School",
-            description: "YoungVox uses structured assessments to track your school's progress and impact of YoungVox",
-            borderColor: "border-[#E5E5E5]",
-            bgColor: "bg-pink-50",
-            textColor: "text-black"
+            description: "YoungVox uses structured assessments to track your school's progress and impact of Youngvox",
+            bgColor: "bg-white",
+            textColor: "text-[#1A1A1A]",
+            descColor: "text-gray-600"
         }
     ];
 
@@ -79,106 +81,142 @@ const HowWeEmpower = () => {
     const [headerRef, headerVisible] = useScrollAnimation({ once: true });
     const [cardsRef, cardsVisible] = useScrollAnimation({ once: true });
     const [partnersRef, partnersVisible] = useScrollAnimation({ once: true });
-    
+
     return (
-        <section className="bg-[#FFF5F5] py-12 md:py-16 lg:py-20">
-            <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-                {/* Section Header */}
-                <div ref={headerRef} className={`text-center mb-10 md:mb-12 ${headerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3">
-                        How YoungVox Empowers School
-                    </h2>
-                    <p className="text-gray-700 text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
-                        Inspiring students to grow as leaders, address real-time issues, and drive change within and beyond their schools
-                    </p>
-                </div>
-
-                {/* Cards Grid */}
-                <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-16 md:mb-20 lg:mb-24">
-                    {empowermentCards.map((card, index) => (
-                        <div
-                            key={card.id}
-                            className={`rounded-xl md:rounded-2xl overflow-hidden shadow-md border-4 md:border-[6px] ${card.borderColor} ${card.bgColor} transition-transform hover:scale-105 hover-lift ${cardsVisible ? `animate-fade-in-up animate-delay-${(index % 2) * 100}` : 'opacity-0'}`}
-                        >
-                            {/* Card Image */}
-                            <div className="relative h-48 md:h-56 lg:h-64 overflow-hidden bg-white">
-                                <img
-                                    src={card.image}
-                                    alt={card.title}
-                                    className={`w-full h-full object-cover object-center ${cardsVisible ? 'animate-zoom-in-out' : ''}`}
-                                    style={{ animationDelay: `${index * 0.5}s` }}
-                                />
-                            </div>
-
-                            {/* Card Content */}
-                            <div className={`p-4 md:p-5 lg:p-6 ${card.textColor}`}>
-                                <h3 className="text-sm md:text-base lg:text-lg font-bold mb-2 leading-tight whitespace-pre-line">
-                                    {card.title}
-                                </h3>
-                                <p className={`text-xs md:text-sm leading-relaxed ${card.textColor === 'text-white' ? 'text-white/95' : 'text-gray-700'}`}>
-                                    {card.description}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Be Part of the Change Section */}
-                <div ref={partnersRef}>
-                    {/* Section Header */}
-                    <div className={`flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 md:mb-12 ${partnersVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                        <div>
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-2 md:mb-3">
-                                Be Part of the Change
+        <>
+            <section
+                className="pt-4 md:pt-8 lg:pt-12 pb-4 md:pb-6 lg:pb-8"
+            >
+                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                    {/* Unified Container for Header and Cards */}
+                    <div
+                        className="rounded-[40px] p-6 md:p-10 lg:p-14 shadow-sm border border-[#F5F5F5] transition-all duration-500 hover:shadow-md overflow-hidden relative"
+                        style={{
+                            backgroundColor: '#FF8E5114',
+                            backgroundImage: `url(${howWeEmpowerBg})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'right 20px bottom 20px',
+                            backgroundSize: 'clamp(200px, 20vw, 350px)'
+                        }}
+                    >
+                        {/* Section Header */}
+                        <div ref={headerRef} className={`text-center mb-12 md:mb-16 ${headerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+                            <h2 className="text-[34px] leading-tight lg:text-[46px] font-extrabold text-[#1A1A1A] mb-4">
+                                How YoungVox Empowers School
                             </h2>
-                            <p className="text-gray-700 text-sm md:text-base max-w-md leading-relaxed">
-                                A transformative platform that nurtures leadership, voice, and real-world impact in every student
+                            <p className="text-[#4A4A4A]/80 text-lg max-w-4xl mx-auto leading-relaxed">
+                                Inspiring students to grow as leaders, address real time issues, and drive change within and beyond their schools
                             </p>
                         </div>
-                        <button className="bg-[#A82228] text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full text-sm md:text-base font-semibold hover:bg-[#8B1B20] transition-colors whitespace-nowrap">
-                            Join Us Today
-                        </button>
-                    </div>
 
-                    {/* Partner Cards */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-                        {partnerCards.map((card, index) => {
-                            // Calculate delay for center-outward animation
-                            // For 4 cards: center is between 1 and 2, so order: 1, 2, 0, 3
-                            const centerOutwardOrder = [1, 2, 0, 3]; // Cards animate from center outward
-                            const animationDelay = centerOutwardOrder.indexOf(index) * 0.15;
-                            
-                            return (
+                        {/* Cards Grid */}
+                        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-8">
+                            {empowermentCards.map((card, index) => (
                                 <div
                                     key={card.id}
-                                    className={`bg-white rounded-xl md:rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 hover-lift ${partnersVisible ? 'animate-scale-in-from-center' : 'opacity-0'}`}
-                                    style={{ 
-                                        animationDelay: partnersVisible ? `${animationDelay}s` : '0s'
-                                    }}
+                                    className={`rounded-[30px] overflow-hidden shadow-xl ${card.bgColor} transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl lg:w-[610px] lg:h-[500px] flex flex-col mx-auto ${cardsVisible ? `animate-fade-in-up animate-delay-${(index % 2) * 100}` : 'opacity-0'}`}
                                 >
-                                    {/* Icon */}
-                                    <div className="mb-3 md:mb-4">
-                                        <img
-                                            src={card.icon}
-                                            alt={card.title}
-                                            className="w-12 h-12 md:w-14 md:h-14 object-contain"
-                                        />
+                                    {/* Card Image Container */}
+                                    <div className="p-6 pb-0">
+                                        <div className="relative w-full aspect-[16/9.5] overflow-hidden rounded-[20px] shadow-sm bg-gray-100">
+                                            <img
+                                                src={card.image}
+                                                alt={card.title}
+                                                className={`w-full h-full object-cover object-center ${cardsVisible ? 'animate-zoom-in-out' : ''}`}
+                                                style={{ animationDelay: `${index * 0.5}s` }}
+                                            />
+                                        </div>
                                     </div>
-                                    {/* Title */}
-                                    <h3 className="text-base md:text-lg font-bold text-black mb-2">
-                                        {card.title}
-                                    </h3>
-                                    {/* Description */}
-                                    <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
-                                        {card.description}
-                                    </p>
+
+                                    {/* Card Content */}
+                                    <div className="px-8 lg:px-10 pt-6 pb-8 flex-grow flex flex-col justify-start text-left">
+                                        <h3 className={`text-xl lg:text-[28px] font-extrabold mb-3 leading-tight whitespace-pre-line ${card.textColor}`}>
+                                            {card.title}
+                                        </h3>
+                                        <p className={`text-base lg:text-[17px] leading-relaxed ${card.descColor}`}>
+                                            {card.description}
+                                        </p>
+                                    </div>
                                 </div>
-                            );
-                        })}
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            {/* Be Part of the Change Section */}
+            <section className="pt-4 md:pt-6 lg:pt-8 pb-12 md:pb-20 lg:pb-24 bg-white overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                    <div ref={partnersRef}>
+                        {/* Section Header */}
+                        <div className={`flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 lg:mb-16 ${partnersVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+                            <div className="max-w-xl">
+                                <h2 className="text-[34px] leading-tight lg:text-[46px] font-extrabold text-[#1A1A1A] mb-4">
+                                    Be Part of the Change
+                                </h2>
+                                <p className="text-[#4A4A4A]/80 text-lg md:text-xl leading-relaxed">
+                                    A transformative platform that nurtures leadership, voice, and real-world impact in every student.
+                                </p>
+                            </div>
+                            <button
+                                className="bg-[#A82228] text-white px-8 py-4 rounded-full text-base font-bold hover:bg-[#8a1c22] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 whitespace-nowrap"
+                            >
+                                Join Us Today
+                            </button>
+                        </div>
+
+                        {/* Partner Cards */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                            {partnerCards.map((card, index) => {
+                                const centerOutwardOrder = [1, 2, 0, 3];
+                                const animationDelay = centerOutwardOrder.indexOf(index) * 0.15;
+
+                                return (
+                                    <div
+                                        key={card.id}
+                                        className={`group rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100/50 hover:-translate-y-2 bg-white relative overflow-hidden ${partnersVisible ? 'animate-scale-in-from-center' : 'opacity-0'}`}
+                                        style={{
+                                            animationDelay: partnersVisible ? `${animationDelay}s` : '0s'
+                                        }}
+                                    >
+                                        {/* Background Pattern */}
+                                        <div
+                                            className="absolute inset-0 transition-opacity duration-500 pointer-events-none"
+                                            style={{
+                                                backgroundImage: `url(${bePartChangeBg})`,
+                                                backgroundSize: 'cover',
+                                                backgroundPosition: 'center',
+                                                opacity: 0.5 // Making it much more prominent as per request
+                                            }}
+                                        />
+
+                                        {/* Content */}
+                                        <div className="relative z-10">
+                                            {/* Icon */}
+                                            <div className="mb-6 bg-[#FDF2F2] w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                                <img
+                                                    src={card.icon}
+                                                    alt={card.title}
+                                                    className="w-10 h-10 object-contain"
+                                                />
+                                            </div>
+                                            {/* Title */}
+                                            <h3 className="text-2xl font-bold text-[#1A1A1A] mb-3">
+                                                {card.title}
+                                            </h3>
+                                            {/* Description */}
+                                            <p className="text-base text-gray-600 leading-relaxed">
+                                                {card.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
     );
 };
 

@@ -51,9 +51,9 @@ const VolunteerFormPage = () => {
       {/* Banner Section */}
       <section className="w-full relative">
         <div className="relative w-full">
-          <img 
-            src={joinBanner} 
-            alt="Join YoungVox Banner" 
+          <img
+            src={joinBanner}
+            alt="Join YoungVox Banner"
             className="w-full h-auto object-cover"
           />
         </div>
@@ -65,10 +65,10 @@ const VolunteerFormPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel - Content */}
             <div className={`space-y-6 ${contentVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
+              <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
                 Be Part of the YoungVox Team
               </h1>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 Our volunteers and interns play a vital role in YoungVox, working closely with students and communities to implement programs and initiatives that inspire real change. From organizing school and community campaigns to offering guidance, creativity, and mentorship, every contribution strengthens our mission. Your time and skills can empower young leaders.
               </p>
               <a
@@ -82,8 +82,8 @@ const VolunteerFormPage = () => {
             </div>
 
             {/* Right Panel - Form */}
-            <div className={`bg-[#FFFBF2] rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${contentVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-3xl font-bold text-black mb-6">
+            <div className={`bg-pink-50 rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${contentVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+              <h2 className="text-[30px] lg:text-[36px] font-bold text-black mb-6">
                 Write to Us
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -98,7 +98,7 @@ const VolunteerFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="email"
@@ -110,7 +110,7 @@ const VolunteerFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="tel"
@@ -122,7 +122,7 @@ const VolunteerFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="text"
@@ -134,7 +134,7 @@ const VolunteerFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="text"
@@ -146,7 +146,7 @@ const VolunteerFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <select
                     name="gender"
@@ -163,7 +163,7 @@ const VolunteerFormPage = () => {
                     ))}
                   </select>
                 </div>
-                
+
                 <div>
                   <input
                     type="number"
@@ -175,7 +175,7 @@ const VolunteerFormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <select
                     name="occupation"
@@ -192,7 +192,7 @@ const VolunteerFormPage = () => {
                     ))}
                   </select>
                 </div>
-                
+
                 <div>
                   <textarea
                     name="message"
@@ -204,7 +204,7 @@ const VolunteerFormPage = () => {
                     required
                   ></textarea>
                 </div>
-                
+
                 <div className="flex items-start">
                   <input
                     type="checkbox"
@@ -218,7 +218,7 @@ const VolunteerFormPage = () => {
                     I confirm my interest in joining the YoungVox team.
                   </label>
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full bg-[#A82228] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors"

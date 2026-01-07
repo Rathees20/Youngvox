@@ -60,10 +60,10 @@ const ImpactSnapshot = () => {
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 {/* Section Header */}
                 <div className={`text-center mb-6 md:mb-4 ${isVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                    <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-3">
+                    <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-white mb-2 md:mb-3">
                         Impact Snapshot
                     </h2>
-                    <p className="text-white/90 text-xs md:text-sm max-w-2xl mx-auto leading-relaxed px-4">
+                    <p className="text-white/90 text-lg max-w-2xl mx-auto leading-relaxed px-4">
                         Our reach and impact across India, empowering the next generation of leaders with continued growth expected in the subsequent years
                     </p>
                 </div>
@@ -88,12 +88,12 @@ const ImpactSnapshot = () => {
                                 >
                                     {/* Circle */}
                                     <div className={`w-[200px] h-[200px] rounded-full border-[2px] border-white/70 flex flex-col items-center justify-center bg-transparent ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
-                                         style={{ animationDelay: `${index * 200}ms` }}>
+                                        style={{ animationDelay: `${index * 200}ms` }}>
                                         <div className="text-center">
                                             <div className="text-4xl font-bold text-white mb-1">
                                                 {formatNumber(currentCount)}{stat.suffix}
                                             </div>
-                                            <div className="text-xs text-white/90 font-medium whitespace-pre-line leading-tight px-2">
+                                            <div className="text-sm md:text-base text-white/90 font-medium whitespace-pre-line leading-tight px-2">
                                                 {stat.label}
                                             </div>
                                         </div>
@@ -111,12 +111,12 @@ const ImpactSnapshot = () => {
                         return (
                             <div key={stat.id} className="flex justify-center">
                                 <div className={`w-[140px] h-[140px] rounded-full border-[2px] border-white/70 flex flex-col items-center justify-center bg-transparent ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
-                                     style={{ animationDelay: `${index * 200}ms` }}>
+                                    style={{ animationDelay: `${index * 200}ms` }}>
                                     <div className="text-center">
                                         <div className="text-2xl font-bold text-white mb-1">
                                             {formatNumber(currentCount)}{stat.suffix}
                                         </div>
-                                        <div className="text-[10px] text-white/90 font-medium whitespace-pre-line leading-tight px-2">
+                                        <div className="text-xs sm:text-sm text-white/90 font-medium whitespace-pre-line leading-tight px-2">
                                             {stat.label}
                                         </div>
                                     </div>
@@ -128,7 +128,7 @@ const ImpactSnapshot = () => {
 
                 {/* Get in touch Button */}
                 <div className={`text-center mt-8 md:mt-12 ${isVisible ? 'animate-fade-in-up animate-delay-500' : 'opacity-0'}`}>
-                    <button className="bg-white text-[#A82228] px-6 md:px-8 py-2.5 md:py-3 rounded-full text-xs md:text-sm font-bold hover:bg-gray-100 transition-all hover-lift shadow-lg">
+                    <button className="bg-white text-[#A82228] px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl">
                         Get in touch
                     </button>
                 </div>

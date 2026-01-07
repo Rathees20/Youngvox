@@ -49,9 +49,9 @@ const FormPage = () => {
       {/* Banner Section */}
       <section className="w-full relative">
         <div className="relative w-full">
-          <img 
-            src={joinBanner} 
-            alt="Join YoungVox Banner" 
+          <img
+            src={joinBanner}
+            alt="Join YoungVox Banner"
             className="w-full h-auto object-cover"
           />
         </div>
@@ -63,16 +63,16 @@ const FormPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel - Content */}
             <div className={`space-y-6 ${contentVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
+              <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
                 Bring YoungVox to Your Campus. Inspire Changemakers.
               </h1>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 As a YoungVox school chapter, your students gain the opportunity to build leadership skills, participate in engaging activities and campaigns within their own school, and take part in community initiatives that create real, lasting impact.
               </p>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 And the best part? It's completely free of cost.
               </p>
-              <p className="text-base sm:text-lg text-black leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers—one student at a time.
               </p>
               <a
@@ -86,8 +86,8 @@ const FormPage = () => {
             </div>
 
             {/* Right Panel - Form */}
-            <div className={`bg-[#FFFBF2] rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${contentVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-3xl font-bold text-black mb-6">
+            <div className={`bg-pink-50 rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${contentVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+              <h2 className="text-[30px] lg:text-[36px] font-bold text-black mb-6">
                 Write to Us
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -102,7 +102,7 @@ const FormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <select
                     name="designation"
@@ -119,7 +119,7 @@ const FormPage = () => {
                     ))}
                   </select>
                 </div>
-                
+
                 <div>
                   <input
                     type="email"
@@ -131,7 +131,7 @@ const FormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="tel"
@@ -143,7 +143,7 @@ const FormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="text"
@@ -155,7 +155,7 @@ const FormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="text"
@@ -167,7 +167,7 @@ const FormPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <textarea
                     name="message"
@@ -179,7 +179,7 @@ const FormPage = () => {
                     required
                   ></textarea>
                 </div>
-                
+
                 <div className="flex items-start">
                   <input
                     type="checkbox"
@@ -193,7 +193,7 @@ const FormPage = () => {
                     I confirm the school's interest in becoming a YoungVox School Chapter (Free of Cost).
                   </label>
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full bg-[#A82228] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors"
