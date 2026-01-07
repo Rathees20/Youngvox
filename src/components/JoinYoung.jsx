@@ -26,12 +26,19 @@ const JoinYoung = () => {
       <Header />
 
       {/* Banner Section */}
-      <section ref={bannerRef} className="w-full relative">
+      <section ref={bannerRef} className="w-full relative overflow-hidden">
         <div className="relative w-full">
           <img
             src={joinBanner}
             alt="Join YoungVox Banner"
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover scale-110"
+            style={{ 
+              imageRendering: '-webkit-optimize-contrast',
+              WebkitImageRendering: '-webkit-optimize-contrast',
+              msInterpolationMode: 'bicubic'
+            }}
+            loading="eager"
+            decoding="async"
           />
 
           {/* Overlay Content - Right aligned on all screens */}
