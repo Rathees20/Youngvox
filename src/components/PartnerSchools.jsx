@@ -29,7 +29,7 @@ const PartnerSchools = () => {
                         <h2 className="text-[24px] leading-relaxed lg:text-[32px] font-extrabold text-black mb-2 md:mb-3 text-left">
                             Partner Schools
                         </h2>
-                        <p className="text-gray-600 text-lg leading-[1.8] text-left">
+                        <p className="text-gray-600 text-xl leading-[1.8] text-left">
                             Collaborating with leading educational institutions across India
                         </p>
                     </div>
