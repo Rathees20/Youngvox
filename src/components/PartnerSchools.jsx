@@ -25,22 +25,22 @@ const PartnerSchools = () => {
             <div className="container mx-auto px-4 md:px-6 max-w-6xl">
                 <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12">
                     {/* Left Side - Title and Description */}
-                    <div className={`w-full md:w-1/3 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                        <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-2 md:mb-3">
+                    <div className={`w-full md:w-1/3 text-left -ml-4 md:-ml-6 pt-4 md:pt-6 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+                        <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-2 md:mb-3 text-left">
                             Partner Schools
                         </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed">
+                        <p className="text-gray-600 text-lg leading-relaxed text-left">
                             Collaborating with leading educational institutions across India
                         </p>
                     </div>
 
                     {/* Right Side - School Logos Grid */}
                     <div className={`w-full md:w-2/3 ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6 place-items-center">
                             {partnerSchools.map((school) => (
                                 <div
                                     key={school.id}
-                                    className="p-4 md:p-6 flex items-center justify-center h-20 md:h-24"
+                                    className="p-4 md:p-6 flex items-center justify-center h-20 md:h-24 w-full"
                                 >
                                     {/* School logo */}
                                     <img

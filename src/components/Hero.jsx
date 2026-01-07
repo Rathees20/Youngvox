@@ -15,7 +15,7 @@ const Hero = () => {
           <div
             style={{
               width: '100%',
-              height: 650,
+              height: 804,
               background: 'linear-gradient(90deg,#eee,#ccc)',
               filter: 'blur(10px)',
               position: 'absolute',
@@ -29,12 +29,12 @@ const Hero = () => {
           src={heroImage}
           alt="YoungVox Hero"
           className={`
-            w-full h-auto md:h-[650px] object-scale-down md:object-fill object-top shadow-sm
+            w-full h-auto md:h-[804px] object-scale-down md:object-cover object-top shadow-sm
             transition-opacity duration-500
-            ${imgLoaded ? 'opacity-100' : 'opacity-0'}
           `}
-          width={1600} // replace with actual image width
-          height={650} // replace with actual image height
+          style={{ aspectRatio: '241/134' }}
+          width={1446} // banner image width
+          height={804} // banner image height
           onLoad={() => setImgLoaded(true)}
         />
 

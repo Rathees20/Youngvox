@@ -149,7 +149,7 @@ const HowWeEmpower = () => {
                 <div className="max-w-7xl mx-auto px-6 lg:px-10">
                     <div ref={partnersRef}>
                         {/* Section Header */}
-                        <div className={`flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 lg:mb-16 ${partnersVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+                        <div className={`flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-6 lg:mb-8 ${partnersVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
                             <div className="max-w-xl">
                                 <h2 className="text-[34px] leading-tight lg:text-[46px] font-extrabold text-[#1A1A1A] mb-4">
                                     Be Part of the Change
@@ -166,7 +166,7 @@ const HowWeEmpower = () => {
                         </div>
 
                         {/* Partner Cards */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
                             {partnerCards.map((card, index) => {
                                 const centerOutwardOrder = [1, 2, 0, 3];
                                 const animationDelay = centerOutwardOrder.indexOf(index) * 0.15;

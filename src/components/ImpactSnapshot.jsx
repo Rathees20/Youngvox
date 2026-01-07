@@ -70,7 +70,7 @@ const ImpactSnapshot = () => {
 
                 {/* Stats Circles - Desktop */}
                 <div className="hidden md:flex justify-center items-center my-12">
-                    <div className="relative flex items-center" style={{ width: '850px', height: '280px' }}>
+                    <div className="relative flex items-center ml-20" style={{ width: '850px', height: '280px' }}>
                         {impactStats.map((stat, index) => {
                             // Alternate positions: down, up, down, up
                             const topPosition = index % 2 === 0 ? '40px' : '0px';
@@ -105,7 +105,7 @@ const ImpactSnapshot = () => {
                 </div>
 
                 {/* Stats Circles - Mobile (2x2 Grid) */}
-                <div className="grid grid-cols-2 gap-4 my-8 md:hidden max-w-md mx-auto">
+                <div className="grid grid-cols-2 gap-4 my-8 md:hidden max-w-md mx-auto ml-10">
                     {impactStats.map((stat, index) => {
                         const currentCount = counts[index];
                         return (

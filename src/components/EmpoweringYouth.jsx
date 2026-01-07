@@ -12,11 +12,11 @@ const EmpoweringYouth = () => {
   const carouselImages = [
     {
       src: smilesAndLearningImage,
-      // caption: 'Smiles and learning all around!',
+      caption: 'Smiles and learning all around!',
     },
     {
       src: youthEmpowerSecondImg,
-
+      caption: 'True strength is knowing when to ask for help',
     },
 
   ];
@@ -39,7 +39,7 @@ const EmpoweringYouth = () => {
 
           {/* LEFT CONTENT */}
           <div
-            className={`space-y-6 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'
+            className={`space-y-6 pt-10 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'
               }`}
           >
             <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900">
@@ -69,7 +69,7 @@ const EmpoweringYouth = () => {
           {/* RIGHT CAROUSEL */}
           <div
             className={`relative ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'
-              } flex justify-center lg:justify-end lg:pt-2`}
+              } flex justify-center lg:justify-end lg:pt-8`}
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-[508px] h-[320px] sm:h-[400px] lg:h-[508px] aspect-square">
               <div
@@ -81,15 +81,15 @@ const EmpoweringYouth = () => {
                     <img
                       src={img.src}
                       alt={img.caption}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-bottom"
                     />
 
                     {/* DARK OVERLAY */}
                     <div className="absolute inset-0 bg-black/25" />
 
                     {/* CAPTION */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
-                      <p className="text-white text-sm font-medium">
+                    <div className="absolute bottom-8 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+                      <p className="text-white text-lg font-medium">
                         {img.caption}
                       </p>
                     </div>
