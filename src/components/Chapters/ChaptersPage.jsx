@@ -27,7 +27,11 @@ const ChaptersPage = () => {
   const states = ['Tamil Nadu', 'Karnataka', 'Maharashtra', 'Delhi', 'Gujarat'];
   const districts = ['Chennai', 'Bangalore', 'Mumbai', 'Delhi', 'Ahmedabad'];
 
-  const totalPages = Math.ceil(schools.length / 12);
+  const cardsPerPage = 9; // 3 rows × 3 columns
+  const totalPages = Math.ceil(schools.length / cardsPerPage);
+  const startIndex = (currentPage - 1) * cardsPerPage;
+  const endIndex = startIndex + cardsPerPage;
+  const displayedSchools = schools.slice(startIndex, endIndex);
   const [heroRef, heroVisible] = useScrollAnimation({ once: true });
   const [searchRef, searchVisible] = useScrollAnimation({ once: true });
   const [resultsRef, resultsVisible] = useScrollAnimation({ once: true });
@@ -131,13 +135,13 @@ const ChaptersPage = () => {
       {/* School Chapters Listing */}
       <section ref={resultsRef} className="py-6 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className={`text-[30px] lg:text-[36px] font-bold text-black mb-6 sm:mb-8 ${resultsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-            Showing Result 1-30
+          <h2 className={`text-[15px] sm:text-[20px] md:text-[25px] lg:text-[28px] font-bold text-black mb-6 sm:mb-8 ${resultsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+            Showing Result {startIndex + 1}-{Math.min(endIndex, schools.length)} of {schools.length}
           </h2>
 
           {/* School Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 mb-8">
-            {schools.map((school, index) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-8">
+            {displayedSchools.map((school, index) => {
               const isPinkBox = index % 2 !== 0; // Pink boxes for odd indices
               return (
                 <div
@@ -162,17 +166,13 @@ const ChaptersPage = () => {
                   <div className="relative z-10 w-full h-full flex flex-col">
                     {/* School Icon and Name Header */}
                     <div className="mb-2 flex-shrink-0">
-                      <div className="flex items-start gap-2 mb-0">
+                      <div className="flex items-start gap-2">
                         <img
                           src={schoolIcon}
                           alt="School icon"
-                          className="w-7 h-7 sm:w-8 sm:h-8 object-contain flex-shrink-0 mt-0.5"
+                          className="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0 mt-0.5"
                         />
-                        <span className="text-[10px] text-gray-600 font-normal">Name</span>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0"></div>
-                        <h3 className="text-sm font-bold text-black leading-tight ml-2">
+                        <h3 className="text-base sm:text-lg font-bold text-black leading-tight mt-3">
                           {school.name}
                         </h3>
                       </div>
@@ -182,22 +182,22 @@ const ChaptersPage = () => {
                     <hr className="border-gray-300 mb-2 flex-shrink-0" />
 
                     {/* Details */}
-                    <div className="space-y-1.5 flex-1 min-h-0">
+                    <div className="space-y-2 flex-1 min-h-0">
                       <div>
-                        <p className="text-[10px] text-gray-600 font-normal mb-0.5">Chapter ID:</p>
-                        <p className="text-[10px] font-bold text-black">{school.chapterId}</p>
+                        <p className="text-xs sm:text-sm text-gray-600 font-normal mb-1">Chapter ID:</p>
+                        <p className="text-xs sm:text-sm font-bold text-black">{school.chapterId}</p>
                       </div>
                       <div>
-                        <p className="text-[10px] text-gray-600 font-normal mb-0.5">District:</p>
-                        <p className="text-[10px] font-bold text-black">{school.district}</p>
+                        <p className="text-xs sm:text-sm text-gray-600 font-normal mb-1">District:</p>
+                        <p className="text-xs sm:text-sm font-bold text-black">{school.district}</p>
                       </div>
                       <div>
-                        <p className="text-[10px] text-gray-600 font-normal mb-0.5">State:</p>
-                        <p className="text-[10px] font-bold text-black">{school.state}</p>
+                        <p className="text-xs sm:text-sm text-gray-600 font-normal mb-1">State:</p>
+                        <p className="text-xs sm:text-sm font-bold text-black">{school.state}</p>
                       </div>
                       <div>
-                        <p className="text-[10px] text-gray-600 font-normal mb-0.5">Created From:</p>
-                        <p className="text-[10px] font-bold text-black">{school.createdFrom}</p>
+                        <p className="text-xs sm:text-sm text-gray-600 font-normal mb-1">Created From:</p>
+                        <p className="text-xs sm:text-sm font-bold text-black">{school.createdFrom}</p>
                       </div>
                     </div>
                   </div>
