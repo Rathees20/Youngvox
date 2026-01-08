@@ -84,8 +84,9 @@ export default function NewsletterSection() {
           alt="frame"
           className="
             absolute
-            bottom-[-22px]
-            sm:bottom-[-30px]
+            bottom-[-32px]
+            sm:bottom-[-42px]
+            
             left-0
             w-full
             z-30

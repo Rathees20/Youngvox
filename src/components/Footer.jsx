@@ -11,7 +11,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-white pt-12 pb-6">
+        <footer className="bg-white pt-12 pb-6 font-sans">
             <div className="container mx-auto px-4 md:px-6 max-w-6xl">
                 {/* Main Footer Content */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -22,7 +22,7 @@ const Footer = () => {
                             alt="YoungVox Logo"
                             className="h-12 mb-4"
                         />
-                        <p className="text-gray-600 text-lg leading-relaxed">
+                        <p className="text-gray-600 text-sm leading-relaxed">
                             YoungVox is a national youth leadership initiative dedicated to nurturing students and socially responsible leaders.
                         </p>
                     </div>
@@ -31,11 +31,11 @@ const Footer = () => {
                     <div>
                         <h3 className="text-sm font-bold text-black mb-3">QUICK LINKS</h3>
                         <ul className="space-y-2">
-                            <li><Link to="/" onClick={scrollToTop} className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">Home</Link></li>
-                            <li><Link to="/about" onClick={scrollToTop} className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">About Us</Link></li>
-                            <li><Link to="/wings" onClick={scrollToTop} className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">Wings </Link></li>
-                            <li><Link to="/chapters" onClick={scrollToTop} className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">Chapters</Link></li>
-                            <li><a href="#" className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">Events</a></li>
+                            <li><Link to="/" onClick={scrollToTop} className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">Home</Link></li>
+                            <li><Link to="/about" onClick={scrollToTop} className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">About Us</Link></li>
+                            <li><Link to="/wings" onClick={scrollToTop} className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">Wings </Link></li>
+                            <li><Link to="/chapters" onClick={scrollToTop} className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">Chapters</Link></li>
+                            <li><a href="#" className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">Events</a></li>
                         </ul>
                     </div>
 
@@ -43,10 +43,10 @@ const Footer = () => {
                     <div>
                         <h3 className="text-sm font-bold text-black mb-3">RESOURCES</h3>
                         <ul className="space-y-2">
-                            <li><a href="#" className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">Blog</a></li>
-                            <li><a href="#" className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">Learning Hub</a></li>
-                            <li><a href="#" className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">Success Stories</a></li>
-                            <li><a href="#" className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">FAQs</a></li>
+                            <li><a href="#" className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">Blog</a></li>
+                            <li><a href="#" className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">Learning Hub</a></li>
+                            <li><a href="#" className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">Success Stories</a></li>
+                            <li><a href="#" className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">FAQs</a></li>
                         </ul>
                     </div>
 
@@ -54,10 +54,10 @@ const Footer = () => {
                     <div>
                         <h3 className="text-sm font-bold text-black mb-3">SUPPORT</h3>
                         <ul className="space-y-2">
-                            <li><Link to="/contact" onClick={scrollToTop} className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">Contact Us</Link></li>
-                            <li><Link to="/joinyoung" onClick={scrollToTop} className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">Join YoungVox</Link></li>
-                            <li><a href="#" className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">Terms & Conditions</a></li>
-                            <li><a href="#" className="text-gray-600 text-lg hover:text-[#A82228] transition-colors">Ethics & Privacy</a></li>
+                            <li><Link to="/contact" onClick={scrollToTop} className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">Contact Us</Link></li>
+                            <li><Link to="/joinyoung" onClick={scrollToTop} className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">Join YoungVox</Link></li>
+                            <li><a href="#" className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">Terms & Conditions</a></li>
+                            <li><a href="#" className="text-gray-600 text-sm hover:text-[#A82228] transition-colors">Ethics & Privacy</a></li>
                         </ul>
                     </div>
                 </div>

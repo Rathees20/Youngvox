@@ -149,7 +149,7 @@ const HowWeEmpower = () => {
                 <div className="max-w-7xl mx-auto px-6 lg:px-10">
                     <div ref={partnersRef}>
                         {/* Section Header */}
-                        <div className={`flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-6 lg:mb-8 ${partnersVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+                        <div className={`flex flex-col md:flex-row justify-between items-start gap-6 mb-6 lg:mb-8 ${partnersVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
                             <div className="max-w-xl">
                                 <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-[#1A1A1A] mb-4">
                                     Be Part of the Change
@@ -159,7 +159,7 @@ const HowWeEmpower = () => {
                                 </p>
                             </div>
                             <button
-                                className="bg-[#A82228] text-white px-8 py-4 rounded-full text-base font-bold hover:bg-[#8a1c22] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 whitespace-nowrap"
+                                className="bg-[#A82228] text-white px-8 py-4 rounded-full text-base font-bold hover:bg-[#8a1c22] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 whitespace-nowrap self-start"
                             >
                                 Join Us Today
                             </button>
