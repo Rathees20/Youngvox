@@ -104,13 +104,13 @@ const AboutPage = () => {
       <Header />
 
       {/* Our Vision Section */}
-      <section ref={visionRef} className="py-6 sm:py-20 lg:py-24">
+      <section ref={visionRef} className="py-6 sm:py-20 lg:py-12">
         <div className={`max-w-4xl mx-auto px-3 sm:px-6 text-center ${visionVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
           <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-3 sm:mb-8">
             Our Vision
           </h1>
 
-          <p className="text-lg text-gray-700 leading-snug sm:leading-relaxed max-w-3xl mx-auto px-0.5 sm:px-0">
+          <p className="text-lg text-gray-700 leading-snug lg:leading-relaxed max-w-7xl mx-auto px-6 lg:px-0">
             To build a generation of empowered youth leaders who are informed,
             compassionate, and equipped to create a sustainable, equitable,
             and inclusive world
@@ -144,7 +144,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Mission Section */}
-      <section className="py-6 sm:py-20 lg:py-24 bg-white">
+      <section className="py-6 sm:py-18 lg:py-18 bg-white">
         <div className="max-w-4xl mx-auto px-3 sm:px-6 text-center">
           <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-3 sm:mb-8">
             Our Mission
@@ -205,11 +205,11 @@ const AboutPage = () => {
       </section>
 
       {/* Empowering India's Youth Section */}
-      <section className="py-6 sm:py-20 lg:py-24 bg-white">
+      <section className="py-6 sm:py-18 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
             {/* Left Column - Text Content */}
-            <div className="order-2 lg:order-1 lg:max-w-[420px] xl:max-w-[500px]">
+            <div className="order-2 lg:order-1 lg:max-w-[600px] xl:max-w-[700px]">
               <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-4 sm:mb-6 lg:mb-8">
                 Empowering India's Youth to Lead, Thrive, and Transform
               </h2>
@@ -248,7 +248,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Team Section */}
-      <section ref={teamRef} className="bg-pink-50 lg:overflow-visible">
+      <section ref={teamRef} className="py-6 sm:py-18 lg:py-20 lg:overflow-visible" style={{ backgroundColor: '#FFF2DD' }}>
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 lg:overflow-visible">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:overflow-visible">
             {/* Left Column - Text Content */}
@@ -330,7 +330,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Advisors Section */}
-      <section ref={advisorsRef} className="bg-pink-50 lg:overflow-visible">
+      <section ref={advisorsRef} className=" y-6 sm:py-18 lg:py-20 bg-pink-50 lg:overflow-visible">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 lg:overflow-visible">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:overflow-visible">
             {/* Left Column - Text Content */}
@@ -428,7 +428,7 @@ const AboutPage = () => {
             <div className="flex items-center gap-3 sm:gap-4 lg:justify-center lg:gap-8 pb-4 lg:mx-auto" style={{ width: 'max-content' }}>
               {/* Partner Logo 1 */}
               <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0">
-                <img src={csrIcon1} alt="CSR Partner 1" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
+                <img src={csrIcon5} alt="CSR Partner 1" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
               </div>
 
               {/* Partner Logo 2 - Velammal Nexus */}
@@ -448,7 +448,7 @@ const AboutPage = () => {
 
               {/* Partner Logo 5 */}
               <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0">
-                <img src={csrIcon5} alt="CSR Partner 5" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
+                <img src={csrIcon1} alt="CSR Partner 5" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
               </div>
             </div>
           </div>
