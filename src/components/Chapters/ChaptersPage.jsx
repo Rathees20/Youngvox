@@ -135,7 +135,7 @@ const ChaptersPage = () => {
       {/* School Chapters Listing */}
       <section ref={resultsRef} className="py-6 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className={`text-[15px] sm:text-[20px] md:text-[25px] lg:text-[28px] font-bold text-black mb-6 sm:mb-8 ${resultsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+          <h2 className={`text-[15px] sm:text-[20px] md:text-[25px] lg:text-[26px] font-bold text-black mb-6 sm:mb-8 ${resultsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
             Showing Result {startIndex + 1}-{Math.min(endIndex, schools.length)} of {schools.length}
           </h2>
 
