@@ -31,6 +31,9 @@ const AboutPage = () => {
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
+  // CSR Partners array for continuous rotation
+  const csrPartners = [csrIcon5, csrIcon2, csrIcon3, csrIcon4, csrIcon1];
+
   const teamMembers = [
     {
       id: 1,
@@ -418,38 +421,46 @@ const AboutPage = () => {
             Our CSR Partners
           </h2>
 
-          {/* Partner Logos - Horizontal Scroll with Invisible Scrollbar */}
-          <div className="overflow-x-auto scrollbar-hide -mx-3 sm:mx-0 px-3 sm:px-0 lg:overflow-visible" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          {/* Partner Logos - Infinite Rotating Carousel */}
+          <div className="overflow-hidden relative">
             <style>{`
-              .scrollbar-hide::-webkit-scrollbar {
-                display: none;
+              @keyframes csrScroll {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(calc(-100% / 2));
+                }
+              }
+              .csr-infinite-scroll {
+                animation: csrScroll 25s linear infinite;
               }
             `}</style>
-            <div className="flex items-center gap-3 sm:gap-4 lg:justify-center lg:gap-8 pb-4 lg:mx-auto" style={{ width: 'max-content' }}>
-              {/* Partner Logo 1 */}
-              <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0">
-                <img src={csrIcon5} alt="CSR Partner 1" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
-              </div>
-
-              {/* Partner Logo 2 - Velammal Nexus */}
-              <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0">
-                <img src={csrIcon2} alt="Velammal Nexus" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
-              </div>
-
-              {/* Partner Logo 3 - ABACUS Montessori School */}
-              <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0">
-                <img src={csrIcon3} alt="ABACUS Montessori School" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
-              </div>
-
-              {/* Partner Logo 4 - TIPS iSP */}
-              <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0">
-                <img src={csrIcon4} alt="TIPS iSP International Schools Partnership" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
-              </div>
-
-              {/* Partner Logo 5 */}
-              <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0">
-                <img src={csrIcon1} alt="CSR Partner 5" className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" />
-              </div>
+            <div className="flex items-center gap-3 sm:gap-4 lg:gap-8 csr-infinite-scroll" style={{ width: '200%', display: 'flex' }}>
+              {/* Duplicate logos twice for seamless infinite loop */}
+              {[...csrPartners, ...csrPartners].map((icon, index) => {
+                const altTexts = [
+                  'CSR Partner 1',
+                  'Velammal Nexus',
+                  'ABACUS Montessori School',
+                  'TIPS iSP International Schools Partnership',
+                  'CSR Partner 5'
+                ];
+                const altIndex = index % 5;
+                return (
+                  <div 
+                    key={index}
+                    className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0"
+                    style={{ width: `calc(100% / ${csrPartners.length * 2})` }}
+                  >
+                    <img 
+                      src={icon} 
+                      alt={altTexts[altIndex]} 
+                      className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" 
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
