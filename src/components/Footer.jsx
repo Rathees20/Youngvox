@@ -92,9 +92,7 @@ const Footer = () => {
 
           {/* BOTTOM RIGHT — COPYRIGHT */}
           <p className="text-sm text-black text-right leading-relaxed">
-            Copyright 2025. Youngvox | Privacy
-            <br />
-            Policy | Terms Conditions
+            Copyright 2025. Youngvox | Privacy Policy | Terms Conditions
           </p>
 
         </div>
