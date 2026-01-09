@@ -6,9 +6,9 @@ import tornBorder from '../../assets/our vision frame red.png';
 import ourVisionShadow from '../../assets/our vision shadow.png';
 import frame15Image from '../../assets/Frame 15.png';
 import saranyaImage from '../../assets/Saranya jaikumar.png';
-import educationIcon from '../../assets/Education.png';
-import empowermentIcon from '../../assets/Empowerment.png';
-import equityIcon from '../../assets/Equity.png';
+import g1Gif from '../../assets/gif/g1.gif';
+import g2Gif from '../../assets/gif/g2.gif';
+import g3Gif from '../../assets/gif/g3.gif';
 import csrIcon1 from '../../assets/icons/CSR Icon.png';
 import csrIcon2 from '../../assets/icons/CSR 2 Icon.png';
 import csrIcon3 from '../../assets/icons/CSR 3 Icon.png';
@@ -113,7 +113,7 @@ const AboutPage = () => {
             Our Vision
           </h1>
 
-          <p className="text-lg text-gray-700 leading-snug lg:leading-relaxed max-w-7xl mx-auto px-6 lg:px-0">
+          <p className="text-xl lg:text-2xl text-gray-700 leading-snug lg:leading-relaxed max-w-7xl mx-auto px-6 lg:px-0">
             To build a generation of empowered youth leaders who are informed,
             compassionate, and equipped to create a sustainable, equitable,
             and inclusive world
@@ -153,7 +153,7 @@ const AboutPage = () => {
             Our Mission
           </h1>
 
-          <p className="text-lg text-gray-700 leading-snug sm:leading-relaxed max-w-3xl mx-auto px-0.5 sm:px-0 mb-8 sm:mb-12">
+          <p className="text-xl lg:text-2xl text-gray-700 leading-snug sm:leading-relaxed max-w-3xl mx-auto px-0.5 sm:px-0 mb-8 sm:mb-12">
             To partner with schools, institutions, and organizations in nurturing student voice and leadership through education, empowerment, and equity.
           </p>
 
@@ -163,9 +163,10 @@ const AboutPage = () => {
             <div className="bg-[#F5F5F5] rounded-t-lg px-4 sm:px-6 pt-8 pb-4 sm:pb-6 flex flex-col items-center min-h-[180px] sm:min-h-[210px] relative">
               <div className="flex-1 flex items-center justify-center mb-6">
                 <img
-                  src={educationIcon}
-                  alt="Education icon"
+                  src={g1Gif}
+                  alt="Education"
                   className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                  loading="lazy"
                 />
               </div>
               <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 mb-3">
@@ -178,9 +179,10 @@ const AboutPage = () => {
             <div className="bg-[#F5F5F5] rounded-t-lg px-4 sm:px-6 pt-8 pb-4 sm:pb-6 flex flex-col items-center min-h-[180px] sm:min-h-[210px] relative">
               <div className="flex-1 flex items-center justify-center mb-6">
                 <img
-                  src={empowermentIcon}
-                  alt="Empowerment icon"
+                  src={g2Gif}
+                  alt="Empowerment"
                   className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                  loading="lazy"
                 />
               </div>
               <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 mb-3">
@@ -193,9 +195,10 @@ const AboutPage = () => {
             <div className="bg-[#F5F5F5] rounded-t-lg px-4 sm:px-6 pt-8 pb-4 sm:pb-6 flex flex-col items-center min-h-[180px] sm:min-h-[210px] relative">
               <div className="flex-1 flex items-center justify-center mb-6">
                 <img
-                  src={equityIcon}
-                  alt="Equity icon"
+                  src={g3Gif}
+                  alt="Equity"
                   className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                  loading="lazy"
                 />
               </div>
               <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 mb-3">
@@ -217,7 +220,7 @@ const AboutPage = () => {
                 Empowering India's Youth to Lead, Thrive, and Transform
               </h2>
 
-              <div className="space-y-4 sm:space-y-5 lg:space-y-5 text-gray-700 text-lg leading-[1.6] sm:leading-[1.65]">
+              <div className="space-y-4 sm:space-y-5 lg:space-y-5 text-gray-700 text-lg leading-[1.6] sm:leading-[1.65] text-justify sm:text-justify">
                 <p>
                   YoungVox was born out of a vision to create empowered, emotionally strong, and socially responsible young leaders across India.
                 </p>
@@ -279,7 +282,7 @@ const AboutPage = () => {
                     <div key={member.id} className="w-full lg:w-1/2 min-w-full lg:min-w-[50%] flex-shrink-0 px-0 sm:px-2">
                       <div className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden">
                         {/* Headshot */}
-                        <div className="relative h-85 sm:h-72 lg:h-80 overflow-hidden m-0 p-0 leading-[0]">
+                        <div className="relative h-48 sm:h-56 lg:h-60 overflow-hidden m-0 p-0 leading-[0]">
                           <img
                             src={member.image}
                             alt={member.name}
@@ -288,14 +291,14 @@ const AboutPage = () => {
                           />
                         </div>
                         {/* Red Background Section */}
-                        <div className="bg-[#A82228] p-4 sm:p-5 mt-0">
-                          <h3 className="text-white text-xl font-bold mb-1">
+                        <div className="bg-[#A82228] p-3 sm:p-4 mt-0">
+                          <h3 className="text-white text-lg font-bold mb-1">
                             {member.name}
                           </h3>
-                          <p className="text-white text-lg mb-3">
+                          <p className="text-white text-base mb-2">
                             {member.title}
                           </p>
-                          <button className="bg-white text-[#A82228] px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">
+                          <button className="bg-white text-[#A82228] px-3 py-1.5 rounded-md text-xs font-medium hover:bg-gray-100 transition-colors">
                             Read Bio
                           </button>
                         </div>
@@ -361,7 +364,7 @@ const AboutPage = () => {
                     <div key={advisor.id} className="w-full lg:w-1/2 min-w-full lg:min-w-[50%] flex-shrink-0 px-2 sm:px-2">
                       <div className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden">
                         {/* Headshot */}
-                        <div className="relative h-70 sm:h-72 lg:h-80 overflow-hidden m-0 p-0 leading-[0] bg-gray-50 lg:bg-transparent">
+                        <div className="relative h-48 sm:h-56 lg:h-60 overflow-hidden m-0 p-0 leading-[0] bg-gray-50 lg:bg-transparent">
                           <img
                             src={advisor.image}
                             alt={advisor.name}
@@ -370,14 +373,14 @@ const AboutPage = () => {
                           />
                         </div>
                         {/* Red Background Section */}
-                        <div className="bg-[#A82228] p-4 sm:p-5 mt-0">
-                          <h3 className="text-white text-xl font-bold mb-1">
+                        <div className="bg-[#A82228] p-3 sm:p-4 mt-0">
+                          <h3 className="text-white text-lg font-bold mb-1">
                             {advisor.name}
                           </h3>
-                          <p className="text-white text-lg mb-3">
+                          <p className="text-white text-base mb-2">
                             {advisor.title}
                           </p>
-                          <button className="bg-white text-[#A82228] px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">
+                          <button className="bg-white text-[#A82228] px-3 py-1.5 rounded-md text-xs font-medium hover:bg-gray-100 transition-colors">
                             Read Bio
                           </button>
                         </div>
