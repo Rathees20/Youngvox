@@ -6,6 +6,10 @@ import tornBorder from '../../assets/our vision frame red.png';
 import ourVisionShadow from '../../assets/our vision shadow.png';
 import frame15Image from '../../assets/Frame 15.png';
 import saranyaImage from '../../assets/Saranya jaikumar.png';
+import c2Image from '../../assets/c2.png';
+import c5Image from '../../assets/c5.jpeg';
+import c7Image from '../../assets/c7.jpeg';
+import c8Image from '../../assets/c8.jpeg';
 import g1Gif from '../../assets/gif/g1.gif';
 import g2Gif from '../../assets/gif/g2.gif';
 import g3Gif from '../../assets/gif/g3.gif';
@@ -37,21 +41,31 @@ const AboutPage = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Dr. Saranya Jaikumar",
+      name: "Dr. Sharanya Jaikumar",
       title: "Founder & President",
-      image: saranyaImage
+      image: c2Image,
+      linkedin: "http://linkedin.com/in/dr-saranya-t-jaikumar-72b833169"
     },
     {
       id: 2,
-      name: "Dr. Saranya Jaikumar",
-      title: "Founder & President",
-      image: saranyaImage
+      name: "Banupriya",
+      title: "Chief Operating Officer (COO)",
+      image: c5Image,
+      linkedin: "https://www.linkedin.com/in/banu-priya-a0312b8b/"
     },
     {
       id: 3,
-      name: "Dr. Saranya Jaikumar",
-      title: "Founder & President",
-      image: saranyaImage
+      name: "Kapilash.G",
+      title: "Head - Business Strategy & Creative communication",
+      image: c7Image,
+      linkedin: "https://www.linkedin.com/in/kapilash-gunasekaran/"
+    },
+    {
+      id: 4,
+      name: "Siyana Salim",
+      title: "National Program Coordinator",
+      image: c8Image,
+      linkedin: "https://www.linkedin.com/in/siyana-salim-vaidyar-395b03267/"
     }
   ];
 
@@ -108,15 +122,13 @@ const AboutPage = () => {
 
       {/* Our Vision Section */}
       <section ref={visionRef} className="py-6 sm:py-20 lg:py-12">
-        <div className={`max-w-4xl mx-auto px-3 sm:px-6 text-center ${visionVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+        <div className={`max-w-7xl mx-auto px-3 sm:px-6 text-center ${visionVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
           <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-3 sm:mb-8">
             Our Vision
           </h1>
 
           <p className="text-xl lg:text-2xl text-gray-700 leading-snug lg:leading-relaxed max-w-7xl mx-auto px-6 lg:px-0">
-            To build a generation of empowered youth leaders who are informed,
-            compassionate, and equipped to create a sustainable, equitable,
-            and inclusive world
+            To build a generation of empowered youth leaders who are informed, compassionate, and equipped to create a sustainable, equitable and inclusive world
           </p>
         </div>
 
@@ -148,12 +160,12 @@ const AboutPage = () => {
 
       {/* Our Mission Section */}
       <section className="py-6 sm:py-18 lg:py-18 bg-white">
-        <div className="max-w-4xl mx-auto px-3 sm:px-6 text-center">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 text-center">
           <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-3 sm:mb-8">
             Our Mission
           </h1>
 
-          <p className="text-xl lg:text-2xl text-gray-700 leading-snug sm:leading-relaxed max-w-3xl mx-auto px-0.5 sm:px-0 mb-8 sm:mb-12">
+          <p className="text-xl lg:text-2xl text-gray-700 leading-snug sm:leading-relaxed max-w-6xl mx-auto px-0.5 sm:px-0 mb-8 sm:mb-12">
             To partner with schools, institutions, and organizations in nurturing student voice and leadership through education, empowerment, and equity.
           </p>
 
@@ -165,7 +177,7 @@ const AboutPage = () => {
                 <img
                   src={g1Gif}
                   alt="Education"
-                  className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                  className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 object-contain"
                   loading="lazy"
                 />
               </div>
@@ -181,7 +193,7 @@ const AboutPage = () => {
                 <img
                   src={g2Gif}
                   alt="Empowerment"
-                  className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                  className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 object-contain"
                   loading="lazy"
                 />
               </div>
@@ -197,7 +209,7 @@ const AboutPage = () => {
                 <img
                   src={g3Gif}
                   alt="Equity"
-                  className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                  className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 object-contain"
                   loading="lazy"
                 />
               </div>
@@ -217,20 +229,16 @@ const AboutPage = () => {
             {/* Left Column - Text Content */}
             <div className="order-2 lg:order-1 lg:max-w-[600px] xl:max-w-[700px]">
               <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-4 sm:mb-6 lg:mb-8">
-                Empowering India's Youth to Lead, Thrive, and Transform
+                Empowering India's Youth to Lead, Thrive & Transform
               </h2>
 
               <div className="space-y-4 sm:space-y-5 lg:space-y-5 text-gray-700 text-lg leading-[1.6] sm:leading-[1.65] text-justify sm:text-justify">
                 <p>
-                  YoungVox was born out of a vision to create empowered, emotionally strong, and socially responsible young leaders across India.
+                YoungVox was born out of a vision to create empowered, emotionally strong, and socially responsible young leaders across India. India has one of the world's largest youth populations—253 million adolescents, with one in every five individuals aged between 10 and 19 (UNICEF, 2023). Yet, access to holistic education, leadership development, and emotional wellbeing support remains limited. While SDG 4 (Quality Education) and NEP 2020 strongly emphasize life-skill-oriented learning, most school systems continue to remain heavily academic-centric. This gap highlights the urgent need for a structured, school-based ecosystem that nurtures both competence and character.
                 </p>
 
                 <p>
-                  India has one of the world's largest youth populations—253 million adolescents, with one in every five individuals aged between 10 and 19 (UNICEF, 2023). Yet, access to holistic education, leadership development, and emotional wellbeing support remains limited. While SDG 4 (Quality Education) and NEP 2020 strongly emphasize life-skill-oriented learning, most school systems continue to remain heavily academic-centric. This gap highlights the urgent need for a structured, school-based ecosystem that nurtures both competence and character.
-                </p>
-
-                <p>
-                  YoungVox was created to bridge this gap. Through its unique 8-Wing Chapter Model, YoungVox provides students with opportunities to discover their voice, develop leadership abilities, strengthen emotional resilience, and contribute meaningfully to their communities.
+                YoungVox bridges this gap through its unique 8-Wing Chapter Model, empowering students to discover their voice, build leadership skills, strengthen emotional resilience, and contribute meaningfully to their communities - shaping a generation that is academically capable, emotionally aware, socially responsible, and future-ready.
                 </p>
 
                 <p>
@@ -266,7 +274,7 @@ const AboutPage = () => {
                 </h2>
               </div>
 
-              <p className="text-lg text-black leading-relaxed">
+              <p className="text-lg text-justify text-black leading-relaxed">
                 Our leadership group brings together experienced professionals across programs, training, and operations, united in their commitment to shaping a generation of strong, confident, and capable young leaders
               </p>
             </div>
@@ -286,8 +294,16 @@ const AboutPage = () => {
                           <img
                             src={member.image}
                             alt={member.name}
-                            className="w-full h-full object-cover block m-0 p-0 align-top"
-                            style={{ display: 'block', verticalAlign: 'top', width: '100%', height: '100%', objectFit: 'cover' }}
+                            className="w-full h-full block m-0 p-0 align-top"
+                            style={{ 
+                              display: 'block', 
+                              verticalAlign: 'top', 
+                              width: '100%', 
+                              height: '100%', 
+                              objectFit: 'cover',
+                              objectPosition: member.id === 3 ? 'top' : member.id === 4 ? 'top' : 'center',
+                              backgroundColor: 'transparent'
+                            }}
                           />
                         </div>
                         {/* Red Background Section */}
@@ -298,9 +314,14 @@ const AboutPage = () => {
                           <p className="text-white text-base mb-2">
                             {member.title}
                           </p>
-                          <button className="bg-white text-[#A82228] px-3 py-1.5 rounded-md text-xs font-medium hover:bg-gray-100 transition-colors">
+                          <a 
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-white text-[#A82228] px-3 py-1.5 rounded-md text-xs font-medium hover:bg-gray-100 transition-colors"
+                          >
                             Read Bio
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -348,7 +369,7 @@ const AboutPage = () => {
                 </h2>
               </div>
 
-              <p className="text-lg text-black leading-relaxed">
+              <p className="text-lg text-justify text-black leading-relaxed">
                 Our leadership group brings together experienced professionals across programs, training, and operations, united in their commitment to shaping a generation of strong, confident, and capable young leaders
               </p>
             </div>
