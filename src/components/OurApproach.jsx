@@ -33,7 +33,7 @@ const OurApproach = () => {
                             </p>
                             <p>
                                 Through this partnership network, we offer free programs to schools so every
-                                student — no matter their background — can access meaningful learning,
+                                student — no matter their background is— can access meaningful learning,
                                 essential life skills, and real leadership opportunities
                             </p>
                         </div>

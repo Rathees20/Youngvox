@@ -32,7 +32,7 @@ const JoinYoung = () => {
             src={joinBanner}
             alt="Join YoungVox Banner"
             className="w-full h-auto object-cover scale-110"
-            style={{ 
+            style={{
               imageRendering: '-webkit-optimize-contrast',
               WebkitImageRendering: '-webkit-optimize-contrast',
               msInterpolationMode: 'bicubic'
@@ -75,9 +75,9 @@ const JoinYoung = () => {
       </section>
 
       {/* Join as a School Section */}
-      <section ref={schoolRef} className="py-6 sm:py-10 lg:py-14 bg-white">
+      <section ref={schoolRef} className="py-4 sm:py-6 lg:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
             {/* Left Column - Text Content */}
             <div className={`order-2 lg:order-1 space-y-6 ${schoolVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
@@ -97,7 +97,7 @@ const JoinYoung = () => {
               </div>
             </div>
             {/* Right Column - Image */}
-            <div className={`order-1 lg:order-2 ${schoolVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+            <div className={`order-1 lg:order-2 lg:pt-2 ${schoolVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
               <img
                 src={join01Image}
                 alt="Students in school uniforms"
@@ -109,9 +109,9 @@ const JoinYoung = () => {
       </section>
 
       {/* Volunteer or Intern With Us Section */}
-      <section ref={volunteerRef} className="py-6 sm:py-10 lg:py-14 bg-white">
+      <section ref={volunteerRef} className="py-4 sm:py-6 lg:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
             {/* Left Column - Image */}
             <div className={`${volunteerVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <img
@@ -121,7 +121,7 @@ const JoinYoung = () => {
               />
             </div>
             {/* Right Column - Text Content */}
-            <div className={`space-y-6 ${volunteerVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+            <div className={`space-y-6 lg:pt-2 ${volunteerVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Volunteer or Intern With Us
               </h2>
@@ -143,9 +143,9 @@ const JoinYoung = () => {
       </section>
 
       {/* Corporate Collaboration Section */}
-      <section ref={corporateRef} className="py-6 sm:py-10 lg:py-14 bg-white">
+      <section ref={corporateRef} className="py-4 sm:py-6 lg:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
             {/* Left Column - Text Content */}
             <div className={`order-2 lg:order-1 space-y-6 ${corporateVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
@@ -165,7 +165,7 @@ const JoinYoung = () => {
               </div>
             </div>
             {/* Right Column - Image */}
-            <div className={`order-1 lg:order-2 ${corporateVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+            <div className={`order-1 lg:order-2 lg:pt-2 ${corporateVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
               <img
                 src={join1Image}
                 alt="Corporate collaboration"
@@ -177,9 +177,9 @@ const JoinYoung = () => {
       </section>
 
       {/* Advisors Section */}
-      <section ref={advisorRef} className="py-6 sm:py-10 lg:py-14 bg-white">
+      <section ref={advisorRef} className="py-4 sm:py-6 lg:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
             {/* Left Column - Image */}
             <div className={`${advisorVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <img
@@ -189,7 +189,7 @@ const JoinYoung = () => {
               />
             </div>
             {/* Right Column - Text Content */}
-            <div className={`space-y-6 ${advisorVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+            <div className={`space-y-6 lg:pt-2 ${advisorVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Advisors
               </h2>
@@ -211,9 +211,9 @@ const JoinYoung = () => {
       </section>
 
       {/* Implementation Partners Section */}
-      <section ref={partnerRef} className="py-6 sm:py-10 lg:py-14 bg-white">
+      <section ref={partnerRef} className="py-4 sm:py-6 lg:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
             {/* Left Column - Text Content */}
             <div className={`order-2 lg:order-1 space-y-6 ${partnerVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
@@ -233,7 +233,7 @@ const JoinYoung = () => {
               </div>
             </div>
             {/* Right Column - Image */}
-            <div className={`order-1 lg:order-2 ${partnerVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+            <div className={`order-1 lg:order-2 lg:pt-2 ${partnerVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
               <img
                 src={join1Image}
                 alt="Implementation partners"

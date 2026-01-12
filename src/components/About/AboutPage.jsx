@@ -22,8 +22,6 @@ import NewsletterSection from '../Newsletter';
 import Footer from '../Footer';
 
 const AboutPage = () => {
-  const [teamSlide, setTeamSlide] = useState(0);
-  const [advisorsSlide, setAdvisorsSlide] = useState(0);
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
@@ -90,27 +88,6 @@ const AboutPage = () => {
     }
   ];
 
-  const nextTeamSlide = () => {
-    setTeamSlide((prev) => {
-      const maxSlide = isDesktop ? teamMembers.length - 2 : teamMembers.length - 1;
-      return Math.min(prev + 1, maxSlide);
-    });
-  };
-
-  const prevTeamSlide = () => {
-    setTeamSlide((prev) => Math.max(prev - 1, 0));
-  };
-
-  const nextAdvisorsSlide = () => {
-    setAdvisorsSlide((prev) => {
-      const maxSlide = isDesktop ? advisors.length - 2 : advisors.length - 1;
-      return Math.min(prev + 1, maxSlide);
-    });
-  };
-
-  const prevAdvisorsSlide = () => {
-    setAdvisorsSlide((prev) => Math.max(prev - 1, 0));
-  };
 
   const [visionRef, visionVisible] = useScrollAnimation({ once: true });
   const [teamRef, teamVisible] = useScrollAnimation({ once: true });
@@ -234,11 +211,11 @@ const AboutPage = () => {
 
               <div className="space-y-4 sm:space-y-5 lg:space-y-5 text-gray-700 text-lg leading-[1.6] sm:leading-[1.65] text-justify sm:text-justify">
                 <p>
-                YoungVox was born out of a vision to create empowered, emotionally strong, and socially responsible young leaders across India. India has one of the world's largest youth populations—253 million adolescents, with one in every five individuals aged between 10 and 19 (UNICEF, 2023). Yet, access to holistic education, leadership development, and emotional wellbeing support remains limited. While SDG 4 (Quality Education) and NEP 2020 strongly emphasize life-skill-oriented learning, most school systems continue to remain heavily academic-centric. This gap highlights the urgent need for a structured, school-based ecosystem that nurtures both competence and character.
+                  YoungVox was born out of a vision to create empowered, emotionally strong, and socially responsible young leaders across India. India has one of the world's largest youth populations—253 million adolescents, with one in every five individuals aged between 10 and 19 (UNICEF, 2023). Yet, access to holistic education, leadership development, and emotional wellbeing support remains limited. While SDG 4 (Quality Education) and NEP 2020 strongly emphasize life-skill-oriented learning, most school systems continue to remain heavily academic-centric. This gap highlights the urgent need for a structured, school-based ecosystem that nurtures both competence and character.
                 </p>
 
                 <p>
-                YoungVox bridges this gap through its unique 8-Wing Chapter Model, empowering students to discover their voice, build leadership skills, strengthen emotional resilience, and contribute meaningfully to their communities - shaping a generation that is academically capable, emotionally aware, socially responsible, and future-ready.
+                  YoungVox bridges this gap through its unique 8-Wing Chapter Model, empowering students to discover their voice, build leadership skills, strengthen emotional resilience, and contribute meaningfully to their communities - shaping a generation that is academically capable, emotionally aware, socially responsible, and future-ready.
                 </p>
 
                 <p>
@@ -248,7 +225,7 @@ const AboutPage = () => {
             </div>
 
             {/* Right Column - Image */}
-            <div className="order-1 lg:order-2 lg:pl-4 w-full">
+            <div className="order-1 lg:order-2 lg:pl-4 w-full lg:pt-2">
               <div className="relative rounded-lg sm:rounded-lg overflow-hidden shadow-xl">
                 <img
                   src={frame15Image}
@@ -262,178 +239,102 @@ const AboutPage = () => {
       </section>
 
       {/* Our Team Section */}
-      <section ref={teamRef} className="py-6 sm:py-18 lg:py-20 lg:overflow-visible" style={{ backgroundColor: '#FFF2DD' }}>
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 lg:overflow-visible">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:overflow-visible">
-            {/* Left Column - Text Content */}
-            <div className={`lg:max-w-md ${teamVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-[#A82228] flex-shrink-0"></div>
-                <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
-                  Our Team
-                </h2>
-              </div>
+      <section ref={teamRef} className="py-6 sm:py-18 lg:py-20" style={{ backgroundColor: '#FFF2DD' }}>
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          {/* Heading */}
+          <div className={`text-center mb-6 sm:mb-10 ${teamVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+            <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-4">
+              Our Team
+            </h2>
+            <p className="text-lg text-center text-black leading-relaxed max-w-4xl mx-auto">
+              The YoungVox team is a dynamic collective of experienced professionals across program design, training, psychology, and operations, united by a shared mission to empower the next generation of emotionally strong, confident, and socially responsible leaders.
+            </p>
+          </div>
 
-              <p className="text-lg text-justify text-black leading-relaxed">
-                Our leadership group brings together experienced professionals across programs, training, and operations, united in their commitment to shaping a generation of strong, confident, and capable young leaders
-              </p>
-            </div>
-
-            {/* Right Column - Carousel */}
-            <div className="relative w-full lg:w-auto lg:overflow-visible">
-              <div className="relative overflow-hidden rounded-lg">
-                <div
-                  className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${teamSlide * (isDesktop ? 50 : 100)}%)` }}
-                >
-                  {teamMembers.map((member) => (
-                    <div key={member.id} className="w-full lg:w-1/2 min-w-full lg:min-w-[50%] flex-shrink-0 px-0 sm:px-2">
-                      <div className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden">
-                        {/* Headshot */}
-                        <div className="relative h-48 sm:h-56 lg:h-60 overflow-hidden m-0 p-0 leading-[0]">
-                          <img
-                            src={member.image}
-                            alt={member.name}
-                            className="w-full h-full block m-0 p-0 align-top"
-                            style={{ 
-                              display: 'block', 
-                              verticalAlign: 'top', 
-                              width: '100%', 
-                              height: '100%', 
-                              objectFit: 'cover',
-                              objectPosition: member.id === 3 ? 'top' : member.id === 4 ? 'top' : 'center',
-                              backgroundColor: 'transparent'
-                            }}
-                          />
-                        </div>
-                        {/* Red Background Section */}
-                        <div className="bg-[#A82228] p-3 sm:p-4 mt-0">
-                          <h3 className="text-white text-lg font-bold mb-1">
-                            {member.name}
-                          </h3>
-                          <p className="text-white text-base mb-2">
-                            {member.title}
-                          </p>
-                          <a 
-                            href={member.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block bg-white text-[#A82228] px-3 py-1.5 rounded-md text-xs font-medium hover:bg-gray-100 transition-colors"
-                          >
-                            Read Bio
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+          {/* Team Cards Grid */}
+          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 ${teamVisible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
+            {teamMembers.map((member) => (
+              <div key={member.id} className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden h-full flex flex-col">
+                {/* Headshot */}
+                <div className="relative h-64 sm:h-60 lg:h-64 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full block m-0 p-0 align-top"
+                    style={{
+                      display: 'block',
+                      verticalAlign: 'top',
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: member.id === 3 ? 'center top' : member.id === 4 ? 'center 20%' : 'center',
+                      backgroundColor: 'transparent'
+                    }}
+                  />
+                </div>
+                {/* Red Background Section */}
+                <div className="bg-[#A82228] p-4 sm:p-4 mt-0 flex flex-col flex-grow">
+                  <h3 className="text-white text-base sm:text-lg font-bold mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-white text-sm sm:text-base mb-3 flex-grow">
+                    {member.title}
+                  </p>
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-white text-[#A82228] px-3 py-1.5 rounded-md text-xs font-medium hover:bg-gray-100 transition-colors w-fit"
+                  >
+                    Read Bio
+                  </a>
                 </div>
               </div>
-
-              {/* Navigation Arrows - Mobile: Below carousel, Desktop: Left border */}
-              <div className="flex justify-center gap-3 sm:gap-4 mt-6 lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:-translate-x-1/2 lg:flex-col lg:mt-0 lg:gap-2 z-20">
-                <button
-                  onClick={prevTeamSlide}
-                  className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 hover:shadow-xl transition-all shadow-lg border border-gray-300"
-                  aria-label="Previous slide"
-                >
-                  <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-
-                <button
-                  onClick={nextTeamSlide}
-                  className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 hover:shadow-xl transition-all shadow-lg border border-gray-300"
-                  aria-label="Next slide"
-                >
-                  <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Our Advisors Section */}
-      <section ref={advisorsRef} className=" y-6 sm:py-18 lg:py-20 bg-pink-50 lg:overflow-visible">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 lg:overflow-visible">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:overflow-visible">
-            {/* Left Column - Text Content */}
-            <div className={`lg:max-w-md ${advisorsVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-[#A82228] flex-shrink-0"></div>
-                <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
-                  Our Advisors
-                </h2>
-              </div>
+      <section ref={advisorsRef} className="py-6 sm:py-18 lg:py-20 bg-pink-50">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          {/* Heading */}
+          <div className={`text-center mb-6 sm:mb-10 ${advisorsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+            <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-4">
+              Our Advisors
+            </h2>
+            <p className="text-lg text-center text-black leading-relaxed max-w-4xl mx-auto">
+              Our leadership group brings together experienced professionals across programs, training, and operations, united in their commitment to shaping a generation of strong, confident, and capable young leaders.
+            </p>
+          </div>
 
-              <p className="text-lg text-justify text-black leading-relaxed">
-                Our leadership group brings together experienced professionals across programs, training, and operations, united in their commitment to shaping a generation of strong, confident, and capable young leaders
-              </p>
-            </div>
-
-            {/* Right Column - Carousel */}
-            <div className={`relative w-full lg:w-auto ${advisorsVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <div className="relative overflow-hidden rounded-lg">
-                <div
-                  className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${advisorsSlide * (isDesktop ? 50 : 100)}%)` }}
-                >
-                  {advisors.map((advisor) => (
-                    <div key={advisor.id} className="w-full lg:w-1/2 min-w-full lg:min-w-[50%] flex-shrink-0 px-2 sm:px-2">
-                      <div className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden">
-                        {/* Headshot */}
-                        <div className="relative h-48 sm:h-56 lg:h-60 overflow-hidden m-0 p-0 leading-[0] bg-gray-50 lg:bg-transparent">
-                          <img
-                            src={advisor.image}
-                            alt={advisor.name}
-                            className="w-full h-full object-cover block m-0 p-0 align-top display-block"
-                            style={{ display: 'block', verticalAlign: 'top', width: '100%', height: '100%' }}
-                          />
-                        </div>
-                        {/* Red Background Section */}
-                        <div className="bg-[#A82228] p-3 sm:p-4 mt-0">
-                          <h3 className="text-white text-lg font-bold mb-1">
-                            {advisor.name}
-                          </h3>
-                          <p className="text-white text-base mb-2">
-                            {advisor.title}
-                          </p>
-                          <button className="bg-white text-[#A82228] px-3 py-1.5 rounded-md text-xs font-medium hover:bg-gray-100 transition-colors">
-                            Read Bio
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+          {/* Advisors Cards Grid */}
+          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 ${advisorsVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
+            {advisors.map((advisor) => (
+              <div key={advisor.id} className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden h-full flex flex-col">
+                {/* Headshot */}
+                <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
+                  <img
+                    src={advisor.image}
+                    alt={advisor.name}
+                    className="w-full h-full object-cover block m-0 p-0 align-top"
+                    style={{ display: 'block', verticalAlign: 'top', width: '100%', height: '100%' }}
+                  />
+                </div>
+                {/* Red Background Section */}
+                <div className="bg-[#A82228] p-4 sm:p-4 mt-0 flex flex-col flex-grow">
+                  <h3 className="text-white text-base sm:text-lg font-bold mb-1">
+                    {advisor.name}
+                  </h3>
+                  <p className="text-white text-sm sm:text-base mb-3 flex-grow">
+                    {advisor.title}
+                  </p>
+                  <button className="bg-white text-[#A82228] px-3 py-1.5 rounded-md text-xs font-medium hover:bg-gray-100 transition-colors w-fit">
+                    Read Bio
+                  </button>
                 </div>
               </div>
-
-              {/* Navigation Arrows - Mobile: Below carousel, Desktop: Left border */}
-              <div className="flex justify-center gap-3 sm:gap-4 mt-6 lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:-translate-x-1/2 lg:flex-col lg:mt-0 lg:gap-2 z-20">
-                <button
-                  onClick={prevAdvisorsSlide}
-                  className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 hover:shadow-xl transition-all shadow-lg border border-gray-300"
-                  aria-label="Previous slide"
-                >
-                  <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-
-                <button
-                  onClick={nextAdvisorsSlide}
-                  className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 hover:shadow-xl transition-all shadow-lg border border-gray-300"
-                  aria-label="Next slide"
-                >
-                  <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -472,15 +373,15 @@ const AboutPage = () => {
                 ];
                 const altIndex = index % 5;
                 return (
-                  <div 
+                  <div
                     key={index}
                     className="bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] h-[90px] sm:h-[100px] lg:h-[120px] flex items-center justify-center flex-shrink-0"
                     style={{ width: `calc(100% / ${csrPartners.length * 2})` }}
                   >
-                    <img 
-                      src={icon} 
-                      alt={altTexts[altIndex]} 
-                      className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain" 
+                    <img
+                      src={icon}
+                      alt={altTexts[altIndex]}
+                      className="max-w-[120px] sm:max-w-[140px] lg:max-w-[160px] max-h-[70px] sm:max-h-[80px] lg:max-h-[100px] object-contain"
                     />
                   </div>
                 );
