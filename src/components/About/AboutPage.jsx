@@ -126,6 +126,14 @@ const AboutPage = () => {
             className="w-full h-auto block object-cover"
           />
 
+          {/* Bottom red shade (Paint stroke effect) */}
+          <div
+            className="absolute bottom-[-1px] left-0 w-full h-24 sm:h-32 lg:h-40 z-20 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to top, #A82228 0%, rgba(168, 34, 40, 0.7) 30%, transparent 100%)'
+            }}
+          ></div>
+
           {/* Bottom torn border */}
           <img
             src={tornBorder}
@@ -199,44 +207,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Empowering India's Youth Section */}
-      <section className="py-6 sm:py-18 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
-            {/* Left Column - Text Content */}
-            <div className="order-2 lg:order-1 lg:max-w-[600px] xl:max-w-[700px]">
-              <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-4 sm:mb-6 lg:mb-8">
-                Empowering India's Youth to Lead, Thrive & Transform
-              </h2>
 
-              <div className="space-y-4 sm:space-y-5 lg:space-y-5 text-gray-700 text-lg leading-[1.6] sm:leading-[1.65] text-justify sm:text-justify">
-                <p>
-                  YoungVox was born out of a vision to create empowered, emotionally strong, and socially responsible young leaders across India. India has one of the world's largest youth populations—253 million adolescents, with one in every five individuals aged between 10 and 19 (UNICEF, 2023). Yet, access to holistic education, leadership development, and emotional wellbeing support remains limited. While SDG 4 (Quality Education) and NEP 2020 strongly emphasize life-skill-oriented learning, most school systems continue to remain heavily academic-centric. This gap highlights the urgent need for a structured, school-based ecosystem that nurtures both competence and character.
-                </p>
-
-                <p>
-                  YoungVox bridges this gap through its unique 8-Wing Chapter Model, empowering students to discover their voice, build leadership skills, strengthen emotional resilience, and contribute meaningfully to their communities - shaping a generation that is academically capable, emotionally aware, socially responsible, and future-ready.
-                </p>
-
-                <p>
-                  YoungVox is redefining what youth development looks like in Indian schools — creating a generation that is not only academically capable, but also emotionally aware, socially responsible, and future-ready
-                </p>
-              </div>
-            </div>
-
-            {/* Right Column - Image */}
-            <div className="order-1 lg:order-2 lg:pl-4 w-full lg:pt-2">
-              <div className="relative rounded-lg sm:rounded-lg overflow-hidden shadow-xl">
-                <img
-                  src={frame15Image}
-                  alt="Four young girls jumping joyfully in school uniforms"
-                  className="w-full h-auto min-h-[300px] sm:min-h-[400px] sm:h-80 lg:h-[600px] xl:h-[650px] object-cover object-center"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Our Team Section */}
       <section ref={teamRef} className="py-6 sm:py-18 lg:py-20" style={{ backgroundColor: '#FFF2DD' }}>
@@ -339,8 +310,47 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Empowering India's Youth Section */}
+      <section className="pt-6 sm:pt-12 lg:pt-16 pb-3 sm:pb-6 lg:pb-8 bg-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
+            {/* Left Column - Text Content */}
+            <div className="order-2 lg:order-1 lg:max-w-[600px] xl:max-w-[700px]">
+              <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-4 sm:mb-6 lg:mb-8">
+                Empowering India's Youth to Lead, Thrive & Transform
+              </h2>
+
+              <div className="space-y-4 sm:space-y-5 lg:space-y-5 text-gray-700 text-lg leading-[1.6] sm:leading-[1.65] text-justify sm:text-justify">
+                <p>
+                  YoungVox was born out of a vision to create empowered, emotionally strong, and socially responsible young leaders across India. India has one of the world's largest youth populations—253 million adolescents, with one in every five individuals aged between 10 and 19 (UNICEF, 2023). Yet, access to holistic education, leadership development, and emotional wellbeing support remains limited. While SDG 4 (Quality Education) and NEP 2020 strongly emphasize life-skill-oriented learning, most school systems continue to remain heavily academic-centric. This gap highlights the urgent need for a structured, school-based ecosystem that nurtures both competence and character.
+                </p>
+
+                <p>
+                  YoungVox bridges this gap through its unique 8-Wing Chapter Model, empowering students to discover their voice, build leadership skills, strengthen emotional resilience, and contribute meaningfully to their communities - shaping a generation that is academically capable, emotionally aware, socially responsible, and future-ready.
+                </p>
+
+                <p>
+                  YoungVox is redefining what youth development looks like in Indian schools — creating a generation that is not only academically capable, but also emotionally aware, socially responsible, and future-ready
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column - Image */}
+            <div className="order-1 lg:order-2 lg:pl-4 w-full lg:pt-2">
+              <div className="relative rounded-lg sm:rounded-lg overflow-hidden shadow-xl">
+                <img
+                  src={frame15Image}
+                  alt="Four young girls jumping joyfully in school uniforms"
+                  className="w-full h-auto min-h-[300px] sm:min-h-[400px] sm:h-80 lg:h-[600px] xl:h-[650px] object-cover object-center"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our CSR Partners Section */}
-      <section className="py-6 sm:py-16 lg:py-24 bg-white">
+      <section className="pt-3 sm:pt-6 lg:pt-8 pb-6 sm:pb-16 lg:pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black text-center mb-6 sm:mb-10">
             Our CSR Partners

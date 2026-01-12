@@ -1,5 +1,12 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 import schoolChapterImg from '../assets/school chapter 1.png';
 import mentorLeadersImg from '../assets/Mentor and wing leaders.png';
 import annualActivitiesImg from '../assets/Annual Activities.png';
@@ -109,36 +116,63 @@ const HowWeEmpower = () => {
                             </p>
                         </div>
 
-                        {/* Cards Grid */}
-                        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 xl:gap-12">
-                            {empowermentCards.map((card, index) => (
-                                <div
-                                    key={card.id}
-                                    className={`rounded-[30px] overflow-hidden shadow-xl ${card.bgColor} transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl w-full max-w-full lg:max-w-[700px] xl:max-w-[750px] lg:h-[550px] xl:h-[600px] flex flex-col mx-auto ${cardsVisible ? `animate-fade-in-up animate-delay-${(index % 2) * 100}` : 'opacity-0'}`}
-                                >
-                                    {/* Card Image Container */}
-                                    <div className="p-6 lg:p-8 pb-0">
-                                        <div className="relative w-full aspect-[16/9.5] overflow-hidden rounded-[20px] shadow-sm bg-gray-100">
-                                            <img
-                                                src={card.image}
-                                                alt={card.title}
-                                                className={`w-full h-full object-cover object-center ${cardsVisible ? 'animate-zoom-in-out' : ''}`}
-                                                style={{ animationDelay: `${index * 0.5}s` }}
-                                            />
-                                        </div>
-                                    </div>
+                        {/* Cards Slider */}
+                        <div ref={cardsRef} className={`${cardsVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                            <Swiper
+                                modules={[Autoplay, Pagination]}
+                                spaceBetween={30}
+                                slidesPerView={1}
+                                loop={true}
+                                autoplay={{
+                                    delay: 3500,
+                                    disableOnInteraction: false,
+                                }}
+                                pagination={{
+                                    clickable: true,
+                                    dynamicBullets: true,
+                                }}
+                                breakpoints={{
+                                    768: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 40,
+                                    },
+                                    1280: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 50,
+                                    }
+                                }}
+                                className="pb-16"
+                            >
+                                {empowermentCards.map((card, index) => (
+                                    <SwiperSlide key={card.id}>
+                                        <div
+                                            className={`rounded-[30px] overflow-hidden shadow-xl ${card.bgColor} transition-all duration-300 hover:shadow-2xl w-full lg:h-[480px] xl:h-[520px] flex flex-col mx-auto`}
+                                        >
+                                            {/* Card Image Container */}
+                                            <div className="p-5 lg:p-6 pb-0">
+                                                <div className="relative w-full aspect-[16/9.5] overflow-hidden rounded-[20px] shadow-sm bg-gray-100">
+                                                    <img
+                                                        src={card.image}
+                                                        alt={card.title}
+                                                        className={`w-full h-full object-cover object-center ${cardsVisible ? 'animate-zoom-in-out' : ''}`}
+                                                        style={{ animationDelay: `${index * 0.5}s` }}
+                                                    />
+                                                </div>
+                                            </div>
 
-                                    {/* Card Content */}
-                                    <div className="px-8 lg:px-10 xl:px-12 pt-6 lg:pt-8 pb-8 lg:pb-10 flex-grow flex flex-col justify-start text-left">
-                                        <h3 className={`text-lg lg:text-[22px] xl:text-[24px] font-extrabold mb-3 lg:mb-4 leading-tight whitespace-pre-line ${card.textColor}`}>
-                                            {card.title}
-                                        </h3>
-                                        <p className={`text-base lg:text-[17px] xl:text-[18px] leading-[1.7] ${card.descColor}`}>
-                                            {card.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
+                                            {/* Card Content */}
+                                            <div className="px-6 lg:px-8 pt-5 lg:pt-6 pb-6 lg:pb-8 flex-grow flex flex-col justify-start text-left">
+                                                <h3 className={`text-lg lg:text-[20px] xl:text-[22px] font-extrabold mb-2 lg:mb-3 leading-tight whitespace-pre-line ${card.textColor}`}>
+                                                    {card.title}
+                                                </h3>
+                                                <p className={`text-sm lg:text-[16px] leading-[1.6] ${card.descColor}`}>
+                                                    {card.description}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
                         </div>
                     </div>
                 </div>

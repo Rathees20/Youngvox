@@ -270,22 +270,20 @@ const WingsPage = () => {
                     return (
                       <div key={step} className="absolute flex flex-col items-center" style={{ left: `${leftPosition}%`, transform: 'translateX(-50%)', zIndex: 10 }}>
                         {/* Number - positioned above the line */}
-                        <div className={`text-lg font-medium transition-all duration-300 ${
-                          currentStep === step
-                            ? 'font-bold text-gray-800'
-                            : 'font-normal text-gray-500'
-                        }`} style={{ marginBottom: '8px' }}>
+                        <div className={`text-lg font-medium transition-all duration-300 ${currentStep === step
+                          ? 'font-bold text-gray-800'
+                          : 'font-normal text-gray-500'
+                          }`} style={{ marginBottom: '8px' }}>
                           {String(step).padStart(2, '0')}
                         </div>
                         {/* Dot - positioned directly on the line at top-8 (32px), centered vertically on the line */}
-                        <div className={`rounded-full absolute transition-all duration-300 ${
-                          currentStep === step
-                            ? 'w-4 h-4 bg-[#A82228]'
-                            : 'w-3 h-3 bg-gray-400'
-                        }`} style={{
-                          top: '32px',
-                          transform: 'translateY(-50%)'
-                        }}></div>
+                        <div className={`rounded-full absolute transition-all duration-300 ${currentStep === step
+                          ? 'w-4 h-4 bg-[#A82228]'
+                          : 'w-3 h-3 bg-gray-400'
+                          }`} style={{
+                            top: '32px',
+                            transform: 'translateY(-50%)'
+                          }}></div>
                       </div>
                     );
                   })}
@@ -307,7 +305,7 @@ const WingsPage = () => {
                   >
                     <svg className="w-6 h-6 text-gray-900" viewBox="0 0 24 24" fill="currentColor">
                       {/* Solid left arrow: triangle head pointing left + rectangular shaft */}
-                      <polygon points="6,12 12,6 12,9 18,9 18,15 12,15 12,18"/>
+                      <polygon points="6,12 12,6 12,9 18,9 18,15 12,15 12,18" />
                     </svg>
                   </button>
                   <button
@@ -317,7 +315,7 @@ const WingsPage = () => {
                   >
                     <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
                       {/* Solid right arrow: triangle head pointing right + rectangular shaft */}
-                      <polygon points="18,12 12,6 12,9 6,9 6,15 12,15 12,18"/>
+                      <polygon points="18,12 12,6 12,9 6,9 6,15 12,15 12,18" />
                     </svg>
                   </button>
                 </div>
@@ -336,147 +334,14 @@ const WingsPage = () => {
         </div>
       </section>
 
-      {/* Launch a YoungVox Chapter Section */}
-      <section ref={formRef} className="py-6 sm:py-8 lg:py-12" style={{ backgroundColor: '#FFF6E3' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left - Content */}
-            <div className={`space-y-6 ${formVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
-                Launch a YoungVox Chapter
-              </h2>
-              <p className="text-lg text-black leading-relaxed">
-                Bring the four-wing leadership model to your campus and empower future changemakers.
-              </p>
-              <a
-                href="https://www.cry.org/contact/?type=corporate"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors"
-              >
-                I'd Like To Know More
-              </a>
-            </div>
 
-            {/* Right - Form */}
-            <div className={`bg-white rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${formVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h3 className="text-[30px] lg:text-[36px] font-bold text-black mb-6">
-                Write to Us
-              </h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
-                    required
-                  />
-                </div>
-
-                <div className="relative">
-                  <select
-                    name="schoolName"
-                    value={formData.schoolName}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent appearance-none pr-10"
-                    required
-                  >
-                    <option value="">School Name</option>
-                    <option value="school1">School 1</option>
-                    <option value="school2">School 2</option>
-                    <option value="school3">School 3</option>
-                  </select>
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </div>
-
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email ID"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <input
-                    type="tel"
-                    name="phoneNumber"
-                    placeholder="Phone Number"
-                    value={formData.phoneNumber}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <input
-                    type="text"
-                    name="location"
-                    placeholder="Location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <textarea
-                    name="message"
-                    placeholder="Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows="5"
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent resize-none"
-                    required
-                  ></textarea>
-                </div>
-
-                <div className="flex items-start">
-                  <input
-                    type="checkbox"
-                    name="notRobot"
-                    id="notRobot"
-                    checked={formData.notRobot}
-                    onChange={handleChange}
-                    className="mt-1 mr-2 w-4 h-4 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
-                    required
-                  />
-                  <label htmlFor="notRobot" className="text-sm text-black">
-                    I confirm the school's interest in becoming a YoungVox School Chapter (Free of Cost).
-                  </label>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-[#A82228] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Bottom Banner Image */}
       <section className="w-full relative">
         <img
           src={wingLBanner}
           alt="YoungVox students"
-          className="w-full h-auto object-cover"
+          className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
         />
 
         {/* Crack/Tear Design at Bottom */}

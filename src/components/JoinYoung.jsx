@@ -97,12 +97,14 @@ const JoinYoung = () => {
               </div>
             </div>
             {/* Right Column - Image */}
-            <div className={`order-1 lg:order-2 lg:pt-2 ${schoolVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <img
-                src={join01Image}
-                alt="Students in school uniforms"
-                className="w-full h-auto rounded-lg shadow-lg hover-scale transition-transform duration-300"
-              />
+            <div className={`order-1 lg:order-2 lg:pt-2 flex justify-center lg:justify-end ${schoolVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+              <div className="w-full max-w-[500px] h-[300px] sm:h-[350px] lg:h-[380px] rounded-2xl overflow-hidden shadow-xl hover-scale transition-transform duration-300">
+                <img
+                  src={join01Image}
+                  alt="Students in school uniforms"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -113,12 +115,14 @@ const JoinYoung = () => {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
             {/* Left Column - Image */}
-            <div className={`${volunteerVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <img
-                src={joinImage}
-                alt="Volunteers working with students"
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
+            <div className={`flex justify-center lg:justify-start ${volunteerVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+              <div className="w-full max-w-[500px] h-[300px] sm:h-[350px] lg:h-[380px] rounded-2xl overflow-hidden shadow-xl hover-scale transition-transform duration-300">
+                <img
+                  src={joinImage}
+                  alt="Volunteers working with students"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             {/* Right Column - Text Content */}
             <div className={`space-y-6 lg:pt-2 ${volunteerVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
@@ -165,12 +169,14 @@ const JoinYoung = () => {
               </div>
             </div>
             {/* Right Column - Image */}
-            <div className={`order-1 lg:order-2 lg:pt-2 ${corporateVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <img
-                src={join1Image}
-                alt="Corporate collaboration"
-                className="w-full h-auto rounded-lg shadow-lg hover-scale transition-transform duration-300"
-              />
+            <div className={`order-1 lg:order-2 lg:pt-2 flex justify-center lg:justify-end ${corporateVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+              <div className="w-full max-w-[500px] h-[300px] sm:h-[350px] lg:h-[380px] rounded-2xl overflow-hidden shadow-xl hover-scale transition-transform duration-300">
+                <img
+                  src={join1Image}
+                  alt="Corporate collaboration"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -181,12 +187,14 @@ const JoinYoung = () => {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
             {/* Left Column - Image */}
-            <div className={`${advisorVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <img
-                src={joinImage}
-                alt="Advisors and mentors"
-                className="w-full h-auto rounded-lg shadow-lg hover-scale transition-transform duration-300"
-              />
+            <div className={`flex justify-center lg:justify-start ${advisorVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+              <div className="w-full max-w-[500px] h-[300px] sm:h-[350px] lg:h-[380px] rounded-2xl overflow-hidden shadow-xl hover-scale transition-transform duration-300">
+                <img
+                  src={joinImage}
+                  alt="Advisors and mentors"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             {/* Right Column - Text Content */}
             <div className={`space-y-6 lg:pt-2 ${advisorVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
@@ -233,12 +241,14 @@ const JoinYoung = () => {
               </div>
             </div>
             {/* Right Column - Image */}
-            <div className={`order-1 lg:order-2 lg:pt-2 ${partnerVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <img
-                src={join1Image}
-                alt="Implementation partners"
-                className="w-full h-auto rounded-lg shadow-lg hover-scale transition-transform duration-300"
-              />
+            <div className={`order-1 lg:order-2 lg:pt-2 flex justify-center lg:justify-end ${partnerVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
+              <div className="w-full max-w-[500px] h-[300px] sm:h-[350px] lg:h-[380px] rounded-2xl overflow-hidden shadow-xl hover-scale transition-transform duration-300">
+                <img
+                  src={join1Image}
+                  alt="Implementation partners"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>

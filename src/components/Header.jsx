@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import youngvoxLogo from '../assets/Youngvox logo.png';
 import donationIcon from '../assets/icons/Donation.png';
+import DonationModal from './DonationModal';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [clickedItem, setClickedItem] = useState(null);
+  const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,6 +18,10 @@ const Header = () => {
     setTimeout(() => {
       setClickedItem(null);
     }, 400);
+  };
+
+  const toggleDonationModal = () => {
+    setIsDonationModalOpen(!isDonationModalOpen);
   };
 
   return (
@@ -97,7 +103,10 @@ const Header = () => {
             </button>
 
             {/* Desktop Donate Button */}
-            <button className="hidden md:flex bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl items-center space-x-2">
+            <button
+              onClick={toggleDonationModal}
+              className="hidden md:flex bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl items-center space-x-2"
+            >
               <img src={donationIcon} alt="Donation" className="w-5 h-5" style={{ filter: 'brightness(0) invert(1)' }} />
               <span>Donate now</span>
             </button>
@@ -159,7 +168,10 @@ const Header = () => {
                 >
                   Contact us
                 </Link>
-                <button className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mt-4 w-full">
+                <button
+                  onClick={() => { toggleDonationModal(); toggleMenu(); }}
+                  className="bg-[#A82228] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mt-4 w-full"
+                >
                   <img src={donationIcon} alt="Donation" className="w-5 h-5" style={{ filter: 'brightness(0) invert(1)' }} />
                   <span>Donate now</span>
                 </button>
@@ -168,6 +180,12 @@ const Header = () => {
           </nav>
         </>
       </div>
+
+      {/* Donation Modal */}
+      <DonationModal
+        isOpen={isDonationModalOpen}
+        onClose={toggleDonationModal}
+      />
     </header>
   );
 };

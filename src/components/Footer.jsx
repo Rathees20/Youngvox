@@ -47,7 +47,7 @@ const Footer = () => {
                 <li><Link to="/events" className="text-black">Events</Link></li>
               </ul>
             </div>
-
+{/* 
             <div>
               <h4 className="text-sm font-semibold uppercase mb-5 text-black">
                 Resources
@@ -58,7 +58,7 @@ const Footer = () => {
                 <li className="text-black">Success Stories</li>
                 <li className="text-black">FAQs</li>
               </ul>
-            </div>
+            </div> */}
 
             <div>
               <h4 className="text-sm font-semibold uppercase mb-5 text-black">
@@ -66,7 +66,6 @@ const Footer = () => {
               </h4>
               <ul className="space-y-4">
                 <li><Link to="/contact" className="text-black">Contact Us</Link></li>
-                <li className="text-black">Help Center</li>
                 <li className="text-black">Terms & Conditions</li>
                 <li className="text-black">Ethics & Privacy</li>
               </ul>
