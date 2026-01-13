@@ -63,11 +63,6 @@ const JoinYoung = () => {
                 At YoungVox, we're building a community of passionate, driven individuals committed to empowering youth and creating meaningful impact. We provide a collaborative environment where ideas flourish, and your efforts directly contribute to shaping the next generation of responsible, capable leaders.
               </p>
               <div className="pt-1 sm:pt-3">
-
-
-                <button className="bg-[#A82228] text-white px-4 sm:px-8 md:px-10 py-1.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors text-[10px] sm:text-base md:text-lg shadow-lg hover:shadow-xl relative z-30">
-                  Explore Ways to Join
-                </button>
               </div>
             </div>
           </div>

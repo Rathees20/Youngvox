@@ -101,13 +101,13 @@ const FormPage = () => {
               <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
                 Bring YoungVox to Your Campus. Inspire Changemakers.
               </h1>
-              <p className="text-lg text-black leading-relaxed">
+              <p className="text-lg text-justify text-black leading-relaxed">
                 As a YoungVox school chapter, your students gain the opportunity to build leadership skills, participate in engaging activities and campaigns within their own school, and take part in community initiatives that create real, lasting impact.
               </p>
               <p className="text-lg text-black leading-relaxed">
                 And the best part? It's completely <b>free of cost</b>.
               </p>
-              <p className="text-lg text-black leading-relaxed">
+              <p className="text-lg text-justify text-black leading-relaxed">
                 By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers—one student at a time.
               </p>
               

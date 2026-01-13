@@ -86,9 +86,30 @@ const Footer = () => {
             </h4>
 
             <div className="flex items-center gap-6">
-              <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
-              <img src={facebookIcon} alt="Facebook" className="w-6 h-6" />
-              <LinkedInIcon className="w-6 h-6 text-blue-600" />
+              <a 
+                href="https://www.instagram.com/young_vox_?igsh=YTM5NWthbjU5bGIw" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
+              </a>
+              <a 
+                href="https://www.facebook.com/share/zhSC2v7vYjZ5ifAr/?mibextid=LQQJ4d" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img src={facebookIcon} alt="Facebook" className="w-6 h-6" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/109957290/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <LinkedInIcon className="w-6 h-6 text-blue-600" />
+              </a>
             </div>
           </div>
 

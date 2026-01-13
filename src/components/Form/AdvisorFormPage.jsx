@@ -108,7 +108,7 @@ const AdvisorFormPage = () => {
               <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
                 Advisor for Change. Nurture Young Voices.
               </h1>
-              <p className="text-lg text-black leading-relaxed">
+              <p className="text-lg text-justify text-black leading-relaxed">
                 We collaborate with education experts, youth mentors, and thought leaders who share our commitment to nurturing the next generation of responsible leaders. Partner with us to provide guidance, shape programs, and support student-led initiatives that create real community impact.
               </p>
               

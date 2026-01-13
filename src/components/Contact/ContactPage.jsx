@@ -83,7 +83,7 @@ const ContactPage = () => {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-xs sm:text-xs font-bold text-black uppercase mb-1">Phone Number</h3>
-                <p className="text-sm sm:text-sm text-black">+91 93844 88111</p>
+                <p className="text-sm sm:text-sm text-black">+91 93818-11111</p>
               </div>
             </div>
 
@@ -96,7 +96,7 @@ const ContactPage = () => {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-xs sm:text-xs font-bold text-black uppercase mb-1">Email</h3>
-                <p className="text-sm sm:text-sm text-black">info@youngvox.com</p>
+                <p className="text-sm sm:text-sm text-black">Info@youngvox.com</p>
               </div>
             </div>
 
@@ -110,7 +110,7 @@ const ContactPage = () => {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-xs sm:text-xs font-bold text-black uppercase mb-1">Address</h3>
-                <p className="text-sm sm:text-sm text-black leading-snug">9/40H, EJR Enclave, Mount Poonamallee Road, St. Thomas Mt, Chennai - 600016</p>
+                <p className="text-sm sm:text-sm text-black leading-snug">1/40H , EJR Enclave , Mount Poonamallee Road , St. Thomas Mt , Chennai - 600016</p>
               </div>
             </div>
           </div>
@@ -144,20 +144,22 @@ const ContactPage = () => {
             {/* Left Panel */}
             <div className={`space-y-6 ${touchVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
-                <span className="block">Get in Touch with</span>
-                <span className="block text-[42px] lg:text-[54px]">YoungVox</span>
+                <span className="block">Get in Touch with<br/>YoungVox</span>
+                <span className="block text-[42px] lg:text-[54px]"></span>
               </h1>
-              <p className="text-lg text-black leading-relaxed">
+              <p className="text-lg text-black text-justify leading-relaxed">
                 Ready to collaborate, contribute, or learn more about our student-led leadership initiatives?
               </p>
-              <p className="text-lg text-black leading-relaxed">
+              <p className="text-lg text-black text-justify leading-relaxed">
                 YoungVox welcomes educators, schools, senior advisors, NGOs, corporates, mission-driven brands, and youth advocates to join our movement. Let's work together to empower students with real-world skills, meaningful opportunities, and impactful leadership pathways.
               </p>
 
               {/* Social Media Icons */}
               <div className="flex items-center gap-4 pt-4">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/young_vox_?igsh=YTM5NWthbjU5bGIw"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-white border border-gray-200 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity shadow-sm"
                   aria-label="Instagram"
                 >
@@ -166,7 +168,9 @@ const ContactPage = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/share/zhSC2v7vYjZ5ifAr/?mibextid=LQQJ4d"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-white border border-gray-200 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity shadow-sm"
                   aria-label="Facebook"
                 >
@@ -175,12 +179,14 @@ const ContactPage = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/109957290/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-white border border-gray-200 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity shadow-sm"
-                  aria-label="YouTube"
+                  aria-label="LinkedIn"
                 >
-                  <svg className="w-7 h-7 text-black" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  <svg className="w-7 h-7 text-black" fill="currentColor" viewBox="0 0 448 512">
+                    <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.07 107 0 82.93 0 53.71 0 24.5 24.07.42 53.84.42 83.6.42 107.7 24.5 107.7 53.71c0 29.22-24.1 53.29-53.86 53.29zM447.9 448h-92.68V302.4c0-34.7-12.4-58.4-43.4-58.4-23.7 0-37.8 15.9-44 31.3-2.3 5.6-2.9 13.4-2.9 21.2V448h-92.68s1.2-242.1 0-266.1h92.68v37.7c-.2.3-.5.7-.7 1h.7v-1c12.3-19 34.4-46 83.7-46 61.1 0 107.1 39.8 107.1 125.4V448z"/>
                   </svg>
                 </a>
               </div>

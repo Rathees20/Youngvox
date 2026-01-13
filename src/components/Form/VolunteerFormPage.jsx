@@ -110,7 +110,7 @@ const handleSubmit = async (e) => {
               <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
                 Be Part of the YoungVox Team
               </h1>
-              <p className="text-lg text-black leading-relaxed">
+              <p className="text-lg text-justify text-black leading-relaxed">
                 Our volunteers and interns play a vital role in YoungVox, working closely with students and communities to implement programs and initiatives that inspire real change. From organizing school and community campaigns to offering guidance, creativity, and mentorship, every contribution strengthens our mission. Your time and skills can empower young leaders.
               </p>
               

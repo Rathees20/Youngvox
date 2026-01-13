@@ -73,7 +73,7 @@ const CorporateFormPage = () => {
               <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
                 CSR for Change. Empower the Next Generation With YoungVox.
               </h1>
-              <p className="text-lg text-black leading-relaxed">
+              <p className="text-lg text-justify text-black leading-relaxed">
                 Companies can partner with YoungVox by supporting initiatives, campaigns, or leadership programs that align with their CSR priorities. From education and skill-building to civic engagement and environmental awareness, your contribution helps strengthen youth leadership, empower student action, and build the next generation of responsible changemakers.
               </p>
               

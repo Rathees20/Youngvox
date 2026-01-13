@@ -107,7 +107,7 @@ const PartnerFormPage = () => {
               <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
                 Your Partnership. Their Leadership. Lasting Change.
               </h1>
-              <p className="text-lg text-black leading-relaxed">
+              <p className="text-lg text-justify text-black leading-relaxed">
                 Are you an NGO, school, or community organization working with youth on the ground? Partner with YoungVox to combine resources, share expertise, and amplify the impact of youth campaigns and leadership programs. Every partnership begins with a conversation. Let's explore how we can work together to empower young leaders and drive meaningful change.
               </p>
               

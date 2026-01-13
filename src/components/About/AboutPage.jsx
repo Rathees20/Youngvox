@@ -6,6 +6,8 @@ import tornBorder from '../../assets/our vision frame red.png';
 import ourVisionShadow from '../../assets/our vision shadow.png';
 import frame15Image from '../../assets/Frame 15.png';
 import saranyaImage from '../../assets/Saranya jaikumar.png';
+import sylendraBabuImage from '../../assets/Sylendra-Babu.jpg';
+import drPalImage from '../../assets/drpal.jpg';
 import c2Image from '../../assets/c2.png';
 import c5Image from '../../assets/c5.jpeg';
 import c7Image from '../../assets/c7.jpeg';
@@ -70,15 +72,15 @@ const AboutPage = () => {
   const advisors = [
     {
       id: 1,
-      name: "Dr. Saranya Jaikumar",
-      title: "Founder & President",
-      image: saranyaImage
+      name: "Dr. C. Sylendra Babu, I.P.S., (Retd)",
+      title: "Retired Indian Police Service",
+      image: sylendraBabuImage
     },
     {
       id: 2,
-      name: "Dr. Saranya Jaikumar",
-      title: "Founder & President",
-      image: saranyaImage
+      name: "Dr Pal Manickam",
+      title: "Gastroenterologist, Preventive Gastro USA, Founder - Dr. Pal's NewME and MedCom",
+      image: drPalImage
     },
     {
       id: 3,
@@ -105,7 +107,7 @@ const AboutPage = () => {
           </h1>
 
           <p className="text-xl lg:text-2xl text-gray-700 leading-snug lg:leading-relaxed max-w-7xl mx-auto px-6 lg:px-0">
-            To build a generation of empowered youth leaders who are informed, compassionate, and equipped to create a sustainable, equitable and inclusive world
+            To build a generation of empowered youth leaders who are informed, compassionate, and equipped to create a sustainable, equitable and inclusive world.
           </p>
         </div>
 
@@ -282,7 +284,14 @@ const AboutPage = () => {
                     src={advisor.image}
                     alt={advisor.name}
                     className="w-full h-full object-cover block m-0 p-0 align-top"
-                    style={{ display: 'block', verticalAlign: 'top', width: '100%', height: '100%' }}
+                    style={{
+                      display: 'block',
+                      verticalAlign: 'top',
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: advisor.id === 1 ? 'center -5%' : 'center'
+                    }}
                   />
                 </div>
                 {/* Red Background Section */}
@@ -313,11 +322,11 @@ const AboutPage = () => {
 
               <div className="space-y-4 sm:space-y-5 lg:space-y-5 text-gray-700 text-lg leading-[1.6] sm:leading-[1.65] text-justify sm:text-justify">
                 <p>
-                  YoungVox was born out of a vision to create empowered, emotionally strong, and socially responsible young leaders across India. India has one of the world's largest youth populations—253 million adolescents, with one in every five individuals aged between 10 and 19 (UNICEF, 2023). Yet, access to holistic education, leadership development, and emotional wellbeing support remains limited. While SDG 4 (Quality Education) and NEP 2020 strongly emphasize life-skill-oriented learning, most school systems continue to remain heavily academic-centric. This gap highlights the urgent need for a structured, school-based ecosystem that nurtures both competence and character.
+                YoungVox was founded with a vision to nurture empowered, emotionally resilient, and socially responsible young leaders across India. Although India has one of the world’s largest youth populations - over 253 million adolescents, with one in five individuals aged 10–19 (UNICEF, 2023) - access to holistic education, leadership development, and emotional wellbeing support remains limited. While SDG 4 and NEP 2020 strongly advocate life-skill-based learning, most school systems continue to be predominantly academic-focused. This gap underscores the urgent need for a structured, school-based ecosystem that develops both competence and character.
                 </p>
 
                 <p>
-                  YoungVox bridges this gap through its unique 8-Wing Chapter Model, empowering students to discover their voice, build leadership skills, strengthen emotional resilience, and contribute meaningfully to their communities - shaping a generation that is academically capable, emotionally aware, socially responsible, and future-ready.
+                YoungVox bridges this gap through its unique 4-Wing Chapter Model, empowering students to discover their voice, build leadership skills, strengthen emotional resilience, and contribute meaningfully to their communities - shaping a generation that is academically capable, emotionally aware, socially responsible, and future-ready. In doing so, YoungVox is redefining youth development in Indian schools by integrating character, competence, and purpose-driven learning.
                 </p>
 
                 <p>
@@ -400,9 +409,9 @@ const AboutPage = () => {
           </h2>
 
           {/* Contact Cards */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {/* Card 1: Phone Number */}
-            <div className="bg-pink-50 rounded-lg p-6 sm:p-8 shadow-md flex items-center gap-4 sm:gap-6 w-full sm:w-auto min-w-[280px] sm:min-w-[300px]">
+            <div className="bg-pink-50 rounded-lg p-6 sm:p-8 shadow-md flex items-center gap-4 sm:gap-6 h-full">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full flex items-center justify-center flex-shrink-0">
                 <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -410,12 +419,12 @@ const AboutPage = () => {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-sm sm:text-base font-bold text-black mb-1 uppercase tracking-wide">Phone Number</h3>
-                <p className="text-base sm:text-lg text-black">+91 935979292</p>
+                <p className="text-base sm:text-lg text-black">+91 93818-11111</p>
               </div>
             </div>
 
             {/* Card 2: Email */}
-            <div className="bg-pink-50 rounded-lg p-6 sm:p-8 shadow-md flex items-center gap-4 sm:gap-6 w-full sm:w-auto min-w-[280px] sm:min-w-[300px]">
+            <div className="bg-pink-50 rounded-lg p-6 sm:p-8 shadow-md flex items-center gap-4 sm:gap-6 h-full">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full flex items-center justify-center flex-shrink-0">
                 <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -423,12 +432,12 @@ const AboutPage = () => {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-sm sm:text-base font-bold text-black mb-1 uppercase tracking-wide">Email</h3>
-                <p className="text-base sm:text-lg text-black">hello@youngvox.org</p>
+                <p className="text-base sm:text-lg text-black">Info@youngvox.com</p>
               </div>
             </div>
 
             {/* Card 3: Address */}
-            <div className="bg-pink-50 rounded-lg p-6 sm:p-8 shadow-md flex items-center gap-4 sm:gap-6 w-full sm:w-auto min-w-[280px] sm:min-w-[300px]">
+            <div className="bg-pink-50 rounded-lg p-6 sm:p-8 shadow-md flex items-center gap-4 sm:gap-6 h-full">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#A82228] rounded-full flex items-center justify-center flex-shrink-0">
                 <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -437,7 +446,7 @@ const AboutPage = () => {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-sm sm:text-base font-bold text-black mb-1 uppercase tracking-wide">Address</h3>
-                <p className="text-base sm:text-lg text-black">Young Vox, India</p>
+                <p className="text-base sm:text-lg text-black leading-snug">1/40H , EJR Enclave , Mount Poonamallee Road , St. Thomas Mt , Chennai - 600016</p>
               </div>
             </div>
           </div>
