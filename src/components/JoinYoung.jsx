@@ -70,7 +70,7 @@ const JoinYoung = () => {
       </section>
 
       {/* Join as a School Section */}
-      <section ref={schoolRef} className="py-4 sm:py-6 lg:py-8 bg-white">
+      <section ref={schoolRef} className="py-4 sm:py-6 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
             {/* Left Column - Text Content */}

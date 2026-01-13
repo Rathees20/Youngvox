@@ -14,7 +14,7 @@ const CorporateFormPage = () => {
     phoneNumber: '',
     city: '',
     country: '',
-    subject: 'CSR Partnership',
+    subject: '',
     organizationName: '',
     message: '',
     confirmInterest: false

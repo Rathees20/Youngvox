@@ -59,7 +59,10 @@ const EmpoweringYouth = () => {
             </div>
 
             <button
-              onClick={() => navigate('/joinyoung')}
+              onClick={() => {
+                navigate('/joinyoung');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               className="mt-6 inline-flex items-center bg-[#A82228] text-white px-7 py-3 rounded-full font-semibold shadow-md hover:bg-[#8f1d22] transition"
             >
               Join YoungVox

@@ -73,14 +73,11 @@ const PartnerFormPage = () => {
   
   // 8 Wings options
   const wings = [
-    'Education & Learning',
-    'Health & Wellbeing',
-    'Environment & Sustainability',
-    'Civic Engagement',
-    'Arts & Culture',
-    'Technology & Innovation',
-    'Social Justice',
-    'Community Development'
+    'Academic and Career Guidance',
+    'Student Well-being',
+    'Child Rights and Social Justice',
+    'Community Services and Outreach',
+    'Others'
   ];
 
   return (

@@ -29,10 +29,14 @@ const Hero = () => {
           src={heroImage}
           alt="YoungVox Hero"
           className={`
-            w-full h-auto object-cover object-top shadow-sm
+            w-full h-auto object-contain object-center shadow-sm
             transition-opacity duration-500
           `}
-          style={{ aspectRatio: '16/9', width: '100%' }}
+          style={{ 
+            aspectRatio: '16/9', 
+            width: '100%',
+            display: 'block'
+          }}
           width={1920}
           height={1080}
           onLoad={() => setImgLoaded(true)}

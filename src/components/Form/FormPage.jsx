@@ -108,7 +108,7 @@ const FormPage = () => {
                 And the best part? It's completely <b>free of cost</b>.
               </p>
               <p className="text-lg text-justify text-black leading-relaxed">
-                By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers—one student at a time.
+                By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers.
               </p>
               
             </div>

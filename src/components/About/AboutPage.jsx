@@ -87,7 +87,7 @@ const AboutPage = () => {
     {
       id: 3,
       name: "Ashwin R",
-      title: "Career Guidance Expert",
+      title: "Career Guidance Expert and Analyst",
       image: ashwinImage
     },
     {
@@ -304,7 +304,7 @@ const AboutPage = () => {
                 </div>
                 {/* Red Background Section */}
                 <div className="bg-[#A82228] p-3 sm:p-3.5 mt-0 flex flex-col flex-grow">
-                  <h3 className="text-white text-sm sm:text-base font-bold mb-1">
+                  <h3 className={`text-white text-sm sm:text-base font-bold mb-1 ${advisor.id === 1 ? 'whitespace-nowrap text-[12px] sm:text-sm' : ''}`}>
                     {advisor.name}
                   </h3>
                   <p className="text-white text-xs sm:text-sm mb-2 flex-grow leading-tight">
@@ -340,7 +340,7 @@ const AboutPage = () => {
             </div>
 
             {/* Right Column - Image */}
-            <div className="order-1 lg:order-2 lg:pl-4 w-full lg:pt-2">
+            <div className="order-1 lg:order-2 lg:pl-4 w-full lg:pt-4">
               <div className="relative rounded-lg sm:rounded-lg overflow-hidden shadow-xl">
                 <img
                   src={frame15Image}
