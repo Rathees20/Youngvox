@@ -27,10 +27,52 @@ const VolunteerFormPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!formData.confirmInterest) {
+    alert("Please confirm your interest to proceed.");
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbyCpcKYLcWdSJlS-N6mIj_5gYlSp_mfQw1xxW2J_iNb-kLYqWqqy5xgvwG50N1aK_dwZw/exec",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          ...formData,
+          source: "volunteer_form"
+        }),
+      }
+    );
+
+    const result = await response.json();
+
+    if (result.success) {
+      alert("Thank you for your interest! We’ll contact you soon.");
+
+      setFormData({
+        name: '',
+        email: '',
+        phoneNumber: '',
+        city: '',
+        country: '',
+        gender: '',
+        age: '',
+        occupation: '',
+        message: '',
+        confirmInterest: false
+      });
+    } else {
+      alert("Submission failed. Please try again.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong!");
+  }
+};
+
 
   const occupations = [
     'School Student',

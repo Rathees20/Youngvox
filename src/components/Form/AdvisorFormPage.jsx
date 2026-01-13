@@ -28,10 +28,49 @@ const AdvisorFormPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+  
+    if (!formData.confirmInterest) {
+      alert("Please confirm your interest to proceed.");
+      return;
+    }
+  
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycby8VUMHJaB2oPkG_DFCpax2ioqZe131qA2cIPgi4SGFlDEU8KTQrQG7F771rVUpMOn3xA/exec",
+        {
+          method: "POST",
+          
+          body: JSON.stringify(formData),
+        }
+      );
+  
+      const result = await response.json();
+  
+      if (result.success) {
+        alert("Thank you for your interest! We’ll get back to you soon.");
+  
+        setFormData({
+          name: '',
+          email: '',
+          phoneNumber: '',
+          city: '',
+          organisation: '',
+          designation: '',
+          areaOfExpertise: '',
+          message: '',
+          confirmInterest: false
+        });
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try later.");
+    }
   };
+  
 
   // 8 Wings options
   const wings = [

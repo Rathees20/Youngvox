@@ -42,9 +42,12 @@ const Footer = () => {
               </h4>
               <ul className="space-y-4">
                 <li><Link to="/" className="text-black">Home</Link></li>
+                
                 <li><Link to="/about" className="text-black">About Us</Link></li>
-                <li><Link to="/wings" className="text-black">Wings & Chapters</Link></li>
-                <li><Link to="/events" className="text-black">Events</Link></li>
+                <li><Link to="/wings" className="text-black">Wings</Link></li>
+                <li><Link to="/events" className="text-black">Chapters</Link></li>
+                <li><Link to="/getinvolved" className="text-black">Get Involved</Link></li>
+                <li><Link to="/contact" className="text-black">Contact Us</Link></li>
               </ul>
             </div>
 {/* 
@@ -60,7 +63,7 @@ const Footer = () => {
               </ul>
             </div> */}
 
-            <div>
+            {/* <div>
               <h4 className="text-sm font-semibold uppercase mb-5 text-black">
                 Support
               </h4>
@@ -69,7 +72,7 @@ const Footer = () => {
                 <li className="text-black">Terms & Conditions</li>
                 <li className="text-black">Ethics & Privacy</li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
 

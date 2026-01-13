@@ -28,10 +28,26 @@ const CorporateFormPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+  
+    if (!formData.confirmInterest) {
+      alert("Please confirm your interest.");
+      return;
+    }
+  
+    await fetch("https://script.google.com/macros/s/AKfycbwGcZy82mcd6jqQlGFtYSEC5u4msykdC1hCatynb7SyK2FkHSgqKdl3JwVafT0OkYc/exec", {
+      method: "POST",
+      
+      body: JSON.stringify({
+        ...formData,
+        source: "corporate_form"
+      }),
+    });
+  
+    alert("Submitted successfully!");
   };
+  
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">

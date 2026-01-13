@@ -142,15 +142,16 @@ const HowWeEmpower = () => {
                                     }
                                 }}
                                 className="pb-16"
+                                style={{ height: 'auto' }}
                             >
                                 {empowermentCards.map((card, index) => (
-                                    <SwiperSlide key={card.id}>
+                                    <SwiperSlide key={card.id} style={{ height: 'auto' }}>
                                         <div
-                                            className={`rounded-[30px] overflow-hidden shadow-xl ${card.bgColor} transition-all duration-300 hover:shadow-2xl w-full lg:h-[400px] xl:h-[440px] flex flex-col mx-auto`}
+                                            className={`rounded-[30px] overflow-hidden shadow-xl ${card.bgColor} transition-all duration-300 hover:shadow-2xl w-full flex flex-col mx-auto h-full`}
                                         >
                                             {/* Card Image Container */}
-                                            <div className="p-5 lg:p-6 pb-0">
-                                                <div className="relative w-full aspect-[16/8.5] overflow-hidden rounded-[20px] shadow-sm bg-gray-100">
+                                            <div className="p-4 lg:p-5 pb-0 flex-shrink-0">
+                                                <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[20px] shadow-sm bg-gray-100">
                                                     <img
                                                         src={card.image}
                                                         alt={card.title}
@@ -161,7 +162,7 @@ const HowWeEmpower = () => {
                                             </div>
 
                                             {/* Card Content */}
-                                            <div className="px-6 lg:px-8 pt-5 lg:pt-6 pb-6 lg:pb-8 flex-grow flex flex-col justify-start text-left">
+                                            <div className="px-6 lg:px-8 pt-4 lg:pt-5 pb-6 lg:pb-8 flex-grow flex flex-col justify-start text-left min-h-0">
                                                 <h3 className={`text-lg lg:text-[20px] xl:text-[22px] font-extrabold mb-2 lg:mb-3 leading-tight whitespace-pre-line ${card.textColor}`}>
                                                     {card.title}
                                                 </h3>

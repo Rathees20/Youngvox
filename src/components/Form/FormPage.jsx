@@ -25,11 +25,46 @@ const FormPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+  
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbztGvAOZbqJ60e3yHDaHmFUvRjIkfyKaQv7gvFnq9HKKBwn86_N9sUzOqSQLDJmysHdXg/exec",
+        {
+          method: "POST",
+          
+          body: JSON.stringify({
+            ...formData,
+            source: "school_form" // 👈 identify form
+          }),
+        }
+      );
+  
+      const result = await response.json();
+  
+      if (result.success) {
+        alert("Thank you! We will contact you soon.");
+  
+        setFormData({
+          name: '',
+          designation: '',
+          email: '',
+          phoneNumber: '',
+          location: '',
+          schoolName: '',
+          message: '',
+          confirmInterest: false
+        });
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong!");
+    }
   };
+  
 
   const designations = [
     'Principal',
