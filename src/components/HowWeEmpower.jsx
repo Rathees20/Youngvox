@@ -146,11 +146,11 @@ const HowWeEmpower = () => {
                                 {empowermentCards.map((card, index) => (
                                     <SwiperSlide key={card.id}>
                                         <div
-                                            className={`rounded-[30px] overflow-hidden shadow-xl ${card.bgColor} transition-all duration-300 hover:shadow-2xl w-full lg:h-[480px] xl:h-[520px] flex flex-col mx-auto`}
+                                            className={`rounded-[30px] overflow-hidden shadow-xl ${card.bgColor} transition-all duration-300 hover:shadow-2xl w-full lg:h-[400px] xl:h-[440px] flex flex-col mx-auto`}
                                         >
                                             {/* Card Image Container */}
                                             <div className="p-5 lg:p-6 pb-0">
-                                                <div className="relative w-full aspect-[16/9.5] overflow-hidden rounded-[20px] shadow-sm bg-gray-100">
+                                                <div className="relative w-full aspect-[16/8.5] overflow-hidden rounded-[20px] shadow-sm bg-gray-100">
                                                     <img
                                                         src={card.image}
                                                         alt={card.title}

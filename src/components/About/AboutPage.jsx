@@ -251,14 +251,7 @@ const AboutPage = () => {
                   <p className="text-white text-sm sm:text-base mb-3 flex-grow">
                     {member.title}
                   </p>
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-white text-[#A82228] px-3 py-1.5 rounded-md text-xs font-medium hover:bg-gray-100 transition-colors w-fit"
-                  >
-                    Read Bio
-                  </a>
+
                 </div>
               </div>
             ))}
@@ -300,9 +293,7 @@ const AboutPage = () => {
                   <p className="text-white text-sm sm:text-base mb-3 flex-grow">
                     {advisor.title}
                   </p>
-                  <button className="bg-white text-[#A82228] px-3 py-1.5 rounded-md text-xs font-medium hover:bg-gray-100 transition-colors w-fit">
-                    Read Bio
-                  </button>
+
                 </div>
               </div>
             ))}
@@ -350,13 +341,13 @@ const AboutPage = () => {
       </section>
 
       {/* Our CSR Partners Section */}
+      {/* 
       <section className="pt-3 sm:pt-6 lg:pt-8 pb-6 sm:pb-16 lg:pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black text-center mb-6 sm:mb-10">
             Our CSR Partners
           </h2>
 
-          {/* Partner Logos - Infinite Rotating Carousel */}
           <div className="overflow-hidden relative">
             <style>{`
               @keyframes csrScroll {
@@ -372,7 +363,6 @@ const AboutPage = () => {
               }
             `}</style>
             <div className="flex items-center gap-3 sm:gap-4 lg:gap-8 csr-infinite-scroll" style={{ width: '200%', display: 'flex' }}>
-              {/* Duplicate logos twice for seamless infinite loop */}
               {[...csrPartners, ...csrPartners].map((icon, index) => {
                 const altTexts = [
                   'CSR Partner 1',
@@ -400,6 +390,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* Connect. Collaborate. Create Future Leaders Section */}
       <section className="py-6 sm:py-16 lg:py-24 bg-white">
