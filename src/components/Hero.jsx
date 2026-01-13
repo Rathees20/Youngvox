@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import heroImage from '../assets/Banner Hero image.jpeg';
+import heroImage from '../assets/Banner Hero image.jpg';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Hero = () => {
           <div
             style={{
               width: '100%',
-              height: 804,
+              aspectRatio: '16/9',
               background: 'linear-gradient(90deg,#eee,#ccc)',
               filter: 'blur(10px)',
               position: 'absolute',
@@ -29,12 +29,12 @@ const Hero = () => {
           src={heroImage}
           alt="YoungVox Hero"
           className={`
-            w-full h-auto md:h-[800px] object-scale-down md:object-cover object-top shadow-sm
+            w-full h-auto object-cover object-top shadow-sm
             transition-opacity duration-500
           `}
-          style={{ aspectRatio: '16:9' }}
-          width={1400} // banner image width
-          height={600} // banner image height
+          style={{ aspectRatio: '16/9', width: '100%' }}
+          width={1920}
+          height={1080}
           onLoad={() => setImgLoaded(true)}
         />
 

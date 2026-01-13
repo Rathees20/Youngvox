@@ -8,6 +8,8 @@ import frame15Image from '../../assets/Frame 15.png';
 import saranyaImage from '../../assets/Saranya jaikumar.png';
 import sylendraBabuImage from '../../assets/Sylendra-Babu.jpg';
 import drPalImage from '../../assets/drpal.jpg';
+import ashwinImage from '../../assets/Ashwin.jpeg';
+import aravindImage from '../../assets/aravind.JPG';
 import c2Image from '../../assets/c2.png';
 import c5Image from '../../assets/c5.jpeg';
 import c7Image from '../../assets/c7.jpeg';
@@ -41,7 +43,7 @@ const AboutPage = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Dr. Sharanya Jaikumar",
+      name: "Dr. Saranya Jaikumar",
       title: "Founder & President",
       image: c2Image,
       linkedin: "http://linkedin.com/in/dr-saranya-t-jaikumar-72b833169"
@@ -84,9 +86,15 @@ const AboutPage = () => {
     },
     {
       id: 3,
-      name: "Dr. Saranya Jaikumar",
-      title: "Founder & President",
-      image: saranyaImage
+      name: "Ashwin R",
+      title: "Career Guidance Expert",
+      image: ashwinImage
+    },
+    {
+      id: 4,
+      name: "S.B.Aravind Tharunsri",
+      title: "Analyst and Director - DIVE FORCE, PADI Master Instructor",
+      image: aravindImage
     }
   ];
 
@@ -225,11 +233,11 @@ const AboutPage = () => {
           </div>
 
           {/* Team Cards Grid */}
-          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 ${teamVisible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
+          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 ${teamVisible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
             {teamMembers.map((member) => (
               <div key={member.id} className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden h-full flex flex-col">
                 {/* Headshot */}
-                <div className="relative h-64 sm:h-60 lg:h-64 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
+                <div className="relative h-48 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -246,11 +254,11 @@ const AboutPage = () => {
                   />
                 </div>
                 {/* Red Background Section */}
-                <div className="bg-[#A82228] p-4 sm:p-4 mt-0 flex flex-col flex-grow">
-                  <h3 className="text-white text-base sm:text-lg font-bold mb-1">
+                <div className="bg-[#A82228] p-3 sm:p-3.5 mt-0 flex flex-col flex-grow">
+                  <h3 className="text-white text-sm sm:text-base font-bold mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-white text-sm sm:text-base mb-3 flex-grow">
+                  <p className="text-white text-xs sm:text-sm mb-2 flex-grow leading-tight">
                     {member.title}
                   </p>
 
@@ -275,11 +283,11 @@ const AboutPage = () => {
           </div>
 
           {/* Advisors Cards Grid */}
-          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 ${advisorsVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
+          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 ${advisorsVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
             {advisors.map((advisor) => (
               <div key={advisor.id} className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden h-full flex flex-col">
                 {/* Headshot */}
-                <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
+                <div className="relative h-48 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
                   <img
                     src={advisor.image}
                     alt={advisor.name}
@@ -290,16 +298,16 @@ const AboutPage = () => {
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                      objectPosition: advisor.id === 1 ? 'center -5%' : 'center'
+                      objectPosition: advisor.id === 1 ? 'center -5%' : advisor.id === 2 ? 'center 20%' : advisor.id === 4? 'center 5%' : 'center'
                     }}
                   />
                 </div>
                 {/* Red Background Section */}
-                <div className="bg-[#A82228] p-4 sm:p-4 mt-0 flex flex-col flex-grow">
-                  <h3 className="text-white text-base sm:text-lg font-bold mb-1">
+                <div className="bg-[#A82228] p-3 sm:p-3.5 mt-0 flex flex-col flex-grow">
+                  <h3 className="text-white text-sm sm:text-base font-bold mb-1">
                     {advisor.name}
                   </h3>
-                  <p className="text-white text-sm sm:text-base mb-3 flex-grow">
+                  <p className="text-white text-xs sm:text-sm mb-2 flex-grow leading-tight">
                     {advisor.title}
                   </p>
 
@@ -327,10 +335,6 @@ const AboutPage = () => {
 
                 <p>
                 YoungVox bridges this gap through its unique 4-Wing Chapter Model, empowering students to discover their voice, build leadership skills, strengthen emotional resilience, and contribute meaningfully to their communities - shaping a generation that is academically capable, emotionally aware, socially responsible, and future-ready. In doing so, YoungVox is redefining youth development in Indian schools by integrating character, competence, and purpose-driven learning.
-                </p>
-
-                <p>
-                  YoungVox is redefining what youth development looks like in Indian schools — creating a generation that is not only academically capable, but also emotionally aware, socially responsible, and future-ready
                 </p>
               </div>
             </div>
@@ -446,7 +450,7 @@ const AboutPage = () => {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-sm sm:text-base font-bold text-black mb-1 uppercase tracking-wide">Address</h3>
-                <p className="text-base sm:text-lg text-black leading-snug">1/40H , EJR Enclave , Mount Poonamallee Road , St. Thomas Mt , Chennai - 600016</p>
+                <p className="text-base text-left text-black leading-snug">1/40H , EJR Enclave , Mount Poonamallee Road , St. Thomas Mt , Chennai - 600016</p>
               </div>
             </div>
           </div>
