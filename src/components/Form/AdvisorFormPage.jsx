@@ -66,20 +66,13 @@ const AdvisorFormPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel - Content */}
             <div className={`space-y-6 ${contentVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
+              <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
                 Advisor for Change. Nurture Young Voices.
               </h1>
               <p className="text-lg text-black leading-relaxed">
                 We collaborate with education experts, youth mentors, and thought leaders who share our commitment to nurturing the next generation of responsible leaders. Partner with us to provide guidance, shape programs, and support student-led initiatives that create real community impact.
               </p>
-              <a
-                href="https://www.cry.org/contact/?type=corporate"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors"
-              >
-                I'd Like To Know More
-              </a>
+              
             </div>
 
             {/* Right Panel - Form */}
@@ -165,12 +158,12 @@ const AdvisorFormPage = () => {
                     name="areaOfExpertise"
                     value={formData.areaOfExpertise}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    className={`w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent ${formData.areaOfExpertise ? 'text-black' : 'text-gray-400'}`}
                     required
                   >
-                    <option value="">Area of Expertise / Interest (Tick all that apply)</option>
+                    <option value="" className="text-gray-400">Area of Expertise / Interest (Tick all that apply)</option>
                     {wings.map((wing) => (
-                      <option key={wing} value={wing}>
+                      <option className="text-black" key={wing} value={wing}>
                         {wing}
                       </option>
                     ))}

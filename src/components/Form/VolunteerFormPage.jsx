@@ -65,20 +65,13 @@ const VolunteerFormPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel - Content */}
             <div className={`space-y-6 ${contentVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
+              <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
                 Be Part of the YoungVox Team
               </h1>
               <p className="text-lg text-black leading-relaxed">
                 Our volunteers and interns play a vital role in YoungVox, working closely with students and communities to implement programs and initiatives that inspire real change. From organizing school and community campaigns to offering guidance, creativity, and mentorship, every contribution strengthens our mission. Your time and skills can empower young leaders.
               </p>
-              <a
-                href="https://www.cry.org/contact/?type=corporate"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors"
-              >
-                I'd Like To Know More
-              </a>
+              
             </div>
 
             {/* Right Panel - Form */}
@@ -152,12 +145,12 @@ const VolunteerFormPage = () => {
                     name="gender"
                     value={formData.gender}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    className={`w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent ${formData.gender ? 'text-black' : 'text-gray-400'}`}
                     required
                   >
-                    <option value="">Gender</option>
+                    <option value="" className="text-gray-400">Gender</option>
                     {genders.map((gender) => (
-                      <option key={gender} value={gender}>
+                      <option key={gender} value={gender} className="text-black">
                         {gender}
                       </option>
                     ))}
@@ -181,12 +174,12 @@ const VolunteerFormPage = () => {
                     name="occupation"
                     value={formData.occupation}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    className={`w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent ${formData.occupation ? 'text-black' : 'text-gray-400'}`}
                     required
                   >
-                    <option value="">Occupation</option>
+                    <option value="" className="text-gray-400">Occupation</option>
                     {occupations.map((occupation) => (
-                      <option key={occupation} value={occupation}>
+                      <option key={occupation} value={occupation} className="text-black">
                         {occupation}
                       </option>
                     ))}

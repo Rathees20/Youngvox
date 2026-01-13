@@ -63,26 +63,19 @@ const FormPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel - Content */}
             <div className={`space-y-6 ${contentVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
+              <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
                 Bring YoungVox to Your Campus. Inspire Changemakers.
               </h1>
               <p className="text-lg text-black leading-relaxed">
                 As a YoungVox school chapter, your students gain the opportunity to build leadership skills, participate in engaging activities and campaigns within their own school, and take part in community initiatives that create real, lasting impact.
               </p>
               <p className="text-lg text-black leading-relaxed">
-                And the best part? It's completely free of cost.
+                And the best part? It's completely <b>free of cost</b>.
               </p>
               <p className="text-lg text-black leading-relaxed">
                 By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers—one student at a time.
               </p>
-              <a
-                href="https://www.cry.org/contact/?type=corporate"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors"
-              >
-                I'd Like To Know More
-              </a>
+              
             </div>
 
             {/* Right Panel - Form */}
@@ -108,12 +101,12 @@ const FormPage = () => {
                     name="designation"
                     value={formData.designation}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    className={`w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent ${formData.designation ? 'text-black' : 'text-gray-400'}`}
                     required
                   >
-                    <option value="">Designation</option>
+                    <option value="" className="text-gray-400">Designation</option>
                     {designations.map((designation) => (
-                      <option key={designation} value={designation}>
+                      <option key={designation} value={designation} className="text-black">
                         {designation}
                       </option>
                     ))}

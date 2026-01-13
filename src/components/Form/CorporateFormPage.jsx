@@ -54,20 +54,13 @@ const CorporateFormPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel - Content */}
             <div className={`space-y-6 ${contentVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
+              <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
                 CSR for Change. Empower the Next Generation With YoungVox.
               </h1>
               <p className="text-lg text-black leading-relaxed">
                 Companies can partner with YoungVox by supporting initiatives, campaigns, or leadership programs that align with their CSR priorities. From education and skill-building to civic engagement and environmental awareness, your contribution helps strengthen youth leadership, empower student action, and build the next generation of responsible changemakers.
               </p>
-              <a
-                href="https://www.cry.org/contact/?type=corporate"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors"
-              >
-                I'd Like To Know More
-              </a>
+              
             </div>
 
             {/* Right Panel - Form */}

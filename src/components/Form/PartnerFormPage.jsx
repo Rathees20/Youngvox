@@ -66,20 +66,13 @@ const PartnerFormPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel - Content */}
             <div className={`space-y-6 ${contentVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
+              <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
                 Your Partnership. Their Leadership. Lasting Change.
               </h1>
               <p className="text-lg text-black leading-relaxed">
                 Are you an NGO, school, or community organization working with youth on the ground? Partner with YoungVox to combine resources, share expertise, and amplify the impact of youth campaigns and leadership programs. Every partnership begins with a conversation. Let's explore how we can work together to empower young leaders and drive meaningful change.
               </p>
-              <a
-                href="https://www.cry.org/contact/?type=corporate"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[#A82228] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold hover:bg-[#8a1c22] transition-colors"
-              >
-                I'd Like To Know More
-              </a>
+              
             </div>
 
             {/* Right Panel - Form */}
@@ -165,12 +158,12 @@ const PartnerFormPage = () => {
                     name="areaOfInterest"
                     value={formData.areaOfInterest}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent"
+                    className={`w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A82228] focus:border-transparent ${formData.areaOfInterest ? 'text-black' : 'text-gray-400'}`}
                     required
                   >
-                    <option value="">Area of Interest / Collaboration (Tick all that apply)</option>
+                    <option value="" className="text-gray-400">Area of Interest / Collaboration (Tick all that apply)</option>
                     {wings.map((wing) => (
-                      <option key={wing} value={wing}>
+                      <option key={wing} value={wing} className="text-black">
                         {wing}
                       </option>
                     ))}
