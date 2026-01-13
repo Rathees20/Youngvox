@@ -217,7 +217,7 @@ const AboutPage = () => {
             <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-4">
               Our Team
             </h2>
-            <p className="text-lg text-center text-black leading-relaxed max-w-4xl mx-auto">
+            <p className="text-lg text-center text-black leading-relaxed max-w-6xl mx-auto">
               The YoungVox team is a dynamic collective of experienced professionals across program design, training, psychology, and operations, united by a shared mission to empower the next generation of emotionally strong, confident, and socially responsible leaders.
             </p>
           </div>
@@ -267,7 +267,7 @@ const AboutPage = () => {
             <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-4">
               Our Advisors
             </h2>
-            <p className="text-lg text-center text-black leading-relaxed max-w-4xl mx-auto">
+            <p className="text-lg text-center text-black leading-relaxed max-w-6xl mx-auto">
               Our leadership group brings together experienced professionals across programs, training, and operations, united in their commitment to shaping a generation of strong, confident, and capable young leaders.
             </p>
           </div>

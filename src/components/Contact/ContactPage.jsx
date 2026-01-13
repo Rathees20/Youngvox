@@ -24,7 +24,7 @@ const ContactPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbx9tye5z3YOIA1hBa7Up-PKAypxfUfqc1sjVxp1_DZ5appzR5fc14Elfors-yomwvuPlA/exec",
@@ -33,12 +33,12 @@ const ContactPage = () => {
           body: JSON.stringify(formData),
         }
       );
-  
+
       const result = await response.json();
-  
+
       if (result.success) {
         alert("Message sent successfully!");
-  
+
         setFormData({
           fullName: '',
           email: '',
@@ -55,7 +55,7 @@ const ContactPage = () => {
       alert("Something went wrong!");
     }
   };
-  
+
 
   const [touchRef, touchVisible] = useScrollAnimation({ once: true });
   const [bannerRef, bannerVisible] = useScrollAnimation({ once: true });
@@ -118,6 +118,16 @@ const ContactPage = () => {
 
         {/* Vector 1 Image at Bottom */}
         <div className="absolute bottom-0 left-0 right-0" style={{ transform: 'translateY(38%)', zIndex: 10 }}>
+          <img
+            src={vector1Image}
+            alt="Vector decoration"
+            className="w-full h-auto object-cover"
+            style={{ display: 'block', width: '100%' }}
+          />
+        </div>
+
+        {/* Second Vector 1 Image below the first one */}
+        <div className="absolute bottom-0 left-0 right-0" style={{ transform: 'translateY(60%)', zIndex: 9 }}>
           <img
             src={vector1Image}
             alt="Vector decoration"
