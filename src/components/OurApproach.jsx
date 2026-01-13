@@ -25,7 +25,7 @@ const OurApproach = () => {
                             Our Approach
                         </h2>
 
-                        <div className="space-y-2 text-[#4A4A4A] leading-[1.8] text-base">
+                        <div className="space-y-2 text-[#4A4A4A] leading-[1.8] text-base text-justify">
                             <p>
                                 We build strong youth leaders through a collaborative and inclusive model. By
                                 bringing together senior advisors, purpose-driven companies, NGOs, and
@@ -33,7 +33,7 @@ const OurApproach = () => {
                             </p>
                             <p>
                                 Through this partnership network, we offer free programs to schools so every
-                                student - no matter their background is-can access meaningful learning,
+                                student - no matter their background is - can access meaningful learning,
                                 essential life skills, and real leadership opportunities
                             </p>
                         </div>

@@ -23,7 +23,7 @@ const HowWeEmpower = () => {
         {
             id: 1,
             image: schoolChapterImg,
-            title: "1. Formation of the\nSchool Chapter",
+            title: "1. Formation of the School Chapter",
             description: "Launch a YoungVox Chapter in your school to empower students to lead and create impact",
             bgColor: "bg-white",
             textColor: "text-[#1A1A1A]",
@@ -32,7 +32,7 @@ const HowWeEmpower = () => {
         {
             id: 2,
             image: mentorLeadersImg,
-            title: "2. Identifying Teacher\nMentor and Wing Leaders",
+            title: "2. Identifying Teacher Mentor and Wing Leaders",
             description: "The school selects a teacher mentor and Wing Leaders to guide the chapter and lead impactful student initiatives",
             bgColor: "bg-[#A82228]",
             textColor: "text-white",
@@ -41,7 +41,7 @@ const HowWeEmpower = () => {
         {
             id: 3,
             image: annualActivitiesImg,
-            title: "3. Engaging in Monthly\nand Annual Activities",
+            title: "3. Engaging in Monthly and Annual Activities",
             description: "Each wing engages in monthly and annual activities, led by student leaders and guided by YoungVox in their school",
             bgColor: "bg-white",
             textColor: "text-[#1A1A1A]",
@@ -50,7 +50,7 @@ const HowWeEmpower = () => {
         {
             id: 4,
             image: measuringImpactImg,
-            title: "4. Measuring Impact\nat School",
+            title: "4. Measuring Impact at School",
             description: "YoungVox uses structured assessments to track your school's progress and impact of Youngvox",
             bgColor: "bg-[#A82228]",
             textColor: "text-white",
@@ -97,7 +97,7 @@ const HowWeEmpower = () => {
                 <div className="max-w-[1600px] mx-auto px-6 lg:px-12 xl:px-16">
                     {/* Unified Container for Header and Cards */}
                     <div
-                        className="rounded-[40px] p-8 md:p-12 lg:p-16 xl:p-20 shadow-sm border border-[#F5F5F5] transition-all duration-500 hover:shadow-md overflow-hidden relative"
+                        className="rounded-[30px] p-6 md:p-8 lg:p-10 xl:p-12 shadow-sm border border-[#F5F5F5] transition-all duration-500 hover:shadow-md overflow-hidden relative"
                         style={{
                             backgroundColor: '#FF8E5114',
                             backgroundImage: `url(${howWeEmpowerBg})`,
@@ -107,7 +107,7 @@ const HowWeEmpower = () => {
                         }}
                     >
                         {/* Section Header */}
-                        <div ref={headerRef} className={`text-center mb-12 md:mb-16 lg:mb-20 ${headerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+                        <div ref={headerRef} className={`text-center mb-8 md:mb-10 lg:mb-12 ${headerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
                             <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-[#1A1A1A] mb-4">
                                 How YoungVox Empowers School
                             </h2>
@@ -120,7 +120,7 @@ const HowWeEmpower = () => {
                         <div ref={cardsRef} className={`${cardsVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                             <Swiper
                                 modules={[Autoplay, Pagination]}
-                                spaceBetween={30}
+                                spaceBetween={20}
                                 slidesPerView={1}
                                 loop={true}
                                 autoplay={{
@@ -134,24 +134,24 @@ const HowWeEmpower = () => {
                                 breakpoints={{
                                     768: {
                                         slidesPerView: 2,
-                                        spaceBetween: 40,
+                                        spaceBetween: 24,
                                     },
                                     1280: {
                                         slidesPerView: 2,
-                                        spaceBetween: 50,
+                                        spaceBetween: 30,
                                     }
                                 }}
-                                className="pb-16"
+                                className="pb-12"
                                 style={{ height: 'auto' }}
                             >
                                 {empowermentCards.map((card, index) => (
                                     <SwiperSlide key={card.id} style={{ height: 'auto' }}>
                                         <div
-                                            className={`rounded-[30px] overflow-hidden shadow-xl ${card.bgColor} transition-all duration-300 hover:shadow-2xl w-full flex flex-col mx-auto h-full`}
+                                            className={`rounded-[20px] overflow-hidden shadow-lg ${card.bgColor} transition-all duration-300 hover:shadow-xl w-full flex flex-col mx-auto h-full`}
                                         >
                                             {/* Card Image Container */}
-                                            <div className="p-4 lg:p-5 pb-0 flex-shrink-0">
-                                                <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[20px] shadow-sm bg-gray-100">
+                                            <div className="p-3 lg:p-4 pb-0 flex-shrink-0">
+                                                <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[15px] shadow-sm bg-gray-100">
                                                     <img
                                                         src={card.image}
                                                         alt={card.title}
@@ -162,11 +162,11 @@ const HowWeEmpower = () => {
                                             </div>
 
                                             {/* Card Content */}
-                                            <div className="px-6 lg:px-8 pt-4 lg:pt-5 pb-6 lg:pb-8 flex-grow flex flex-col justify-start text-left min-h-0">
-                                                <h3 className={`text-lg lg:text-[20px] xl:text-[22px] font-extrabold mb-2 lg:mb-3 leading-tight whitespace-pre-line ${card.textColor}`}>
+                                            <div className="px-4 lg:px-5 pt-3 lg:pt-4 pb-4 lg:pb-5 flex-grow flex flex-col justify-start text-left min-h-0">
+                                                <h3 className={`text-base lg:text-[18px] font-extrabold mb-2 leading-tight ${card.textColor}`}>
                                                     {card.title}
                                                 </h3>
-                                                <p className={`text-sm lg:text-[16px] leading-[1.6] ${card.descColor}`}>
+                                                <p className={`text-xs lg:text-[14px] leading-[1.5] ${card.descColor}`}>
                                                     {card.description}
                                                 </p>
                                             </div>

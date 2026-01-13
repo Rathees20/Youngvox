@@ -47,7 +47,7 @@ export default function NewsletterSection() {
     <section ref={ref} className="w-full bg-[#A82228] relative overflow-hidden">
       {/* TOP CONTENT */}
       <div className="max-w-4xl mx-auto text-center pt-10 sm:pt-14 pb-6 px-4">
-        <h2 className="text-white text-bold text-lg mb-6 sm:mb-8 leading-[1.8]">
+      <h2 className="text-[14px] leading-[1.8] lg:text-[32px] font-bold text-white mb-4">
           Stay Updated on YoungVox Activities, Events, and Student Initiatives
         </h2>
 
