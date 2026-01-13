@@ -22,10 +22,40 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+  
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbx9tye5z3YOIA1hBa7Up-PKAypxfUfqc1sjVxp1_DZ5appzR5fc14Elfors-yomwvuPlA/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+        }
+      );
+  
+      const result = await response.json();
+  
+      if (result.success) {
+        alert("Message sent successfully!");
+  
+        setFormData({
+          fullName: '',
+          email: '',
+          phoneNumber: '',
+          location: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong!");
+    }
   };
+  
 
   const [touchRef, touchVisible] = useScrollAnimation({ once: true });
   const [bannerRef, bannerVisible] = useScrollAnimation({ once: true });

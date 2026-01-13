@@ -23,7 +23,7 @@ const HowWeEmpower = () => {
         {
             id: 1,
             image: schoolChapterImg,
-            title: "Formation of the\nSchool Chapter",
+            title: "1. Formation of the\nSchool Chapter",
             description: "Launch a YoungVox Chapter in your school to empower students to lead and create impact",
             bgColor: "bg-white",
             textColor: "text-[#1A1A1A]",
@@ -32,7 +32,7 @@ const HowWeEmpower = () => {
         {
             id: 2,
             image: mentorLeadersImg,
-            title: "Identifying Teacher\nMentor and Wing Leaders",
+            title: "2. Identifying Teacher\nMentor and Wing Leaders",
             description: "The school selects a teacher mentor and Wing Leaders to guide the chapter and lead impactful student initiatives",
             bgColor: "bg-[#A82228]",
             textColor: "text-white",
@@ -41,20 +41,20 @@ const HowWeEmpower = () => {
         {
             id: 3,
             image: annualActivitiesImg,
-            title: "Engaging in Monthly\nand Annual Activities",
+            title: "3. Engaging in Monthly\nand Annual Activities",
             description: "Each wing engages in monthly and annual activities, led by student leaders and guided by YoungVox in their school",
-            bgColor: "bg-[#A82228]",
-            textColor: "text-white",
-            descColor: "text-white/90"
+            bgColor: "bg-white",
+            textColor: "text-[#1A1A1A]",
+            descColor: "text-gray-600"
         },
         {
             id: 4,
             image: measuringImpactImg,
-            title: "Measuring Impact\nat School",
+            title: "4. Measuring Impact\nat School",
             description: "YoungVox uses structured assessments to track your school's progress and impact of Youngvox",
-            bgColor: "bg-white",
-            textColor: "text-[#1A1A1A]",
-            descColor: "text-gray-600"
+            bgColor: "bg-[#A82228]",
+            textColor: "text-white",
+            descColor: "text-white/90"
         }
     ];
 
