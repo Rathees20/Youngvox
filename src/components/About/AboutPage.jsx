@@ -129,7 +129,7 @@ const AboutPage = () => {
         <div className={`relative w-full mt-6 sm:mt-12 ${visionVisible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
 
           {/* Top shadow */}
-          
+
 
           {/* Main image full width */}
           <img
@@ -139,13 +139,13 @@ const AboutPage = () => {
           />
 
           {/* Bottom red shade (Paint stroke effect) */}
-          
+
 
           {/* Bottom torn border */}
           <img
             src={tornBorder}
             alt="torn border"
-            className="absolute bottom-[10px] sm:bottom-[10px] left-0 w-full block z-30 pointer-events-none select-none"
+            className="absolute bottom-0 sm:bottom-[10px] left-0 w-full block z-30 pointer-events-none select-none"
           />
         </div>
       </section>
@@ -234,7 +234,7 @@ const AboutPage = () => {
             {teamMembers.map((member) => (
               <div key={member.id} className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden h-full flex flex-col">
                 {/* Headshot */}
-                <div className="relative h-48 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
+                <div className="relative h-64 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -245,7 +245,7 @@ const AboutPage = () => {
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                      objectPosition: member.id === 3 ? 'center top' : member.id === 4 ? 'center 20%' : 'center',
+                      objectPosition: member.id === 2 && !isDesktop ? 'center top' : member.id === 3 ? 'center top' : member.id === 4 ? 'center 20%' : 'center',
                       backgroundColor: 'transparent'
                     }}
                   />
@@ -284,17 +284,17 @@ const AboutPage = () => {
             {/* First Row - 3 cards centered */}
             <div className="flex flex-wrap justify-center gap-4 sm:gap-5 mb-4 sm:mb-5">
               {advisors.slice(0, 3).map((advisor) => (
-                <div 
-                  key={advisor.id} 
+                <div
+                  key={advisor.id}
                   className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden flex flex-col w-full sm:w-[calc(50%-0.5rem)]"
-                  style={{ 
+                  style={{
                     width: '100%',
                     maxWidth: '100%',
                     flexBasis: window.innerWidth >= 1024 ? 'calc((100% - 2rem) / 4)' : window.innerWidth >= 640 ? 'calc(50% - 0.5rem)' : '100%'
                   }}
                 >
                   {/* Headshot */}
-                  <div className="relative h-48 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
+                  <div className="relative h-64 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
                     <img
                       src={advisor.image}
                       alt={advisor.name}
@@ -321,18 +321,17 @@ const AboutPage = () => {
                 </div>
               ))}
             </div>
-            
+
             {/* Second Row - 2 cards centered */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
               {advisors.slice(3, 5).map((advisor) => (
-                <div 
-                  key={advisor.id} 
-                  className={`bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden h-full flex flex-col ${
-                    advisor.id === 4 ? 'lg:col-start-2' : ''
-                  }`}
+                <div
+                  key={advisor.id}
+                  className={`bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden h-full flex flex-col ${advisor.id === 4 ? 'lg:col-start-2' : ''
+                    }`}
                 >
                   {/* Headshot */}
-                  <div className="relative h-48 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
+                  <div className="relative h-64 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
                     <img
                       src={advisor.image}
                       alt={advisor.name}
@@ -343,7 +342,7 @@ const AboutPage = () => {
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
-                        objectPosition: advisor.id === 5 ? 'center 5%' : 'center'
+                        objectPosition: advisor.id === 5 && !isDesktop ? 'center 12%' : advisor.id === 5 ? 'center 5%' : 'center'
                       }}
                     />
                   </div>
@@ -375,11 +374,11 @@ const AboutPage = () => {
 
               <div className="space-y-4 sm:space-y-5 lg:space-y-5 text-gray-700 text-lg leading-[1.6] sm:leading-[1.65] text-justify sm:text-justify">
                 <p>
-                YoungVox was founded with a vision to nurture empowered, emotionally resilient, and socially responsible young leaders across India. Although India has one of the world’s largest youth populations - over 253 million adolescents, with one in five individuals aged 10–19 (UNICEF, 2023) - access to holistic education, leadership development, and emotional wellbeing support remains limited. While SDG 4 and NEP 2020 strongly advocate life-skill-based learning, most school systems continue to be predominantly academic-focused. This gap underscores the urgent need for a structured, school-based ecosystem that develops both competence and character.
+                  YoungVox was founded with a vision to nurture empowered, emotionally resilient, and socially responsible young leaders across India. Although India has one of the world’s largest youth populations - over 253 million adolescents, with one in five individuals aged 10–19 (UNICEF, 2023) - access to holistic education, leadership development, and emotional wellbeing support remains limited. While SDG 4 and NEP 2020 strongly advocate life-skill-based learning, most school systems continue to be predominantly academic-focused. This gap underscores the urgent need for a structured, school-based ecosystem that develops both competence and character.
                 </p>
 
                 <p>
-                YoungVox bridges this gap through its unique 4-Wing Chapter Model, empowering students to discover their voice, build leadership skills, strengthen emotional resilience, and contribute meaningfully to their communities - shaping a generation that is academically capable, emotionally aware, socially responsible, and future-ready. In doing so, YoungVox is redefining youth development in Indian schools by integrating character, competence, and purpose-driven learning.
+                  YoungVox bridges this gap through its unique 4-Wing Chapter Model, empowering students to discover their voice, build leadership skills, strengthen emotional resilience, and contribute meaningfully to their communities - shaping a generation that is academically capable, emotionally aware, socially responsible, and future-ready. In doing so, YoungVox is redefining youth development in Indian schools by integrating character, competence, and purpose-driven learning.
                 </p>
               </div>
             </div>

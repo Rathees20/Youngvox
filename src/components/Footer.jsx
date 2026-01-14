@@ -36,7 +36,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20">
 
           {/* LEFT CONTENT */}
-          <div className="max-w-sm">
+          <div className="max-w-sm flex flex-col items-start text-left mx-auto md:mx-0">
             <img src={youngvoxLogo} alt="YoungVox" className="h-10 md:h-14 mb-4 md:mb-6" />
             <p className="text-sm md:text-base text-black leading-relaxed">
               YoungVox is a national youth leadership initiative
@@ -46,11 +46,11 @@ const Footer = () => {
           </div>
 
           {/* RIGHT LINKS */}
-          <div className="flex flex-col md:pt-20">
+          <div className="flex flex-col items-start md:pt-20">
             <h4 className="text-base md:text-lg font-semibold uppercase mb-3 md:mb-5 text-black font-bold">
               Quick Links
             </h4>
-            <ul className="flex flex-wrap gap-4 md:gap-6 text-sm md:text-base text-black">
+            <ul className="grid grid-cols-2 md:flex md:flex-wrap gap-4 md:gap-6 text-sm md:text-base text-black w-full md:w-auto">
               <li><Link to="/" className="text-black">Home</Link></li>
               <li><Link to="/about" className="text-black">About Us</Link></li>
               <li><Link to="/wings" className="text-black">Wings</Link></li>
@@ -65,17 +65,17 @@ const Footer = () => {
               <li><Link to="/joinyoung" className="text-black">Get Involved</Link></li>
               <li><Link to="/contact" className="text-black">Contact Us</Link></li>
             </ul>
-            <p className="hidden md:block text-base text-black mt-8 text-center">
+            <p className="hidden md:block text-base text-black mt-8">
               Copyright 2025. Youngvox All Rights Reserved
             </p>
           </div>
         </div>
 
         {/* BOTTOM BAR */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 md:gap-0 mt-0">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 md:gap-0 mt-8 md:mt-0">
 
           {/* BOTTOM LEFT — SOCIAL MEDIA */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col items-start gap-3">
             <h4 className="text-base md:text-lg font-semibold uppercase text-black">
               Social Media
             </h4>
@@ -107,13 +107,10 @@ const Footer = () => {
               </a>
             </div>
           </div>
-
-
-
         </div>
 
         {/* Mobile Copyright */}
-        <div className="md:hidden mt-8 text-center">
+        <div className="md:hidden mt-8 text-left">
           <p className="text-xs text-black">
             Copyright 2025. Youngvox All Rights Reserved
           </p>

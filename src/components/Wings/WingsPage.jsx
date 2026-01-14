@@ -153,7 +153,7 @@ const WingsPage = () => {
             <h1 className="text-3xl lg:text-4xl font-bold text-[#1A2B3C] mb-6 uppercase tracking-tight">
               YOUNGVOX - WINGS
             </h1>
-            
+
           </div>
 
           <div className={`max-w-7xl mx-auto space-y-8 ${heroVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
