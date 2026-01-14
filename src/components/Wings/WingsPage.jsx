@@ -150,7 +150,7 @@ const WingsPage = () => {
       <section ref={heroRef} className="pt-12 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
           <div className={`${heroVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-            <h1 className="text-3xl lg:text-4xl font-bold text-[#1A2B3C] mb-2 uppercase tracking-tight">
+            <h1 className="text-3xl lg:text-4xl font-bold text-[#1A2B3C] mb-6 uppercase tracking-tight">
               YOUNGVOX - WINGS
             </h1>
             
@@ -158,7 +158,7 @@ const WingsPage = () => {
 
           <div className={`max-w-7xl mx-auto space-y-8 ${heroVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
             <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed max-w-7xl mx-auto">
-              YoungVox nurtures student leadership through a structured School Chapter model powered by four dynamic wings. Each wing is led by students, supported by a core leadership team and teacher mentors, ensuring meaningful engagement, collaboration, and real-world learning
+              YoungVox nurtures student leadership through a structured School Chapter model powered by four dynamic wings. Each wing is led by students, supported by a core leadership team and teacher mentors, ensuring meaningful engagement, collaboration, and real world learning.
             </p>
             <button onClick={() => navigate('/joinyoung')} className="bg-[#A82228] text-white px-8 py-3 rounded-full font-bold hover:bg-[#8a1c22] transition-all transform hover:scale-105 shadow-md">
               Join Now
@@ -360,7 +360,7 @@ const WingsPage = () => {
             </div>
 
             {/* Theme badge (Now in header row for better alignment) */}
-            <div className="flex lg:justify-end justify-center lg:pr-12">
+            <div className="flex lg:justify-end justify-center lg:pr-20">
               <div className="inline-flex flex-col items-center justify-center text-center rounded-md bg-[#FFF6E3] px-6 py-3">
                 <div className="text-base text-lg font-bold text-[#A82228] leading-relaxed">
                   Overall theme for 2026-Empower Future
@@ -490,7 +490,7 @@ const WingsPage = () => {
 
               {/* Descriptive Text - Aligned with timeline */}
               <div className="min-h-[100px] mb-10">
-                <p className="text-lg text-gray-700 leading-relaxed max-w-sm transition-all duration-300">
+                <p className="text-lg text-gray-700 text-justify leading-relaxed max-w-sm transition-all duration-300">
                   {stepContent[currentStep]}
                 </p>
               </div>
