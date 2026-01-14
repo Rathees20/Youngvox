@@ -2,10 +2,11 @@ import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useCountUp } from '../hooks/useCountUp';
 import impactBgImage from '../assets/impact snapshot.png';
+import { useNavigate } from 'react-router-dom'; 
 
 const ImpactSnapshot = () => {
     const [ref, isVisible] = useScrollAnimation({ once: true, threshold: 0.2 });
-
+    const navigate = useNavigate();
     // Extract numeric values and suffixes
     const impactStats = [
         {
@@ -61,7 +62,7 @@ const ImpactSnapshot = () => {
                     <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-white mb-2 md:mb-3">
                         Impact Snapshot
                     </h2>
-                    <p className="text-white/90 text-xl max-w-2xl mx-auto leading-[1.8] px-4">
+                    <p className="text-white/90 text-xl max-w-3xl mx-auto leading-[1.8] px-4">
                         Our reach and impact across India, empowering the next generation of leaders with continued growth expected in the subsequent years
                     </p>
                 </div>
@@ -130,7 +131,10 @@ const ImpactSnapshot = () => {
 
                 {/* Get in touch Button */}
                 <div className={`text-center mt-6 md:mt-8 ${isVisible ? 'animate-fade-in-up animate-delay-500' : 'opacity-0'}`}>
-                    <button className="bg-white text-[#A82228] px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl">
+                    <button  onClick={() => {
+                                navigate('/contact');
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                              }} className="bg-white text-[#A82228] px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl">
                         Get in touch
                     </button>
                 </div>

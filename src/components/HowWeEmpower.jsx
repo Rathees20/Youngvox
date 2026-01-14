@@ -2,7 +2,7 @@ import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-
+import { useNavigate } from 'react-router-dom';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -19,7 +19,8 @@ import howWeEmpowerBg from '../assets/how empower bacground image.png';
 import bePartChangeBg from '../assets/be part change background.png';
 
 const HowWeEmpower = () => {
-    const empowermentCards = [
+    const navigate = useNavigate();
+        const empowermentCards = [
         {
             id: 1,
             image: schoolChapterImg,
@@ -193,7 +194,12 @@ const HowWeEmpower = () => {
                                     A transformative platform that nurtures leadership, voice, and real-world impact in every student.
                                 </p>
                             </div>
+                            
                             <button
+                            onClick={() => {
+                                navigate('/joinyoung');
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                              }}
                                 className="bg-[#A82228] text-white px-8 py-4 rounded-full text-base font-bold hover:bg-[#8a1c22] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 whitespace-nowrap self-start"
                             >
                                 Join Us Today

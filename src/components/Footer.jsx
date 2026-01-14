@@ -35,53 +35,27 @@ const Footer = () => {
           </div>
 
           {/* RIGHT LINKS */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-16 text-base text-black">
-            <div>
-              <h4 className="text-sm font-semibold uppercase mb-5 text-black">
-                Quick Links
-              </h4>
-              <ul className="space-y-4">
-                <li><Link to="/" className="text-black">Home</Link></li>
-                
-                <li><Link to="/about" className="text-black">About Us</Link></li>
+          <div className="flex flex-col pt-25 lg:pt-20">
+            <h4 className="text-lg font-semibold uppercase mb-5 text-black font-bold">
+              Quick Links
+            </h4>
+            <ul className="flex flex-wrap gap-6 text-base text-black">
+              <li><Link to="/" className="text-black">Home</Link></li>
+              <li><Link to="/about" className="text-black">About Us</Link></li>
                 <li><Link to="/wings" className="text-black">Wings</Link></li>
                 <li><Link to="/events" className="text-black">Chapters</Link></li>
                 <li><Link to="/getinvolved" className="text-black">Get Involved</Link></li>
                 <li><Link to="/contact" className="text-black">Contact Us</Link></li>
-              </ul>
-            </div>
-{/* 
-            <div>
-              <h4 className="text-sm font-semibold uppercase mb-5 text-black">
-                Resources
-              </h4>
-              <ul className="space-y-4">
-                <li className="text-black">Blog</li>
-                <li className="text-black">Learning Hub</li>
-                <li className="text-black">Success Stories</li>
-                <li className="text-black">FAQs</li>
-              </ul>
-            </div> */}
-
-            {/* <div>
-              <h4 className="text-sm font-semibold uppercase mb-5 text-black">
-                Support
-              </h4>
-              <ul className="space-y-4">
-                <li><Link to="/contact" className="text-black">Contact Us</Link></li>
-                <li className="text-black">Terms & Conditions</li>
-                <li className="text-black">Ethics & Privacy</li>
-              </ul>
-            </div> */}
+            </ul>
           </div>
         </div>
 
         {/* BOTTOM BAR */}
-        <div className="flex items-end justify-between mt-20 pt-6">
+        <div className="flex items-start justify-between mt-6 pt-6">
 
           {/* BOTTOM LEFT — SOCIAL MEDIA */}
-          <div className="flex flex-col gap-3">
-            <h4 className="text-sm font-semibold uppercase text-black">
+          <div className="flex flex-col gap-3 ">
+            <h4 className="text-lg font-semibold uppercase text-black">
               Social Media
             </h4>
 
@@ -114,8 +88,8 @@ const Footer = () => {
           </div>
 
           {/* BOTTOM RIGHT — COPYRIGHT */}
-          <p className="text-sm text-black text-right leading-relaxed">
-            Copyright 2025. Youngvox | Privacy Policy | Terms Conditions
+          <p className="text-base text-black text-left leading-relaxed -ml-30 mt-2">
+            Copyright 2025. Youngvox All Rights Reserved
           </p>
 
         </div>

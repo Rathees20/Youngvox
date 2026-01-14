@@ -39,11 +39,14 @@ const OurApproach = () => {
                         </div>
 
                         <button
-                            onClick={() => navigate('/joinyoung')}
-                            className="bg-[#A82228] text-white px-8 py-3 rounded-full font-bold hover:bg-[#901d22] transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
-                        >
-                            Join YoungVox
-                        </button>
+              onClick={() => {
+                navigate('/joinyoung');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="mt-6 inline-flex items-center bg-[#A82228] text-white px-7 py-3 rounded-full font-semibold shadow-md hover:bg-[#8f1d22] transition"
+            >
+              Join YoungVox
+            </button>
                     </div>
 
                     {/* Right Column - Image */}
