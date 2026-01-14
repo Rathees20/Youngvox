@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import smilesAndLearningImage from '../assets/smiles and learning all.png';
+import smilesAndLearningImage from '../assets/smiles and learning all.jpeg';
 import youthEmpowerSecondImg from '../assets/Youthempower second image.png';
 
 const EmpoweringYouth = () => {

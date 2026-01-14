@@ -126,7 +126,7 @@ const AboutPage = () => {
         </div>
 
         {/* 🔥 Full-width Vision Image with overlays */}
-        <div className={`relative w-full mt-6 sm:mt-12 ${visionVisible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
+        <div className={`relative w-full mt-6 sm:mt-12 overflow-hidden ${visionVisible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
 
           {/* Top shadow */}
 
@@ -135,7 +135,7 @@ const AboutPage = () => {
           <img
             src={visionImage}
             alt="Our Vision"
-            className="w-full h-auto block object-cover"
+            className="w-full h-auto block object-cover scale-x-110"
           />
 
           {/* Bottom red shade (Paint stroke effect) */}
