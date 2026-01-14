@@ -20,7 +20,8 @@ import banupriyaImage from '../../assets/c5.jpeg';
 import kapilashImage from '../../assets/c7.jpeg';
 import siyanaSalimImage from '../../assets/c8.jpeg';
 import userPlaceholder from '../../assets/icons/Mask group.png'; // Using existing icon as placeholder for silhouettes
-
+import lsImage from '../../assets/ls.jpeg';
+import { useNavigate } from 'react-router-dom';
 const LeaderNode = ({ image, name, title, className = "" }) => (
   <div className={`flex items-center gap-3 bg-[#802525] rounded-full py-2 pl-2 pr-6 shadow-md w-full max-w-[360px] z-10 ${className}`}>
     <div className="w-[54px] h-[54px] rounded-full overflow-hidden border-2 border-white/30 flex-shrink-0 bg-white">
@@ -108,6 +109,16 @@ const WingsPage = () => {
 
   const [currentStep, setCurrentStep] = useState(1);
 
+  const navigate = useNavigate();
+
+  // Step content for "How it works" section
+  const stepContent = {
+    1: "Student-led leadership structure - Every activity is planned, and executed by student leaders from each wing.",
+    2: "Monthly digital campaigns - Students create awareness through posters, videos, reels, and school-wide messages.",
+    3: "Annual events and showcases - Includes gamified activities that make learning engaging and fun.",
+    4: "Collaboration with mentors and external experts - Teacher mentors and external professionals guide students through workshops, sessions, and project support"
+  };
+
   // Scroll animations
   const [heroRef, heroVisible] = useScrollAnimation({ once: true });
   const [leadershipRef, leadershipVisible] = useScrollAnimation({ once: true });
@@ -139,17 +150,17 @@ const WingsPage = () => {
       <section ref={heroRef} className="pt-12 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
           <div className={`${heroVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-            <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-[#1A2B3C] mb-2 uppercase tracking-tight">
+            <h1 className="text-3xl lg:text-4xl font-bold text-[#1A2B3C] mb-2 uppercase tracking-tight">
               YOUNGVOX - WINGS
             </h1>
-            <div className="w-24 h-2 bg-[#A82228] mx-auto mb-8"></div>
+            
           </div>
 
           <div className={`max-w-4xl mx-auto space-y-8 ${heroVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
             <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
               YoungVox nurtures student leadership through a structured School Chapter model powered by four dynamic wings. Each wing is led by students, supported by a core leadership team and teacher mentors, ensuring meaningful engagement, collaboration, and real-world learning
             </p>
-            <button className="bg-[#A82228] text-white px-8 py-3 rounded-full font-bold hover:bg-[#8a1c22] transition-all transform hover:scale-105 shadow-md">
+            <button onClick={() => navigate('/joinyoung')} className="bg-[#A82228] text-white px-8 py-3 rounded-full font-bold hover:bg-[#8a1c22] transition-all transform hover:scale-105 shadow-md">
               Join Now
             </button>
           </div>
@@ -166,7 +177,7 @@ const WingsPage = () => {
             {/* Top Fade Gradient */}
             <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
 
-            {/* Crack/Tear Design at Bottom */}
+            {/* Crack/Tear Design at Bottom
             <div className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-10">
               <img
                 src={vectorImage}
@@ -174,7 +185,7 @@ const WingsPage = () => {
                 className="w-full h-auto object-cover scale-x-110"
                 style={{ display: 'block' }}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -183,16 +194,16 @@ const WingsPage = () => {
       <section ref={leadershipRef} className="py-10 lg:py-14" style={{ backgroundColor: '#FFF9F0' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-8 ${leadershipVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-            <h2 className="text-[36px] lg:text-[44px] font-extrabold text-[#1A2B3C] mb-2">
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-[#1A2B3C] mb-2">
               Leadership Structure
             </h2>
-            <p className="text-gray-500 text-[15px] font-medium max-w-xl mx-auto">
+            <p className="text-gray-500 text-[20px] font-medium max-w-2xl mx-auto">
               A collaborative model where students lead, learn, and grow together
             </p>
           </div>
 
-          {/* Org Chart Container */}
-          <div className={`${leadershipVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
+          {/* Org Chart Container - Hidden */}
+          <div className={`hidden ${leadershipVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
             {/* Desktop: fixed-position layout (pixel-accurate) */}
             <div className="hidden sm:block">
               <div className="relative mx-auto w-[780px] bg-transparent">
@@ -320,6 +331,17 @@ const WingsPage = () => {
               </div>
             </div>
           </div>
+
+          {/* Leadership Structure Image */}
+          <div className={`${leadershipVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
+            <div className="flex justify-center">
+              <img
+                src={lsImage}
+                alt="Leadership Structure"
+                className="w-full max-w-4xl h-auto rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -332,7 +354,7 @@ const WingsPage = () => {
               <h2 className="text-3xl lg:text-4xl font-extrabold text-[#1A2B3C] mb-3">
                 YoungVox Wings
               </h2>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <p className="text-gray-600 text-[20px] font-medium leading-relaxed">
                 YoungVox operates through 4 dynamic wings that empower learners to lead, create, collaborate, and drive real impact within their school and community.
               </p>
             </div>
@@ -340,10 +362,10 @@ const WingsPage = () => {
             {/* Theme badge (Now in header row for better alignment) */}
             <div className="flex lg:justify-end justify-center lg:pr-12">
               <div className="inline-flex flex-col items-center justify-center text-center rounded-md bg-[#FFF6E3] px-6 py-3">
-                <div className="text-[13px] font-bold text-[#A82228] leading-tight">
+                <div className="text-base font-bold text-[#A82228] leading-relaxed">
                   Overall theme for 2026-Empower Future
                 </div>
-                <div className="text-[13px] font-bold text-[#A82228] leading-tight">
+                <div className="text-base font-bold text-[#A82228] leading-relaxed">
                   Begin Today, For Better Tomorrow
                 </div>
               </div>
@@ -363,7 +385,7 @@ const WingsPage = () => {
                   <img src={wing1Image} alt="Academic & Career Guidance" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-black mb-1">Academic & Career Guidance Wing</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-black mb-1">Academic & Career Guidance Wing</h2>
               <p className="text-[13px] text-gray-600 mb-4 font-medium">[SDG 4 – Quality Education]</p>
               <p className="text-lg text-gray-700 leading-relaxed font-medium">
                 Helps students discover academic interests, plan career paths, and access learning resources.
@@ -381,7 +403,7 @@ const WingsPage = () => {
                   <img src={wing2Image} alt="Student Wellbeing" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">Student Wellbeing Wing</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-1">Student Wellbeing Wing</h2>
               <p className="text-[13px] text-white/80 mb-4 font-medium">[SDG 3 – Good Health & Well-being]</p>
               <p className="text-lg text-white/90 leading-relaxed font-medium">
                 Promotes emotional, mental, and physical wellbeing through psychoeducation, awareness sessions, and healthy habit-building activities.
@@ -399,7 +421,7 @@ const WingsPage = () => {
                   <img src={wing3Image} alt="Child Rights & Social Justice" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">Child Rights & Social Justice Wing</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-1">Child Rights & Social Justice Wing</h2>
               <p className="text-[13px] text-white/80 mb-4 font-medium">[SDG 16 – Peace, Justice & Strong Institutions]</p>
               <p className="text-lg text-white/90 leading-relaxed font-medium">
                 Builds awareness on children's rights, protection, equality, safety, and safety through campaigns and forums.
@@ -417,7 +439,7 @@ const WingsPage = () => {
                   <img src={wing4Image} alt="Community Outreach & Service" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-black mb-1">Community Outreach & Service Wing</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-black mb-1">Community Outreach & Service Wing</h2>
               <p className="text-[13px] text-gray-600 mb-4 font-medium">[SDG 14 – Life Below Water]</p>
               <p className="text-lg text-gray-700 leading-relaxed font-medium">
                 Leads eco-friendly initiatives, environmental awareness drives, and community service to promote sustainability and civic responsibility.
@@ -434,7 +456,7 @@ const WingsPage = () => {
             {/* Left - Content */}
             <div className={`space-y-6 pt-4 lg:pt-8 ${howItWorksVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
               {/* Title */}
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1A2B3C] mb-6 leading-tight">
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-[#1A2B3C] mb-6 leading-tight">
                 <span className="block lg:whitespace-nowrap">Student-Led Experiential</span>
                 <span className="block lg:whitespace-nowrap">Leadership Framework</span>
               </h2>
@@ -468,8 +490,8 @@ const WingsPage = () => {
 
               {/* Descriptive Text - Aligned with timeline */}
               <div className="min-h-[100px] mb-10">
-                <p className="text-[15px] text-gray-700 leading-relaxed max-w-sm">
-                  Student-led leadership structure - Every activity is planned and executed by student leaders from each wing.
+                <p className="text-[15px] text-gray-700 leading-relaxed max-w-sm transition-all duration-300">
+                  {stepContent[currentStep]}
                 </p>
               </div>
 
@@ -512,20 +534,22 @@ const WingsPage = () => {
 
       {/* Bottom Banner Image */}
       <section className="w-full relative overflow-hidden">
-        <img
-          src={wingLBanner}
-          alt="YoungVox students"
-          className="w-full h-auto aspect-[16/9] sm:aspect-auto sm:h-[400px] lg:h-[500px] object-cover object-center"
-        />
-
-        {/* Crack/Tear Design at Bottom */}
-        <div className="absolute bottom-0 left-0 right-0" style={{ transform: 'translateY(35%)', zIndex: 10 }}>
+        <div className="relative">
           <img
-            src={vectorImage}
-            alt="Crack design"
-            className="w-full h-auto"
-            style={{ width: '100%' }}
+            src={wingLBanner}
+            alt="YoungVox students"
+            className="w-full h-auto aspect-[16/9] sm:aspect-auto sm:h-[600px] lg:h-[700px] object-cover object-center"
           />
+
+          {/* Crack/Tear Design at Bottom
+          <div className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-10">
+            <img
+              src={vectorImage}
+              alt="Crack design"
+              className="w-full h-auto object-cover scale-x-110"
+              style={{ display: 'block' }}
+            />
+          </div> */}
         </div>
       </section>
 
