@@ -20,7 +20,7 @@ const OurApproach = () => {
             <div className="max-w-7xl mx-auto px-6 lg:px-10 lg:pl-15 w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 sm:gap-2 items-center">
                     {/* Left Column - Text Content */}
-                    <div className={`space-y-3 order-2 lg:order-1 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+                    <div className={`space-y-6 pt-10 order-2 lg:order-1 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
                         <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-[#1A1A1A]">
                             Our Approach
                         </h2>
