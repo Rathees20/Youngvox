@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import heroImage from '../assets/Banner Hero image.jpg';
+import heroImage from '../assets/bb.jpg';
 
 const Hero = () => {
   const navigate = useNavigate();
