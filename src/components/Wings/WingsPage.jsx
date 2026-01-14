@@ -156,8 +156,8 @@ const WingsPage = () => {
             
           </div>
 
-          <div className={`max-w-4xl mx-auto space-y-8 ${heroVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
-            <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
+          <div className={`max-w-7xl mx-auto space-y-8 ${heroVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
+            <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed max-w-7xl mx-auto">
               YoungVox nurtures student leadership through a structured School Chapter model powered by four dynamic wings. Each wing is led by students, supported by a core leadership team and teacher mentors, ensuring meaningful engagement, collaboration, and real-world learning
             </p>
             <button onClick={() => navigate('/joinyoung')} className="bg-[#A82228] text-white px-8 py-3 rounded-full font-bold hover:bg-[#8a1c22] transition-all transform hover:scale-105 shadow-md">
@@ -362,10 +362,10 @@ const WingsPage = () => {
             {/* Theme badge (Now in header row for better alignment) */}
             <div className="flex lg:justify-end justify-center lg:pr-12">
               <div className="inline-flex flex-col items-center justify-center text-center rounded-md bg-[#FFF6E3] px-6 py-3">
-                <div className="text-base font-bold text-[#A82228] leading-relaxed">
+                <div className="text-base text-lg font-bold text-[#A82228] leading-relaxed">
                   Overall theme for 2026-Empower Future
                 </div>
-                <div className="text-base font-bold text-[#A82228] leading-relaxed">
+                <div className="text-base text-lg font-bold text-[#A82228] leading-relaxed">
                   Begin Today, For Better Tomorrow
                 </div>
               </div>
@@ -385,7 +385,7 @@ const WingsPage = () => {
                   <img src={wing1Image} alt="Academic & Career Guidance" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-black mb-1">Academic & Career Guidance Wing</h2>
+              <h2 className="text-3xl lg:text-3xl font-bold text-black mb-1">Academic & Career Guidance Wing</h2>
               <p className="text-[13px] text-gray-600 mb-4 font-medium">[SDG 4 – Quality Education]</p>
               <p className="text-lg text-gray-700 leading-relaxed font-medium">
                 Helps students discover academic interests, plan career paths, and access learning resources.
@@ -403,7 +403,7 @@ const WingsPage = () => {
                   <img src={wing2Image} alt="Student Wellbeing" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-1">Student Wellbeing Wing</h2>
+              <h2 className="text-3xl lg:text-3xl font-bold text-white mb-1">Student Wellbeing Wing</h2>
               <p className="text-[13px] text-white/80 mb-4 font-medium">[SDG 3 – Good Health & Well-being]</p>
               <p className="text-lg text-white/90 leading-relaxed font-medium">
                 Promotes emotional, mental, and physical wellbeing through psychoeducation, awareness sessions, and healthy habit-building activities.
@@ -421,7 +421,7 @@ const WingsPage = () => {
                   <img src={wing3Image} alt="Child Rights & Social Justice" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-1">Child Rights & Social Justice Wing</h2>
+              <h2 className="text-3xl lg:text-3xl font-bold text-white mb-1">Child Rights & Social Justice Wing</h2>
               <p className="text-[13px] text-white/80 mb-4 font-medium">[SDG 16 – Peace, Justice & Strong Institutions]</p>
               <p className="text-lg text-white/90 leading-relaxed font-medium">
                 Builds awareness on children's rights, protection, equality, safety, and safety through campaigns and forums.
@@ -439,7 +439,7 @@ const WingsPage = () => {
                   <img src={wing4Image} alt="Community Outreach & Service" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-black mb-1">Community Outreach & Service Wing</h2>
+              <h2 className="text-3xl lg:text-3xl font-bold text-black mb-1">Community Outreach & Service Wing</h2>
               <p className="text-[13px] text-gray-600 mb-4 font-medium">[SDG 14 – Life Below Water]</p>
               <p className="text-lg text-gray-700 leading-relaxed font-medium">
                 Leads eco-friendly initiatives, environmental awareness drives, and community service to promote sustainability and civic responsibility.
@@ -490,7 +490,7 @@ const WingsPage = () => {
 
               {/* Descriptive Text - Aligned with timeline */}
               <div className="min-h-[100px] mb-10">
-                <p className="text-[15px] text-gray-700 leading-relaxed max-w-sm transition-all duration-300">
+                <p className="text-lg text-gray-700 leading-relaxed max-w-sm transition-all duration-300">
                   {stepContent[currentStep]}
                 </p>
               </div>
