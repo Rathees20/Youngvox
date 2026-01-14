@@ -3,7 +3,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import vectorImage from '../../assets/Vector.png';
-import joinBanner from '../../assets/join bannner.png';
+import joinBanner from '../../assets/joinyoungvox 2.jpeg';
 
 const FormPage = () => {
   const [formData, setFormData] = useState({
@@ -27,25 +27,25 @@ const FormPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbztGvAOZbqJ60e3yHDaHmFUvRjIkfyKaQv7gvFnq9HKKBwn86_N9sUzOqSQLDJmysHdXg/exec",
         {
           method: "POST",
-          
+
           body: JSON.stringify({
             ...formData,
             source: "school_form" // 👈 identify form
           }),
         }
       );
-  
+
       const result = await response.json();
-  
+
       if (result.success) {
         alert("Thank you! We will contact you soon.");
-  
+
         setFormData({
           name: '',
           designation: '',
@@ -64,7 +64,7 @@ const FormPage = () => {
       alert("Something went wrong!");
     }
   };
-  
+
 
   const designations = [
     'Principal',
@@ -110,7 +110,7 @@ const FormPage = () => {
               <p className="text-lg text-justify text-black leading-relaxed">
                 By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers.
               </p>
-              
+
             </div>
 
             {/* Right Panel - Form */}

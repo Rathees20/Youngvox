@@ -3,7 +3,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import vectorImage from '../../assets/Vector.png';
-import joinBanner from '../../assets/join bannner.png';
+import joinBanner from '../../assets/joinyoungvox 2.jpeg';
 
 const AdvisorFormPage = () => {
   const [contentRef, contentVisible] = useScrollAnimation({ once: true });
