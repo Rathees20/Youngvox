@@ -385,7 +385,7 @@ const AboutPage = () => {
             </div>
 
             {/* Right Column - Image */}
-            <div className="order-1 lg:order-2 lg:pl-4 w-full lg:pt-4">
+            <div className="order-1 lg:order-2 lg:pl-4 w-full lg:pt-10">
               <div className="relative rounded-lg sm:rounded-lg overflow-hidden shadow-xl">
                 <img
                   src={frame15Image}

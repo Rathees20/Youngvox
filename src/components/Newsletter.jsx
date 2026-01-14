@@ -99,7 +99,7 @@ export default function NewsletterSection() {
         <img
           src={frameImage}
           alt="frame"
-          className="absolute bottom-[-33px] sm:bottom-[-44px] left-0 w-full z-30 pointer-events-none"
+          className="absolute bottom-[-33px] sm:bottom-[-44px] left-0 w-full z-29 pointer-events-none"
         />
       </div>
     </section>
