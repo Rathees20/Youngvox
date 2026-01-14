@@ -47,11 +47,14 @@ const Footer = () => {
               <li><Link to="/getinvolved" className="text-black">Get Involved</Link></li>
               <li><Link to="/contact" className="text-black">Contact Us</Link></li>
             </ul>
+            <p className="text-xs md:text-base text-black mt-8 text-center">
+              Copyright 2025. Youngvox All Rights Reserved
+            </p>
           </div>
         </div>
 
         {/* BOTTOM BAR */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-0 mt-6 pt-6">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 md:gap-0 mt-0">
 
           {/* BOTTOM LEFT — SOCIAL MEDIA */}
           <div className="flex flex-col gap-3">
@@ -87,10 +90,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* BOTTOM RIGHT — COPYRIGHT */}
-          <p className="text-xs md:text-base text-black text-left md:text-right leading-relaxed md:mt-2">
-            Copyright 2025. Youngvox All Rights Reserved
-          </p>
+
 
         </div>
 

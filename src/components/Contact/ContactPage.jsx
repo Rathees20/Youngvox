@@ -117,7 +117,7 @@ const ContactPage = () => {
         </div>
 
         {/* Vector 1 Image at Bottom */}
-        <div className="absolute bottom-0 left-0 right-0" style={{ transform: 'translateY(38%)', zIndex: 10 }}>
+        <div className="absolute bottom-0 left-0 right-0" style={{ transform: 'translateY(35%)', zIndex: 8 }}>
           <img
             src={vector1Image}
             alt="Vector decoration"
@@ -127,7 +127,7 @@ const ContactPage = () => {
         </div>
 
         {/* Second Vector 1 Image below the first one */}
-        <div className="absolute bottom-0 left-0 right-0" style={{ transform: 'translateY(60%)', zIndex: 9 }}>
+        <div className="absolute bottom-0 left-0 right-0" style={{ transform: 'translateY(57%)', zIndex: 9 }}>
           <img
             src={vector1Image}
             alt="Vector decoration"
