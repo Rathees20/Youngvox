@@ -34,7 +34,7 @@ const Hero = () => {
         />
 
         {/* Join Button */}
-        <div className="absolute top-6 right-3 sm:top-6 sm:right-6 md:top-[15%] md:right-[6%] z-10">
+        <div className="absolute top-6 right-2 sm:top-6 sm:right-4 md:top-[15%] md:right-[4%] z-10">
           <button
             onClick={() => navigate('/joinyoung')}
             className="

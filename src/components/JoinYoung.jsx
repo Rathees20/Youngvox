@@ -31,7 +31,7 @@ const JoinYoung = () => {
           <img
             src={joinBanner}
             alt="Join YoungVox Banner"
-            className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover scale-130"
+            className="w-full h-[300px] sm:h-[350px] md:h-auto md:max-h-screen object-cover scale-120 md:scale-100"
             style={{
               imageRendering: '-webkit-optimize-contrast',
               WebkitImageRendering: '-webkit-optimize-contrast',
