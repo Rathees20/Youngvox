@@ -114,7 +114,7 @@ const WingsPage = () => {
   // Step content for "How it works" section
   const stepContent = {
     1: "Student-led leadership structure: Every activity is planned, and executed by student leaders from each wing.",
-    2: "Monthly digital campaigns:Students create awareness through posters, videos, reels, and school-wide messages.",
+    2: "Monthly digital campaigns: Students create awareness through posters, videos, reels, and school-wide messages.",
     3: "Annual events and showcases: Includes gamified activities that make learning engaging and fun.",
     4: "Collaboration with mentors and external experts: Teacher mentors and external professionals guide students through workshops, sessions, and project support"
   };
