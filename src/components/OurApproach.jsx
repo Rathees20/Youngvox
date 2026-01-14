@@ -11,7 +11,7 @@ const OurApproach = () => {
     return (
         <section
             ref={ref}
-            className="bg-center bg-no-repeat lg:h-[500px] flex items-center py-0 pb-0 -mb-10 lg:-mb-14"
+            className="bg-center bg-no-repeat lg:h-[500px] flex items-center py-0 pb-0 -mb-4 lg:-mb-14"
             style={{
                 backgroundImage: `url(${backgroundImage}), linear-gradient(180deg, #FFF6E3 0%, #FFFFFF 100%)`,
                 backgroundSize: 'contain, cover'
@@ -39,14 +39,14 @@ const OurApproach = () => {
                         </div>
 
                         <button
-              onClick={() => {
-                navigate('/joinyoung');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="mt-6 inline-flex items-center bg-[#A82228] text-white px-7 py-3 rounded-full font-semibold shadow-md hover:bg-[#8f1d22] transition"
-            >
-              Join YoungVox
-            </button>
+                            onClick={() => {
+                                navigate('/joinyoung');
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }}
+                            className="mt-6 inline-flex items-center bg-[#A82228] text-white px-7 py-3 rounded-full font-semibold shadow-md hover:bg-[#8f1d22] transition"
+                        >
+                            Join YoungVox
+                        </button>
                     </div>
 
                     {/* Right Column - Image */}

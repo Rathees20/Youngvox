@@ -2,7 +2,7 @@ import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useCountUp } from '../hooks/useCountUp';
 import impactBgImage from '../assets/impact snapshot.png';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
 const ImpactSnapshot = () => {
     const [ref, isVisible] = useScrollAnimation({ once: true, threshold: 0.2 });
@@ -47,7 +47,7 @@ const ImpactSnapshot = () => {
     };
 
     return (
-        <section ref={ref} className="relative py-8 md:py-10 lg:py-12 overflow-hidden min-h-[400px] md:min-h-0">
+        <section ref={ref} className="relative py-4 md:py-10 lg:py-12 overflow-hidden min-h-[400px] md:min-h-0">
             {/* Background Image */}
             <img
                 src={impactBgImage}
@@ -62,7 +62,7 @@ const ImpactSnapshot = () => {
                     <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-white mb-2 md:mb-3">
                         Impact Snapshot
                     </h2>
-                    <p className="text-white/90 text-xl max-w-3xl mx-auto leading-[1.8] px-4">
+                    <p className="text-white/90 text-sm md:text-xl max-w-3xl mx-auto leading-[1.6] md:leading-[1.8] px-4">
                         Our reach and impact across India, empowering the next generation of leaders with continued growth expected in the subsequent years
                     </p>
                 </div>
@@ -106,20 +106,20 @@ const ImpactSnapshot = () => {
                 </div>
 
                 {/* Stats Circles - Mobile (2x2 Grid) */}
-                <div className="grid grid-cols-2 gap-4 my-4 md:hidden max-w-md mx-auto ml-10">
+                <div className="grid grid-cols-2 gap-3 my-4 md:hidden max-w-sm mx-auto px-2">
                     {impactStats.map((stat, index) => {
                         const currentCount = counts[index];
                         return (
                             <div key={stat.id} className="flex justify-center">
-                                <div className={`w-[140px] h-[140px] rounded-full border-[2px] border-white/70 flex flex-col items-center justify-center bg-transparent ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
+                                <div className={`w-[130px] h-[130px] rounded-full border-[2px] border-white/70 flex flex-col items-center justify-center bg-transparent ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
                                     style={{ animationDelay: `${index * 200}ms` }}>
-                                    <div className="text-center">
+                                    <div className="text-center flex flex-col items-center justify-center">
                                         {stat.number !== undefined && (
-                                            <div className="text-2xl font-bold text-white mb-1">
+                                            <div className="text-xl font-bold text-white mb-1">
                                                 {formatNumber(currentCount)}{stat.suffix}
                                             </div>
                                         )}
-                                        <div className="text-xs sm:text-sm text-white/90 font-medium whitespace-pre-line leading-tight px-2">
+                                        <div className="text-[10px] sm:text-xs text-white/90 font-medium whitespace-pre-line leading-[1.3] px-1">
                                             {stat.label}
                                         </div>
                                     </div>
@@ -131,10 +131,10 @@ const ImpactSnapshot = () => {
 
                 {/* Get in touch Button */}
                 <div className={`text-center mt-6 md:mt-8 ${isVisible ? 'animate-fade-in-up animate-delay-500' : 'opacity-0'}`}>
-                    <button  onClick={() => {
-                                navigate('/contact');
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                              }} className="bg-white text-[#A82228] px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl">
+                    <button onClick={() => {
+                        navigate('/contact');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }} className="bg-white text-[#A82228] px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl">
                         Get in touch
                     </button>
                 </div>

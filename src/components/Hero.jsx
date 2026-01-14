@@ -34,13 +34,13 @@ const Hero = () => {
         />
 
         {/* Join Button */}
-        <div className="absolute top-3 right-3 sm:top-6 sm:right-6 md:top-[15%] md:right-[6%] z-10">
+        <div className="absolute top-6 right-3 sm:top-6 sm:right-6 md:top-[15%] md:right-[6%] z-10">
           <button
             onClick={() => navigate('/joinyoung')}
             className="
               bg-[#A82228] text-white
-              px-3 py-1.5 sm:px-5 sm:py-2.5
-              text-xs sm:text-sm md:text-base
+              px-2 py-1 sm:px-5 sm:py-2.5
+              text-[10px] sm:text-sm md:text-base
               rounded-full font-bold
               shadow-lg
               hover:bg-[#8a1c22]
