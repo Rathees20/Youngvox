@@ -1,5 +1,9 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import school1Logo from '../assets/school1.png';
 import school2Logo from '../assets/school2.png';
 import school3Logo from '../assets/school3.png';
@@ -21,40 +25,74 @@ const PartnerSchools = () => {
     ];
 
     return (
-        <section ref={ref} className="bg-[#FFF5F5] py-12 md:py-16">
+        <section ref={ref} className="bg-[#FFF5F5] py-6 md:py-16">
             <div className="container mx-auto px-4 md:px-6 max-w-6xl">
                 <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12">
                     {/* Left Side - Title and Description */}
-                    <div className={`w-full md:w-1/3 text-left -ml-4 md:-ml-6 pt-4 md:pt-6 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+                    <div className={`w-full md:w-1/3 text-left md:-ml-6 pt-4 md:pt-6 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
                         <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-black mb-2 md:mb-3 text-left">
                             Partner Schools
                         </h2>
-                        <p className="text-gray-600 text-xl leading-[1.8] text-left">
+                        <p className="text-gray-600 text-sm md:text-xl leading-[1.6] md:leading-[1.8] text-left">
                             Collaborating with leading educational institutions across India
                         </p>
                     </div>
 
-                    {/* Right Side - School Logos Grid */}
+                    {/* Right Side - School Logos */}
                     <div className={`w-full md:w-2/3 ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6 place-items-center">
-                            {partnerSchools.map((school) => (
-                                <div
-                                    key={school.id}
-                                    className="p-4 md:p-6 flex items-center justify-center h-20 md:h-24 w-full"
-                                >
-                                    {/* School logo */}
-                                    <img
-                                        src={school.logo}
-                                        alt={school.name}
-                                        className="max-h-12 md:max-h-16 max-w-full object-contain"
-                                    />
-                                </div>
-                            ))}
+                        {/* Mobile Slider */}
+                        <div className="md:hidden">
+                            <Swiper
+                                modules={[Autoplay, Pagination]}
+                                spaceBetween={20}
+                                slidesPerView={2}
+                                loop={true}
+                                autoplay={{
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                }}
+                                speed={800}
+                                pagination={{
+                                    clickable: true,
+                                    dynamicBullets: true,
+                                }}
+                                className="pb-10"
+                            >
+                                {partnerSchools.map((school) => (
+                                    <SwiperSlide key={school.id}>
+                                        <div className="p-4 flex items-center justify-center h-20">
+                                            <img
+                                                src={school.logo}
+                                                alt={school.name}
+                                                className="max-h-12 max-w-full object-contain"
+                                            />
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
                         </div>
 
-                        {/* Pagination Dots */}
-                        <div className="flex justify-center gap-2 mt-3 md:mt-4">
-                            <div className="w-2 h-2 rounded-full bg-gray-800"></div>
+                        {/* Desktop Grid */}
+                        <div className="hidden md:block">
+                            <div className="grid grid-cols-3 gap-4 mb-6 place-items-center">
+                                {partnerSchools.map((school) => (
+                                    <div
+                                        key={school.id}
+                                        className="p-6 flex items-center justify-center h-24 w-full"
+                                    >
+                                        <img
+                                            src={school.logo}
+                                            alt={school.name}
+                                            className="max-h-16 max-w-full object-contain"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Pagination Dot - Desktop only */}
+                            <div className="flex justify-center gap-2 mt-4">
+                                <div className="w-2 h-2 rounded-full bg-gray-800"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

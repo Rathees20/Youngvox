@@ -32,7 +32,7 @@ const EmpoweringYouth = () => {
   return (
     <section
       ref={ref}
-      className="bg-white pt-6 pb-20 lg:pt-10 lg:pb-28 overflow-hidden"
+      className="bg-white -mt-6 pt-2 pb-20 lg:mt-0 lg:pt-10 lg:pb-28 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-14">

@@ -20,7 +20,7 @@ import bePartChangeBg from '../assets/be part change background.png';
 
 const HowWeEmpower = () => {
     const navigate = useNavigate();
-        const empowermentCards = [
+    const empowermentCards = [
         {
             id: 1,
             image: schoolChapterImg,
@@ -194,20 +194,87 @@ const HowWeEmpower = () => {
                                     A transformative platform that nurtures leadership, voice, and real-world impact in every student.
                                 </p>
                             </div>
-                            
+
                             <button
-                            onClick={() => {
-                                navigate('/joinyoung');
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                              }}
+                                onClick={() => {
+                                    navigate('/joinyoung');
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
                                 className="bg-[#A82228] text-white px-8 py-4 rounded-full text-base font-bold hover:bg-[#8a1c22] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 whitespace-nowrap self-start"
                             >
                                 Join Us Today
                             </button>
                         </div>
 
-                        {/* Partner Cards */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                        {/* Partner Cards - Mobile Slider */}
+                        <div className="sm:hidden">
+                            <Swiper
+                                modules={[Autoplay, Pagination]}
+                                spaceBetween={20}
+                                slidesPerView={1}
+                                loop={true}
+                                autoplay={{
+                                    delay: 4000,
+                                    disableOnInteraction: false,
+                                }}
+                                speed={800}
+                                pagination={{
+                                    clickable: true,
+                                    dynamicBullets: true,
+                                }}
+                                className="pb-12"
+                            >
+                                {partnerCards.map((card, index) => {
+                                    const centerOutwardOrder = [1, 2, 0, 3];
+                                    const animationDelay = centerOutwardOrder.indexOf(index) * 0.15;
+
+                                    return (
+                                        <SwiperSlide key={card.id}>
+                                            <div
+                                                className={`group rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100/50 bg-white relative overflow-hidden ${partnersVisible ? 'animate-scale-in-from-center' : 'opacity-0'}`}
+                                                style={{
+                                                    animationDelay: partnersVisible ? `${animationDelay}s` : '0s'
+                                                }}
+                                            >
+                                                {/* Background Pattern */}
+                                                <div
+                                                    className="absolute inset-0 transition-opacity duration-500 pointer-events-none"
+                                                    style={{
+                                                        backgroundImage: `url(${bePartChangeBg})`,
+                                                        backgroundSize: 'cover',
+                                                        backgroundPosition: 'center',
+                                                        opacity: 0.5
+                                                    }}
+                                                />
+
+                                                {/* Content */}
+                                                <div className="relative z-10">
+                                                    {/* Icon */}
+                                                    <div className="mb-6 bg-[#FDF2F2] w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                                        <img
+                                                            src={card.icon}
+                                                            alt={card.title}
+                                                            className="w-10 h-10 object-contain"
+                                                        />
+                                                    </div>
+                                                    {/* Title */}
+                                                    <h3 className="text-2xl font-bold text-[#1A1A1A] mb-3">
+                                                        {card.title}
+                                                    </h3>
+                                                    {/* Description */}
+                                                    <p className="text-base text-gray-600 leading-relaxed">
+                                                        {card.description}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                    );
+                                })}
+                            </Swiper>
+                        </div>
+
+                        {/* Partner Cards - Desktop Grid */}
+                        <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
                             {partnerCards.map((card, index) => {
                                 const centerOutwardOrder = [1, 2, 0, 3];
                                 const animationDelay = centerOutwardOrder.indexOf(index) * 0.15;
@@ -227,7 +294,7 @@ const HowWeEmpower = () => {
                                                 backgroundImage: `url(${bePartChangeBg})`,
                                                 backgroundSize: 'cover',
                                                 backgroundPosition: 'center',
-                                                opacity: 0.5 // Making it much more prominent as per request
+                                                opacity: 0.5
                                             }}
                                         />
 
