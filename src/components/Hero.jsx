@@ -14,7 +14,7 @@ const Hero = () => {
         {!imgLoaded && (
           <div
             className="absolute inset-0 bg-gradient-to-r from-gray-200 to-gray-300 animate-pulse"
-            style={{ aspectRatio: '16 / 9' }}
+            style={{ aspectRatio: '14 / 6' }}
           />
         )}
 
@@ -27,9 +27,9 @@ const Hero = () => {
             transition-opacity duration-500
             ${imgLoaded ? 'opacity-100' : 'opacity-0'}
           `}
-          style={{ aspectRatio: '16 / 9' }}
-          width={1920}
-          height={1080}
+          style={{ aspectRatio: '14 / 6' }}
+          width={1440}
+          height={600}
           onLoad={() => setImgLoaded(true)}
         />
 
