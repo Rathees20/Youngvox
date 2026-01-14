@@ -113,10 +113,10 @@ const WingsPage = () => {
 
   // Step content for "How it works" section
   const stepContent = {
-    1: "Student-led leadership structure - Every activity is planned, and executed by student leaders from each wing.",
-    2: "Monthly digital campaigns - Students create awareness through posters, videos, reels, and school-wide messages.",
-    3: "Annual events and showcases - Includes gamified activities that make learning engaging and fun.",
-    4: "Collaboration with mentors and external experts - Teacher mentors and external professionals guide students through workshops, sessions, and project support"
+    1: "Student-led leadership structure: Every activity is planned, and executed by student leaders from each wing.",
+    2: "Monthly digital campaigns: Students create awareness through posters, videos, reels, and school-wide messages.",
+    3: "Annual events and showcases: Includes gamified activities that make learning engaging and fun.",
+    4: "Collaboration with mentors and external experts: Teacher mentors and external professionals guide students through workshops, sessions, and project support"
   };
 
   // Scroll animations
@@ -349,7 +349,7 @@ const WingsPage = () => {
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section header (matches reference layout) */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-start gap-6 mb-10">
             <div className="max-w-2xl">
               <h2 className="text-3xl lg:text-4xl font-extrabold text-[#1A2B3C] mb-3">
                 YoungVox Wings
@@ -360,7 +360,7 @@ const WingsPage = () => {
             </div>
 
             {/* Theme badge (Now in header row for better alignment) */}
-            <div className="flex lg:justify-end justify-center lg:pr-20">
+            <div className="flex lg:justify-start justify-center lg:pl-4 mt-12">
               <div className="inline-flex flex-col items-center justify-center text-center rounded-md bg-[#FFF6E3] px-6 py-3">
                 <div className="text-base text-lg font-bold text-[#A82228] leading-relaxed">
                   Overall theme for 2026-Empower Future
@@ -375,7 +375,7 @@ const WingsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
             {/* Academic & Career Guidance Wing */}
-            <div ref={wing1Ref} className={`md:row-start-2 p-6 lg:p-10 rounded-[2rem] bg-[#FFF6E3] shadow-sm transition-all hover:shadow-md ${wing1Visible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            <div ref={wing1Ref} className={`md:row-start-2 p-6 lg:p-10 rounded-[2rem] bg-[#A82228] shadow-sm transition-all hover:shadow-md ${wing1Visible ? 'animate-fade-in-up' : 'opacity-0'}`}>
               <div className="relative mb-6">
                 <div className="absolute top-4 left-4 z-10 bg-white rounded-2xl px-4 py-2 shadow-sm flex flex-col items-start leading-tight">
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">2026 Theme</span>
@@ -385,9 +385,9 @@ const WingsPage = () => {
                   <img src={wing1Image} alt="Academic & Career Guidance" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="text-3xl lg:text-3xl font-bold text-black mb-1">Academic & Career Guidance Wing</h2>
-              <p className="text-[13px] text-gray-600 mb-4 font-medium">[SDG 4 – Quality Education]</p>
-              <p className="text-lg text-gray-700 leading-relaxed font-medium">
+              <h2 className="text-3xl lg:text-3xl font-bold text-white mb-1">Academic & Career Guidance Wing</h2>
+              <p className="text-[13px] text-white/80 mb-4 font-medium">[SDG 4 – Quality Education]</p>
+              <p className="text-lg text-white/90 leading-relaxed font-medium">
                 Helps students discover academic interests, plan career paths, and access learning resources.
               </p>
             </div>
@@ -429,7 +429,7 @@ const WingsPage = () => {
             </div>
 
             {/* Community Outreach & Service Wing */}
-            <div ref={wing4Ref} className={`md:row-start-3 p-6 lg:p-10 rounded-[2rem] bg-[#FFF6E3] shadow-sm transition-all hover:shadow-md ${wing4Visible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
+            <div ref={wing4Ref} className={`md:row-start-3 p-6 lg:p-10 rounded-[2rem] bg-[#A82228] shadow-sm transition-all hover:shadow-md ${wing4Visible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
               <div className="relative mb-6">
                 <div className="absolute top-4 left-4 z-10 bg-white rounded-2xl px-4 py-2 shadow-sm flex flex-col items-start leading-tight">
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">2026 Theme</span>
@@ -439,9 +439,9 @@ const WingsPage = () => {
                   <img src={wing4Image} alt="Community Outreach & Service" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="text-3xl lg:text-3xl font-bold text-black mb-1">Community Outreach & Service Wing</h2>
-              <p className="text-[13px] text-gray-600 mb-4 font-medium">[SDG 14 – Life Below Water]</p>
-              <p className="text-lg text-gray-700 leading-relaxed font-medium">
+              <h2 className="text-3xl lg:text-3xl font-bold text-white mb-1">Community Outreach & Service Wing</h2>
+              <p className="text-[13px] text-white mb-4 font-medium">[SDG 14 – Life Below Water]</p>
+              <p className="text-lg text-white/90 leading-relaxed font-medium">
                 Leads eco-friendly initiatives, environmental awareness drives, and community service to promote sustainability and civic responsibility.
               </p>
             </div>

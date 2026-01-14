@@ -4,12 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import school1Logo from '../assets/school1.png';
+import school1Logo from '../assets/school1.jpeg';
 import school2Logo from '../assets/school2.png';
-import school3Logo from '../assets/school3.png';
-import school4Logo from '../assets/school4.png';
-import school5Logo from '../assets/school5.png';
-import school6Logo from '../assets/school6.png';
+import school3Logo from '../assets/school3.jpeg';
+import school4Logo from '../assets/school4.jpeg';
+import school5Logo from '../assets/school5.jpeg';
+
 
 const PartnerSchools = () => {
     const [ref, isVisible] = useScrollAnimation({ once: true });
@@ -21,7 +21,7 @@ const PartnerSchools = () => {
         { id: 3, name: 'School 3', logo: school3Logo },
         { id: 4, name: 'School 4', logo: school4Logo },
         { id: 5, name: 'School 5', logo: school5Logo },
-        { id: 6, name: 'School 6', logo: school6Logo },
+        
     ];
 
     return (
