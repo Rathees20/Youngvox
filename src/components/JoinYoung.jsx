@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import NewsletterSection from './Newsletter';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import joinBanner from '../assets/youngvox image.png';
+import joinBanner from '../assets/joinyoungvox 2.jpeg';
 import join01Image from '../assets/join01.png';
 import joinImage from '../assets/join.png';
 import join1Image from '../assets/join1.png';
@@ -31,7 +31,7 @@ const JoinYoung = () => {
           <img
             src={joinBanner}
             alt="Join YoungVox Banner"
-            className="w-full h-auto object-cover scale-110"
+            className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover scale-130"
             style={{
               imageRendering: '-webkit-optimize-contrast',
               WebkitImageRendering: '-webkit-optimize-contrast',

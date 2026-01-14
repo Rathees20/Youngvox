@@ -12,22 +12,27 @@ import CorporateFormPage from './components/Form/CorporateFormPage'
 import AdvisorFormPage from './components/Form/AdvisorFormPage'
 import PartnerFormPage from './components/Form/PartnerFormPage'
 
+import ScrollToTop from './components/ScrollToTop'
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/joinyoung" element={<JoinYoung />} />
-      <Route path="/chapters" element={<ChaptersPage />} />
-      <Route path="/wings" element={<WingsPage />} />
-      <Route path="/contact" element={<ContactPage />} />
-      <Route path="/form" element={<FormPage />} />
-      <Route path="/form/school" element={<FormPage />} />
-      <Route path="/form/volunteer" element={<VolunteerFormPage />} />
-      <Route path="/form/corporate" element={<CorporateFormPage />} />
-      <Route path="/form/advisor" element={<AdvisorFormPage />} />
-      <Route path="/form/partner" element={<PartnerFormPage />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/joinyoung" element={<JoinYoung />} />
+        <Route path="/chapters" element={<ChaptersPage />} />
+        <Route path="/wings" element={<WingsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/form" element={<FormPage />} />
+        <Route path="/form/school" element={<FormPage />} />
+        <Route path="/form/volunteer" element={<VolunteerFormPage />} />
+        <Route path="/form/corporate" element={<CorporateFormPage />} />
+        <Route path="/form/advisor" element={<AdvisorFormPage />} />
+        <Route path="/form/partner" element={<PartnerFormPage />} />
+      </Routes>
+    </>
   )
 }
 
