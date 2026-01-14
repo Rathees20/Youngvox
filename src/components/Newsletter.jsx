@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import frameImage from '../assets/Frame.png';
+
 import backgroundCircle from '../assets/backgound circle.png';
 import studentImage from '../assets/student.png';
 import sendIcon from '../assets/icons/send.png';
@@ -96,11 +96,7 @@ export default function NewsletterSection() {
           className="absolute bottom-[-10px] sm:bottom-0 left-1/2 -translate-x-1/2 w-[360px] sm:w-[520px] md:w-[640px] z-20 pointer-events-none"
         />
 
-        <img
-          src={frameImage}
-          alt="frame"
-          className="absolute bottom-[-33px] sm:bottom-[-44px] left-0 w-full z-29 pointer-events-none"
-        />
+
       </div>
     </section>
   );

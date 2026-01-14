@@ -65,7 +65,7 @@ const Footer = () => {
               <li><Link to="/joinyoung" className="text-black">Get Involved</Link></li>
               <li><Link to="/contact" className="text-black">Contact Us</Link></li>
             </ul>
-            <p className="text-xs md:text-base text-black mt-8 text-center">
+            <p className="hidden md:block text-base text-black mt-8 text-center">
               Copyright 2025. Youngvox All Rights Reserved
             </p>
           </div>
@@ -110,6 +110,13 @@ const Footer = () => {
 
 
 
+        </div>
+
+        {/* Mobile Copyright */}
+        <div className="md:hidden mt-8 text-center">
+          <p className="text-xs text-black">
+            Copyright 2025. Youngvox All Rights Reserved
+          </p>
         </div>
 
       </div>
