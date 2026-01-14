@@ -7,55 +7,45 @@ const Hero = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
-    <section id="home" className="w-full bg-white flex justify-center py-0">
-      <div className="relative w-full px-0">
+    <section id="home" className="w-full bg-white">
+      <div className="relative w-full overflow-hidden">
 
-        {/* Placeholder - blurred, shows until image loads */}
+        {/* Placeholder (prevents layout shift) */}
         {!imgLoaded && (
           <div
-            style={{
-              width: '100%',
-              aspectRatio: '16/9',
-              background: 'linear-gradient(90deg,#eee,#ccc)',
-              filter: 'blur(10px)',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: 0,
-            }}
+            className="absolute inset-0 bg-gradient-to-r from-gray-200 to-gray-300 animate-pulse"
+            style={{ aspectRatio: '16 / 9' }}
           />
         )}
+
+        {/* Hero Image */}
         <img
           src={heroImage}
           alt="YoungVox Hero"
           className={`
-            w-full h-auto object-contain object-center shadow-sm
+            w-full h-auto object-contain
             transition-opacity duration-500
+            ${imgLoaded ? 'opacity-100' : 'opacity-0'}
           `}
-          style={{ 
-            aspectRatio: '16/9', 
-            width: '100%',
-            display: 'block'
-          }}
+          style={{ aspectRatio: '16 / 9' }}
           width={1920}
           height={1080}
           onLoad={() => setImgLoaded(true)}
         />
 
-        {/* Join Button - positioned absolutely to match the design */}
-        <div className="absolute top-4 right-1 md:top-[15%] md:right-[6%] z-10">
+        {/* Join Button */}
+        <div className="absolute top-3 right-3 sm:top-6 sm:right-6 md:top-[15%] md:right-[6%] z-10">
           <button
             onClick={() => navigate('/joinyoung')}
             className="
               bg-[#A82228] text-white
-              px-2 py-1 md:px-6 md:py-3
-              text-[8px] sm:text-sm md:text-base
-              rounded-full
-              font-bold
+              px-3 py-1.5 sm:px-5 sm:py-2.5
+              text-xs sm:text-sm md:text-base
+              rounded-full font-bold
               shadow-lg
               hover:bg-[#8a1c22]
               hover:scale-105
-              transition-transform duration-200
+              transition-all duration-200
             "
           >
             Join YoungVox

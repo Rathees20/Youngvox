@@ -50,7 +50,7 @@ const EmpoweringYouth = () => {
 
             <div className="text-gray-700 space-y-4 text-base leading-[1.8] max-w-xl text-justify">
               <p>
-                YoungVox is a national youth leadership movement committed to shaping confident socially responsible young leaders across India. As a non-political and non-religious initiative, it focuses on youth development, civic awareness, and community wellbeing aligned closely with the UN Sustainable Development Goals (SDGs). Through a structured school chapter–based model, YoungVox conducts regular leadership activities, youth campaigns, and peer-driven initiatives that strengthen student voice and participation.
+                YoungVox is a national youth leadership movement committed to shaping socially responsible young leaders across India. As a non-political and non-religious initiative, it focuses on youth development, civic awareness, and community wellbeing aligned closely with the UN Sustainable Development Goals (SDGs). Through a structured school chapter–based model, YoungVox conducts regular leadership activities, youth campaigns, and peer-driven initiatives that strengthen student voice and participation.
               </p>
 
               <p>

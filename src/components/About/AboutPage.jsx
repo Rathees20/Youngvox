@@ -3,7 +3,6 @@ import Header from '../Header';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import visionImage from '../../assets/Our vision.png';
 import tornBorder from '../../assets/our vision frame red.png';
-import ourVisionShadow from '../../assets/our vision shadow.png';
 import frame15Image from '../../assets/Frame 15.png';
 import saranyaImage from '../../assets/Saranya jaikumar.png';
 import sylendraBabuImage from '../../assets/Sylendra-Babu.jpg';
@@ -123,11 +122,7 @@ const AboutPage = () => {
         <div className={`relative w-full mt-6 sm:mt-12 ${visionVisible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
 
           {/* Top shadow */}
-          <img
-            src={ourVisionShadow}
-            alt="vision shadow"
-            className="absolute top-0 left-0 w-full block z-10 pointer-events-none select-none"
-          />
+          
 
           {/* Main image full width */}
           <img
@@ -137,18 +132,13 @@ const AboutPage = () => {
           />
 
           {/* Bottom red shade (Paint stroke effect) */}
-          <div
-            className="absolute bottom-[-1px] left-0 w-full h-24 sm:h-32 lg:h-40 z-20 pointer-events-none"
-            style={{
-              background: 'linear-gradient(to top, #A82228 0%, rgba(168, 34, 40, 0.7) 30%, transparent 100%)'
-            }}
-          ></div>
+          
 
           {/* Bottom torn border */}
           <img
             src={tornBorder}
             alt="torn border"
-            className="absolute bottom-[-10px] sm:bottom-[-30px] left-0 w-full block z-30 pointer-events-none select-none"
+            className="absolute bottom-[10px] sm:bottom-[10px] left-0 w-full block z-30 pointer-events-none select-none"
           />
         </div>
       </section>
