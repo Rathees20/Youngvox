@@ -113,10 +113,10 @@ const WingsPage = () => {
 
   // Step content for "How it works" section
   const stepContent = {
-    1: "Student-led leadership structure - Every activity is planned, and executed by student leaders from each wing.",
+    1: "Student-led leadership structure-Every activity is planned, and executed by student leaders from each wing.",
     2: "Monthly digital campaigns - Students create awareness through posters, videos, reels, and school-wide messages.",
-    3: "Annual events and showcases - Includes gamified activities that make learning engaging and fun.",
-    4: "Collaboration with mentors and external experts - Teacher mentors and external professionals guide students through workshops, sessions, and project support"
+    3: "Annual events and showcases-Includes gamified activities that make learning engaging and fun.",
+    4: "Collaboration with mentors and external experts-Teacher mentors and external professionals guide students through workshops, sessions, and project support"
   };
 
   // Scroll animations
@@ -349,7 +349,7 @@ const WingsPage = () => {
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section header (matches reference layout) */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-start gap-6 mb-10">
             <div className="max-w-2xl">
               <h2 className="text-3xl lg:text-4xl font-extrabold text-[#1A2B3C] mb-3">
                 YoungVox Wings
@@ -360,7 +360,7 @@ const WingsPage = () => {
             </div>
 
             {/* Theme badge (Now in header row for better alignment) */}
-            <div className="flex lg:justify-end justify-center lg:pr-20">
+            <div className="flex lg:justify-start justify-center lg:pl-4 mt-12">
               <div className="inline-flex flex-col items-center justify-center text-center rounded-md bg-[#FFF6E3] px-6 py-3">
                 <div className="text-base text-lg font-bold text-[#A82228] leading-relaxed">
                   Overall theme for 2026-Empower Future
