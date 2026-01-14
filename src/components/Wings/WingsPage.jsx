@@ -375,7 +375,7 @@ const WingsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
             {/* Academic & Career Guidance Wing */}
-            <div ref={wing1Ref} className={`md:row-start-2 p-6 lg:p-10 rounded-[2rem] bg-[#FFF6E3] shadow-sm transition-all hover:shadow-md ${wing1Visible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            <div ref={wing1Ref} className={`md:row-start-2 p-6 lg:p-10 rounded-[2rem] bg-[#A82228] shadow-sm transition-all hover:shadow-md ${wing1Visible ? 'animate-fade-in-up' : 'opacity-0'}`}>
               <div className="relative mb-6">
                 <div className="absolute top-4 left-4 z-10 bg-white rounded-2xl px-4 py-2 shadow-sm flex flex-col items-start leading-tight">
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">2026 Theme</span>
@@ -385,9 +385,9 @@ const WingsPage = () => {
                   <img src={wing1Image} alt="Academic & Career Guidance" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="text-3xl lg:text-3xl font-bold text-black mb-1">Academic & Career Guidance Wing</h2>
-              <p className="text-[13px] text-gray-600 mb-4 font-medium">[SDG 4 – Quality Education]</p>
-              <p className="text-lg text-gray-700 leading-relaxed font-medium">
+              <h2 className="text-3xl lg:text-3xl font-bold text-white mb-1">Academic & Career Guidance Wing</h2>
+              <p className="text-[13px] text-white/80 mb-4 font-medium">[SDG 4 – Quality Education]</p>
+              <p className="text-lg text-white/90 leading-relaxed font-medium">
                 Helps students discover academic interests, plan career paths, and access learning resources.
               </p>
             </div>
@@ -429,7 +429,7 @@ const WingsPage = () => {
             </div>
 
             {/* Community Outreach & Service Wing */}
-            <div ref={wing4Ref} className={`md:row-start-3 p-6 lg:p-10 rounded-[2rem] bg-[#FFF6E3] shadow-sm transition-all hover:shadow-md ${wing4Visible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
+            <div ref={wing4Ref} className={`md:row-start-3 p-6 lg:p-10 rounded-[2rem] bg-[#A82228] shadow-sm transition-all hover:shadow-md ${wing4Visible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>
               <div className="relative mb-6">
                 <div className="absolute top-4 left-4 z-10 bg-white rounded-2xl px-4 py-2 shadow-sm flex flex-col items-start leading-tight">
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">2026 Theme</span>
@@ -439,9 +439,9 @@ const WingsPage = () => {
                   <img src={wing4Image} alt="Community Outreach & Service" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h2 className="text-3xl lg:text-3xl font-bold text-black mb-1">Community Outreach & Service Wing</h2>
-              <p className="text-[13px] text-gray-600 mb-4 font-medium">[SDG 14 – Life Below Water]</p>
-              <p className="text-lg text-gray-700 leading-relaxed font-medium">
+              <h2 className="text-3xl lg:text-3xl font-bold text-white mb-1">Community Outreach & Service Wing</h2>
+              <p className="text-[13px] text-white mb-4 font-medium">[SDG 14 – Life Below Water]</p>
+              <p className="text-lg text-white/90 leading-relaxed font-medium">
                 Leads eco-friendly initiatives, environmental awareness drives, and community service to promote sustainability and civic responsibility.
               </p>
             </div>
