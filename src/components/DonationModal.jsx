@@ -19,39 +19,39 @@ const DonationModal = ({ isOpen, onClose }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-      
+
         try {
-          const response = await fetch(
-            "https://script.google.com/macros/s/AKfycbz779xrRLb5iHrN-GDjNlkh3wH0ugBs_POEcfztKEDrD5nTv11kWnN5Ls8tfTyw7OC3/exec",
-            {
-              method: "POST",
-              body: JSON.stringify(formData),
+            const response = await fetch(
+                "https://script.google.com/macros/s/AKfycbz779xrRLb5iHrN-GDjNlkh3wH0ugBs_POEcfztKEDrD5nTv11kWnN5Ls8tfTyw7OC3/exec",
+                {
+                    method: "POST",
+                    body: JSON.stringify(formData),
+                }
+            );
+
+            const result = await response.json();
+
+            if (result.success) {
+                setIsSubmitted(true);
+
+                setTimeout(() => {
+                    setIsSubmitted(false);
+                    setFormData({
+                        name: "",
+                        email: "",
+                        whatsappNumber: "",
+                    });
+                    onClose();
+                }, 3000);
+            } else {
+                alert("Failed to submit. Try again.");
             }
-          );
-      
-          const result = await response.json();
-      
-          if (result.success) {
-            setIsSubmitted(true);
-      
-            setTimeout(() => {
-              setIsSubmitted(false);
-              setFormData({
-                name: "",
-                email: "",
-                whatsappNumber: "",
-              });
-              onClose();
-            }, 3000);
-          } else {
-            alert("Failed to submit. Try again.");
-          }
         } catch (error) {
-          console.error("Error:", error);
-          alert("Something went wrong!");
+            console.error("Error:", error);
+            alert("Something went wrong!");
         }
-      };
-      
+    };
+
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8">
@@ -89,7 +89,7 @@ const DonationModal = ({ isOpen, onClose }) => {
 
                             <form onSubmit={handleSubmit} className="space-y-5">
                                 <div>
-                                    <label htmlFor="modal-name" className="block text-sm font-semibold text-gray-700 mb-1">
+                                    <label htmlFor="modal-name" className="block text-base font-semibold text-gray-700 mb-1">
                                         Full Name
                                     </label>
                                     <input
@@ -105,7 +105,7 @@ const DonationModal = ({ isOpen, onClose }) => {
                                 </div>
 
                                 <div>
-                                    <label htmlFor="modal-email" className="block text-sm font-semibold text-gray-700 mb-1">
+                                    <label htmlFor="modal-email" className="block text-base font-semibold text-gray-700 mb-1">
                                         Email Address
                                     </label>
                                     <input
@@ -121,7 +121,7 @@ const DonationModal = ({ isOpen, onClose }) => {
                                 </div>
 
                                 <div>
-                                    <label htmlFor="modal-whatsapp" className="block text-sm font-semibold text-gray-700 mb-1">
+                                    <label htmlFor="modal-whatsapp" className="block text-base font-semibold text-gray-700 mb-1">
                                         WhatsApp Number
                                     </label>
                                     <input
@@ -156,7 +156,7 @@ const DonationModal = ({ isOpen, onClose }) => {
                             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1A1A1A] mb-4">
                                 Thank You!
                             </h2>
-                            <p className="text-gray-700 text-lg leading-relaxed">
+                            <p className="text-gray-700 text-base leading-relaxed">
                                 Our team will contact you soon.
                             </p>
                         </div>

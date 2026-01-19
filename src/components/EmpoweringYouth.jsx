@@ -84,11 +84,11 @@ const EmpoweringYouth = () => {
                     <img
                       src={img.src}
                       alt={img.caption}
-                      className="w-full h-full object-cover object-bottom"
+                      className="w-full h-full object-cover object-bottom brightness-110"
                     />
 
-                    {/* DARK OVERLAY */}
-                    <div className="absolute inset-0 bg-black/25" />
+                    {/* DARK OVERLAY REMOVED AS PER USER REQUEST FOR BRIGHTNESS */}
+                    {/* <div className="absolute inset-0 bg-black/25" /> */}
 
                     {/* CAPTION */}
                     <div className="absolute bottom-8 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">

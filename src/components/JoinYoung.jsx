@@ -56,10 +56,10 @@ const JoinYoung = () => {
     "
             >
 
-              <h1 className="text-base sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight sm:leading-tight drop-shadow-lg">
+              <h1 className="text-[24px] lg:text-5xl font-bold text-black leading-tight sm:leading-tight drop-shadow-lg">
                 Join YoungVox
               </h1>
-              <p className="text-[10px] sm:text-lg text-black leading-tight sm:leading-relaxed drop-shadow-md text-justify">
+              <p className="text-base sm:text-lg text-black leading-tight sm:leading-relaxed drop-shadow-md text-justify">
                 At YoungVox, we're building a community of passionate, driven individuals committed to empowering youth and creating meaningful impact. We provide a collaborative environment where ideas flourish, and your efforts directly contribute to shaping the next generation of responsible, capable leaders.
               </p>
               <div className="pt-1 sm:pt-3">
@@ -75,17 +75,17 @@ const JoinYoung = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
             {/* Left Column - Text Content */}
             <div className={`order-2 lg:order-1 space-y-6 ${schoolVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-[24px] lg:text-4xl font-bold text-gray-900 leading-tight">
                 Join as a School
               </h2>
-              <p className="text-gray-700 text-lg leading-relaxed text-justify">
+              <p className="text-gray-700 text-base lg:text-lg leading-relaxed text-justify">
                 Become a YoungVox School Chapter and empower your students to lead with purpose. Students build leadership skills, run campaigns in their own school, and take part in community initiatives that create real, lasting impact. And the best part? It's completely free of cost. By joining YoungVox, your school becomes part of a national movement nurturing confident, responsible young changemakers.
               </p>
               <div className="pt-2">
                 <Link
                   to="/form/school"
                   onClick={handleLinkClick}
-                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-base md:text-lg"
                 >
                   Get in touch
                 </Link>
@@ -121,17 +121,17 @@ const JoinYoung = () => {
             </div>
             {/* Right Column - Text Content */}
             <div className={`space-y-6 lg:pt-2 ${volunteerVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-[24px] lg:text-4xl font-bold text-gray-900 leading-tight">
                 Volunteer or Intern With Us
               </h2>
-              <p className="text-gray-700 text-lg leading-relaxed text-justify">
+              <p className="text-gray-700 text-base lg:text-lg leading-relaxed text-justify">
                 Our volunteers and interns play a vital role in YoungVox, working closely with students and communities to implement programs and initiatives that inspire real change. From organizing school and community campaigns to offering guidance, creativity, and mentorship, every contribution strengthens our mission. Your time and skills can empower young leaders.
               </p>
               <div className="pt-2">
                 <Link
                   to="/form/volunteer"
                   onClick={handleLinkClick}
-                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-base md:text-lg"
                 >
                   Get in touch
                 </Link>
@@ -147,17 +147,17 @@ const JoinYoung = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
             {/* Left Column - Text Content */}
             <div className={`order-2 lg:order-1 space-y-6 ${corporateVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-[24px] lg:text-4xl font-bold text-gray-900 leading-tight">
                 Corporate Collaboration
               </h2>
-              <p className="text-gray-700 text-lg leading-relaxed text-justify">
+              <p className="text-gray-700 text-base lg:text-lg leading-relaxed text-justify">
                 Companies can partner with YoungVox by supporting initiatives, campaigns, or leadership programs that align with their CSR priorities. From education and skill-building to civic engagement and environmental awareness, your contribution helps strengthen youth leadership, empower student action, and build the next generation of responsible changemakers.
               </p>
               <div className="pt-2">
                 <Link
                   to="/form/corporate"
                   onClick={handleLinkClick}
-                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-base md:text-lg"
                 >
                   Get in touch
                 </Link>
@@ -193,17 +193,17 @@ const JoinYoung = () => {
             </div>
             {/* Right Column - Text Content */}
             <div className={`space-y-6 lg:pt-2 ${advisorVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-[24px] lg:text-4xl font-bold text-gray-900 leading-tight">
                 Advisors
               </h2>
-              <p className="text-gray-700 text-lg leading-relaxed text-justify">
+              <p className="text-gray-700 text-base lg:text-lg leading-relaxed text-justify">
                 We collaborate with education experts, youth mentors, and thought leaders who share our commitment to nurturing the next generation of responsible leaders. Partner with us to provide guidance, shape programs, and support student-led initiatives that create real community impact.
               </p>
               <div className="pt-2">
                 <Link
                   to="/form/advisor"
                   onClick={handleLinkClick}
-                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-base md:text-lg"
                 >
                   Get in touch
                 </Link>
@@ -214,22 +214,22 @@ const JoinYoung = () => {
       </section>
 
       {/* Implementation Partners Section */}
-      <section ref={partnerRef} className="py-4 sm:py-6 lg:py-8 bg-white">
+      <section ref={partnerRef} className="pt-4 pb-12 sm:py-6 lg:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
             {/* Left Column - Text Content */}
             <div className={`order-2 lg:order-1 space-y-6 ${partnerVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-[24px] lg:text-4xl font-bold text-gray-900 leading-tight">
                 Implementation Partners
               </h2>
-              <p className="text-gray-700 text-lg leading-relaxed text-justify">
+              <p className="text-gray-700 text-base lg:text-lg leading-relaxed text-justify">
                 Are you an NGO, school, or community organization working with youth on the ground? Partner with YoungVox to combine resources, share expertise, and amplify the impact of youth campaigns and leadership programs. Every partnership begins with a conversation. Let's explore how we can work together to empower young leaders and drive meaningful change.
               </p>
               <div className="pt-2">
                 <Link
                   to="/form/partner"
                   onClick={handleLinkClick}
-                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-sm sm:text-base md:text-lg"
+                  className="inline-block bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl text-base md:text-lg"
                 >
                   Get in touch
                 </Link>

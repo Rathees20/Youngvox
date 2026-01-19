@@ -65,10 +65,10 @@ const ChaptersPage = () => {
     "
           >
 
-            <h1 className="text-[34px] lg:text-[42px] font-extrabold text-white leading-tight drop-shadow-lg">
+            <h1 className="text-[24px] lg:text-[42px] font-extrabold text-white leading-tight drop-shadow-lg">
               YoungVox School Chapters
             </h1>
-            <p className="text-lg text-white leading-relaxed drop-shadow-md">
+            <p className="text-base lg:text-lg text-white leading-relaxed drop-shadow-md">
               Join our network of schools committed to empowering young leaders. Discover how your school can become part of the YoungVox movement.
             </p>
             <div className="pt-2 sm:pt-3 md:pt-4">

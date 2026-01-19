@@ -68,7 +68,7 @@ const ContactPage = () => {
       {/* Connect. Collaborate. Create Future Leaders. Section - Red Banner */}
       <section ref={bannerRef} className="bg-[#A82228] py-12 sm:py-16 lg:py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`text-[34px] leading-tight lg:text-[42px] font-extrabold text-white text-center mb-8 sm:mb-12 ${bannerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+          <h2 className={`text-[24px] leading-tight lg:text-[42px] font-extrabold text-white text-center mb-8 sm:mb-12 ${bannerVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
             Connect. Collaborate. Create Future Leaders.
           </h2>
 
@@ -117,7 +117,7 @@ const ContactPage = () => {
         </div>
 
         {/* Vector 1 Image at Bottom */}
-        <div className="absolute bottom-0 left-0 right-0" style={{ transform: 'translateY(35%)', zIndex: 8 }}>
+        <div className="absolute bottom-0 left-0 right-0 translate-y-[20%] sm:translate-y-[35%]" style={{ zIndex: 8 }}>
           <img
             src={vector1Image}
             alt="Vector decoration"
@@ -127,7 +127,7 @@ const ContactPage = () => {
         </div>
 
         {/* Second Vector 1 Image below the first one */}
-        <div className="absolute bottom-0 left-0 right-0" style={{ transform: 'translateY(57%)', zIndex: 9 }}>
+        <div className="absolute bottom-0 left-0 right-0 translate-y-[43%] sm:translate-y-[57%]" style={{ zIndex: 9 }}>
           <img
             src={vector1Image}
             alt="Vector decoration"
@@ -143,14 +143,14 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel */}
             <div className={`space-y-6 ${touchVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black">
-                <span className="block">Get in Touch with<br/>YoungVox</span>
-                <span className="block text-[42px] lg:text-[54px]"></span>
+              <h1 className="text-[24px] leading-tight lg:text-[42px] font-extrabold text-black">
+                <span className="block">Get in Touch with<br />YoungVox</span>
+                <span className="block text-[24px] lg:text-[54px]"></span>
               </h1>
-              <p className="text-lg text-black text-justify leading-relaxed">
+              <p className="text-base lg:text-lg text-black text-justify leading-relaxed">
                 Ready to collaborate, contribute, or learn more about our student-led leadership initiatives?
               </p>
-              <p className="text-lg text-black text-justify leading-relaxed">
+              <p className="text-base lg:text-lg text-black text-justify leading-relaxed">
                 YoungVox welcomes educators, schools, senior advisors, NGOs, corporates, mission-driven brands, and youth advocates to join our movement. Let's work together to empower students with real-world skills, meaningful opportunities, and impactful leadership pathways.
               </p>
 
@@ -186,7 +186,7 @@ const ContactPage = () => {
                   aria-label="LinkedIn"
                 >
                   <svg className="w-7 h-7 text-black" fill="currentColor" viewBox="0 0 448 512">
-                    <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.07 107 0 82.93 0 53.71 0 24.5 24.07.42 53.84.42 83.6.42 107.7 24.5 107.7 53.71c0 29.22-24.1 53.29-53.86 53.29zM447.9 448h-92.68V302.4c0-34.7-12.4-58.4-43.4-58.4-23.7 0-37.8 15.9-44 31.3-2.3 5.6-2.9 13.4-2.9 21.2V448h-92.68s1.2-242.1 0-266.1h92.68v37.7c-.2.3-.5.7-.7 1h.7v-1c12.3-19 34.4-46 83.7-46 61.1 0 107.1 39.8 107.1 125.4V448z"/>
+                    <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.07 107 0 82.93 0 53.71 0 24.5 24.07.42 53.84.42 83.6.42 107.7 24.5 107.7 53.71c0 29.22-24.1 53.29-53.86 53.29zM447.9 448h-92.68V302.4c0-34.7-12.4-58.4-43.4-58.4-23.7 0-37.8 15.9-44 31.3-2.3 5.6-2.9 13.4-2.9 21.2V448h-92.68s1.2-242.1 0-266.1h92.68v37.7c-.2.3-.5.7-.7 1h.7v-1c12.3-19 34.4-46 83.7-46 61.1 0 107.1 39.8 107.1 125.4V448z" />
                   </svg>
                 </a>
               </div>
@@ -194,7 +194,7 @@ const ContactPage = () => {
 
             {/* Right Panel - Contact Form */}
             <div className={`bg-white ${touchVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h2 className="text-[30px] lg:text-[36px] font-bold text-black mb-6">
+              <h2 className="text-[24px] lg:text-[36px] font-bold text-black mb-6">
                 Write to the YoungVox Team
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
