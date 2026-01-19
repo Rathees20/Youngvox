@@ -30,24 +30,24 @@ const CorporateFormPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!formData.confirmInterest) {
       alert("Please confirm your interest.");
       return;
     }
-  
+
     await fetch("https://script.google.com/macros/s/AKfycbwGcZy82mcd6jqQlGFtYSEC5u4msykdC1hCatynb7SyK2FkHSgqKdl3JwVafT0OkYc/exec", {
       method: "POST",
-      
+
       body: JSON.stringify({
         ...formData,
         source: "corporate_form"
       }),
     });
-  
+
     alert("Submitted successfully!");
   };
-  
+
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -70,18 +70,18 @@ const CorporateFormPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel - Content */}
             <div className={`space-y-6 ${contentVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
+              <h1 className="text-[24px] lg:text-[32px] font-extrabold text-black leading-tight">
                 CSR for Change. Empower the Next Generation With YoungVox.
               </h1>
-              <p className="text-lg text-justify text-black leading-relaxed">
+              <p className="text-base lg:text-lg text-justify text-black leading-relaxed">
                 Companies can partner with YoungVox by supporting initiatives, campaigns, or leadership programs that align with their CSR priorities. From education and skill-building to civic engagement and environmental awareness, your contribution helps strengthen youth leadership, empower student action, and build the next generation of responsible changemakers.
               </p>
-              
+
             </div>
 
             {/* Right Panel - Form */}
             <div className={`bg-pink-50 rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${contentVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h2 className="text-[30px] lg:text-[36px] font-bold text-black mb-6">
+              <h2 className="text-[24px] lg:text-[36px] font-bold text-black mb-6">
                 Write to Us
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -181,16 +181,16 @@ const CorporateFormPage = () => {
                   ></textarea>
                 </div>
 
-                <div className="flex items-start">
+                <div className="flex items-start gap-2">
                   <input
                     type="checkbox"
                     name="confirmInterest"
                     id="confirmInterest"
                     checked={formData.confirmInterest}
                     onChange={handleChange}
-                    className="mt-1 mr-2 w-4 h-4 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
+                    className="mt-0.5 w-7 h-7 shrink-0 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
                   />
-                  <label htmlFor="confirmInterest" className="text-sm text-black">
+                  <label htmlFor="confirmInterest" className="text-base text-black leading-tight pt-0.5">
                     I confirm our intent to contribute to YoungVox programs and campaigns.
                   </label>
                 </div>

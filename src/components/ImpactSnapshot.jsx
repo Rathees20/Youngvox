@@ -62,7 +62,7 @@ const ImpactSnapshot = () => {
                     <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-white mb-2 md:mb-3">
                         Impact Snapshot
                     </h2>
-                    <p className="text-white/90 text-sm md:text-xl max-w-3xl mx-auto leading-[1.6] md:leading-[1.8] px-4">
+                    <p className="text-white/90 text-base md:text-xl max-w-3xl mx-auto leading-[1.6] md:leading-[1.8] px-4">
                         Our reach and impact across India, empowering the next generation of leaders with continued growth expected in the subsequent years
                     </p>
                 </div>

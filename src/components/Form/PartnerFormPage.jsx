@@ -30,27 +30,27 @@ const PartnerFormPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!formData.confirmInterest) {
       alert("Please confirm your interest to proceed.");
       return;
     }
-  
+
     try {
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbwcCXrhBQi9MPGgXyaKYmGYu9_QZp_F9PhnfL6d6vXBDubQQHkglpjfeROAAYtxhuTZvQ/exec",
         {
           method: "POST",
-          
+
           body: JSON.stringify(formData),
         }
       );
-  
+
       const result = await response.json();
-  
+
       if (result.success) {
         alert("Thank you for reaching out! Our team will contact you soon.");
-  
+
         setFormData({
           name: '',
           email: '',
@@ -70,7 +70,7 @@ const PartnerFormPage = () => {
       alert("Something went wrong. Please try later.");
     }
   };
-  
+
   // 8 Wings options
   const wings = [
     'Academic and Career Guidance',
@@ -101,18 +101,18 @@ const PartnerFormPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel - Content */}
             <div className={`space-y-6 ${contentVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
+              <h1 className="text-[24px] lg:text-[32px] font-extrabold text-black leading-tight">
                 Your Partnership. Their Leadership. Lasting Change.
               </h1>
-              <p className="text-lg text-justify text-black leading-relaxed">
+              <p className="text-base lg:text-lg text-justify text-black leading-relaxed">
                 Are you an NGO, school, or community organization working with youth on the ground? Partner with YoungVox to combine resources, share expertise, and amplify the impact of youth campaigns and leadership programs. Every partnership begins with a conversation. Let's explore how we can work together to empower young leaders and drive meaningful change.
               </p>
-              
+
             </div>
 
             {/* Right Panel - Form */}
             <div className={`bg-pink-50 rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${contentVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h2 className="text-[30px] lg:text-[36px] font-bold text-black mb-6">
+              <h2 className="text-[24px] lg:text-[36px] font-bold text-black mb-6">
                 Write to Us
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -217,16 +217,16 @@ const PartnerFormPage = () => {
                   ></textarea>
                 </div>
 
-                <div className="flex items-start">
+                <div className="flex items-start gap-2">
                   <input
                     type="checkbox"
                     name="confirmInterest"
                     id="confirmInterest"
                     checked={formData.confirmInterest}
                     onChange={handleChange}
-                    className="mt-1 mr-2 w-4 h-4 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
+                    className="mt-0.5 w-7 h-7 shrink-0 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
                   />
-                  <label htmlFor="confirmInterest" className="text-sm text-black">
+                  <label htmlFor="confirmInterest" className="text-base text-black leading-tight pt-0.5">
                     I confirm our organisation's interest in partnering with YoungVox to empower young leaders.
                   </label>
                 </div>

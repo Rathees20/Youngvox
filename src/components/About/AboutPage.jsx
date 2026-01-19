@@ -114,13 +114,13 @@ const AboutPage = () => {
       <Header />
 
       {/* Our Vision Section */}
-      <section ref={visionRef} className="py-6 sm:py-20 lg:py-12">
-        <div className={`max-w-7xl mx-auto px-3 sm:px-6 text-center ${visionVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-          <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-3 sm:mb-8">
+      <section ref={visionRef} className="py-8 sm:py-20 lg:py-12">
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 text-center ${visionVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+          <h1 className="text-[24px] lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-8">
             Our Vision
           </h1>
 
-          <p className="text-xl lg:text-2xl text-gray-700 leading-snug lg:leading-relaxed max-w-7xl mx-auto px-6 lg:px-0">
+          <p className="text-base lg:text-2xl text-gray-700 leading-snug lg:leading-relaxed max-w-7xl mx-auto px-2 lg:px-0">
             To build a generation of empowered youth leaders who are informed, compassionate, and equipped to create a sustainable, equitable and inclusive world.
           </p>
         </div>
@@ -145,27 +145,27 @@ const AboutPage = () => {
           <img
             src={tornBorder}
             alt="torn border"
-            className="absolute bottom-0 sm:bottom-[10px] left-0 w-full block z-30 pointer-events-none select-none"
+            className="absolute bottom-[-3px] sm:bottom-[10px] left-0 w-full block z-30 pointer-events-none select-none"
           />
         </div>
       </section>
 
       {/* Our Mission Section */}
-      <section className="py-6 sm:py-18 lg:py-18 bg-white">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 text-center">
-          <h1 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-3 sm:mb-8">
+      <section className="py-8 sm:py-18 lg:py-18 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <h1 className="text-[24px] lg:text-[42px] font-extrabold text-gray-900 mb-4 sm:mb-8">
             Our Mission
           </h1>
 
-          <p className="text-xl lg:text-2xl text-gray-700 leading-snug sm:leading-relaxed max-w-6xl mx-auto px-0.5 sm:px-0 mb-8 sm:mb-12">
+          <p className="text-base sm:text-xl lg:text-2xl text-gray-700 leading-snug sm:leading-relaxed max-w-6xl mx-auto px-4 sm:px-0 mb-6 sm:mb-12">
             To partner with schools, institutions, and organizations in nurturing student voice and leadership through education, empowerment, and equity.
           </p>
 
           {/* Three Blocks: Education, Empowerment, Equity */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-5 max-w-5xl mx-auto mt-6 sm:mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto mt-8 sm:mt-10">
             {/* Education Block */}
-            <div className="bg-[#F5F5F5] rounded-t-lg px-4 sm:px-6 pt-8 pb-4 sm:pb-6 flex flex-col items-center min-h-[180px] sm:min-h-[210px] relative">
-              <div className="flex-1 flex items-center justify-center mb-6">
+            <div className="bg-[#F5F5F5] rounded-t-lg px-4 sm:px-6 pt-6 pb-4 sm:pb-6 flex flex-col items-center min-h-[160px] sm:min-h-[210px] relative">
+              <div className="flex-1 flex items-center justify-center mb-4">
                 <img
                   src={g1Gif}
                   alt="Education"
@@ -217,14 +217,14 @@ const AboutPage = () => {
 
 
       {/* Our Team Section */}
-      <section ref={teamRef} className="py-6 sm:py-18 lg:py-20" style={{ backgroundColor: '#FFF2DD' }}>
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <section ref={teamRef} className="py-8 sm:py-18 lg:py-20" style={{ backgroundColor: '#FFF2DD' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Heading */}
-          <div className={`text-center mb-6 sm:mb-10 ${teamVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-            <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-4">
+          <div className={`text-center mb-8 sm:mb-10 ${teamVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+            <h2 className="text-[24px] lg:text-5xl font-extrabold text-black mb-4">
               Our Team
             </h2>
-            <p className="text-lg text-center text-black leading-relaxed max-w-6xl mx-auto">
+            <p className="text-base sm:text-lg text-center text-black leading-relaxed max-w-6xl mx-auto">
               The YoungVox team is a dynamic collective of experienced professionals across program design, training, psychology, and operations, united by a shared mission to empower the next generation of emotionally strong, confident, and socially responsible leaders.
             </p>
           </div>
@@ -258,7 +258,12 @@ const AboutPage = () => {
                   <p className="text-white text-xs sm:text-sm mb-2 flex-grow leading-tight">
                     {member.title}
                   </p>
-
+                  <button
+                    onClick={() => window.open(member.linkedin, '_blank', 'noopener,noreferrer')}
+                    className="mt-2 px-4 py-1.5 border border-white text-white text-xs sm:text-sm font-medium rounded hover:bg-white hover:text-[#A82228] transition-colors self-start"
+                  >
+                    Read Bio
+                  </button>
                 </div>
               </div>
             ))}
@@ -267,14 +272,14 @@ const AboutPage = () => {
       </section>
 
       {/* Our Advisors Section */}
-      <section ref={advisorsRef} className="py-6 sm:py-18 lg:py-20 bg-pink-50">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <section ref={advisorsRef} className="py-8 sm:py-18 lg:py-20 bg-pink-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Heading */}
-          <div className={`text-center mb-6 sm:mb-10 ${advisorsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-            <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black mb-4">
+          <div className={`text-center mb-8 sm:mb-10 ${advisorsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
+            <h2 className="text-[24px] lg:text-5xl font-extrabold text-black mb-4">
               Our Advisors
             </h2>
-            <p className="text-lg text-center text-black leading-relaxed max-w-6xl mx-auto">
+            <p className="text-base sm:text-lg text-center text-black leading-relaxed max-w-6xl mx-auto">
               Our leadership group brings together experienced professionals across programs, training, and operations, united in their commitment to shaping a generation of strong, confident, and capable young leaders.
             </p>
           </div>
@@ -286,12 +291,7 @@ const AboutPage = () => {
               {advisors.slice(0, 3).map((advisor) => (
                 <div
                   key={advisor.id}
-                  className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden flex flex-col w-full sm:w-[calc(50%-0.5rem)]"
-                  style={{
-                    width: '100%',
-                    maxWidth: '100%',
-                    flexBasis: window.innerWidth >= 1024 ? 'calc((100% - 2rem) / 4)' : window.innerWidth >= 640 ? 'calc(50% - 0.5rem)' : '100%'
-                  }}
+                  className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden flex flex-col w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(25%-1rem)]"
                 >
                   {/* Headshot */}
                   <div className="relative h-64 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
@@ -317,6 +317,7 @@ const AboutPage = () => {
                     <p className="text-white text-xs sm:text-sm mb-2 flex-grow leading-tight">
                       {advisor.title}
                     </p>
+
                   </div>
                 </div>
               ))}
@@ -354,6 +355,7 @@ const AboutPage = () => {
                     <p className="text-white text-xs sm:text-sm mb-2 flex-grow leading-tight">
                       {advisor.title}
                     </p>
+
                   </div>
                 </div>
               ))}
@@ -363,16 +365,16 @@ const AboutPage = () => {
       </section>
 
       {/* Empowering India's Youth Section */}
-      <section className="pt-6 sm:pt-12 lg:pt-16 pb-3 sm:pb-6 lg:pb-8 bg-white">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
+      <section className="py-8 sm:py-12 lg:py-16 pb-6 sm:pb-6 lg:pb-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-8 lg:gap-12 items-start">
             {/* Left Column - Text Content */}
             <div className="order-2 lg:order-1 lg:max-w-[600px] xl:max-w-[700px]">
-              <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-gray-900 mb-4 sm:mb-6 lg:mb-8">
+              <h2 className="text-[24px] lg:text-5xl font-extrabold text-gray-900 mb-6 sm:mb-6 lg:mb-8">
                 Empowering India's Youth to Lead, Thrive & Transform
               </h2>
 
-              <div className="space-y-4 sm:space-y-5 lg:space-y-5 text-gray-700 text-lg leading-[1.6] sm:leading-[1.65] text-justify sm:text-justify">
+              <div className="space-y-4 sm:space-y-5 lg:space-y-5 text-gray-700 text-base leading-[1.6] sm:leading-[1.65] text-justify sm:text-justify">
                 <p>
                   YoungVox was founded with a vision to nurture empowered, emotionally resilient, and socially responsible young leaders across India. Although India has one of the world’s largest youth populations - over 253 million adolescents, with one in five individuals aged 10–19 (UNICEF, 2023) - access to holistic education, leadership development, and emotional wellbeing support remains limited. While SDG 4 and NEP 2020 strongly advocate life-skill-based learning, most school systems continue to be predominantly academic-focused. This gap underscores the urgent need for a structured, school-based ecosystem that develops both competence and character.
                 </p>
@@ -450,9 +452,9 @@ const AboutPage = () => {
       */}
 
       {/* Connect. Collaborate. Create Future Leaders Section */}
-      <section className="py-6 sm:py-16 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className="text-[34px] leading-tight lg:text-[42px] font-extrabold text-black text-center mb-6 sm:mb-10">
+      <section className="py-8 sm:py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-[24px] lg:text-5xl font-extrabold text-black text-center mb-8 sm:mb-10">
             Connect. Collaborate. Create Future Leaders.
           </h2>
 

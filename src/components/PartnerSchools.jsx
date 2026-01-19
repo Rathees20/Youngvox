@@ -9,6 +9,9 @@ import school2Logo from '../assets/school2.png';
 import school3Logo from '../assets/school3.jpeg';
 import school4Logo from '../assets/school4.jpeg';
 import school5Logo from '../assets/school5.jpeg';
+import school6Logo from '../assets/school6.jpeg';
+import school7Logo from '../assets/school7.png';
+import school8Logo from '../assets/school8.jpeg';
 
 
 const PartnerSchools = () => {
@@ -21,11 +24,13 @@ const PartnerSchools = () => {
         { id: 3, name: 'School 3', logo: school3Logo },
         { id: 4, name: 'School 4', logo: school4Logo },
         { id: 5, name: 'School 5', logo: school5Logo },
-        
+        { id: 6, name: 'School 6', logo: school6Logo },
+        { id: 7, name: 'School 7', logo: school7Logo },
+        { id: 8, name: 'School 8', logo: school8Logo },
     ];
 
     return (
-        <section ref={ref} className="bg-[#FFF5F5] py-6 md:py-16">
+        <section ref={ref} className="bg-[#FFF5F5] py-4 md:py-10">
             <div className="container mx-auto px-4 md:px-6 max-w-6xl">
                 <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12">
                     {/* Left Side - Title and Description */}
@@ -33,67 +38,55 @@ const PartnerSchools = () => {
                         <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-black mb-2 md:mb-3 text-left">
                             Partner Schools
                         </h2>
-                        <p className="text-gray-600 text-sm md:text-xl leading-[1.6] md:leading-[1.8] text-left">
+                        <p className="text-gray-600 text-base md:text-xl leading-[1.6] md:leading-[1.8] text-left">
                             Collaborating with leading educational institutions across India
                         </p>
                     </div>
 
                     {/* Right Side - School Logos */}
                     <div className={`w-full md:w-2/3 ${isVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-                        {/* Mobile Slider */}
-                        <div className="md:hidden">
-                            <Swiper
-                                modules={[Autoplay, Pagination]}
-                                spaceBetween={20}
-                                slidesPerView={2}
-                                loop={true}
-                                autoplay={{
-                                    delay: 3000,
-                                    disableOnInteraction: false,
-                                }}
-                                speed={800}
-                                pagination={{
-                                    clickable: true,
-                                    dynamicBullets: true,
-                                }}
-                                className="pb-10"
-                            >
-                                {partnerSchools.map((school) => (
-                                    <SwiperSlide key={school.id}>
-                                        <div className="p-4 flex items-center justify-center h-20">
-                                            <img
-                                                src={school.logo}
-                                                alt={school.name}
-                                                className="max-h-12 max-w-full object-contain"
-                                            />
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-                        </div>
-
-                        {/* Desktop Grid */}
-                        <div className="hidden md:block">
-                            <div className="grid grid-cols-3 gap-4 mb-6 place-items-center">
-                                {partnerSchools.map((school) => (
-                                    <div
-                                        key={school.id}
-                                        className="p-6 flex items-center justify-center h-24 w-full"
-                                    >
+                        <Swiper
+                            modules={[Autoplay, Pagination]}
+                            spaceBetween={20}
+                            slidesPerView={2}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 2.5,
+                                    spaceBetween: 20,
+                                },
+                                768: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 25,
+                                },
+                                1024: {
+                                    slidesPerView: 4,
+                                    spaceBetween: 30,
+                                },
+                            }}
+                            loop={true}
+                            autoplay={{
+                                delay: 2500,
+                                disableOnInteraction: false,
+                            }}
+                            speed={1000}
+                            pagination={{
+                                clickable: true,
+                                dynamicBullets: true,
+                            }}
+                            className="pb-10"
+                        >
+                            {partnerSchools.map((school) => (
+                                <SwiperSlide key={school.id}>
+                                    <div className="p-3 flex items-center justify-center h-32">
                                         <img
                                             src={school.logo}
                                             alt={school.name}
-                                            className="max-h-16 max-w-full object-contain"
+                                            className="max-h-24 max-w-full object-contain"
                                         />
                                     </div>
-                                ))}
-                            </div>
-
-                            {/* Pagination Dot - Desktop only */}
-                            <div className="flex justify-center gap-2 mt-4">
-                                <div className="w-2 h-2 rounded-full bg-gray-800"></div>
-                            </div>
-                        </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
                 </div>
             </div>

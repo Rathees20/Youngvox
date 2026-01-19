@@ -30,27 +30,27 @@ const AdvisorFormPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!formData.confirmInterest) {
       alert("Please confirm your interest to proceed.");
       return;
     }
-  
+
     try {
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycby8VUMHJaB2oPkG_DFCpax2ioqZe131qA2cIPgi4SGFlDEU8KTQrQG7F771rVUpMOn3xA/exec",
         {
           method: "POST",
-          
+
           body: JSON.stringify(formData),
         }
       );
-  
+
       const result = await response.json();
-  
+
       if (result.success) {
         alert("Thank you for your interest! We’ll get back to you soon.");
-  
+
         setFormData({
           name: '',
           email: '',
@@ -70,7 +70,7 @@ const AdvisorFormPage = () => {
       alert("Something went wrong. Please try later.");
     }
   };
-  
+
 
   // 8 Wings options
   const wings = [
@@ -102,18 +102,18 @@ const AdvisorFormPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Panel - Content */}
             <div className={`space-y-6 ${contentVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
-              <h1 className="text-[34px] leading-tight lg:text-[32px] font-extrabold text-black">
+              <h1 className="text-[24px] lg:text-[32px] font-extrabold text-black leading-tight">
                 Advisor for Change. Nurture Young Voices.
               </h1>
-              <p className="text-lg text-justify text-black leading-relaxed">
+              <p className="text-base lg:text-lg text-justify text-black leading-relaxed">
                 We collaborate with education experts, youth mentors, and thought leaders who share our commitment to nurturing the next generation of responsible leaders. Partner with us to provide guidance, shape programs, and support student-led initiatives that create real community impact.
               </p>
-              
+
             </div>
 
             {/* Right Panel - Form */}
             <div className={`bg-pink-50 rounded-lg p-6 sm:p-8 shadow-sm hover-lift transition-all ${contentVisible ? 'animate-fade-in-right animate-delay-200' : 'opacity-0'}`}>
-              <h2 className="text-[30px] lg:text-[36px] font-bold text-black mb-6">
+              <h2 className="text-[24px] lg:text-[36px] font-bold text-black mb-6">
                 Write to Us
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -218,16 +218,16 @@ const AdvisorFormPage = () => {
                   ></textarea>
                 </div>
 
-                <div className="flex items-start">
+                <div className="flex items-start gap-2">
                   <input
                     type="checkbox"
                     name="confirmInterest"
                     id="confirmInterest"
                     checked={formData.confirmInterest}
                     onChange={handleChange}
-                    className="mt-1 mr-2 w-4 h-4 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
+                    className="mt-0.5 w-7 h-7 shrink-0 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
                   />
-                  <label htmlFor="confirmInterest" className="text-sm text-black">
+                  <label htmlFor="confirmInterest" className="text-base text-black leading-tight pt-0.5">
                     I confirm my interest in contributing as an Advisor with YoungVox.
                   </label>
                 </div>

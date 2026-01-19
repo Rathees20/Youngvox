@@ -112,7 +112,7 @@ const HowWeEmpower = () => {
                             <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-[#1A1A1A] mb-4">
                                 How YoungVox Empowers School
                             </h2>
-                            <p className="text-[#4A4A4A]/80 text-xl max-w-4xl mx-auto leading-[1.8]">
+                            <p className="text-[#4A4A4A]/80 text-base lg:text-xl max-w-4xl mx-auto leading-[1.8]">
                                 Inspiring students to grow as leaders, address real time issues, and drive change within and beyond their schools
                             </p>
                         </div>
@@ -190,7 +190,7 @@ const HowWeEmpower = () => {
                                 <h2 className="text-[24px] leading-tight lg:text-[32px] font-extrabold text-[#1A1A1A] mb-4">
                                     Be Part of the Change
                                 </h2>
-                                <p className="text-[#4A4A4A]/80 text-xl leading-[1.8]">
+                                <p className="text-[#4A4A4A]/80 text-base lg:text-xl leading-[1.8]">
                                     A transformative platform that nurtures leadership, voice, and real-world impact in every student.
                                 </p>
                             </div>
