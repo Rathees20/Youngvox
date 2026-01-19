@@ -30,7 +30,7 @@ const PartnerSchools = () => {
     ];
 
     return (
-        <section ref={ref} className="bg-[#FFF5F5] py-6 md:py-16">
+        <section ref={ref} className="bg-[#FFF5F5] py-4 md:py-10">
             <div className="container mx-auto px-4 md:px-6 max-w-6xl">
                 <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12">
                     {/* Left Side - Title and Description */}
@@ -73,15 +73,15 @@ const PartnerSchools = () => {
                                 clickable: true,
                                 dynamicBullets: true,
                             }}
-                            className="pb-12"
+                            className="pb-10"
                         >
                             {partnerSchools.map((school) => (
                                 <SwiperSlide key={school.id}>
-                                    <div className="p-3 flex items-center justify-center h-40">
+                                    <div className="p-3 flex items-center justify-center h-32">
                                         <img
                                             src={school.logo}
                                             alt={school.name}
-                                            className="max-h-32 max-w-full object-contain"
+                                            className="max-h-24 max-w-full object-contain"
                                         />
                                     </div>
                                 </SwiperSlide>
