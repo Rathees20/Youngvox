@@ -234,7 +234,7 @@ const AboutPage = () => {
             {teamMembers.map((member) => (
               <div key={member.id} className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden h-full flex flex-col">
                 {/* Headshot */}
-                <div className="relative h-64 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
+                <div className="relative h-80 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -245,7 +245,7 @@ const AboutPage = () => {
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                      objectPosition: member.id === 2 && !isDesktop ? 'center top' : member.id === 3 ? 'center top' : member.id === 4 ? 'center 20%' : 'center',
+                      objectPosition: member.id === 2 && !isDesktop ? 'center top' : member.id === 3 ? 'center 10%' : member.id === 4 ? 'center 20%' : 'center',
                       backgroundColor: 'transparent'
                     }}
                   />
