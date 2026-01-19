@@ -258,7 +258,12 @@ const AboutPage = () => {
                   <p className="text-white text-xs sm:text-sm mb-2 flex-grow leading-tight">
                     {member.title}
                   </p>
-
+                  <button
+                    onClick={() => window.open(member.linkedin, '_blank', 'noopener,noreferrer')}
+                    className="mt-2 px-4 py-1.5 border border-white text-white text-xs sm:text-sm font-medium rounded hover:bg-white hover:text-[#A82228] transition-colors self-start"
+                  >
+                    Read Bio
+                  </button>
                 </div>
               </div>
             ))}
@@ -312,6 +317,7 @@ const AboutPage = () => {
                     <p className="text-white text-xs sm:text-sm mb-2 flex-grow leading-tight">
                       {advisor.title}
                     </p>
+
                   </div>
                 </div>
               ))}
@@ -349,6 +355,7 @@ const AboutPage = () => {
                     <p className="text-white text-xs sm:text-sm mb-2 flex-grow leading-tight">
                       {advisor.title}
                     </p>
+
                   </div>
                 </div>
               ))}

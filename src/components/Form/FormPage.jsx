@@ -215,7 +215,7 @@ const FormPage = () => {
                     id="confirmInterest"
                     checked={formData.confirmInterest}
                     onChange={handleChange}
-                    className="mt-1 mr-2 w-4 h-4 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
+                    className="mt-1 mr-2 w-7 h-7 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
                   />
                   <label htmlFor="confirmInterest" className="text-base text-black">
                     I confirm the school's interest in becoming a YoungVox School Chapter (Free of Cost).

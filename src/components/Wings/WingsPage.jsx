@@ -195,7 +195,7 @@ const WingsPage = () => {
 
       {/* Hero Section */}
       <section ref={heroRef} className="pt-12 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6 sm:mb-12">
           <div className={`${heroVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
             <h1 className="text-[24px] lg:text-4xl font-bold text-[#1A2B3C] mb-6 uppercase tracking-tight">
               YOUNGVOX - WINGS
@@ -219,10 +219,10 @@ const WingsPage = () => {
             <img
               src={wingBanner}
               alt="YoungVox students"
-              className="w-full h-auto sm:min-h-[400px] sm:object-cover object-center"
+              className="w-full h-auto sm:min-h-[400px] sm:object-cover object-center shadow-none"
             />
             {/* Top Fade Gradient */}
-            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
+            <div className="hidden sm:block absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
 
             {/* Crack/Tear Design at Bottom
             <div className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-10">
@@ -396,7 +396,7 @@ const WingsPage = () => {
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section header (matches reference layout) */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-start gap-6 mb-10">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-start gap-2 lg:gap-6 mb-10">
             <div className="max-w-2xl">
               <h2 className="text-[24px] lg:text-4xl font-extrabold text-[#1A2B3C] mb-3">
                 YoungVox Wings
@@ -407,7 +407,7 @@ const WingsPage = () => {
             </div>
 
             {/* Theme badge (Now in header row for better alignment) */}
-            <div className="flex justify-start lg:pl-4 mt-8 lg:mt-0 lg:ml-auto">
+            <div className="flex justify-start lg:pl-4 mt-2 lg:mt-0 lg:ml-auto">
               <div className="inline-flex flex-col items-center justify-center text-center rounded-md bg-[#FFF6E3] px-6 py-3">
                 <div className="text-base lg:text-lg font-bold text-[#A82228] leading-relaxed">
                   Overall theme for 2026-Empower Future
@@ -448,7 +448,7 @@ const WingsPage = () => {
                         <img src={wing.image} alt={wing.name} className="w-full h-full object-cover" />
                       </div>
                     </div>
-                    <h2 className="text-[24px] font-bold text-white mb-1 uppercase leading-tight">{wing.name}</h2>
+                    <h2 className="text-[20px] font-bold text-white mb-1 uppercase leading-tight">{wing.name}</h2>
                     <p className="text-[13px] text-white/80 mb-4 font-medium">{wing.sdg}</p>
                     <p className="text-base text-white/90 leading-relaxed font-medium">
                       {wing.description}

@@ -48,8 +48,8 @@ const JoinYoung = () => {
           >
             <div
               className="
-      ml-6 sm:ml-auto
-      mr-6 sm:mr-[6%]
+      ml-20 sm:ml-auto
+      mr-4 sm:mr-[6%]
       max-w-[85%] sm:max-w-lg md:max-w-xl lg:max-w-2xl
       text-left
       space-y-1 sm:space-y-5 md:space-y-6
