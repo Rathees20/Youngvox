@@ -48,7 +48,7 @@ const PartnerSchools = () => {
                         <Swiper
                             modules={[Autoplay, Pagination]}
                             spaceBetween={20}
-                            slidesPerView={1.5}
+                            slidesPerView={2}
                             breakpoints={{
                                 640: {
                                     slidesPerView: 2.5,
