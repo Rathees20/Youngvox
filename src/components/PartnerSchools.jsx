@@ -9,6 +9,9 @@ import school2Logo from '../assets/school2.png';
 import school3Logo from '../assets/school3.jpeg';
 import school4Logo from '../assets/school4.jpeg';
 import school5Logo from '../assets/school5.jpeg';
+import school6Logo from '../assets/school6.jpeg';
+import school7Logo from '../assets/school7.png';
+import school8Logo from '../assets/school8.jpeg';
 
 
 const PartnerSchools = () => {
@@ -21,7 +24,9 @@ const PartnerSchools = () => {
         { id: 3, name: 'School 3', logo: school3Logo },
         { id: 4, name: 'School 4', logo: school4Logo },
         { id: 5, name: 'School 5', logo: school5Logo },
-        
+        { id: 6, name: 'School 6', logo: school6Logo },
+        { id: 7, name: 'School 7', logo: school7Logo },
+        { id: 8, name: 'School 8', logo: school8Logo },
     ];
 
     return (
@@ -44,8 +49,8 @@ const PartnerSchools = () => {
                         <div className="md:hidden">
                             <Swiper
                                 modules={[Autoplay, Pagination]}
-                                spaceBetween={20}
-                                slidesPerView={2}
+                                spaceBetween={15}
+                                slidesPerView={1.5}
                                 loop={true}
                                 autoplay={{
                                     delay: 3000,
@@ -56,15 +61,15 @@ const PartnerSchools = () => {
                                     clickable: true,
                                     dynamicBullets: true,
                                 }}
-                                className="pb-10"
+                                className="pb-12"
                             >
                                 {partnerSchools.map((school) => (
                                     <SwiperSlide key={school.id}>
-                                        <div className="p-4 flex items-center justify-center h-20">
+                                        <div className="p-3 flex items-center justify-center h-36">
                                             <img
                                                 src={school.logo}
                                                 alt={school.name}
-                                                className="max-h-12 max-w-full object-contain"
+                                                className="max-h-28 max-w-full object-contain"
                                             />
                                         </div>
                                     </SwiperSlide>
@@ -74,24 +79,24 @@ const PartnerSchools = () => {
 
                         {/* Desktop Grid */}
                         <div className="hidden md:block">
-                            <div className="grid grid-cols-3 gap-4 mb-6 place-items-center">
+                            <div className="grid grid-cols-3 lg:grid-cols-4 gap-6 mb-8 place-items-center">
                                 {partnerSchools.map((school) => (
                                     <div
                                         key={school.id}
-                                        className="p-6 flex items-center justify-center h-24 w-full"
+                                        className="p-5 flex items-center justify-center h-36 w-full"
                                     >
                                         <img
                                             src={school.logo}
                                             alt={school.name}
-                                            className="max-h-16 max-w-full object-contain"
+                                            className="max-h-28 max-w-full object-contain"
                                         />
                                     </div>
                                 ))}
                             </div>
 
                             {/* Pagination Dot - Desktop only */}
-                            <div className="flex justify-center gap-2 mt-4">
-                                <div className="w-2 h-2 rounded-full bg-gray-800"></div>
+                            <div className="flex justify-center gap-2 mt-2">
+                                <div className="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
                             </div>
                         </div>
                     </div>
