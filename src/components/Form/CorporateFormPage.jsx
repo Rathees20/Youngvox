@@ -181,16 +181,16 @@ const CorporateFormPage = () => {
                   ></textarea>
                 </div>
 
-                <div className="flex items-start">
+                <div className="flex items-start gap-2">
                   <input
                     type="checkbox"
                     name="confirmInterest"
                     id="confirmInterest"
                     checked={formData.confirmInterest}
                     onChange={handleChange}
-                    className="mt-1 mr-2 w-7 h-7 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
+                    className="mt-0.5 w-7 h-7 shrink-0 text-[#A82228] border-gray-300 rounded focus:ring-[#A82228]"
                   />
-                  <label htmlFor="confirmInterest" className="text-base text-black">
+                  <label htmlFor="confirmInterest" className="text-base text-black leading-tight pt-0.5">
                     I confirm our intent to contribute to YoungVox programs and campaigns.
                   </label>
                 </div>
