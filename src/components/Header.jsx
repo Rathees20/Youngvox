@@ -52,7 +52,7 @@ const Header = () => {
               <img
                 src={youngvoxLogo}
                 alt="Youngvox Logo"
-                className="w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18"
+                className="w-16 h-16 sm:w-16 sm:h-16 lg:w-18 lg:h-18"
               />
             </Link>
           </div>
