@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 import backgroundCircle from '../assets/backgound circle.png';
-import studentImage from '../assets/Down banner.jpeg';
+import studentImage from '../assets/news banner.png';
 import sendIcon from '../assets/icons/send.png';
 
 export default function NewsletterSection() {
