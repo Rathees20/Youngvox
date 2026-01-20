@@ -7,7 +7,6 @@ import frame15Image from '../../assets/Frame 15.png';
 import saranyaImage from '../../assets/Saranya jaikumar.png';
 import sylendraBabuImage from '../../assets/Sylendra-Babu.jpg';
 import lakshmiImage from '../../assets/Lakshmi.webp';
-import drPalImage from '../../assets/drpal.jpg';
 import ashwinImage from '../../assets/Ashwin.jpeg';
 import aravindImage from '../../assets/aravind.JPG';
 import c2Image from '../../assets/c2.png';
@@ -83,12 +82,6 @@ const AboutPage = () => {
       name: "Dr. Lakshmi Vijayakumar",
       title: "Leading Psychiatrist, Founder - Sneha Foundation India",
       image: lakshmiImage
-    },
-    {
-      id: 3,
-      name: "Dr Pal Manickam",
-      title: "Gastroenterologist, Preventive Gastro USA, Founder - Dr. Pal's NewME and MedCom",
-      image: drPalImage
     },
     {
       id: 4,
@@ -285,81 +278,43 @@ const AboutPage = () => {
           </div>
 
           {/* Advisors Cards Grid */}
-          <div className={`${advisorsVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
-            {/* First Row - 3 cards centered */}
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-5 mb-4 sm:mb-5">
-              {advisors.slice(0, 3).map((advisor) => (
-                <div
-                  key={advisor.id}
-                  className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden flex flex-col w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(25%-1rem)]"
-                >
-                  {/* Headshot */}
-                  <div className="relative h-64 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
-                    <img
-                      src={advisor.image}
-                      alt={advisor.name}
-                      className="w-full h-full object-cover block m-0 p-0 align-top"
-                      style={{
-                        display: 'block',
-                        verticalAlign: 'top',
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        objectPosition: advisor.id === 1 ? 'center -5%' : advisor.id === 2 ? 'center 5%' : advisor.id === 3 ? 'center 20%' : 'center'
-                      }}
-                    />
-                  </div>
-                  {/* Red Background Section */}
-                  <div className="bg-[#A82228] p-3 sm:p-3.5 mt-0 flex flex-col flex-grow">
-                    <h3 className={`text-white text-sm sm:text-base font-bold mb-1 ${advisor.id === 1 ? 'whitespace-nowrap text-[12px] sm:text-sm' : ''}`}>
-                      {advisor.name}
-                    </h3>
-                    <p className="text-white text-xs sm:text-sm mb-2 flex-grow leading-tight">
-                      {advisor.title}
-                    </p>
-
-                  </div>
+          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 ${advisorsVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
+            {advisors.map((advisor) => (
+              <div
+                key={advisor.id}
+                className="bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden flex flex-col h-full"
+              >
+                {/* Headshot */}
+                <div className="relative h-64 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
+                  <img
+                    src={advisor.image}
+                    alt={advisor.name}
+                    className="w-full h-full object-cover block m-0 p-0 align-top"
+                    style={{
+                      display: 'block',
+                      verticalAlign: 'top',
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: advisor.id === 1 ? 'center -5%' :
+                        advisor.id === 2 ? 'center 5%' :
+                          advisor.id === 5 && !isDesktop ? 'center 12%' :
+                            advisor.id === 5 ? 'center 5%' :
+                              'center'
+                    }}
+                  />
                 </div>
-              ))}
-            </div>
-
-            {/* Second Row - 2 cards centered */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-              {advisors.slice(3, 5).map((advisor) => (
-                <div
-                  key={advisor.id}
-                  className={`bg-white rounded-lg border-2 border-[#A82228] shadow-sm overflow-hidden h-full flex flex-col ${advisor.id === 4 ? 'lg:col-start-2' : ''
-                    }`}
-                >
-                  {/* Headshot */}
-                  <div className="relative h-64 sm:h-52 lg:h-56 overflow-hidden m-0 p-0 leading-[0] flex-shrink-0">
-                    <img
-                      src={advisor.image}
-                      alt={advisor.name}
-                      className="w-full h-full object-cover block m-0 p-0 align-top"
-                      style={{
-                        display: 'block',
-                        verticalAlign: 'top',
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        objectPosition: advisor.id === 5 && !isDesktop ? 'center 12%' : advisor.id === 5 ? 'center 5%' : 'center'
-                      }}
-                    />
-                  </div>
-                  {/* Red Background Section */}
-                  <div className="bg-[#A82228] p-3 sm:p-3.5 mt-0 flex flex-col flex-grow">
-                    <h3 className="text-white text-sm sm:text-base font-bold mb-1">
-                      {advisor.name}
-                    </h3>
-                    <p className="text-white text-xs sm:text-sm mb-2 flex-grow leading-tight">
-                      {advisor.title}
-                    </p>
-
-                  </div>
+                {/* Red Background Section */}
+                <div className="bg-[#A82228] p-3 sm:p-3.5 mt-0 flex flex-col flex-grow">
+                  <h3 className={`text-white text-sm sm:text-base font-bold mb-1 ${advisor.id === 1 ? 'whitespace-nowrap text-[12px] sm:text-sm' : ''}`}>
+                    {advisor.name}
+                  </h3>
+                  <p className="text-white text-xs sm:text-sm mb-2 flex-grow leading-tight">
+                    {advisor.title}
+                  </p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
