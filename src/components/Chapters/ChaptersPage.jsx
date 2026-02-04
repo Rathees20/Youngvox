@@ -299,19 +299,15 @@ const ChaptersPage = () => {
                           alt="School icon"
                           className="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0 mt-0.5"
                         />
-<<<<<<< Updated upstream
                         <h3
                           title={school.name}
-                          className="text-base sm:text-lg font-bold text-black leading-snug min-h-[44px] sm:min-h-[52px] overflow-hidden"
+                          className="text-sm sm:text-lg font-bold text-black leading-snug min-h-[44px] sm:min-h-[52px] overflow-hidden"
                           style={{
                             display: '-webkit-box',
                             WebkitLineClamp: 2,
                             WebkitBoxOrient: 'vertical',
                           }}
                         >
-=======
-                        <h3 className="text-sm sm:text-lg font-bold text-black leading-tight mt-3">
->>>>>>> Stashed changes
                           {school.name}
                         </h3>
                       </div>
