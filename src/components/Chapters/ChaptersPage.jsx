@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Header from '../Header';
 import NewsletterSection from '../Newsletter';
 import Footer from '../Footer';
@@ -133,6 +133,7 @@ const ChaptersPage = () => {
   const [heroRef, heroVisible] = useScrollAnimation({ once: true });
   const [searchRef, searchVisible] = useScrollAnimation({ once: true });
   const [resultsRef, resultsVisible] = useScrollAnimation({ once: true });
+  const isFirstRenderRef = useRef(true);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -143,6 +144,24 @@ const ChaptersPage = () => {
       setSelectedDistrict('');
     }
   }, [districts, selectedDistrict]);
+
+  useEffect(() => {
+    if (isFirstRenderRef.current) {
+      isFirstRenderRef.current = false;
+      return;
+    }
+
+    // When user paginates, keep them at the top of results (not stuck near footer).
+    // Use an offset so the section title isn't hidden under the fixed header.
+    const el = resultsRef.current;
+    if (!el) return;
+
+    const headerOffsetPx = 90;
+    const top = el.getBoundingClientRect().top + window.scrollY - headerOffsetPx;
+
+    // Jump instantly (no "down-to-up" animation)
+    window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+  }, [currentPage]);
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -166,7 +185,7 @@ const ChaptersPage = () => {
           <div
             className="
       ml-auto
-      mr-[6%]
+      mr-[2%] sm:mr-[6%]
       max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl
       text-left
       space-y-4 sm:space-y-5 md:space-y-6
@@ -280,7 +299,15 @@ const ChaptersPage = () => {
                           alt="School icon"
                           className="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0 mt-0.5"
                         />
-                        <h3 className="text-base sm:text-lg font-bold text-black leading-tight mt-3">
+                        <h3
+                          title={school.name}
+                          className="text-base sm:text-lg font-bold text-black leading-snug min-h-[44px] sm:min-h-[52px] overflow-hidden"
+                          style={{
+                            display: '-webkit-box',
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: 'vertical',
+                          }}
+                        >
                           {school.name}
                         </h3>
                       </div>
@@ -316,6 +343,22 @@ const ChaptersPage = () => {
 
           {/* Pagination */}
           <div className="flex justify-center items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+              disabled={currentPage === 1}
+              className="w-10 h-10 rounded-full bg-[#A82228] text-white flex items-center justify-center hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#A82228] font-semibold"
+            >
+              <img
+                src={rightArrowIcon}
+                alt="Previous page"
+                className="w-5 h-5 object-contain rotate-180"
+                style={{
+                  filter: 'brightness(0) saturate(100%) invert(100%)'
+                }}
+              />
+            </button>
+
             {(() => {
               const pages = [];
               const showPages = 4; // Show first 4 pages
@@ -349,6 +392,7 @@ const ChaptersPage = () => {
 
                 return (
                   <button
+                    type="button"
                     key={page}
                     onClick={() => setCurrentPage(page)}
                     className={`${isActive
@@ -363,6 +407,7 @@ const ChaptersPage = () => {
             })()}
 
             <button
+              type="button"
               onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
               disabled={currentPage === totalPages}
               className="w-10 h-10 rounded-full bg-[#A82228] text-white flex items-center justify-center hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#A82228] font-semibold"
