@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import youngvoxLogo from '../assets/Youngvox logo.png';
 import instagramIcon from '../assets/icons/instagram.png';
@@ -17,17 +17,6 @@ const LinkedInIcon = ({ className = "w-6 h-6 text-blue-600" }) => (
 );
 
 const Footer = () => {
-  const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
-
-  const handleChaptersClick = (e) => {
-    e.preventDefault();
-    setIsComingSoonOpen(true);
-  };
-
-  const closeComingSoon = () => {
-    setIsComingSoonOpen(false);
-  };
-
   return (
     <footer className="bg-white pt-8 md:pt-16 pb-6 font-sans text-[#333]">
       <div className="max-w-7xl mx-auto px-6">
@@ -55,12 +44,12 @@ const Footer = () => {
               <li><Link to="/about" className="text-black">About Us</Link></li>
               <li><Link to="/wings" className="text-black">Wings</Link></li>
               <li>
-                <button
-                  onClick={handleChaptersClick}
+                <Link
+                  to="/chapters"
                   className="text-black hover:text-[#A82228] transition-colors text-left"
                 >
                   Chapters
-                </button>
+                </Link>
               </li>
               <li><Link to="/joinyoung" className="text-black">Get Involved</Link></li>
               <li><Link to="/contact" className="text-black">Contact Us</Link></li>
@@ -118,58 +107,6 @@ const Footer = () => {
 
       </div>
 
-      {/* Coming Soon Modal */}
-      {isComingSoonOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
-            onClick={closeComingSoon}
-          ></div>
-
-          {/* Modal Container */}
-          <div className="relative bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-full max-w-[420px] overflow-hidden animate-popup">
-            {/* Close Button */}
-            <button
-              onClick={closeComingSoon}
-              className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors"
-              aria-label="Close modal"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            {/* Content */}
-            <div className="p-8 sm:p-10">
-              <div className="text-center">
-                <div className="mb-6">
-                  <div className="w-20 h-20 mx-auto bg-[#A82228]/10 rounded-full flex items-center justify-center">
-                    <svg className="w-12 h-12 text-[#A82228]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1A1A1A] mb-4">
-                  Coming Soon
-                </h2>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  The Chapters page is currently under development. We'll be launching it soon!
-                </p>
-                <button
-                  onClick={closeComingSoon}
-                  className="mt-6 w-full bg-[#A82228] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#8a1c22] transition-colors shadow-lg hover:shadow-xl active:scale-[0.98] transform"
-                >
-                  OK
-                </button>
-              </div>
-            </div>
-
-            {/* Bottom Decorative Element */}
-            <div className="h-2 bg-[#A82228]"></div>
-          </div>
-        </div>
-      )}
     </footer>
   );
 };

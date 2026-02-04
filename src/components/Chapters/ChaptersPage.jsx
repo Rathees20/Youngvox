@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../Header';
 import NewsletterSection from '../Newsletter';
 import Footer from '../Footer';
@@ -14,27 +14,135 @@ const ChaptersPage = () => {
   const [selectedState, setSelectedState] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState('');
 
-  // Sample school data
-  const schools = Array.from({ length: 30 }, (_, i) => ({
-    id: i + 1,
-    name: 'Delhi Public School',
-    chapterId: '127879317',
-    district: 'Chennai',
-    state: 'Tamil Nadu',
-    createdFrom: '12/11/2025'
-  }));
+  const schools = [
+    {
+      id: 1,
+      name: 'Vaels International School',
+      chapterId: 'CHN001',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '25-01-2026',
+    },
+    {
+      id: 2,
+      name: 'Islamiah Matriculation Higher Secondary School',
+      chapterId: 'RAM002',
+      district: 'Ramanathapuram',
+      state: 'Tamil Nadu',
+      createdFrom: '25-01-2026',
+    },
+    {
+      id: 3,
+      name: 'Government Boys High School',
+      chapterId: 'CHN003',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '25-01-2026',
+    },
+    {
+      id: 4,
+      name: 'St. Gabriel Higher Secondary School',
+      chapterId: 'CHN004',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '25-01-2026',
+    },
+    {
+      id: 5,
+      name: 'Nehru High School',
+      chapterId: 'CHN005',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '25-01-2026',
+    },
+    {
+      id: 6,
+      name: 'Velammal Vidyalaya, Poonamallee',
+      chapterId: 'CHN006',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '25-01-2026',
+    },
+    {
+      id: 7,
+      name: 'Velammal Vidyalaya, Paruthipattu',
+      chapterId: 'CHN007',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '25-01-2026',
+    },
+    {
+      id: 8,
+      name: 'Velammal Vidyalaya Annexure, Melayanambakkam',
+      chapterId: 'CHN008',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '25-01-2026',
+    },
+    {
+      id: 9,
+      name: 'Velammal Vidyalaya, Melayanambakkam',
+      chapterId: 'CHN009',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '25-01-2026',
+    },
+    {
+      id: 10,
+      name: 'Velammal Vidyalaya, Alapakkam',
+      chapterId: 'CHN010',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '25-01-2026',
+    },
+    {
+      id: 11,
+      name: 'Zigma Matriculation Higher Secondary School',
+      chapterId: 'CHN011',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '25-01-2026',
+    },
+  ];
 
-  const states = ['Tamil Nadu', 'Karnataka', 'Maharashtra', 'Delhi', 'Gujarat'];
-  const districts = ['Chennai', 'Bangalore', 'Mumbai', 'Delhi', 'Ahmedabad'];
+  const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+  const filteredSchools = schools.filter((school) => {
+    const matchesSearch =
+      normalizedSearchTerm.length === 0 ||
+      school.name.toLowerCase().includes(normalizedSearchTerm) ||
+      school.chapterId.toLowerCase().includes(normalizedSearchTerm);
+
+    const matchesState = selectedState.length === 0 || school.state === selectedState;
+    const matchesDistrict = selectedDistrict.length === 0 || school.district === selectedDistrict;
+
+    return matchesSearch && matchesState && matchesDistrict;
+  });
+
+  const states = Array.from(new Set(schools.map((s) => s.state))).sort((a, b) => a.localeCompare(b));
+  const districts = Array.from(
+    new Set(
+      (selectedState ? schools.filter((s) => s.state === selectedState) : schools).map((s) => s.district)
+    )
+  ).sort((a, b) => a.localeCompare(b));
 
   const cardsPerPage = 9; // 3 rows × 3 columns
-  const totalPages = Math.ceil(schools.length / cardsPerPage);
+  const totalPages = Math.max(1, Math.ceil(filteredSchools.length / cardsPerPage));
   const startIndex = (currentPage - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
-  const displayedSchools = schools.slice(startIndex, endIndex);
+  const displayedSchools = filteredSchools.slice(startIndex, endIndex);
   const [heroRef, heroVisible] = useScrollAnimation({ once: true });
   const [searchRef, searchVisible] = useScrollAnimation({ once: true });
   const [resultsRef, resultsVisible] = useScrollAnimation({ once: true });
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedState, selectedDistrict]);
+
+  useEffect(() => {
+    if (selectedDistrict && !districts.includes(selectedDistrict)) {
+      setSelectedDistrict('');
+    }
+  }, [districts, selectedDistrict]);
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -136,7 +244,7 @@ const ChaptersPage = () => {
       <section ref={resultsRef} className="py-6 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <h2 className={`text-[15px] sm:text-[20px] md:text-[25px] lg:text-[26px] font-bold text-black mb-6 sm:mb-8 ${resultsVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-            Showing Result {startIndex + 1}-{Math.min(endIndex, schools.length)} of {schools.length}
+            Showing Result {filteredSchools.length === 0 ? 0 : startIndex + 1}-{Math.min(endIndex, filteredSchools.length)} of {filteredSchools.length}
           </h2>
 
           {/* School Cards Grid */}
