@@ -308,7 +308,7 @@ const ChaptersPage = () => {
                   <div className="relative z-10 w-full h-full flex flex-col">
                     {/* School Icon and Name Header */}
                     <div className="mb-2 flex-shrink-0">
-                      <div className="flex items-start gap-2">
+                      <div className="flex flex-col sm:flex-row sm:items-start gap-2">
                         <img
                           src={schoolIcon}
                           alt="School icon"
@@ -316,7 +316,12 @@ const ChaptersPage = () => {
                         />
                         <h3
                           title={school.name}
-                          className="text-sm sm:text-lg font-bold text-black leading-snug break-words sm:overflow-hidden sm:[display:-webkit-box] sm:[-webkit-line-clamp:2] sm:[-webkit-box-orient:vertical]"
+                          className="text-sm sm:text-lg font-bold text-black leading-snug break-words overflow-hidden min-h-[60px] sm:min-h-[52px]"
+                          style={{
+                            display: '-webkit-box',
+                            WebkitLineClamp: isMobileView ? 3 : 2,
+                            WebkitBoxOrient: 'vertical',
+                          }}
                         >
                           {school.name}
                         </h3>
