@@ -316,19 +316,7 @@ const ChaptersPage = () => {
                         />
                         <h3
                           title={school.name}
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-                          className="text-sm sm:text-lg font-bold text-black leading-snug min-h-[44px] sm:min-h-[52px] break-words sm:overflow-hidden sm:[display:-webkit-box] sm:[-webkit-line-clamp:2] sm:[-webkit-box-orient:vertical]"
-=======
->>>>>>> Stashed changes
-                          className="text-sm sm:text-lg font-bold text-black leading-snug min-h-[56px] sm:min-h-[52px] overflow-hidden break-words"
-                          style={{
-                            display: '-webkit-box',
-                            WebkitLineClamp: isMobileView ? 3 : 2,
-                            WebkitBoxOrient: 'vertical',
-                          }}
->>>>>>> c58e9f5eadea156ce9c4b5ff17326a9468323a1c
+                          className="text-sm sm:text-lg font-bold text-black leading-snug break-words sm:overflow-hidden sm:[display:-webkit-box] sm:[-webkit-line-clamp:2] sm:[-webkit-box-orient:vertical]"
                         >
                           {school.name}
                         </h3>
