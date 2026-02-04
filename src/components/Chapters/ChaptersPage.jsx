@@ -13,6 +13,10 @@ const ChaptersPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedState, setSelectedState] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState('');
+  const [cardsPerPage, setCardsPerPage] = useState(() => {
+    if (typeof window === 'undefined') return 9;
+    return window.innerWidth < 640 ? 4 : 9; // Mobile: 2x2, Desktop: 3x3
+  });
 
   const schools = [
     {
@@ -125,7 +129,6 @@ const ChaptersPage = () => {
     )
   ).sort((a, b) => a.localeCompare(b));
 
-  const cardsPerPage = 9; // 3 rows × 3 columns
   const totalPages = Math.max(1, Math.ceil(filteredSchools.length / cardsPerPage));
   const startIndex = (currentPage - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
@@ -137,7 +140,18 @@ const ChaptersPage = () => {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, selectedState, selectedDistrict]);
+  }, [searchTerm, selectedState, selectedDistrict, cardsPerPage]);
+
+  useEffect(() => {
+    const updateCardsPerPage = () => {
+      const next = window.innerWidth < 640 ? 4 : 9;
+      setCardsPerPage((prev) => (prev === next ? prev : next));
+    };
+
+    updateCardsPerPage();
+    window.addEventListener('resize', updateCardsPerPage);
+    return () => window.removeEventListener('resize', updateCardsPerPage);
+  }, []);
 
   useEffect(() => {
     if (selectedDistrict && !districts.includes(selectedDistrict)) {
@@ -267,14 +281,14 @@ const ChaptersPage = () => {
           </h2>
 
           {/* School Cards Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 mb-8">
             {displayedSchools.map((school, index) => {
               const isPinkBox = index % 2 !== 0; // Pink boxes for odd indices
               return (
                 <div
                   key={school.id}
-                  className={`rounded-sm p-4 sm:p-4 relative hover-lift transition-all overflow-hidden ${isPinkBox ? 'bg-pink-50' : 'bg-white border border-gray-200'
-                    } ${resultsVisible ? 'animate-scale-in' : 'opacity-100 sm:opacity-0'} w-full min-h-[280px] h-auto sm:h-[300px]`}
+                  className={`rounded-sm p-3 sm:p-4 relative hover-lift transition-all overflow-hidden ${isPinkBox ? 'bg-pink-50' : 'bg-white border border-gray-200'
+                    } ${resultsVisible ? 'animate-scale-in' : 'opacity-100 sm:opacity-0'} w-full min-h-[230px] sm:min-h-[280px] h-auto sm:h-[300px]`}
                   style={{
                     animationDelay: `${index * 50}ms`
                   }}
@@ -297,11 +311,11 @@ const ChaptersPage = () => {
                         <img
                           src={schoolIcon}
                           alt="School icon"
-                          className="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0 mt-0.5"
+                          className="w-8 h-8 sm:w-12 sm:h-12 object-contain flex-shrink-0 mt-0.5"
                         />
                         <h3
                           title={school.name}
-                          className="text-sm sm:text-lg font-bold text-black leading-snug min-h-[44px] sm:min-h-[52px] overflow-hidden"
+                          className="text-sm sm:text-lg font-bold text-black leading-snug min-h-[40px] sm:min-h-[52px] overflow-hidden"
                           style={{
                             display: '-webkit-box',
                             WebkitLineClamp: 2,
@@ -317,7 +331,7 @@ const ChaptersPage = () => {
                     <hr className="border-gray-300 mb-2 flex-shrink-0" />
 
                     {/* Details */}
-                    <div className="space-y-2 flex-1 min-h-0">
+                    <div className="space-y-1.5 sm:space-y-2 flex-1 min-h-0">
                       <div>
                         <p className="text-xs sm:text-sm text-gray-600 font-normal mb-1">Chapter ID:</p>
                         <p className="text-xs sm:text-sm font-bold text-black">{school.chapterId}</p>
