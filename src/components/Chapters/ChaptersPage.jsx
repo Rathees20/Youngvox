@@ -7,6 +7,7 @@ import chapterBanner from '../../assets/chapter.png';
 import schoolIcon from '../../assets/icons/schools.png';
 import frameImage from '../../assets/Frame.png';
 import rightArrowIcon from '../../assets/icons/right arrow.png';
+import { useNavigate } from 'react-router-dom';
 
 const ChaptersPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -17,6 +18,7 @@ const ChaptersPage = () => {
     if (typeof window === 'undefined') return 9;
     return window.innerWidth < 640 ? 4 : 9; // Mobile: 2x2, Desktop: 3x3
   });
+  const navigate = useNavigate();
 
   const schools = [
     {
@@ -215,7 +217,11 @@ const ChaptersPage = () => {
             </p>
             <div className="pt-2 sm:pt-3 md:pt-4">
 
-              <button className="bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl relative z-30">
+              <button
+                type="button"
+                onClick={() => navigate('/joinyoung')}
+                className="bg-[#A82228] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full font-semibold hover:bg-[#8a1c22] transition-colors text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl relative z-30"
+              >
                 Join Now
               </button>
             </div>
