@@ -133,6 +133,7 @@ const ChaptersPage = () => {
   const startIndex = (currentPage - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
   const displayedSchools = filteredSchools.slice(startIndex, endIndex);
+  const isMobileView = cardsPerPage === 4;
   const [heroRef, heroVisible] = useScrollAnimation({ once: true });
   const [searchRef, searchVisible] = useScrollAnimation({ once: true });
   const [resultsRef, resultsVisible] = useScrollAnimation({ once: true });
@@ -315,10 +316,10 @@ const ChaptersPage = () => {
                         />
                         <h3
                           title={school.name}
-                          className="text-sm sm:text-lg font-bold text-black leading-snug min-h-[40px] sm:min-h-[52px] overflow-hidden"
+                          className="text-sm sm:text-lg font-bold text-black leading-snug min-h-[56px] sm:min-h-[52px] overflow-hidden break-words"
                           style={{
                             display: '-webkit-box',
-                            WebkitLineClamp: 2,
+                            WebkitLineClamp: isMobileView ? 3 : 2,
                             WebkitBoxOrient: 'vertical',
                           }}
                         >
