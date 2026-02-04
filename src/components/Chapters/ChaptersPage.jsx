@@ -267,7 +267,7 @@ const ChaptersPage = () => {
           </h2>
 
           {/* School Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-8">
             {displayedSchools.map((school, index) => {
               const isPinkBox = index % 2 !== 0; // Pink boxes for odd indices
               return (
@@ -299,6 +299,7 @@ const ChaptersPage = () => {
                           alt="School icon"
                           className="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0 mt-0.5"
                         />
+<<<<<<< Updated upstream
                         <h3
                           title={school.name}
                           className="text-base sm:text-lg font-bold text-black leading-snug min-h-[44px] sm:min-h-[52px] overflow-hidden"
@@ -308,6 +309,9 @@ const ChaptersPage = () => {
                             WebkitBoxOrient: 'vertical',
                           }}
                         >
+=======
+                        <h3 className="text-sm sm:text-lg font-bold text-black leading-tight mt-3">
+>>>>>>> Stashed changes
                           {school.name}
                         </h3>
                       </div>
