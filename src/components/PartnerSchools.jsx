@@ -77,7 +77,7 @@ const PartnerSchools = () => {
                         >
                             {partnerSchools.map((school) => (
                                 <SwiperSlide key={school.id}>
-                                    <div className="p-4 flex items-center justify-center  shadow-sm border border-gray-100">
+                                    <div className="p-4 flex items-center justify-center h-32">
                                         <img
                                             src={school.logo}
                                             alt={school.name}
