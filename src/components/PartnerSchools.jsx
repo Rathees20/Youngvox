@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 import school1Logo from '../assets/school1.jpeg';
 import school2Logo from '../assets/school2.png';
 import school3Logo from '../assets/school3.jpeg';
-import school4Logo from '../assets/school4.jpeg';
+import school4Logo from '../assets/school9.jpeg';
 import school5Logo from '../assets/school5.jpeg';
 import school6Logo from '../assets/school6.jpeg';
 import school7Logo from '../assets/school7.png';
@@ -77,11 +77,11 @@ const PartnerSchools = () => {
                         >
                             {partnerSchools.map((school) => (
                                 <SwiperSlide key={school.id}>
-                                    <div className="p-3 flex items-center justify-center h-32">
+                                    <div className="p-4 flex items-center justify-center h-32 bg-white rounded-lg shadow-sm border border-gray-100">
                                         <img
                                             src={school.logo}
                                             alt={school.name}
-                                            className="max-h-24 max-w-full object-contain"
+                                            className="h-20 w-20 object-contain rounded-md"
                                         />
                                     </div>
                                 </SwiperSlide>

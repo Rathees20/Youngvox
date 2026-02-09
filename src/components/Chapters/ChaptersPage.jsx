@@ -109,6 +109,14 @@ const ChaptersPage = () => {
       state: 'Tamil Nadu',
       createdFrom: '25-01-2026',
     },
+    {
+      id: 12,
+      name: 'Kannadivappa International School',
+      chapterId: 'RAM012',
+      district: 'Ramanathapuram',
+      state: 'Tamil Nadu',
+      createdFrom: '02-02-2026',
+    },
   ];
 
   const normalizedSearchTerm = searchTerm.trim().toLowerCase();
