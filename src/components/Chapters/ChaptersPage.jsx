@@ -210,6 +210,7 @@ const ChaptersPage = () => {
           <div
             className="
       ml-auto
+      pl-5
       mr-[2%] sm:mr-[6%]
       max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl
       text-left
