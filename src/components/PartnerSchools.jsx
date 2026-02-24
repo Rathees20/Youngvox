@@ -14,6 +14,7 @@ import school7Logo from '../assets/school7.png';
 import school8Logo from '../assets/school8.jpeg';
 import school10Logo from '../assets/school10.png';
 import school11Logo from '../assets/school11.jpg';
+import school12Logo from '../assets/school12.jpeg';
 
 
 const PartnerSchools = () => {
@@ -31,6 +32,7 @@ const PartnerSchools = () => {
         { id: 8, name: 'School 8', logo: school8Logo },
         { id: 9, name: 'School 10', logo: school10Logo },
         { id: 10, name: 'School 11', logo: school11Logo },
+        { id: 11, name: 'School 12', logo: school12Logo },
     ];
 
     return (

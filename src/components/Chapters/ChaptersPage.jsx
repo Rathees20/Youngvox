@@ -117,6 +117,30 @@ const ChaptersPage = () => {
       state: 'Tamil Nadu',
       createdFrom: '02-02-2026',
     },
+    {
+      id: 13,
+      name: 'The Matric Higher Secondary School',
+      chapterId: 'CUD013',
+      district: 'Cuddalore',
+      state: 'Tamil Nadu',
+      createdFrom: '13-02-2026',
+    },
+    {
+      id: 14,
+      name: 'Prim Buds Garden School',
+      chapterId: 'CHN014',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '17-02-2026',
+    },
+    {
+      id: 15,
+      name: 'SV High International School',
+      chapterId: 'CHN015',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '19-02-2026',
+    },
   ];
 
   const normalizedSearchTerm = searchTerm.trim().toLowerCase();
