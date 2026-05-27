@@ -141,6 +141,14 @@ const ChaptersPage = () => {
       state: 'Tamil Nadu',
       createdFrom: '19-02-2026',
     },
+    {
+      id: 16,
+      name: 'Veera Savarkar Nethaji Matriculation Higher Secondary School',
+      chapterId: 'CHN018',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '25-05-2026',
+    },
   ];
 
   const normalizedSearchTerm = searchTerm.trim().toLowerCase();
