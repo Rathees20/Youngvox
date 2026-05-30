@@ -15,8 +15,9 @@ import school8Logo from '../assets/school8.jpeg';
 import school10Logo from '../assets/school10.png';
 import school11Logo from '../assets/school11.jpg';
 import school12Logo from '../assets/school12.jpeg';
-import veeraLogo from '../assets/veera.jpeg';
-import chakraLogo from '../assets/chakra.jpeg';
+import veeraLogo from '../assets/school13.jpeg';
+import chakraLogo from '../assets/school14.jpeg';
+import school15Logo from '../assets/school15.jpeg';
 
 
 const PartnerSchools = () => {
@@ -35,8 +36,9 @@ const PartnerSchools = () => {
         { id: 9, name: 'School 10', logo: school10Logo },
         { id: 10, name: 'School 11', logo: school11Logo },
         { id: 11, name: 'School 12', logo: school12Logo },
-        { id: 12, name: 'Veera', logo: veeraLogo },
-        { id: 13, name: 'Chakra', logo: chakraLogo },
+        { id: 12, name: 'School 13', logo: veeraLogo },
+        { id: 13, name: 'School 14', logo: chakraLogo },
+        { id: 14, name: 'School 15', logo: school15Logo },
     ];
 
     return (

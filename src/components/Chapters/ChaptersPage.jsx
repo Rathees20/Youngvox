@@ -149,6 +149,30 @@ const ChaptersPage = () => {
       state: 'Tamil Nadu',
       createdFrom: '25-05-2026',
     },
+    {
+      id: 17,
+      name: 'Sree Iyappa Matriculation Higher Secondary School',
+      chapterId: 'CHN016',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '05-03-2026',
+    },
+    {
+      id: 18,
+      name: 'Srichakra Matric Higher Secondary School',
+      chapterId: 'MAY017',
+      district: 'Mayiladuthurai',
+      state: 'Tamil Nadu',
+      createdFrom: '23-05-2026',
+    },
+    {
+      id: 19,
+      name: 'Springfield Matriculation Higher Secondary School',
+      chapterId: 'CHN019',
+      district: 'Chennai',
+      state: 'Tamil Nadu',
+      createdFrom: '25-05-2026',
+    },
   ];
 
   const normalizedSearchTerm = searchTerm.trim().toLowerCase();
