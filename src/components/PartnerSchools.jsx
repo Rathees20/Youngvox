@@ -18,6 +18,10 @@ import school12Logo from '../assets/school12.jpeg';
 import veeraLogo from '../assets/school13.jpeg';
 import chakraLogo from '../assets/school14.jpeg';
 import school15Logo from '../assets/school15.jpeg';
+import school16Logo from '../assets/school16.jpeg';
+import school17Logo from '../assets/school17.png';
+import school18Logo from '../assets/school18.png';
+
 
 
 const PartnerSchools = () => {
@@ -39,6 +43,10 @@ const PartnerSchools = () => {
         { id: 12, name: 'School 13', logo: veeraLogo },
         { id: 13, name: 'School 14', logo: chakraLogo },
         { id: 14, name: 'School 15', logo: school15Logo },
+        { id: 15, name: 'School 16' , logo: school16Logo },
+        { id: 16, name: 'School 17' , logo: school17Logo },
+        { id: 17, name: 'School 18' , logo: school18Logo },
+
     ];
 
     return (
